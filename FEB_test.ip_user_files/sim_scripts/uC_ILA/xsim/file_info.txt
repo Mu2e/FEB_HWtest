@@ -1,0 +1,1 @@
+uC_ILA.vhd,vhdl,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/uC_ILA/sim/uC_ILA.vhd,incdir="../../../../FEB_test.gen/sources_1/ip/uC_ILA/hdl/verilog"

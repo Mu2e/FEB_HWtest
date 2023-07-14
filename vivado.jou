@@ -1,0 +1,177 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Jul 13 12:27:19 2023
+# Process ID: 3316
+# Current directory: C:/v23.1/FEB_test
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29368 C:\v23.1\FEB_test\FEB_test.xpr
+# Log file: C:/v23.1/FEB_test/vivado.log
+# Journal file: C:/v23.1/FEB_test\vivado.jou
+# Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34287 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/v23.1/FEB_test/FEB_test.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property file_type {VHDL 2008} [get_files  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd]
+set_property file_type VHDL [get_files  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd]
+set_property file_type {VHDL 2019} [get_files  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd]
+set_property file_type VHDL [get_files  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd]
+update_compile_order -fileset sources_1
+file mkdir C:/v23.1/FEB_test/FEB_test.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/v23.1/FEB_test/FEB_test.srcs/sim_1/new/Testbench.vhd w ]
+add_files -fileset sim_1 C:/v23.1/FEB_test/FEB_test.srcs/sim_1/new/Testbench.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property library work [get_files  C:/v23.1/FEB_test/FEB_test.srcs/sim_1/new/Testbench.vhd]
+launch_simulation
+source FEB_testbench.tcl
+save_wave_config {C:/v23.1/FEB_test/FEB_testbench_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/v23.1/FEB_test/FEB_testbench_behav.wcfg
+set_property xsim.view C:/v23.1/FEB_test/FEB_testbench_behav.wcfg [get_filesets sim_1]
+close_sim
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name PLL_0
+set_property -dict [list \
+  CONFIG.CLKIN1_JITTER_PS {62.5} \
+  CONFIG.CLKOUT1_DRIVES {BUFG} \
+  CONFIG.CLKOUT1_JITTER {116.303} \
+  CONFIG.CLKOUT1_PHASE_ERROR {92.596} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {100.000} \
+  CONFIG.CLKOUT2_DRIVES {BUFG} \
+  CONFIG.CLKOUT3_DRIVES {BUFG} \
+  CONFIG.CLKOUT4_DRIVES {BUFG} \
+  CONFIG.CLKOUT5_DRIVES {BUFG} \
+  CONFIG.CLKOUT6_DRIVES {BUFG} \
+  CONFIG.CLKOUT7_DRIVES {BUFG} \
+  CONFIG.CLK_OUT1_PORT {Clk_100MHz} \
+  CONFIG.ENABLE_CLOCK_MONITOR {false} \
+  CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
+  CONFIG.MMCM_BANDWIDTH {OPTIMIZED} \
+  CONFIG.MMCM_CLKFBOUT_MULT_F {6.250} \
+  CONFIG.MMCM_CLKIN1_PERIOD {6.250} \
+  CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
+  CONFIG.MMCM_CLKOUT0_DIVIDE_F {10.000} \
+  CONFIG.MMCM_COMPENSATION {ZHOLD} \
+  CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+  CONFIG.PRIMARY_PORT {clk_in1} \
+  CONFIG.PRIMITIVE {MMCM} \
+  CONFIG.PRIM_IN_FREQ {160} \
+  CONFIG.PRIM_SOURCE {Differential_clock_capable_pin} \
+  CONFIG.RESET_PORT {resetn} \
+  CONFIG.RESET_TYPE {ACTIVE_LOW} \
+] [get_ips PLL_0]
+generate_target {instantiation_template} [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci]
+generate_target all [get_files  c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci]
+catch { config_ip_cache -export [get_ips -all PLL_0] }
+export_ip_user_files -of_objects [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci]
+launch_runs PLL_0_synth_1 -jobs 16
+wait_on_run PLL_0_synth_1
+export_simulation -of_objects [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci] -directory C:/v23.1/FEB_test/FEB_test.ip_user_files/sim_scripts -ip_user_files_dir C:/v23.1/FEB_test/FEB_test.ip_user_files -ipstatic_source_dir C:/v23.1/FEB_test/FEB_test.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/modelsim} {questa=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/questa} {riviera=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/riviera} {activehdl=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config C:/v23.1/FEB_test/FEB_testbench_behav.wcfg
+source FEB_testbench.tcl
+save_wave_config {C:/v23.1/FEB_test/FEB_testbench_behav.wcfg}
+restart
+run 1 ms
+update_compile_order -fileset sim_1
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/v23.1/FEB_test/FEB_testbench_behav.wcfg}
+close_sim
+reset_simulation -simset sim_1 -mode behavioral
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config C:/v23.1/FEB_test/FEB_testbench_behav.wcfg
+source FEB_testbench.tcl
+restart
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 500 ns
+add_force {/FEB_testbench/DUT/uWRDL} -radix hex {1 0ns}
+run 50 ns
+add_force {/FEB_testbench/DUT/uCD} -radix hex {0 0ns}
+run 50 ns
+add_force {/FEB_testbench/DUT/uRDDL} -radix hex {2 0ns}
+run 50 ns
+add_force {/FEB_testbench/DUT/uWRDL} -radix hex {0 0ns}
+run 50 ns
+save_wave_config {C:/v23.1/FEB_test/FEB_testbench_behav.wcfg}
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+close_design
+close_sim
+file mkdir C:/v23.1/FEB_test/FEB_test.srcs/constrs_1
+file mkdir C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new
+close [ open C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc w ]
+add_files -fileset constrs_1 C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+place_ports VXO_P P15
+set_property IOSTANDARD DIFF_SSTL135 [get_ports [list VXO_P]]
+set_property IOSTANDARD DIFF_SSTL135 [get_ports [list VXO_P]]
+set_property IOSTANDARD DIFF_SSTL135 [get_ports [list VXO_P]]
+set_property IOSTANDARD MINI_LVDS_25 [get_ports [list VXO_P]]
+set_property target_constrs_file C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc [current_fileset -constrset]
+save_constraints -force
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name uC_ILA
+set_property -dict [list \
+  CONFIG.C_ADV_TRIGGER {true} \
+  CONFIG.C_EN_STRG_QUAL {1} \
+  CONFIG.C_NUM_OF_PROBES {7} \
+  CONFIG.C_PROBE4_WIDTH {12} \
+  CONFIG.C_PROBE5_WIDTH {16} \
+  CONFIG.C_PROBE6_WIDTH {2} \
+] [get_ips uC_ILA]
+generate_target {instantiation_template} [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci]
+catch { config_ip_cache -export [get_ips -all uC_ILA] }
+export_ip_user_files -of_objects [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci] -directory C:/v23.1/FEB_test/FEB_test.ip_user_files/sim_scripts -ip_user_files_dir C:/v23.1/FEB_test/FEB_test.ip_user_files -ipstatic_source_dir C:/v23.1/FEB_test/FEB_test.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/modelsim} {questa=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/questa} {riviera=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/riviera} {activehdl=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+close [ open C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Debug_ILA.vhd w ]
+add_files C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Debug_ILA.vhd
+set_property library work [get_files  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Debug_ILA.vhd]
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+set_property -dict [list \
+  CONFIG.C_NUM_OF_PROBES {11} \
+  CONFIG.C_PROBE10_WIDTH {2} \
+  CONFIG.C_PROBE7_WIDTH {2} \
+  CONFIG.C_PROBE8_WIDTH {2} \
+  CONFIG.C_PROBE9_WIDTH {2} \
+] [get_ips uC_ILA]
+generate_target all [get_files  c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci]
+catch { config_ip_cache -export [get_ips -all uC_ILA] }
+export_ip_user_files -of_objects [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci] -directory C:/v23.1/FEB_test/FEB_test.ip_user_files/sim_scripts -ip_user_files_dir C:/v23.1/FEB_test/FEB_test.ip_user_files -ipstatic_source_dir C:/v23.1/FEB_test/FEB_test.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/modelsim} {questa=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/questa} {riviera=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/riviera} {activehdl=C:/v23.1/FEB_test/FEB_test.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
