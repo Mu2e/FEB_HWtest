@@ -67,7 +67,7 @@ port(
 	uCA 					: in std_logic_vector(11 downto 0);
 	uCD 					: inout std_logic_vector(15 downto 0);
 	-- Geographic address pins
-	GA 						: in std_logic_vector(1 downto 0);
+	GA 						: in std_logic_vector(1 downto 0)
 	-- Analog Mux address lines
 --	MuxEn 					: buffer std_logic_vector(3 downto 0);
 --	Muxad 					: buffer std_logic_vector(1 downto 0);
@@ -77,14 +77,14 @@ port(
 --	DACDat 					: buffer std_logic;
 --	DACLd 					: buffer std_logic;
 	-- Chip dependent I/O functions
-	A7,LVDSTX 				: buffer std_logic;
-	GPI0_N,GPI0_P,GPI1  	: in std_logic;
-	-- LED/Flash Gate select line
-	PulseSel 				: buffer std_logic;
-	-- LED pulser/Flash Gate
-	Pulse 					: out std_logic;
-	-- Temperature sensor lines
-	Temp					: inout std_logic_vector(3 downto 0)
+--	A7,LVDSTX 				: buffer std_logic;
+--	GPI0_N,GPI0_P,GPI1  	: in std_logic;
+--	-- LED/Flash Gate select line
+--	PulseSel 				: buffer std_logic;
+--	-- LED pulser/Flash Gate
+--	Pulse 					: out std_logic;
+--	-- Temperature sensor lines
+--	Temp					: inout std_logic_vector(3 downto 0)
   );
 end FEB;
 
@@ -209,15 +209,15 @@ global_signals_100MHz : process(Clk_100MHz, CpldRst)
 end process;
 
 -- IBUFDS: Differential Input Buffer
-GPI0DiffIn : IBUFDS
-generic map (
-	DIFF_TERM 	 => TRUE, -- Differential Termination
-	IBUF_LOW_PWR => FALSE, -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
-	IOSTANDARD   => "DEFAULT")
-port map (
-	I  => GPI0_P, -- Diff_p buffer input (connect directly to top-level port)
-	IB => GPI0_N, -- Diff_n buffer input (connect directly to top-level port)
-	O  => GPI0);	  -- Buffer output
+-- GPI0DiffIn : IBUFDS
+-- generic map (
+-- 	DIFF_TERM 	 => TRUE, -- Differential Termination
+-- 	IBUF_LOW_PWR => FALSE, -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
+-- 	IOSTANDARD   => "DEFAULT")
+-- port map (
+-- 	I  => GPI0_P, -- Diff_p buffer input (connect directly to top-level port)
+-- 	IB => GPI0_N, -- Diff_n buffer input (connect directly to top-level port)
+-- 	O  => GPI0);	  -- Buffer output
 
 PLL :  PLL_0 
 port map(

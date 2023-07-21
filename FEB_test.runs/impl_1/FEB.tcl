@@ -139,8 +139,8 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/v23.1/FEB_test/FEB_test.runs/synth_1/FEB.dcp
-  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
-  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci
+  read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
+  read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc
 OPTRACE "read constraints: implementation" END { }
@@ -311,7 +311,7 @@ OPTRACE "read constraints: write_bitstream" END { }
   catch { write_mem_info -force -no_partial_mmi FEB.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
-  write_bitstream -force FEB.bit 
+  write_bitstream -force FEB.bit -bin_file
 OPTRACE "write_bitstream" END { }
 OPTRACE "write_bitstream misc" START { }
 OPTRACE "read constraints: write_bitstream_post" START { }

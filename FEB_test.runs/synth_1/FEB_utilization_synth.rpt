@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Thu Jul 13 18:00:30 2023
+| Date         : Thu Jul 20 11:43:08 2023
 | Host         : CD-135239 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file FEB_utilization_synth.rpt -pb FEB_utilization_synth.pb
 | Design       : FEB
@@ -92,14 +92,14 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   40 |     0 |          0 |       250 | 16.00 |
+| Bonded IOB                  |   34 |     0 |          0 |       250 | 13.60 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         5 |  0.00 |
 | OUT_FIFO                    |    0 |     0 |          0 |        20 |  0.00 |
 | IN_FIFO                     |    0 |     0 |          0 |        20 |  0.00 |
 | IDELAYCTRL                  |    0 |     0 |          0 |         5 |  0.00 |
-| IBUFDS                      |    1 |     0 |          0 |       240 |  0.42 |
+| IBUFDS                      |    0 |     0 |          0 |       240 |  0.00 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        20 |  0.00 |
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        20 |  0.00 |
 | IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       250 |  0.00 |
@@ -149,10 +149,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | IBUF     |   34 |                  IO |
 | FDCE     |    8 |        Flop & Latch |
-| OBUFT    |    4 |                  IO |
 | LUT2     |    2 |                 LUT |
 | LUT1     |    1 |                 LUT |
-| IBUFDS   |    1 |                  IO |
 +----------+------+---------------------+
 
 

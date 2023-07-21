@@ -93,12 +93,12 @@ read_vhdl -library work {
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Proj_Def.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd
 }
-read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
+read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_ooc.xdc]
 
-read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci
+read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/uC_ILA/uC_ILA.xci
 set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila.xdc]

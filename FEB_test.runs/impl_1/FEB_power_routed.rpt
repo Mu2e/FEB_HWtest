@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Thu Jul 13 18:03:57 2023
+| Date             : Thu Jul 20 11:45:22 2023
 | Host             : CD-135239 running 64-bit major release  (build 9200)
 | Command          : report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
 | Design           : FEB
@@ -64,7 +64,7 @@ Table of Contents
 | Signals                  |     0.004 |     7740 |       --- |             --- |
 | Block RAM                |     0.001 |      1.5 |        75 |            2.00 |
 | MMCM                     |     0.123 |        1 |         5 |           20.00 |
-| I/O                      |     0.003 |       40 |       250 |           16.00 |
+| I/O                      |     0.003 |       36 |       250 |           14.40 |
 | Static Power             |     0.069 |          |           |                 |
 | Total                    |     0.225 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+

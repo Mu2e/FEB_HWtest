@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="uC_ILA_synth_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1689289039">
   <File Type="PA-TCL" Name="uC_ILA.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="uC_ILA_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="uC_ILA_reports.tcl"/>
   <File Type="RDS-RDS" Name="uC_ILA.vds"/>
   <File Type="RDS-UTIL" Name="uC_ILA_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="uC_ILA_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="uC_ILA.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="uC_ILA_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="uC_ILA_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/uC_ILA" RelGenDir="$PGENDIR/uC_ILA">
     <File Path="$PSRCDIR/sources_1/ip/uC_ILA/uC_ILA.xci">
       <FileInfo>
@@ -50,9 +47,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
