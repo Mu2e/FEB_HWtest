@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1689871335">
-  <File Type="ROUTE-PWR" Name="FEB_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="FEB.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="FEB_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="FEB_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="FEB_rqa_opted.pb"/>
-  <File Type="BITSTR-MMI" Name="FEB.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="FEB_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="FEB_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="FEB_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="FEB_opt.dcp"/>
-  <File Type="OPT-DRC" Name="FEB_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="FEB.hwdef"/>
-  <File Type="PWROPT-DCP" Name="FEB_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="FEB_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="FEB_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="FEB_placed.dcp"/>
-  <File Type="PLACE-IO" Name="FEB_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="FEB_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="FEB_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="FEB_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="FEB_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="FEB_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="FEB_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="FEB.bin"/>
-  <File Type="PLACE-TIMING" Name="FEB_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="FEB_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="FEB_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="FEB_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="FEB.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="FEB_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="FEB_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="FEB_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="FEB.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="FEB_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="FEB_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="FEB_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="FEB_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="FEB_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="FEB_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="FEB_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="FEB_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="FEB_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="FEB_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="FEB_rqs_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="FEB_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="FEB_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="FEB_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="FEB_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="FEB_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="FEB_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="FEB_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="FEB_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="FEB_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="FEB_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="FEB_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="FEB_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="FEB_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="FEB_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="FEB_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="FEB_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="FEB.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="FEB_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="FEB_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="FEB.nky"/>
-  <File Type="BITSTR-BMM" Name="FEB_bd.bmm"/>
-  <File Type="PDI-FILE" Name="FEB.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="FEB_soc.pdi"/>
-  <File Type="PL-PDI-FILE" Name="FEB_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="FEB.rcfi"/>
-  <File Type="CFI_FILE" Name="FEB.cfi"/>
-  <File Type="RNPI_FILE" Name="FEB.rnpi"/>
-  <File Type="NPI_FILE" Name="FEB.npi"/>
-  <File Type="RBD_FILE" Name="FEB.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1689979245">
+  <File Type="ROUTE-PWR" Name="Test_DDR_wrapper_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="Test_DDR_wrapper.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="Test_DDR_wrapper_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="Test_DDR_wrapper_reports.tcl"/>
+  <File Type="BITSTR-MSK" Name="Test_DDR_wrapper.msk"/>
+  <File Type="ROUTE-CLK" Name="Test_DDR_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="Test_DDR_wrapper.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Test_DDR_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="Test_DDR_wrapper.bit"/>
+  <File Type="BG-DRC" Name="Test_DDR_wrapper.drc"/>
+  <File Type="BG-BGN" Name="Test_DDR_wrapper.bgn"/>
+  <File Type="BG-BIN" Name="Test_DDR_wrapper.bin"/>
+  <File Type="BITSTR-RBT" Name="Test_DDR_wrapper.rbt"/>
+  <File Type="BITSTR-NKY" Name="Test_DDR_wrapper.nky"/>
+  <File Type="BITSTR-BMM" Name="Test_DDR_wrapper_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="Test_DDR_wrapper.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Test_DDR_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="Test_DDR_wrapper.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="FEB.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="FEB.sysdef"/>
-  <File Type="BG-BGN" Name="FEB.bgn"/>
-  <File Type="BG-DRC" Name="FEB.drc"/>
-  <File Type="RDI-RDI" Name="FEB.vdi"/>
+  <File Type="BITSTR-LTX" Name="Test_DDR_wrapper.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="FEB_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="FEB_postroute_physopted.rqs"/>
+  <File Type="OPT-DRC" Name="Test_DDR_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Test_DDR_wrapper.hwdef"/>
+  <File Type="PLACE-IO" Name="Test_DDR_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="Test_DDR_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="Test_DDR_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="Test_DDR_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Test_DDR_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DRC" Name="Test_DDR_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="Test_DDR_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="Test_DDR_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="Test_DDR_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Test_DDR_wrapper_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="Test_DDR_wrapper_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="Test_DDR_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Test_DDR_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Test_DDR_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="Test_DDR_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Test_DDR_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="Test_DDR_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="Test_DDR_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="Test_DDR_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="Test_DDR_wrapper_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="Test_DDR_wrapper_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="Test_DDR_wrapper_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="Test_DDR_wrapper_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Test_DDR_wrapper_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="Test_DDR_wrapper_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Test_DDR_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Test_DDR_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Test_DDR_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Test_DDR_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Test_DDR_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Test_DDR_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Test_DDR_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Test_DDR_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="Test_DDR_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Test_DDR_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="PDI-FILE" Name="Test_DDR_wrapper.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="Test_DDR_wrapper_soc.pdi"/>
+  <File Type="PL-PDI-FILE" Name="Test_DDR_wrapper_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="Test_DDR_wrapper.rcfi"/>
+  <File Type="CFI_FILE" Name="Test_DDR_wrapper.cfi"/>
+  <File Type="RNPI_FILE" Name="Test_DDR_wrapper.rnpi"/>
+  <File Type="NPI_FILE" Name="Test_DDR_wrapper.npi"/>
+  <File Type="RBD_FILE" Name="Test_DDR_wrapper.rbd"/>
+  <File Type="ROUTE-RQS" Name="Test_DDR_wrapper_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="Test_DDR_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/Test_DDR.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/Test_DDR/hdl/Test_DDR_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Debug_ILA.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -96,6 +96,7 @@
     <File Path="$PSRCDIR/sources_1/new/Proj_Def.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -103,26 +104,45 @@
     <File Path="$PSRCDIR/sources_1/new/FEB.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/mig_b.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="Test_DDR_mig_7series_0_0"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="Test_DDR_mig_7series_0_0"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FEB"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="Test_DDR_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/FEB_pinout.xdc">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/BD_constraints.xdc">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/FEB_pinout.xdc"/>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/BD_constraints.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -141,9 +161,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -156,6 +174,10 @@
       <Option Id="BinFile">1</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="PLL_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="uC_ILA"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_mig_7series_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_dlmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_ilmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_lmb_bram_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_axi_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_clk_wiz_1_0"/>
 </GenRun>

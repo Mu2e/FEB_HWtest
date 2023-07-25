@@ -1,0 +1,16 @@
+vhdl xil_defaultlib  \
+"../../../bd/Test_DDR/ip/Test_DDR_microblaze_0_0/sim/Test_DDR_microblaze_0_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_dlmb_v10_0/sim/Test_DDR_dlmb_v10_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_ilmb_v10_0/sim/Test_DDR_ilmb_v10_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_dlmb_bram_if_cntlr_0/sim/Test_DDR_dlmb_bram_if_cntlr_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_ilmb_bram_if_cntlr_0/sim/Test_DDR_ilmb_bram_if_cntlr_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_mdm_1_0/sim/Test_DDR_mdm_1_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_rst_clk_wiz_0_100M_0/sim/Test_DDR_rst_clk_wiz_0_100M_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_axi_smc_0/bd_0/ip/ip_1/sim/bd_5a9a_psr0_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_axi_smc_0/bd_0/ip/ip_2/sim/bd_5a9a_psr_aclk_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_axi_smc_0/bd_0/ip/ip_3/sim/bd_5a9a_psr_aclk1_0.vhd" \
+"../../../bd/Test_DDR/ip/Test_DDR_rst_mig_7series_0_81M_0/sim/Test_DDR_rst_mig_7series_0_81M_0.vhd" \
+"../../../bd/Test_DDR/sim/Test_DDR.vhd" \
+
+# Do not sort compile order
+nosort

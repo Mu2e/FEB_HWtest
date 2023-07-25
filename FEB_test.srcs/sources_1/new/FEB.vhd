@@ -85,7 +85,7 @@ port(
 --	Pulse 					: out std_logic;
 --	-- Temperature sensor lines
 --	Temp					: inout std_logic_vector(3 downto 0)
-  );
+);
 end FEB;
 
 architecture behavioural of FEB is
@@ -150,7 +150,7 @@ signal EvBuffEmpty	          : std_logic;
 signal EvBuffWdsUsed          : std_logic_vector(10 downto 0);
 
 signal asp					  : std_logic := '0';
- 
+
 signal TempEn 				  : std_logic;
 signal TempCtrl 			  : std_logic_vector(3 downto 0);
 signal One_Wire_Out 		  : std_logic_vector(15 downto 0);
@@ -221,10 +221,10 @@ end process;
 
 PLL :  PLL_0 
 port map(
- 	clk_in1_p	=> VXO_P,
- 	clk_in1_n	=> VXO_N,
+	clk_in1_p	=> VXO_P,
+	clk_in1_n	=> VXO_N,
 	resetn		=> CpldRst,
-				
+
 	Clk_100MHz	=> Clk_100MHz,
 	locked		=> PLL_locked
 );

@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1689871335" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/FEB.dcp">
-  <File Type="PA-TCL" Name="FEB.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="FEB_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="FEB_reports.tcl"/>
-  <File Type="RDS-RDS" Name="FEB.vds"/>
-  <File Type="RDS-UTIL" Name="FEB_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="FEB_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="FEB.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FEB_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="FEB_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1689978970" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/FEB.dcp">
+  <File Type="PA-TCL" Name="Test_DDR_wrapper.tcl"/>
+  <File Type="REPORTS-TCL" Name="Test_DDR_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Test_DDR_wrapper.vds"/>
+  <File Type="RDS-UTIL" Name="Test_DDR_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Test_DDR_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Test_DDR_wrapper.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/Test_DDR.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/Test_DDR/hdl/Test_DDR_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Debug_ILA.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -21,6 +32,7 @@
     <File Path="$PSRCDIR/sources_1/new/Proj_Def.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -28,26 +40,45 @@
     <File Path="$PSRCDIR/sources_1/new/FEB.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/mig_b.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="Test_DDR_mig_7series_0_0"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="Test_DDR_mig_7series_0_0"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FEB"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="Test_DDR_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/FEB_pinout.xdc">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/BD_constraints.xdc">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/FEB_pinout.xdc"/>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/BD_constraints.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -66,11 +97,13 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="PLL_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="uC_ILA"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_mig_7series_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_dlmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_ilmb_bram_if_cntlr_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_lmb_bram_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_axi_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_clk_wiz_1_0"/>
 </GenRun>
