@@ -1,0 +1,827 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Jul 31 10:34:00 2023
+# Process ID: 23520
+# Current directory: C:/v23.1/FEB_test/FEB_test.runs/impl_1
+# Command line: vivado.exe -log FEB.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FEB.tcl -notrace
+# Log file: C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB.vdi
+# Journal file: C:/v23.1/FEB_test/FEB_test.runs/impl_1\vivado.jou
+# Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34287 MB
+#-----------------------------------------------------------
+source FEB.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1505.355 ; gain = 197.152
+Command: link_design -top FEB -part xc7s50fgga484-2
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s50fgga484-2
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/uC_ILA.dcp' for cell 'ILA_uC'
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.dcp' for cell 'PLL'
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController.dcp' for cell 'DDR/DDR_Controller'
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/vio_0/vio_0.dcp' for cell 'DDR/buttons'
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/DDR_ila_0.dcp' for cell 'DDR/ila'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.490 . Memory (MB): peak = 2048.410 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2672 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: DDR/buttons UUID: df538658-7a53-540d-854f-04a510bf157b 
+INFO: [Chipscope 16-324] Core: DDR/ila UUID: cbf13a52-8f0d-5762-b485-05ca6bb2f421 
+INFO: [Chipscope 16-324] Core: ILA_uC UUID: fab29885-ba49-55ec-a49d-1439a7a12cc1 
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc] for cell 'PLL/inst'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc] for cell 'PLL/inst'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc] for cell 'PLL/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2717.973 ; gain = 485.664
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc] for cell 'PLL/inst'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila_impl.xdc] for cell 'ILA_uC/U0'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila_impl.xdc] for cell 'ILA_uC/U0'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila.xdc] for cell 'ILA_uC/U0'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila.xdc] for cell 'ILA_uC/U0'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'DDR/ila/U0'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'DDR/ila/U0'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila.xdc] for cell 'DDR/ila/U0'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila.xdc] for cell 'DDR/ila/U0'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc] for cell 'DDR/DDR_Controller'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc] for cell 'DDR/DDR_Controller'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/vio_0/vio_0.xdc] for cell 'DDR/buttons'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/vio_0/vio_0.xdc] for cell 'DDR/buttons'
+Parsing XDC File [C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]
+Finished Parsing XDC File [C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2747.285 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1653 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 1452 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 2 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 114 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 64 instances
+
+17 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 2747.285 ; gain = 1159.281
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors, 16 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2747.285 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+Ending Cache Timing Information Task | Checksum: 19b316e45
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2781.215 ; gain = 33.930
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 3178.168 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 15c75389e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:01:40 . Memory (MB): peak = 3178.168 ; gain = 19.879
+
+Phase 2 Retarget
+INFO: [Opt 31-1566] Pulled 11 inverters resulting in an inversion of 102 pins
+INFO: [Opt 31-138] Pushed 10 inverter(s) to 10 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: 53f327fd
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:01:42 . Memory (MB): peak = 3178.168 ; gain = 19.879
+INFO: [Opt 31-389] Phase Retarget created 76 cells and removed 227 cells
+INFO: [Opt 31-1021] In phase Retarget, 133 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 3 Constant propagation | Checksum: cfc37fad
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:01:42 . Memory (MB): peak = 3178.168 ; gain = 19.879
+INFO: [Opt 31-389] Phase Constant propagation created 3 cells and removed 35 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 66 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Sweep
+Phase 4 Sweep | Checksum: 52b6ec4e
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:01:42 . Memory (MB): peak = 3178.168 ; gain = 19.879
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 280 cells
+INFO: [Opt 31-1021] In phase Sweep, 1911 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 BUFG optimization
+Phase 5 BUFG optimization | Checksum: a21c8857
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:01:43 . Memory (MB): peak = 3178.168 ; gain = 19.879
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 6 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 6 Shift Register Optimization | Checksum: 1c0932884
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:01:43 . Memory (MB): peak = 3178.168 ; gain = 19.879
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 7 Post Processing Netlist
+Phase 7 Post Processing Netlist | Checksum: 1a8b38f25
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:01:43 . Memory (MB): peak = 3178.168 ; gain = 19.879
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 71 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              76  |             227  |                                            133  |
+|  Constant propagation         |               3  |              35  |                                             66  |
+|  Sweep                        |               0  |             280  |                                           1911  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             71  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 3178.168 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: ed8a7e0a
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:01:44 . Memory (MB): peak = 3178.168 ; gain = 19.879
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 9 BRAM(s) out of a total of 11 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 11 newly gated: 0 Total Ports: 22
+Ending PowerOpt Patch Enables Task | Checksum: fe68657a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Ending Power Optimization Task | Checksum: fe68657a
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 3353.340 ; gain = 175.172
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: fe68657a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1b081d8e7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 3353.340 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:22 ; elapsed = 00:01:54 . Memory (MB): peak = 3353.340 ; gain = 606.055
+INFO: [runtcl-4] Executing : report_drc -file FEB_drc_opted.rpt -pb FEB_drc_opted.pb -rpx FEB_drc_opted.rpx
+Command: report_drc -file FEB_drc_opted.rpt -pb FEB_drc_opted.pb -rpx FEB_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.103 . Memory (MB): peak = 3353.340 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 3353.340 ; gain = 0.000
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+CRITICAL WARNING: [DRC AVAL-46] v7v8_mmcm_fvco_rule1: The current computed target frequency, FVCO, is out of range for cell DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i. The computed FVCO is 200.000 MHz. The valid FVCO range for speed grade -2 is 600MHz to 1440MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 8.000, CLKIN1_PERIOD = 40.00000, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
+This violation may be corrected by:
+  1. The timer uses timing constraints for clock period or clock frequency that affect CLKIN1 to set cell attribute CLKIN1_PERIOD, over-riding any previous value. This may already be in place and, if so this violation will be resolved once Timing is run.  Otherwise, consider modifying timing constraints to adjust the CLKIN1_PERIOD and bring FVCO into the allowed range.
+  2. In the absence of timing constraints that affect CLKIN1, consider modifying the cell CLKIN1_PERIOD to bring FVCO into the allowed range.
+  3. If CLKIN1_PERIOD is satisfactory, modify the CLKFBOUT_MULT_F or DIVCLK_DIVIDE cell attributes to bring FVCO into the allowed range.
+  4. The MMCM configuration may be dynamically modified by use of DRP which is recognized by an ACTIVE signal on DCLK pin.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Critical Warnings, 17 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: c8dd4527
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 180e6696d
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1e127d656
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1e127d656
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1e127d656
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1e5b0d241
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 28014f1c5
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 18e544805
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 1b30ee974
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 159 LUTNM shape to break, 1222 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 159, total 159, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 711 nets or LUTs. Breaked 159 LUTs, combined 552 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 18 nets or cells. Created 36 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 3353.340 ; gain = 0.000
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |          159  |            552  |                   711  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |           36  |              0  |                    18  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |          195  |            552  |                   729  |           0  |           9  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 139521439
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:26 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Phase 2.4 Global Placement Core | Checksum: 133371333
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:27 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 133371333
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:27 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1b638311f
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:28 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: f585f9f4
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:32 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: b050b78e
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:32 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1984d3e27
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:32 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: f9d48237
+
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:38 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: bfe42a48
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:45 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: b445d82b
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:45 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 16b9c13f1
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:46 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 153349984
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:52 . Memory (MB): peak = 3353.340 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 153349984
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:52 . Memory (MB): peak = 3353.340 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance DDR/DDR_Controller/u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 10.000 obtained from clock propagation is outside the allowed range.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1dba81116
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.334 | TNS=-2445.458 |
+Phase 1 Physical Synthesis Initialization | Checksum: 129439fd9
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3366.469 ; gain = 13.129
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 129439fd9
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3368.648 ; gain = 15.309
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1dba81116
+
+Time (s): cpu = 00:01:27 ; elapsed = 00:01:00 . Memory (MB): peak = 3368.648 ; gain = 15.309
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-2.966. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1358be9c8
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:28 . Memory (MB): peak = 3377.766 ; gain = 24.426
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:28 . Memory (MB): peak = 3377.766 ; gain = 24.426
+Phase 4.1 Post Commit Optimization | Checksum: 1358be9c8
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:29 . Memory (MB): peak = 3377.766 ; gain = 24.426
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1358be9c8
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:29 . Memory (MB): peak = 3377.766 ; gain = 24.426
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1358be9c8
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:29 . Memory (MB): peak = 3377.766 ; gain = 24.426
+Phase 4.3 Placer Reporting | Checksum: 1358be9c8
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:29 . Memory (MB): peak = 3377.766 ; gain = 24.426
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 3377.766 ; gain = 0.000
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:29 . Memory (MB): peak = 3377.766 ; gain = 24.426
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 122d3f199
+
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:29 . Memory (MB): peak = 3377.766 ; gain = 24.426
+Ending Placer Task | Checksum: 106482475
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:01:29 . Memory (MB): peak = 3377.766 ; gain = 24.426
+INFO: [Common 17-83] Releasing license: Implementation
+91 Infos, 36 Warnings, 1 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:01 ; elapsed = 00:01:31 . Memory (MB): peak = 3377.766 ; gain = 24.426
+INFO: [runtcl-4] Executing : report_io -file FEB_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 3377.766 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file FEB_utilization_placed.rpt -pb FEB_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file FEB_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.108 . Memory (MB): peak = 3377.766 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3404.633 ; gain = 26.867
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 3404.633 ; gain = 26.867
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 3435.141 ; gain = 30.508
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 7.00s |  WALL: 4.57s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 3435.336 ; gain = 0.129
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.177 | TNS=-2352.308 |
+Phase 1 Physical Synthesis Initialization | Checksum: 183ec98bf
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3453.387 ; gain = 18.051
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.177 | TNS=-2352.308 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 183ec98bf
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3453.387 ; gain = 18.051
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.177 | TNS=-2352.308 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[126].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[126]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[126]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.027 | TNS=-2351.881 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[62].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[62]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[62]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.966 | TNS=-2351.469 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[5].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[5]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.936 | TNS=-2351.082 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[3].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[3]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[0].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.902 | TNS=-2350.808 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[64].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[64]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[64]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.883 | TNS=-2350.507 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[73].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[73]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[73]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.882 | TNS=-2350.170 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[54]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/clk_pll_i. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[87].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M_i_74
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[87]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.882 | TNS=-2349.934 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[28]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 6 pins.
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[61]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.881 | TNS=-2349.426 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[126].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[126]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[126]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.880 | TNS=-2349.300 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[113].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[113]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[113]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.879 | TNS=-2349.080 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[113]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[146].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M_i_15
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[146]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.872 | TNS=-2349.205 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[73].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[73]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[73]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.868 | TNS=-2349.453 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[5].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[5]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.867 | TNS=-2349.187 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[73]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[252].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M_i_55
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[252]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.865 | TNS=-2348.680 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[44]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 8 pins.
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[77]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.863 | TNS=-2348.305 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[29]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 11 pins.
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[62]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.828 | TNS=-2347.914 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[11].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[11]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.816 | TNS=-2347.845 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[120].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[120]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[120]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.808 | TNS=-2347.763 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[88].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[88]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[88]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.807 | TNS=-2347.623 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[11].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[11]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.806 | TNS=-2347.579 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[63].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[63]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[63]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.795 | TNS=-2347.564 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[120].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[120]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[120]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.794 | TNS=-2347.188 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[43]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[76]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net DDR/DDR3_wrt_data[43].  Re-placed instance DDR/DDR3_wrt_data_reg[43]
+INFO: [Physopt 32-735] Processed net DDR/DDR3_wrt_data[43]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.791 | TNS=-2347.296 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[72].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[72]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[72]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.791 | TNS=-2347.016 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[63]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 3 pins.
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[96]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.786 | TNS=-2346.544 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[14]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[47].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M_i_114
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[47]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.785 | TNS=-2345.889 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[58].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[58]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[58]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.648 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[113].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[113]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[113]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.486 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[114].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[114]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[114]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.358 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[24].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[24]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[24]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.319 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[75].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[75]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[75]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.290 |
+INFO: [Physopt 32-663] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0].  Re-placed instance ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]
+INFO: [Physopt 32-735] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.268 |
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[17].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-601] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/probe_data[36]. Net driver ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M_i_2 was replaced.
+INFO: [Physopt 32-735] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/probe_data[36]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.158 |
+INFO: [Physopt 32-663] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0].  Re-placed instance ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]
+INFO: [Physopt 32-735] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.080 |
+INFO: [Physopt 32-663] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1].  Re-placed instance ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[1]
+INFO: [Physopt 32-735] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.035 |
+INFO: [Physopt 32-663] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1].  Re-placed instance ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[1]
+INFO: [Physopt 32-735] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2345.020 |
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/probe_data[36]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net RDDL[0].  Re-placed instance RDDL_reg[0]
+INFO: [Physopt 32-735] Processed net RDDL[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2344.949 |
+INFO: [Physopt 32-663] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[17].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1].  Re-placed instance ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[17].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[1]
+INFO: [Physopt 32-735] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[17].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2344.912 |
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/probe_data[35]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net WRDL[1].  Re-placed instance WRDL_reg[1]
+INFO: [Physopt 32-735] Processed net WRDL[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2344.872 |
+INFO: [Physopt 32-663] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1].  Re-placed instance ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[1]
+INFO: [Physopt 32-735] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[16].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.784 | TNS=-2344.857 |
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[16].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[16]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[16]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.783 | TNS=-2344.672 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[6].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[6]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[1].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.783 | TNS=-2344.638 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[40].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[40]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[40]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.782 | TNS=-2344.617 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[68].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[68]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[68]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.782 | TNS=-2344.500 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[67].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[67]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[67]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.781 | TNS=-2344.251 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[49].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[49]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[49]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.780 | TNS=-2344.231 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[74].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[74]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[74]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.779 | TNS=-2344.010 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[115].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[115]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[115]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.779 | TNS=-2343.733 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[13].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[13]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.779 | TNS=-2343.364 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[48].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[48]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[48]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.778 | TNS=-2343.344 |
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/probe_data[35]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.778 | TNS=-2343.344 |
+Phase 3 Critical Path Optimization | Checksum: 16575b19c
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 3453.387 ; gain = 18.051
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.778 | TNS=-2343.344 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[113].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[113]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[113]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.778 | TNS=-2343.205 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[103].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[103]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[103]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.778 | TNS=-2342.970 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[0].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.777 | TNS=-2342.925 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[40]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/clk_pll_i. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[73]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[73]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.776 | TNS=-2342.708 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[25].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[25].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[0]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[25].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.776 | TNS=-2342.362 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[74].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[74]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[74]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.775 | TNS=-2342.271 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[101]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 5 pins.
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[134]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.774 | TNS=-2342.105 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[17].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[17]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[17]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.773 | TNS=-2341.746 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[10].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[28].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[10].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[14]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[10].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[28]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.773 | TNS=-2341.587 |
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[114].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[114]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[6].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[114]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.772 | TNS=-2341.578 |
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/probe_data[35]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[81].  Re-placed instance DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[81]
+INFO: [Physopt 32-735] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[14].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[81]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.772 | TNS=-2341.078 |
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[7].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/clk_pll_i. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DDR/ila/U0/ila_core_inst/u_trig/U_TM/probe_data[36]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net DDR/DDR3_wrt_data[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[15].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_dly1[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net ILA_uC/U0/ila_core_inst/u_trig/U_TM/probe_data[35]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.772 | TNS=-2341.078 |
+Phase 4 Critical Path Optimization | Checksum: 224054b24
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 3453.387 ; gain = 18.051
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 3453.387 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-2.772 | TNS=-2341.078 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.405  |         11.229  |            1  |              0  |                    61  |           0  |           2  |  00:00:05  |
+|  Total          |          0.405  |         11.229  |            1  |              0  |                    61  |           0  |           3  |  00:00:05  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 3453.387 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: cb7eb7ee
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 3453.387 ; gain = 18.051
+INFO: [Common 17-83] Releasing license: Implementation
+329 Infos, 36 Warnings, 1 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 3453.387 ; gain = 48.754
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3465.469 ; gain = 12.082
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3465.469 ; gain = 12.082
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC PDRC-34] MMCM_adv_ClkFrequency_div_no_dclk: The computed value 200.000 MHz (CLKIN1_PERIOD, net pll_clk3) for the VCO operating frequency of the MMCME2_ADV site MMCME2_ADV_X0Y1 (cell DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i) falls outside the operating range of the MMCM VCO frequency for this device (600.000 - 1440.000 MHz). The computed value is (CLKFBOUT_MULT_F * 1000 / (CLKINx_PERIOD * DIVCLK_DIVIDE)). Please run update_timing to update the MMCM settings. If that does not work, adjust either the input period CLKINx_PERIOD (40.000000), multiplication factor CLKFBOUT_MULT_F (8.000000) or the division factor DIVCLK_DIVIDE (1), in order to achieve a VCO frequency within the rated operating range for this device.
+ERROR: [DRC PDRC-43] PLL_adv_ClkFrequency_div_no_dclk: The computed value 400.000 MHz (CLKIN1_PERIOD, net Clk_100MHz) for the VCO operating frequency of the PLLE2_ADV site PLLE2_ADV_X0Y1 (cell DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/plle2_i) falls outside the operating range of the PLL VCO frequency for this device (800.000 - 1866.000 MHz). The computed value is (CLKFBOUT_MULT_F * 1000 / (CLKINx_PERIOD * DIVCLK_DIVIDE)). Please adjust either the input period CLKINx_PERIOD (10.000000), multiplication factor CLKFBOUT_MULT_F (4) or the division factor DIVCLK_DIVIDE (1), in order to achieve a VCO frequency within the rated operating range for this device.
+INFO: [Vivado_Tcl 4-198] DRC finished with 2 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-16] Error(s) found during DRC. Router not run.
+INFO: [Common 17-83] Releasing license: Implementation
+339 Infos, 36 Warnings, 1 Critical Warnings and 3 Errors encountered.
+route_design failed
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 3465.543 ; gain = 0.074
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_routed_error.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 3465.543 ; gain = 0.074
+ERROR: [Common 17-39] 'route_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 31 10:39:00 2023...

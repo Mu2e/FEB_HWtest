@@ -90,6 +90,33 @@ set_property PACKAGE_PIN AB21 [get_ports uCWr]
 set_property IOSTANDARD LVCMOS25 [get_ports uCWr]
 
 #-------------------------------------
+# DEBUG Header
+#-------------------------------------
+
+
+set_property PACKAGE_PIN U17 [get_ports {DBG[0]}]
+set_property PACKAGE_PIN N18 [get_ports {DBG[1]}]
+set_property PACKAGE_PIN U18 [get_ports {DBG[2]}]
+set_property PACKAGE_PIN T17 [get_ports {DBG[3]}]
+set_property PACKAGE_PIN R18 [get_ports {DBG[4]}]
+set_property PACKAGE_PIN N17 [get_ports {DBG[5]}]
+set_property PACKAGE_PIN T8 [get_ports {DBG[6]}]
+set_property PACKAGE_PIN T7 [get_ports {DBG[7]}]
+set_property PACKAGE_PIN T6 [get_ports {DBG[8]}]
+set_property PACKAGE_PIN V5 [get_ports {DBG[9]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[9]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[8]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[7]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[6]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[5]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[4]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[3]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[2]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[1]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {DBG[0]}]
+
+
+#-------------------------------------
 # Chip dependent I/O functions
 #-------------------------------------
 

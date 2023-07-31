@@ -82,14 +82,14 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/v23.1/FEB_test/FEB_test.cache/wt [current_project]
 set_property parent.project_path C:/v23.1/FEB_test/FEB_test.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/v23.1/FEB_test/FEB_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
+read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_ooc.xdc]

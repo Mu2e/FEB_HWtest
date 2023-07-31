@@ -580,6 +580,50 @@ port (
 	);
 end component;
 
+component DDR_test is
+	generic(
+		-- DDR3L parameters
+		DATA_WIDTH			: integer := 16;  -- 16 Both ARTY and FEB
+		DDR3L_ADDR			: integer := 15;  -- 14: ARTY 15: FEB
+		APP_ADDR			: integer := 29  -- 28: ARTY 29: FEB
+	);
+	port (
+        Clk_100MHz			: in std_logic;
+		Clk_200MHz			: in std_logic;
+        SysClk				: in std_logic; -- 160 MHz
+        ResetHi				: in std_logic;
+	-- DDR3L pins
+		DDR_DATA			: inout std_logic_vector(DATA_WIDTH-1 downto 0);
+		DDR_ADDR			: out std_logic_vector(DDR3L_ADDR-1 downto 0);
+		BA 					: out std_logic_vector(2 downto 0);
+		DDR_CKE	 			: out std_logic_vector(0 downto 0);
+		ODT 				: out std_logic_vector(0 downto 0);
+		CS 					: out std_logic_vector(0 downto 0);
+		DM 					: out std_logic_vector(1 downto 0);
+		RAS,CAS				: out std_logic; 
+		DDR_WE 				: out std_logic;
+		DDR_CLKP,DDR_CLKN 	: out  std_logic_vector(0 downto 0);
+		LDQS_P, LDQS_N 		: inout std_logic;
+		UDQS_P, UDQS_N 		: inout std_logic;
+		RESET_N				: out std_logic;
+	-- Microcontroller strobes
+		CpldRst				: in std_logic;
+		CpldCS				: in std_logic;
+		uCRd				: in std_logic;
+		uCWr 				: in std_logic;
+	-- Microcontroller data and address buses	
+		uCA 				: in std_logic_vector(11 downto 0);
+		uCD 				: in std_logic_vector(15 downto 0);
+	-- Geographic address pins
+		GA 					: in std_logic_vector(1 downto 0);
+	-- Synchronous edge detectors of uC read and write strobes
+		AddrReg			  	: in std_logic_vector(11 downto 0);
+		WRDL 				: in std_logic_vector(1 downto 0);
+		RDDL				: in std_logic_vector(1 downto 0);
+	-- Debug
+		DBG	 				: out std_logic_vector(9 downto 0)
+	);
+	end component;
 
 component Histogram is
 port(
@@ -708,48 +752,48 @@ end component;
 
 component DDR3LController is
   port (
-      ddr3_dq       	: inout std_logic_vector(DATA_WIDTH-1 downto 0);
-      ddr3_dqs_p    	: inout std_logic_vector(1 downto 0);
-      ddr3_dqs_n    	: inout std_logic_vector(1 downto 0);
-      ddr3_addr     	: out   std_logic_vector(DDR3L_ADDR-1 downto 0);
-      ddr3_ba       	: out   std_logic_vector(2 downto 0);
-      ddr3_ras_n    	: out   std_logic;
-      ddr3_cas_n    	: out   std_logic;
-      ddr3_we_n     	: out   std_logic;
-      ddr3_reset_n  	: out   std_logic;
-      ddr3_ck_p     	: out   std_logic_vector(0 downto 0);
-      ddr3_ck_n     	: out   std_logic_vector(0 downto 0);
-      ddr3_cke      	: out   std_logic_vector(0 downto 0);
-      ddr3_cs_n     	: out   std_logic_vector(0 downto 0);
-      ddr3_dm       	: out   std_logic_vector(1 downto 0);
-      ddr3_odt      	: out   std_logic_vector(0 downto 0);
-      app_addr          : in    std_logic_vector(APP_ADDR-1 downto 0);
-      app_cmd           : in    std_logic_vector(2 downto 0);
-      app_en            : in    std_logic;
-      app_wdf_data      : in    std_logic_vector(63 downto 0);
-      app_wdf_end       : in    std_logic;
-      app_wdf_mask      : in    std_logic_vector(7 downto 0);
-      app_wdf_wren      : in    std_logic;
-      app_rd_data       : out   std_logic_vector(63 downto 0);
-      app_rd_data_end   : out   std_logic;
-      app_rd_data_valid : out   std_logic;
-      app_rdy           : out   std_logic;
-      app_wdf_rdy       : out   std_logic;
-      app_sr_req        : in    std_logic;
-      app_ref_req       : in    std_logic;
-      app_zq_req        : in    std_logic;
-      app_sr_active     : out   std_logic;
-      app_ref_ack       : out   std_logic;
-      app_zq_ack        : out   std_logic;
-      ui_clk            : out   std_logic;
-      ui_clk_sync_rst   : out   std_logic;
-      init_calib_complete: out   std_logic;
-      -- System Clock Ports
-      sys_clk_i          : in    std_logic;
-      -- Reference Clock Ports
-      clk_ref_i          : in    std_logic;
-      device_temp        : out std_logic_vector(11 downto 0);
-    sys_rst              : in    std_logic
+	ddr3_dq       		: inout std_logic_vector(15 downto 0);
+	ddr3_dqs_p    		: inout std_logic_vector(1 downto 0);
+	ddr3_dqs_n    		: inout std_logic_vector(1 downto 0);
+	ddr3_addr     		: out   std_logic_vector(14 downto 0);
+	ddr3_ba       		: out   std_logic_vector(2 downto 0);
+	ddr3_ras_n    		: out   std_logic;
+	ddr3_cas_n    		: out   std_logic;
+	ddr3_we_n     		: out   std_logic;
+	ddr3_reset_n  		: out   std_logic;
+	ddr3_ck_p     		: out   std_logic_vector(0 downto 0);
+	ddr3_ck_n     		: out   std_logic_vector(0 downto 0);
+	ddr3_cke      		: out   std_logic_vector(0 downto 0);
+	ddr3_cs_n     		: out   std_logic_vector(0 downto 0);
+	ddr3_dm       		: out   std_logic_vector(1 downto 0);
+	ddr3_odt      		: out   std_logic_vector(0 downto 0);
+	app_addr            : in    std_logic_vector(28 downto 0);
+	app_cmd             : in    std_logic_vector(2 downto 0);
+	app_en              : in    std_logic;
+	app_wdf_data        : in    std_logic_vector(127 downto 0);
+	app_wdf_end         : in    std_logic;
+	app_wdf_mask        : in    std_logic_vector(15 downto 0);
+	app_wdf_wren        : in    std_logic;
+	app_rd_data         : out   std_logic_vector(127 downto 0);
+	app_rd_data_end     : out   std_logic;
+	app_rd_data_valid   : out   std_logic;
+	app_rdy             : out   std_logic;
+	app_wdf_rdy         : out   std_logic;
+	app_sr_req          : in    std_logic;
+	app_ref_req         : in    std_logic;
+	app_zq_req          : in    std_logic;
+	app_sr_active       : out   std_logic;
+	app_ref_ack         : out   std_logic;
+	app_zq_ack          : out   std_logic;
+	ui_clk              : out   std_logic;
+	ui_clk_sync_rst     : out   std_logic;
+	init_calib_complete : out   std_logic;
+	-- System Clock Ports
+	sys_clk_i           : in    std_logic;
+	-- Reference Clock Ports
+	clk_ref_i           : in    std_logic;
+	device_temp         : out 	std_logic_vector(11 downto 0);
+  sys_rst               : in    std_logic
   );
 end component;
 
@@ -819,6 +863,8 @@ component SysPLL
 	resetn				: in std_logic;
 
 	Clk_100MHz			: out std_logic;
+	Clk_200MHz			: out std_logic;
+	SysClk				: out std_logic;
 	locked				: out std_logic
  );
  end component;

@@ -45,19 +45,19 @@ port(
 --	AFESClk, AFESDI  	    : buffer std_logic;
 --	AFESDO 				    : in std_logic;
 --	-- DDR3L pins
---	DDR_DATA				: inout std_logic_vector(DATA_WIDTH-1 downto 0);
---	DDR_ADDR				: out std_logic_vector(DDR3L_ADDR-1 downto 0);
---	BA 						: out std_logic_vector(2 downto 0);
---	DDR_CKE	 				: out std_logic_vector(0 downto 0);
---	ODT 					: out std_logic_vector(0 downto 0);
---	CS 						: out std_logic_vector(0 downto 0);
---	DM 						: out std_logic_vector(1 downto 0);
---	RAS,CAS					: out std_logic; 
---	DDR_WE 					: out std_logic;
---	DDR_CLKP,DDR_CLKN 		: out  std_logic_vector(0 downto 0);
---	LDQS_P, LDQS_N 			: inout std_logic;
---	UDQS_P, UDQS_N 			: inout std_logic;
---	DDR_RESET_N 			: out std_logic
+	DDR_DATA				: inout std_logic_vector(DATA_WIDTH-1 downto 0);
+	DDR_ADDR				: out std_logic_vector(DDR3L_ADDR-1 downto 0);
+	BA 						: out std_logic_vector(2 downto 0);
+	DDR_CKE	 				: out std_logic_vector(0 downto 0);
+	ODT 					: out std_logic_vector(0 downto 0);
+	CS 						: out std_logic_vector(0 downto 0);
+	DM 						: out std_logic_vector(1 downto 0);
+	RAS,CAS					: out std_logic; 
+	DDR_WE 					: out std_logic;
+	DDR_CLKP,DDR_CLKN 		: out  std_logic_vector(0 downto 0);
+	LDQS_P, LDQS_N 			: inout std_logic;
+	UDQS_P, UDQS_N 			: inout std_logic;
+	DDR_RESET_N 			: out std_logic;
 	-- Microcontroller strobes
 	CpldRst					: in std_logic;
 	CpldCS					: in std_logic;
@@ -67,7 +67,7 @@ port(
 	uCA 					: in std_logic_vector(11 downto 0);
 	uCD 					: inout std_logic_vector(15 downto 0);
 	-- Geographic address pins
-	GA 						: in std_logic_vector(1 downto 0)
+	GA 						: in std_logic_vector(1 downto 0);
 	-- Analog Mux address lines
 --	MuxEn 					: buffer std_logic_vector(3 downto 0);
 --	Muxad 					: buffer std_logic_vector(1 downto 0);
@@ -85,6 +85,8 @@ port(
 --	Pulse 					: out std_logic;
 --	-- Temperature sensor lines
 --	Temp					: inout std_logic_vector(3 downto 0)
+	-- Debug header 
+	DBG	 					: out std_logic_vector(9 downto 0)
 );
 end FEB;
 
@@ -166,6 +168,7 @@ signal TestCount 			  : std_logic_vector (31 downto 0); -- Make a test counter t
 -- PLL signals 
 signal PLL_locked 			  : std_logic;
 
+
 begin
 
 ResetHi <= not CpldRst;
@@ -226,6 +229,8 @@ port map(
 	resetn		=> CpldRst,
 
 	Clk_100MHz	=> Clk_100MHz,
+	Clk_200MHz	=> Clk_200MHz, 
+	SysClk		=> SysClk,
 	locked		=> PLL_locked
 );
 
@@ -269,9 +274,59 @@ elsif rising_edge (Clk_100MHz) then
 end if;
 end process;
 
+DDR : DDR_test
+generic map(
+	-- DDR3L parameters
+	DATA_WIDTH		=> DATA_WIDTH,  -- 16 Both ARTY and FEB
+	DDR3L_ADDR		=> DDR3L_ADDR,  -- 14: ARTY 15: FEB
+	APP_ADDR		=> APP_ADDR 	-- 28: ARTY 29: FEB
+)
+port map(
+	Clk_100MHz		=> Clk_100MHz,
+	Clk_200MHz		=> Clk_200MHz,
+	SysClk			=> SysClk,	
+	ResetHi			=> ResetHi,
+-- DDR3L pins
+	DDR_DATA		=> DDR_DATA,	
+	DDR_ADDR		=> DDR_ADDR,	
+	BA 				=> BA, 			
+	DDR_CKE	 		=> DDR_CKE,		
+	ODT 			=> ODT, 		
+	CS 				=> CS, 			
+	DM 				=> DM, 			
+	RAS				=> RAS,
+	CAS				=> CAS,		
+	DDR_WE 			=> DDR_WE, 		
+	DDR_CLKP        => DDR_CLKP,
+	DDR_CLKN 	    => DDR_CLKN,
+	LDQS_P          => LDQS_P,
+	LDQS_N 		    => LDQS_N, 	
+	UDQS_P          => UDQS_P,
+	UDQS_N 		    => UDQS_N, 	 	
+	RESET_N			=> DDR_RESET_N,
+-- Microcontroller strobes
+	CpldRst			=> CpldRst,	
+	CpldCS			=> CpldCS,	
+	uCRd			=> uCRd,
+	uCWr 			=> uCWr, 	
+-- Microcontroller data and address buses	
+	uCA 			=> uCA,
+	uCD 			=> uCD,
+-- Geographic address pins
+	GA 				=> GA,
+-- Synchronous edge detectors of uC read and write strobes
+	AddrReg			=> AddrReg,
+	WRDL 			=> WRDL,
+	RDDL			=> RDDL,
+-- Debug
+	DBG	 			=> DBG
+);
+
+
+
 ILA_uC : uC_ILA 
 port map(
-	clk    => Clk_100MHz, 	-- std_logic;
+	clk    	  => Clk_100MHz,-- std_logic;
 	probe0(0) => CpldRst, 	-- std_logic_vector(0 downto 0);
     probe1(0) => CpldCS, 	-- std_logic_vector(0 downto 0);
     probe2(0) => uCRd,		-- std_logic_vector(0 downto 0);

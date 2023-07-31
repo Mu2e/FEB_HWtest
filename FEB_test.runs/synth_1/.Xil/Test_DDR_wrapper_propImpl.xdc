@@ -1,5 +1,0 @@
-set_property SRC_FILE_INFO {cfile:C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/BD_constraints.xdc rfile:../../../FEB_test.srcs/constrs_1/new/BD_constraints.xdc id:1} [current_design]
-set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN P15 [get_ports BD_VXO_P]
-set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN Y19 [get_ports BD_CpldRst]

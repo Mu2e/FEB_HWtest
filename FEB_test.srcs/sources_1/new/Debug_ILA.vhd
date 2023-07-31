@@ -41,5 +41,41 @@ port (
 );
 end component;
 
+component DDR_ila_0 is
+    port (
+        clk 	: in std_logic;
+        probe0 	: in std_logic_vector(28 downto 0);
+        probe1 	: in std_logic_vector(2 downto 0);
+        probe2 	: in std_logic_vector(0 downto 0);
+        probe3 	: in std_logic_vector(127 downto 0);
+        probe4 	: in std_logic_vector(0 downto 0);
+        probe5 	: in std_logic_vector(15 downto 0);
+        probe6 	: in std_logic_vector(0 downto 0);
+        probe7 	: in std_logic_vector(127 downto 0);
+        probe8 	: in std_logic_vector(0 downto 0);
+        probe9 	: in std_logic_vector(0 downto 0);
+        probe10 : in std_logic_vector(0 downto 0);
+        probe11 : in std_logic_vector(0 downto 0);
+        probe12 : in std_logic_vector(3 downto 0)
+    );
+end component;
+
+component vio_0 is
+    port (
+        clk         : in std_logic;
+        probe_in0   : in std_logic_vector(0 downto 0);
+        probe_in1   : in std_logic_vector(0 downto 0);
+        probe_in2   : in std_logic_vector(0 downto 0);
+        probe_in3   : in std_logic_vector(0 downto 0);
+        probe_in4   : in std_logic_vector(0 downto 0);
+        probe_out0  : out std_logic_vector(0 downto 0);
+        probe_out1  : out std_logic_vector(0 downto 0);
+        probe_out2  : out std_logic_vector(0 downto 0);
+        probe_out3  : out std_logic_vector(0 downto 0);
+        probe_out4  : out std_logic_vector(0 downto 0)
+);
+end component;
+
+
 
 end package;
