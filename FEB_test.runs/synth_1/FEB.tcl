@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param simulator.modelsimInstallPath C:/intelFPGA/20.1/modelsim_ae/win32aloem
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50fgga484-2
@@ -90,7 +91,6 @@ OPTRACE "Adding files" START { }
 read_vhdl -library work {
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Proj_Def.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Debug_ILA.vhd
-  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/DDR_test.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd
 }
 read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
@@ -103,20 +103,6 @@ set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/uC_ILA_ooc.xdc]
-
-read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DDR_ila_0/DDR_ila_0.xci
-set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/DDR_ila_0_ooc.xdc]
-
-read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DDR3LController/DDR3LController.xci
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController_ooc.xdc]
-
-read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/vio_0/vio_0.xci
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/vio_0/vio_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/vio_0/vio_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

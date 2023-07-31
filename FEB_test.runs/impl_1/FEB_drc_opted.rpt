@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Mon Jul 31 10:36:48 2023
+| Date         : Mon Jul 31 12:30:19 2023
 | Host         : CD-135239 running 64-bit major release  (build 9200)
 | Command      : report_drc -file FEB_drc_opted.rpt -pb FEB_drc_opted.pb -rpx FEB_drc_opted.rpx
 | Design       : FEB
@@ -24,50 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 21
-+-----------+------------------+--------------------------------------+------------+
-| Rule      | Severity         | Description                          | Violations |
-+-----------+------------------+--------------------------------------+------------+
-| PDRC-34   | Error            | MMCM_adv_ClkFrequency_div_no_dclk    | 1          |
-| PDRC-43   | Error            | PLL_adv_ClkFrequency_div_no_dclk     | 1          |
-| AVAL-46   | Critical Warning | v7v8_mmcm_fvco_rule1                 | 1          |
-| CFGBVS-7  | Warning          | CONFIG_VOLTAGE with Config Bank VCCO | 1          |
-| REQP-1709 | Warning          | Clock output buffering               | 1          |
-| RPBF-3    | Warning          | IO port buffering is incomplete      | 16         |
-+-----------+------------------+--------------------------------------+------------+
+             Violations found: 16
++--------+----------+---------------------------------+------------+
+| Rule   | Severity | Description                     | Violations |
++--------+----------+---------------------------------+------------+
+| RPBF-3 | Warning  | IO port buffering is incomplete | 16         |
++--------+----------+---------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-PDRC-34#1 Error
-MMCM_adv_ClkFrequency_div_no_dclk  
-The computed value 200.000 MHz (CLKIN1_PERIOD, net pll_clk3) for the VCO operating frequency of the MMCME2_ADV site MMCME2_ADV_X0Y1 (cell DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i) falls outside the operating range of the MMCM VCO frequency for this device (600.000 - 1440.000 MHz). The computed value is (CLKFBOUT_MULT_F * 1000 / (CLKINx_PERIOD * DIVCLK_DIVIDE)). Please run update_timing to update the MMCM settings. If that does not work, adjust either the input period CLKINx_PERIOD (40.000000), multiplication factor CLKFBOUT_MULT_F (8.000000) or the division factor DIVCLK_DIVIDE (1), in order to achieve a VCO frequency within the rated operating range for this device.
-Related violations: <none>
-
-PDRC-43#1 Error
-PLL_adv_ClkFrequency_div_no_dclk  
-The computed value 400.000 MHz (CLKIN1_PERIOD, net Clk_100MHz) for the VCO operating frequency of the PLLE2_ADV site PLLE2_ADV_X0Y1 (cell DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/plle2_i) falls outside the operating range of the PLL VCO frequency for this device (800.000 - 1866.000 MHz). The computed value is (CLKFBOUT_MULT_F * 1000 / (CLKINx_PERIOD * DIVCLK_DIVIDE)). Please adjust either the input period CLKINx_PERIOD (10.000000), multiplication factor CLKFBOUT_MULT_F (4) or the division factor DIVCLK_DIVIDE (1), in order to achieve a VCO frequency within the rated operating range for this device.
-Related violations: <none>
-
-AVAL-46#1 Critical Warning
-v7v8_mmcm_fvco_rule1  
-The current computed target frequency, FVCO, is out of range for cell DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i. The computed FVCO is 200.000 MHz. The valid FVCO range for speed grade -2 is 600MHz to 1440MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 8.000, CLKIN1_PERIOD = 40.00000, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
-This violation may be corrected by:
-  1. The timer uses timing constraints for clock period or clock frequency that affect CLKIN1 to set cell attribute CLKIN1_PERIOD, over-riding any previous value. This may already be in place and, if so this violation will be resolved once Timing is run.  Otherwise, consider modifying timing constraints to adjust the CLKIN1_PERIOD and bring FVCO into the allowed range.
-  2. In the absence of timing constraints that affect CLKIN1, consider modifying the cell CLKIN1_PERIOD to bring FVCO into the allowed range.
-  3. If CLKIN1_PERIOD is satisfactory, modify the CLKFBOUT_MULT_F or DIVCLK_DIVIDE cell attributes to bring FVCO into the allowed range.
-  4. The MMCM configuration may be dynamically modified by use of DRP which is recognized by an ACTIVE signal on DCLK pin.
-Related violations: <none>
-
-CFGBVS-7#1 Warning
-CONFIG_VOLTAGE with Config Bank VCCO  
-The CONFIG_MODE property of current_design specifies a configuration mode (S_SELECTMAP16) that uses pins in bank 15.  I/O standards used in this bank have a voltage requirement of 1.35.  However, the CONFIG_VOLTAGE for current_design is set to 2.5. If you're using any config pins in this bank, ensure that your configuration voltage is compatible with the I/O standards in banks used by your configuration mode.  Refer to device configuration user guide for more information.    Pins used by config mode: L20 (IO_L24P_T3_RS1_15) and L21 (IO_L24N_T3_RS0_15)
-Related violations: <none>
-
-REQP-1709#1 Warning
-Clock output buffering  
-PLLE2_ADV connectivity violation. The signal DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/pll_clk3_out on the DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/plle2_i/CLKOUT3 pin of DDR/DDR_Controller/u_DDR3LController_mig/u_ddr3_infrastructure/plle2_i does not drive the same kind of BUFFER load as the other CLKOUT pins. Routing from the different buffer types will not be phase aligned.
-Related violations: <none>
-
 RPBF-3#1 Warning
 IO port buffering is incomplete  
 Device port uCD[0] expects both input and output buffering but the buffers are incomplete.

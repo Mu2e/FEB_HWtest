@@ -83,7 +83,7 @@ set_property IOSTANDARD LVCMOS25 [get_ports CpldCS]
 set_property PACKAGE_PIN Y19 [get_ports CpldRst]
 set_property IOSTANDARD LVCMOS25 [get_ports CpldRst]
 
-set_property PACKAGE_PIN W18 [get_ports uCRd]
+set_property PACKAGE_PIN U17 [get_ports uCRd]
 set_property IOSTANDARD LVCMOS25 [get_ports uCRd]
 
 set_property PACKAGE_PIN AB21 [get_ports uCWr]
@@ -94,7 +94,6 @@ set_property IOSTANDARD LVCMOS25 [get_ports uCWr]
 #-------------------------------------
 
 
-set_property PACKAGE_PIN U17 [get_ports {DBG[0]}]
 set_property PACKAGE_PIN N18 [get_ports {DBG[1]}]
 set_property PACKAGE_PIN U18 [get_ports {DBG[2]}]
 set_property PACKAGE_PIN T17 [get_ports {DBG[3]}]
@@ -391,8 +390,10 @@ set_property BITSTREAM.CONFIG.OVERTEMPPOWERDOWN ENABLE [current_design]
 set_property CONFIG_MODE S_SELECTMAP16 [current_design]
 
 set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN DIV-1 [current_design]
+
+
+set_property PACKAGE_PIN R17 [get_ports {DBG[0]}]
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
 connect_debug_port dbg_hub/clk [get_nets Clk_100MHz]
-
