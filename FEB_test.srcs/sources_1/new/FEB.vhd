@@ -86,7 +86,7 @@ port(
 --	-- Temperature sensor lines
 --	Temp					: inout std_logic_vector(3 downto 0)
 	-- Debug header 
-	DBG	 					: out std_logic_vector(9 downto 0)
+	DBG	 					: out std_logic_vector(9 downto 1)
 );
 end FEB;
 
@@ -267,7 +267,7 @@ elsif rising_edge (Clk_100MHz) then
 	elsif uWRDL = 1 and  uCA(11 downto 10) = GA and uCA(9 downto 0) = TestCounterLoAd then 
 		TestCount <= TestCount(31 downto 16) & uCD;
 	elsif uRDDL = 2 and uAddrReg(11 downto 10) = GA and uAddrReg(9 downto 0) = TestCounterLoAd then 
-		TestCount <= TestCount + 1;
+		TestCount <= TestCount + 0x"1";
 	else 
 		TestCount <= TestCount;
 	end if;

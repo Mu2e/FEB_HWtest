@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date                      : Mon Jul 31 12:30:43 2023
+| Date                      : Mon Jul 31 14:16:41 2023
 | Host                      : CD-135239 running 64-bit major release  (build 9200)
 | Command                   : report_io -file FEB_io_placed.rpt
 | Design                    : FEB
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            46 |
+|            45 |
 +---------------+
 
 
@@ -403,7 +403,7 @@ Table of Contents
 | R14        |             |            | VCCAUX                       | VCCAUX        |              |         |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |
 | R15        |             |            | GND                          | GND           |              |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | R16        |             | High Range | IO_L16P_T2_CSI_B_14          | User IO       |              |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| R17        | DBG[0]      | High Range | IO_L16N_T2_D31_14            | TRISTATE      | LVCMOS25     |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| R17        |             | High Range | IO_L16N_T2_D31_14            | User IO       |              |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R18        | DBG[4]      | High Range | IO_L14N_T2_SRCC_14           | TRISTATE      | LVCMOS25     |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | R19        | uCA[5]      | High Range | IO_L17P_T2_D30_14            | INPUT         | LVCMOS25     |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | R20        | uCA[4]      | High Range | IO_L17N_T2_D29_14            | INPUT         | LVCMOS25     |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |

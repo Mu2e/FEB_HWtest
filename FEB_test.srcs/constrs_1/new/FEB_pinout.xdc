@@ -112,21 +112,11 @@ set_property IOSTANDARD LVCMOS25 [get_ports {DBG[4]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {DBG[3]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {DBG[2]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {DBG[1]}]
-set_property IOSTANDARD LVCMOS25 [get_ports {DBG[0]}]
 
 
 #-------------------------------------
 # Chip dependent I/O functions
 #-------------------------------------
-
-
-
-
-
-
-
-
-
 
 #set_property PACKAGE_PIN M4 [get_ports AFE0Clk_P]
 #set_property PACKAGE_PIN AA6 [get_ports AFE1Clk_P]
@@ -383,16 +373,12 @@ set_property IOSTANDARD LVCMOS25 [get_ports {DBG[0]}]
 
 
 #set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
-set_property BITSTREAM.GENERAL.DEBUGBITSTREAM YES [current_design]
+
+
+set_property BITSTREAM.CONFIG.CCLK_TRISTATE TRUE [current_design]
 set_property CONFIG_VOLTAGE 2.5 [current_design]
 set_property CFGBVS VCCO [current_design]
-set_property BITSTREAM.CONFIG.OVERTEMPPOWERDOWN ENABLE [current_design]
-set_property CONFIG_MODE S_SELECTMAP16 [current_design]
-
-set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN DIV-1 [current_design]
-
-
-set_property PACKAGE_PIN R17 [get_ports {DBG[0]}]
+set_property BITSTREAM.STARTUP.STARTUPCLK JTAGCLK [current_design]
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
