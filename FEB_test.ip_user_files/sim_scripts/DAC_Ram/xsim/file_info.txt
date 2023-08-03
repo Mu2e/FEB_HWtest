@@ -1,0 +1,2 @@
+DAC_Ram.v,verilog,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/DAC_Ram/sim/DAC_Ram.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

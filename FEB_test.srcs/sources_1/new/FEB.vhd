@@ -71,11 +71,11 @@ port(
 	-- Analog Mux address lines
 	MuxEn 					: out std_logic_vector(3 downto 0);
 	Muxad 					: out std_logic_vector(1 downto 0);
---	-- Serial DAC control lines
---	DACCS 					: buffer std_logic_vector(2 downto 0);
---	DACClk 					: buffer std_logic;
---	DACDat 					: buffer std_logic;
---	DACLd 					: buffer std_logic;
+	-- Serial DAC control lines
+	DACCS 					: buffer std_logic_vector(2 downto 0);
+	DACClk 					: buffer std_logic;
+	DACDat 					: buffer std_logic;
+	DACLd 					: buffer std_logic;
 	-- Chip dependent I/O functions
 --	A7,LVDSTX 				: buffer std_logic;
 	GPI0_N, GPI0_P			: in std_logic;
@@ -248,7 +248,6 @@ port map(
 -- Microcontroller data and address buses	
     uCA 			=> uCA,
     uCD 			=> uCD,
-	--iCD				=> iCD, 
 -- Geographic address pins
     GA 				=> GA,
 -- Synchronous edge detectors of uC read and write strobes

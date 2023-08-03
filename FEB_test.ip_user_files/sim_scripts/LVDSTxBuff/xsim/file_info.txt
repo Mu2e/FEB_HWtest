@@ -1,0 +1,2 @@
+LVDSTxBuff.v,verilog,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/LVDSTxBuff/sim/LVDSTxBuff.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

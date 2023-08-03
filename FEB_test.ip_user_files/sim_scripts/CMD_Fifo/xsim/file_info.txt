@@ -1,0 +1,2 @@
+CMD_Fifo.v,verilog,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/CMD_Fifo/sim/CMD_Fifo.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

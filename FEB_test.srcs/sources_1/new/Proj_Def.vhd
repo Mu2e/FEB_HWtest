@@ -663,7 +663,7 @@ component uController_interface is
         uWRDL 				: in std_logic_vector(1 downto 0);
 		uRDDL 				: in std_logic_vector(1 downto 0);
 		uAddrReg 				: in std_logic_vector(11 downto 0);
-		
+
         iCD                 : out std_logic_vector(15 downto 0);
     -- OUTPUT REGISTERS     
     -- ADC mux
@@ -681,7 +681,6 @@ component ADC_Mux is
     -- Microcontroller data and address buses	
         uCA 				: in std_logic_vector(11 downto 0);
         uCD 				: in std_logic_vector(15 downto 0);
-        --iCD                 : out std_logic_vector(15 downto 0);
     -- Geographic address pins
         GA 					: in std_logic_vector(1 downto 0);
     -- Synchronous edge detectors of uC read and write strobes
