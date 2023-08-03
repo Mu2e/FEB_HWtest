@@ -126,6 +126,23 @@ set_property IOSTANDARD LVCMOS25 [get_ports {Temp[2]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {Temp[1]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {Temp[0]}]
 
+#-------------------------------------
+# ADC MUX PINs
+#-------------------------------------
+
+
+set_property PACKAGE_PIN N5 [get_ports {Muxad[1]}]
+set_property PACKAGE_PIN M5 [get_ports {Muxad[0]}]
+set_property PACKAGE_PIN L7 [get_ports {MuxEn[0]}]
+set_property PACKAGE_PIN M7 [get_ports {MuxEn[1]}]
+set_property PACKAGE_PIN R4 [get_ports {MuxEn[2]}]
+set_property PACKAGE_PIN R3 [get_ports {MuxEn[3]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {Muxad[1]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {Muxad[0]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {MuxEn[3]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {MuxEn[2]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {MuxEn[1]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {MuxEn[0]}]
 
 
 #-------------------------------------
@@ -395,24 +412,11 @@ set_property CFGBVS VCCO [current_design]
 set_property BITSTREAM.STARTUP.STARTUPCLK JTAGCLK [current_design]
 
 
-create_debug_core u_ila_0 ila
-set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
-set_property ALL_PROBE_SAME_MU_CNT 4 [get_debug_cores u_ila_0]
-set_property C_ADV_TRIGGER true [get_debug_cores u_ila_0]
-set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
-set_property C_EN_STRG_QUAL true [get_debug_cores u_ila_0]
-set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
-set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
-set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
-set_property port_width 1 [get_debug_ports u_ila_0/clk]
-connect_debug_port u_ila_0/clk [get_nets [list PLL/inst/Clk_100MHz]]
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
-set_property port_width 32 [get_debug_ports u_ila_0/probe0]
 connect_debug_port u_ila_0/probe0 [get_nets [list {TestCount[0]} {TestCount[1]} {TestCount[2]} {TestCount[3]} {TestCount[4]} {TestCount[5]} {TestCount[6]} {TestCount[7]} {TestCount[8]} {TestCount[9]} {TestCount[10]} {TestCount[11]} {TestCount[12]} {TestCount[13]} {TestCount[14]} {TestCount[15]} {TestCount[16]} {TestCount[17]} {TestCount[18]} {TestCount[19]} {TestCount[20]} {TestCount[21]} {TestCount[22]} {TestCount[23]} {TestCount[24]} {TestCount[25]} {TestCount[26]} {TestCount[27]} {TestCount[28]} {TestCount[29]} {TestCount[30]} {TestCount[31]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
-set_property port_width 12 [get_debug_ports u_ila_0/probe1]
 connect_debug_port u_ila_0/probe1 [get_nets [list {uAddrReg[0]} {uAddrReg[1]} {uAddrReg[2]} {uAddrReg[3]} {uAddrReg[4]} {uAddrReg[5]} {uAddrReg[6]} {uAddrReg[7]} {uAddrReg[8]} {uAddrReg[9]} {uAddrReg[10]} {uAddrReg[11]}]]
+
+
+
 
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]

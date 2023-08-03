@@ -69,8 +69,8 @@ port(
 	-- Geographic address pins
 	GA 						: in std_logic_vector(1 downto 0);
 	-- Analog Mux address lines
---	MuxEn 					: buffer std_logic_vector(3 downto 0);
---	Muxad 					: buffer std_logic_vector(1 downto 0);
+	MuxEn 					: out std_logic_vector(3 downto 0);
+	Muxad 					: out std_logic_vector(1 downto 0);
 --	-- Serial DAC control lines
 --	DACCS 					: buffer std_logic_vector(2 downto 0);
 --	DACClk 					: buffer std_logic;
@@ -86,7 +86,7 @@ port(
 --	-- Temperature sensor lines
 	Temp					: inout std_logic_vector(3 downto 0);
 	-- Debug header 
-	DBG	 					: out std_logic_vector(9 downto 1)
+	DBG	 					: inout std_logic_vector(9 downto 1)
 );
 end FEB;
 
@@ -168,15 +168,17 @@ signal TestCount 			  : std_logic_vector (31 downto 0); -- Make a test counter t
 -- PLL signals 
 signal PLL_locked 			  : std_logic;
 
+-- Debug signals
+signal MuxadDBG				  :  std_logic_vector(1 downto 0);
 
 attribute mark_debug : string;
-attribute mark_debug of uAddrReg: signal is "true";
-attribute mark_debug of TestCount: signal is "true";
+attribute mark_debug of uAddrReg: signal is "false";
+attribute mark_debug of TestCount: signal is "false";
 
 begin
 
 ResetHi <= not CpldRst;
-
+-- Global signals used to syncronize with the uC read/write requests
 global_signals_160MHz : process(SysClk, CpldRst)
 	begin 
 	if CpldRst = '0' then
@@ -239,26 +241,6 @@ port map(
 );
 
 	
---PLL : SysPLL 
--- port map(
---	clk_in1_p		=> ClkB_P,
---	clk_in1_n		=> ClkB_N,
---	resetn			=> CpldRst,
---					 
---	Clk_80MHz		=> Clk_80MHz,	
---	Clk_100MHz		=> Clk_100MHz,	
---	SysClk   		=> SysClk,  	
---	Clk_200MHz		=> Clk_200MHz	
--- );
---
---HF_PLL : HF_SysPLL 
--- port map(
---	clk_in1			=> Clk_80MHz,				
---	resetn			=> CpldRst,			
--- 
---	Clk_560MHz		=> Clk_560MHz	
--- );
-
 uController_registers : process(Clk_100MHz, CpldRst)
 begin 
 if CpldRst = '0' then
@@ -277,6 +259,28 @@ elsif rising_edge (Clk_100MHz) then
 	end if;
 end if;
 end process;
+
+Mux : ADC_Mux
+port map(
+    Clk_100MHz		=> Clk_100MHz,
+-- Microcontroller strobes
+    CpldRst			=> CpldRst,	
+-- Microcontroller data and address buses	
+    uCA 			=> uCA,
+    uCD 			=> uCD,
+	--iCD				=> iCD, 
+-- Geographic address pins
+    GA 				=> GA,
+-- Synchronous edge detectors of uC read and write strobes
+    uWRDL 			=> uWRDL,
+-- Analog Mux address lines
+    MuxEn           => MuxEn, 
+    Muxad           => MuxadDBG      
+);
+
+Muxad <= MuxadDBG;
+DBG(1 downto 1) <= MuxadDBG(0 downto 0);
+DBG(3 downto 3) <= MuxadDBG(1 downto 1);
 
 -- DDR : DDR_test
 -- generic map(
@@ -563,6 +567,7 @@ port map(
 	Temp 			=> Temp, 
 	One_Wire_Out 	=> One_Wire_Out
 );
+
 
 ---- Data written from the uC to the LVDS Tx port
 --uC_to_LVDSTX : LVDS_TX

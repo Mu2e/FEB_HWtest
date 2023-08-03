@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param simulator.modelsimInstallPath C:/intelFPGA/20.1/modelsim_ae/win32aloem
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50fgga484-2
@@ -80,7 +81,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/v23.1/FEB_test/FEB_test.cache/wt [current_project]
 set_property parent.project_path C:/v23.1/FEB_test/FEB_test.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/v23.1/FEB_test/FEB_test.cache/ip [current_project]
@@ -95,67 +96,9 @@ read_vhdl -library work {
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FM_Serializer.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Phase_Detector.vhd
-  C:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/hdl/Test_DDR_wrapper.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd
 }
-add_files C:/v23.1/FEB_test/FEB_test.srcs/sources_1/bd/Test_DDR/Test_DDR.bd
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0/user_design/constraints/Test_DDR_mig_7series_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0/user_design/constraints/Test_DDR_mig_7series_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_microblaze_0_1/Test_DDR_microblaze_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_microblaze_0_1/Test_DDR_microblaze_0_1_ooc_debug.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_microblaze_0_1/Test_DDR_microblaze_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_dlmb_v10_1/Test_DDR_dlmb_v10_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_ilmb_v10_1/Test_DDR_ilmb_v10_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_dlmb_bram_if_cntlr_1/Test_DDR_dlmb_bram_if_cntlr_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_ilmb_bram_if_cntlr_1/Test_DDR_ilmb_bram_if_cntlr_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_lmb_bram_1/Test_DDR_lmb_bram_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_mdm_1_1/Test_DDR_mdm_1_1.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_mdm_1_1/Test_DDR_mdm_1_1_ooc_trace.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_clk_wiz_1_0/Test_DDR_clk_wiz_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_clk_wiz_1_0/Test_DDR_clk_wiz_1_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_clk_wiz_1_0/Test_DDR_clk_wiz_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_rst_clk_wiz_1_100M_0/Test_DDR_rst_clk_wiz_1_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_rst_clk_wiz_1_100M_0/Test_DDR_rst_clk_wiz_1_100M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_rst_clk_wiz_1_100M_0/Test_DDR_rst_clk_wiz_1_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_1/bd_9a5b_psr0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_1/bd_9a5b_psr0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_2/bd_9a5b_psr_aclk_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_2/bd_9a5b_psr_aclk_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_3/bd_9a5b_psr_aclk1_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_3/bd_9a5b_psr_aclk1_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_4/bd_9a5b_arsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_5/bd_9a5b_rsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_6/bd_9a5b_awsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_7/bd_9a5b_wsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_8/bd_9a5b_bsw_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_12/bd_9a5b_s00a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_13/bd_9a5b_sarn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_14/bd_9a5b_srn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_15/bd_9a5b_sawn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_16/bd_9a5b_swn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_17/bd_9a5b_sbn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_21/bd_9a5b_s01a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_22/bd_9a5b_sarn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_23/bd_9a5b_srn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_27/bd_9a5b_s02a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_28/bd_9a5b_sarn_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_29/bd_9a5b_srn_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_30/bd_9a5b_sawn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_31/bd_9a5b_swn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_32/bd_9a5b_sbn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_33/bd_9a5b_m00s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_34/bd_9a5b_m00arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_35/bd_9a5b_m00rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_36/bd_9a5b_m00awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_37/bd_9a5b_m00wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/bd_0/ip/ip_38/bd_9a5b_m00bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_axi_smc_1/ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_rst_mig_7series_0_81M_1/Test_DDR_rst_mig_7series_0_81M_1_board.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_rst_mig_7series_0_81M_1/Test_DDR_rst_mig_7series_0_81M_1.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_rst_mig_7series_0_81M_1/Test_DDR_rst_mig_7series_0_81M_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/Test_DDR_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_microblaze_0_1/data/mb_bootloop_le.elf]
-
 read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc]
@@ -193,8 +136,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc
 set_property used_in_implementation false [get_files C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental C:/v23.1/FEB_test/FEB_test.srcs/utils_1/imports/synth_1/FEB.dcp

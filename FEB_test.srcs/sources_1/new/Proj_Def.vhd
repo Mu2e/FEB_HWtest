@@ -503,7 +503,7 @@ port(
 	WRDL 				: in std_logic_vector(1 downto 0);
 -- inout/buffer  
 	Temp 				: inout  std_logic_vector(3 downto 0);
-	One_Wire_Out 		: buffer std_logic_vector(15 downto 0)
+	One_Wire_Out 		: inout std_logic_vector(15 downto 0)
 );
 end component;
 
@@ -690,7 +690,24 @@ port(
   );
 end component;
 
-
+component ADC_Mux is
+    port (
+        Clk_100MHz			: in std_logic;
+    -- Microcontroller strobes
+        CpldRst				: in std_logic;
+    -- Microcontroller data and address buses	
+        uCA 				: in std_logic_vector(11 downto 0);
+        uCD 				: in std_logic_vector(15 downto 0);
+        --iCD                 : out std_logic_vector(15 downto 0);
+    -- Geographic address pins
+        GA 					: in std_logic_vector(1 downto 0);
+    -- Synchronous edge detectors of uC read and write strobes
+        uWRDL 				: in std_logic_vector(1 downto 0);
+    -- Analog Mux address lines
+	    MuxEn               : out std_logic_vector(3 downto 0);
+	    Muxad               : out std_logic_vector(1 downto 0)       
+    );
+end component;
 
 
 
