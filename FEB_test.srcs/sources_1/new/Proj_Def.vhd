@@ -494,15 +494,17 @@ component One_Wire is
 port(
 	clock  				: in std_logic;
 	reset  				: in std_logic;
-	CpldCS  			: in std_logic;
-	uCWr  				: in std_logic;
-	GA  				: in std_logic_vector(1 downto 0);
+-- Microcontroller data and address buses	
 	uCA 				: in std_logic_vector(11 downto 0);
-	uCD 				: in std_logic_vector(15 downto 0);
-	Temp 				: in  std_logic_vector(3 downto 0);
-	TempEn 				: buffer std_logic;
-	TempCtrl 			: buffer std_logic_vector(3 downto 0);
-	One_Wire_Out 		: buffer std_logic_vector(15 downto 0));
+	uCD 				: in std_logic_vector(15 downto 0);	
+-- Geographic address pins
+	GA 					: in std_logic_vector(1 downto 0);
+-- Synchronous edge detectors of uC read and write strobes
+	WRDL 				: in std_logic_vector(1 downto 0);
+-- inout/buffer  
+	Temp 				: inout  std_logic_vector(3 downto 0);
+	One_Wire_Out 		: buffer std_logic_vector(15 downto 0)
+);
 end component;
 
 component LVDS_TX is

@@ -84,7 +84,7 @@ port(
 --	-- LED pulser/Flash Gate
 --	Pulse 					: out std_logic;
 --	-- Temperature sensor lines
---	Temp					: inout std_logic_vector(3 downto 0)
+	Temp					: inout std_logic_vector(3 downto 0);
 	-- Debug header 
 	DBG	 					: out std_logic_vector(9 downto 1)
 );
@@ -153,7 +153,7 @@ signal EvBuffWdsUsed          : std_logic_vector(10 downto 0);
 
 signal asp					  : std_logic := '0';
 
-signal TempEn 				  : std_logic;
+
 signal TempCtrl 			  : std_logic_vector(3 downto 0);
 signal One_Wire_Out 		  : std_logic_vector(15 downto 0);
 
@@ -547,28 +547,23 @@ port map(
 --	RDDL			=> RDDL
 --);
 --
----- Read the temperature/ID chip on the four connectoed CMBs
---OneWire : One_Wire 
---port map(
---	reset 			=> CpldRst, 
---	clock 			=> Clk_100MHz,
---	CpldCS 			=> CpldCS, 
---	uCWr 		  	=> uCWr, 
---	GA 				=> GA, 
---	uCA 			=> uCA, 
---	uCD 			=> uCD,
---	Temp 			=> Temp, 
---	TempEn 			=> TempEn, 
---	TempCtrl		=> TempCtrl, 
---	One_Wire_Out 	=> One_Wire_Out
---);
---
---Temp(0) <= '0' when TempEn = '1' and TempCtrl = "0001" else 'Z';
---Temp(1) <= '0' when TempEn = '1' and TempCtrl = "0010" else 'Z';
---Temp(2) <= '0' when TempEn = '1' and TempCtrl = "0100" else 'Z';
---Temp(3) <= '0' when TempEn = '1' and TempCtrl = "1000" else 'Z';
---
---
+-- Read the temperature/ID chip on the four connectoed CMBs
+OneWire : One_Wire 
+port map(
+	reset 			=> CpldRst, 
+	clock 			=> Clk_100MHz,
+	-- Microcontroller data and address buses	
+	uCA 			=> uCA,
+	uCD 			=> uCD,
+	-- Geographic address pins
+	GA 				=> GA,
+	-- Synchronous edge detectors of uC read and write strobes
+	WRDL 			=> WRDL,
+	-- inout/buffer  
+	Temp 			=> Temp, 
+	One_Wire_Out 	=> One_Wire_Out
+);
+
 ---- Data written from the uC to the LVDS Tx port
 --uC_to_LVDSTX : LVDS_TX
 --port map(
@@ -754,8 +749,8 @@ uCD <= iCD when uCRd = '0' and CpldCS = '0' and uCA(11 downto 10) = GA
 	and uCA(9 downto 0) /= PageStatAddr
 -- else ShadowOut when uCRd = '0' and CpldCS = '0' and uCA(11 downto 10) = GA 
 --    and uCA(9 downto 0) >= DatArray0Min and uCA(9 downto 0) <= CtrlArray2Max
--- else One_Wire_Out when uCRd = '0' and CpldCS = '0' and uCA(11 downto 10) = GA 
---    and uCA(9 downto 0) >= OneWireCmdAd and uCA(9 downto 0) <= TempDat4Ad
+ else One_Wire_Out when uCRd = '0' and CpldCS = '0' and uCA(11 downto 10) = GA 
+    and uCA(9 downto 0) >= OneWireCmdAd and uCA(9 downto 0) <= TempDat4Ad
 -- Contrive to to show status bits from 4 FPGAs with a read from a single address.
 -- else 'Z'&'Z'&'Z'&'Z'&'Z'&'Z'&'Z'&'Z'&'Z'&'Z'&'Z'& DRAMRdBuffEmpty &'Z'&'Z'&'Z'  
 -- 		& PageRdStat when uCRd = '0' and CpldCS = '0' and GA = "00" and uCA(9 downto 0) = PageStatAddr

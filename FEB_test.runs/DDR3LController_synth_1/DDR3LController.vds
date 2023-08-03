@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Jul 28 09:37:00 2023
-# Process ID: 17240
+# Start of session at: Thu Aug  3 09:44:28 2023
+# Process ID: 8536
 # Current directory: C:/v23.1/FEB_test/FEB_test.runs/DDR3LController_synth_1
 # Command line: vivado.exe -log DDR3LController.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DDR3LController.tcl
 # Log file: C:/v23.1/FEB_test/FEB_test.runs/DDR3LController_synth_1/DDR3LController.vds
@@ -12,7 +12,7 @@
 # Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34287 MB
 #-----------------------------------------------------------
 source DDR3LController.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1504.215 ; gain = 198.137
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1505.773 ; gain = 198.773
 Command: synth_design -top DDR3LController -part xc7s50fgga484-2 -incremental_mode off -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
@@ -20,10 +20,10 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Device 21-403] Loading part xc7s50fgga484-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17316
+INFO: [Synth 8-7075] Helper process launched with PID 15776
 WARNING: [Synth 8-10515] begin/end is required for generate-for in this mode of Verilog [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:253]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2340.227 ; gain = 410.148
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2339.727 ; gain = 410.176
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'DDR3LController' [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/DDR3LController.vhd:120]
 INFO: [Synth 8-3491] module 'DDR3LController_mig' declared at 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/DDR3LController_mig.vhd:77' bound to instance 'u_DDR3LController_mig' of component 'DDR3LController_mig' [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/DDR3LController.vhd:177]
@@ -1103,18 +1103,18 @@ WARNING: [Synth 8-7129] Port dbg_phy_init[214] in module mig_7series_v4_2_ddr_ph
 WARNING: [Synth 8-7129] Port dbg_phy_init[213] in module mig_7series_v4_2_ddr_phy_init is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2645.172 ; gain = 715.094
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2645.039 ; gain = 715.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2663.082 ; gain = 733.004
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2662.949 ; gain = 733.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2663.082 ; gain = 733.004
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2662.949 ; gain = 733.398
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.346 . Memory (MB): peak = 2675.117 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.342 . Memory (MB): peak = 2675.008 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -1131,24 +1131,24 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/DDR3LControl
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2776.805 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2776.688 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 69 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
   IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 2 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 51 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.131 . Memory (MB): peak = 2776.805 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.132 . Memory (MB): peak = 2776.691 ; gain = 0.004
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2776.805 ; gain = 846.727
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2776.691 ; gain = 847.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50fgga484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2776.805 ; gain = 846.727
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2776.691 ; gain = 847.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1156,7 +1156,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_n[0]. (constraint file  c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc, line 27).
 Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_p[0]. (constraint file  c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc, line 28).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2776.805 ; gain = 846.727
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2776.691 ; gain = 847.141
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'xadc_supplied_temperature.tempmon_state_reg' in module 'mig_7series_v4_2_tempmon'
 INFO: [Synth 8-802] inferred FSM for state register 'wl_state_r_reg' in module 'mig_7series_v4_2_ddr_phy_wrlvl'
@@ -1272,7 +1272,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'cal1_state_r_reg' using en
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'tempmon_state_reg' in module 'mig_7series_v4_2_ddr_phy_tempmon'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2776.805 ; gain = 846.727
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2776.691 ; gain = 847.141
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1428,7 +1428,7 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'oclkdelay_start_dly
 WARNING: [Synth 8-3936] Found unconnected internal register 'wrcal_start_dly_r_reg' and it is trimmed from '15' to '14' bits. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:1230]
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_cal1_state_r_reg[33]) is unused and will be removed from module mig_7series_v4_2_ddr_phy_rdlvl.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:01:58 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:55 ; elapsed = 00:01:59 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1466,13 +1466,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 365 of c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc:365]
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:01 ; elapsed = 00:02:03 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:00 ; elapsed = 00:02:04 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:01 ; elapsed = 00:02:04 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Timing Optimization : Time (s): cpu = 00:02:01 ; elapsed = 00:02:05 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1499,7 +1499,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:05 ; elapsed = 00:02:08 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Technology Mapping : Time (s): cpu = 00:02:05 ; elapsed = 00:02:08 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1550,37 +1550,37 @@ WARNING: [Synth 8-3295] tying undriven pin u_DDR3LController_mig/u_memc_ui_top_s
 WARNING: [Synth 8-3295] tying undriven pin u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/pi_dqs_find_rst_inferred:in0[1] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin u_DDR3LController_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/pi_dqs_find_rst_inferred:in0[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:10 ; elapsed = 00:02:12 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished IO Insertion : Time (s): cpu = 00:02:09 ; elapsed = 00:02:13 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:10 ; elapsed = 00:02:12 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:09 ; elapsed = 00:02:13 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:11 ; elapsed = 00:02:13 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1663,18 +1663,18 @@ Report Cell Usage:
 |42    |OBUFT                 |     2|
 +------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:10 ; elapsed = 00:02:14 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 39 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:52 ; elapsed = 00:02:08 . Memory (MB): peak = 3089.492 ; gain = 1045.691
-Synthesis Optimization Complete : Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 3089.492 ; gain = 1159.414
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:52 ; elapsed = 00:02:09 . Memory (MB): peak = 3088.422 ; gain = 1045.129
+Synthesis Optimization Complete : Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 3088.422 ; gain = 1158.871
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.257 . Memory (MB): peak = 3089.492 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.258 . Memory (MB): peak = 3088.422 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 292 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 16 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3089.492 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3088.422 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 137 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
@@ -1687,8 +1687,8 @@ Synth Design complete | Checksum: df20d814
 INFO: [Common 17-83] Releasing license: Synthesis
 242 Infos, 345 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:16 ; elapsed = 00:02:27 . Memory (MB): peak = 3089.492 ; gain = 1525.391
+synth_design: Time (s): cpu = 00:02:16 ; elapsed = 00:02:27 . Memory (MB): peak = 3088.422 ; gain = 1523.750
 INFO: [Coretcl 2-1174] Renamed 77 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/DDR3LController_synth_1/DDR3LController.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file DDR3LController_utilization_synth.rpt -pb DDR3LController_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 28 09:39:45 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  3 09:47:13 2023...

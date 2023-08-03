@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1690903573">
-  <File Type="OPT-HWDEF" Name="FEB.hwdef"/>
-  <File Type="ROUTE-BUS-SKEW" Name="FEB_bus_skew_routed.rpt"/>
-  <File Type="PA-DCP" Name="FEB.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1691074328">
   <File Type="ROUTE-PWR" Name="FEB_power_routed.rpt"/>
   <File Type="PA-TCL" Name="FEB.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="FEB_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="FEB_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="FEB_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="FEB.mmi"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="FEB_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="FEB_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="FEB_power_summary_routed.pb"/>
-  <File Type="OPT-RQA-PB" Name="FEB_rqa_opted.pb"/>
-  <File Type="REPORTS-TCL" Name="FEB_reports.tcl"/>
   <File Type="OPT-TIMING" Name="FEB_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="FEB_opt.dcp"/>
   <File Type="OPT-DRC" Name="FEB_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="FEB.hwdef"/>
   <File Type="PWROPT-DCP" Name="FEB_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="FEB_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="FEB_timing_summary_pwropted.rpt"/>
@@ -52,6 +51,7 @@
   <File Type="ROUTE-TIMING-RPX" Name="FEB_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="FEB_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="FEB_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="FEB_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="FEB_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="FEB_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="FEB_postroute_physopt.dcp"/>
@@ -65,7 +65,6 @@
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="FEB_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="FEB.nky"/>
   <File Type="BITSTR-BMM" Name="FEB_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="FEB.mmi"/>
   <File Type="PDI-FILE" Name="FEB.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="FEB_soc.pdi"/>
   <File Type="PL-PDI-FILE" Name="FEB_pld.pdi"/>
@@ -87,6 +86,13 @@
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/Test_DDR.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Proj_Def.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
@@ -101,33 +107,51 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/FEB.vhd">
-      <FileInfo>
-        <Attr Name="Library" Val="work"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/DDR_test.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/Test_DDR/Test_DDR.bd">
+    <File Path="$PSRCDIR/sources_1/new/FM_Deserializer.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FM_Serializer.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/One_Wire.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Phase_Detector.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PGENDIR/sources_1/bd/Test_DDR/hdl/Test_DDR_wrapper.vhd">
       <FileInfo>
         <Attr Name="Library" Val="work"/>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FEB.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -206,9 +230,12 @@
   <BlockFileSet Type="BlockSrcs" Name="PLL_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_DDR_ilmb_bram_if_cntlr_1"/>
   <BlockFileSet Type="BlockSrcs" Name="uC_ILA"/>
+  <BlockFileSet Type="BlockSrcs" Name="DDR_ila_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_DDR_dlmb_bram_if_cntlr_1"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_DDR_mig_7series_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_DDR_lmb_bram_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_clk_wiz_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_DDR_axi_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_DDR_clk_wiz_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="DDR3LController"/>
 </GenRun>

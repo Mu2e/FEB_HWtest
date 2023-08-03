@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="DDR3LController_synth_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1690555017">
+<GenRun Id="DDR3LController_synth_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1691073865">
   <File Type="PA-TCL" Name="DDR3LController.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="DDR3LController_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="DDR3LController_reports.tcl"/>

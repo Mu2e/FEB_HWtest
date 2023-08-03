@@ -113,6 +113,20 @@ set_property IOSTANDARD LVCMOS25 [get_ports {DBG[3]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {DBG[2]}]
 set_property IOSTANDARD LVCMOS25 [get_ports {DBG[1]}]
 
+#-------------------------------------
+# Temperature PINs
+#-------------------------------------
+
+set_property PACKAGE_PIN AA3 [get_ports {Temp[0]}]
+set_property PACKAGE_PIN W2 [get_ports {Temp[1]}]
+set_property PACKAGE_PIN Y1 [get_ports {Temp[2]}]
+set_property PACKAGE_PIN V4 [get_ports {Temp[3]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {Temp[3]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {Temp[2]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {Temp[1]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {Temp[0]}]
+
+
 
 #-------------------------------------
 # Chip dependent I/O functions
@@ -380,6 +394,7 @@ set_property CONFIG_VOLTAGE 2.5 [current_design]
 set_property CFGBVS VCCO [current_design]
 set_property BITSTREAM.STARTUP.STARTUPCLK JTAGCLK [current_design]
 
+
 create_debug_core u_ila_0 ila
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
 set_property ALL_PROBE_SAME_MU_CNT 4 [get_debug_cores u_ila_0]
@@ -398,6 +413,7 @@ create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
 set_property port_width 12 [get_debug_ports u_ila_0/probe1]
 connect_debug_port u_ila_0/probe1 [get_nets [list {uAddrReg[0]} {uAddrReg[1]} {uAddrReg[2]} {uAddrReg[3]} {uAddrReg[4]} {uAddrReg[5]} {uAddrReg[6]} {uAddrReg[7]} {uAddrReg[8]} {uAddrReg[9]} {uAddrReg[10]} {uAddrReg[11]}]]
+
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
