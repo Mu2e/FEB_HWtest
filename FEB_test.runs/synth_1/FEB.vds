@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Aug  3 13:25:56 2023
-# Process ID: 18724
+# Start of session at: Thu Aug  3 17:18:18 2023
+# Process ID: 5672
 # Current directory: C:/v23.1/FEB_test/FEB_test.runs/synth_1
 # Command line: vivado.exe -log FEB.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FEB.tcl
 # Log file: C:/v23.1/FEB_test/FEB_test.runs/synth_1/FEB.vds
@@ -12,7 +12,7 @@
 # Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34287 MB
 #-----------------------------------------------------------
 source FEB.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1503.535 ; gain = 197.910
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1507.383 ; gain = 198.684
 Command: read_checkpoint -auto_incremental -incremental C:/v23.1/FEB_test/FEB_test.srcs/utils_1/imports/synth_1/FEB.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/v23.1/FEB_test/FEB_test.srcs/utils_1/imports/synth_1/FEB.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,29 +25,35 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 23692
+INFO: [Synth 8-7075] Helper process launched with PID 27132
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2377.441 ; gain = 411.980
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2378.457 ; gain = 411.164
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'FEB' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:93]
-INFO: [Synth 8-3491] module 'PLL_0' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-18724-CD-135239/realtime/PLL_0_stub.vhdl:6' bound to instance 'PLL' of component 'PLL_0' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:231]
-INFO: [Synth 8-638] synthesizing module 'PLL_0' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-18724-CD-135239/realtime/PLL_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'ADC_Mux' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:31' bound to instance 'Mux' of component 'ADC_Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:263]
-INFO: [Synth 8-638] synthesizing module 'ADC_Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:50]
-INFO: [Synth 8-226] default block is never used [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:78]
-INFO: [Synth 8-256] done synthesizing module 'ADC_Mux' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:50]
-INFO: [Synth 8-3491] module 'uC_ILA' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-18724-CD-135239/realtime/uC_ILA_stub.vhdl:6' bound to instance 'ILA_uC' of component 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:331]
-INFO: [Synth 8-638] synthesizing module 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-18724-CD-135239/realtime/uC_ILA_stub.vhdl:24]
-INFO: [Synth 8-3491] module 'One_Wire' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:7' bound to instance 'OneWire' of component 'One_Wire' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:551]
+INFO: [Synth 8-638] synthesizing module 'FEB' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:94]
+	Parameter DIFF_TERM bound to: 1 - type: bool 
+	Parameter IBUF_LOW_PWR bound to: 0 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'GPI0DiffIn' to cell 'IBUFDS' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:221]
+INFO: [Synth 8-3491] module 'PLL_0' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/PLL_0_stub.vhdl:6' bound to instance 'PLL' of component 'PLL_0' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:231]
+INFO: [Synth 8-638] synthesizing module 'PLL_0' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/PLL_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'ADC_Mux' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:31' bound to instance 'Mux' of component 'ADC_Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:243]
+INFO: [Synth 8-638] synthesizing module 'ADC_Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:53]
+INFO: [Synth 8-226] default block is never used [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:77]
+INFO: [Synth 8-256] done synthesizing module 'ADC_Mux' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:53]
+INFO: [Synth 8-3491] module 'uC_ILA' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/uC_ILA_stub.vhdl:6' bound to instance 'ILA_uC' of component 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:315]
+INFO: [Synth 8-638] synthesizing module 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/uC_ILA_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'One_Wire' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:7' bound to instance 'OneWire' of component 'One_Wire' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:535]
 INFO: [Synth 8-638] synthesizing module 'One_Wire' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:25]
 WARNING: [Synth 8-614] signal 'OneWrRdROM' is read in the process but is not in the sensitivity list [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:60]
 INFO: [Synth 8-256] done synthesizing module 'One_Wire' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'FEB' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:93]
-WARNING: [Synth 8-6014] Unused sequential element MuxadReg_reg was removed.  [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element MuxSelReg_reg was removed.  [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:63]
+INFO: [Synth 8-3491] module 'uController_interface' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhdl:31' bound to instance 'uControllerRegister' of component 'uController_interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:574]
+INFO: [Synth 8-638] synthesizing module 'uController_interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhdl:55]
+INFO: [Synth 8-256] done synthesizing module 'uController_interface' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhdl:55]
+INFO: [Synth 8-256] done synthesizing module 'FEB' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:94]
 WARNING: [Synth 8-6014] Unused sequential element ResponseBit_reg was removed.  [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:73]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'OneWire'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:551]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Mux'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:263]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'uControllerRegister'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:574]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'OneWire'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:535]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Mux'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:243]
 WARNING: [Synth 8-6014] Unused sequential element AddrReg_reg was removed.  [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:187]
 WARNING: [Synth 8-7129] Port uCD[15] in module ADC_Mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port uCD[14] in module ADC_Mux is either unconnected or has no load
@@ -69,19 +75,22 @@ WARNING: [Synth 8-7129] Port DBG[4] in module FEB is either unconnected or has n
 WARNING: [Synth 8-7129] Port DBG[3] in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBG[2] in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBG[1] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port GPI1 in module FEB is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2477.699 ; gain = 512.238
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2479.039 ; gain = 511.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2495.605 ; gain = 530.145
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2496.961 ; gain = 529.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2495.605 ; gain = 530.145
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2496.961 ; gain = 529.668
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2495.605 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2508.949 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -96,22 +105,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/FEB_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2608.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2609.645 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2608.328 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2609.645 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50fgga484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -123,7 +132,7 @@ Applied set_property CLOCK_BUFFER_TYPE = NONE for VXO_P. (constraint file  c:/v2
 Applied set_property KEEP_HIERARCHY = SOFT for PLL. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for ILA_uC. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'OneWireSeq_reg' in module 'One_Wire'
 ---------------------------------------------------------------------------------------------------
@@ -140,7 +149,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'OneWireSeq_reg' in module '
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'OneWireSeq_reg' using encoding 'one-hot' in module 'One_Wire'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -158,11 +167,13 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 4     
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 5     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 6     
 	                1 Bit    Registers := 6     
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 4     
-	   2 Input   16 Bit        Muxes := 5     
+	   2 Input   16 Bit        Muxes := 4     
+	   4 Input   16 Bit        Muxes := 1     
 	   8 Input    9 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 20    
 	   8 Input    8 Bit        Muxes := 1     
@@ -213,26 +224,27 @@ WARNING: [Synth 8-7129] Port DBG[4] in module FEB is either unconnected or has n
 WARNING: [Synth 8-7129] Port DBG[3] in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBG[2] in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBG[1] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port GPI1 in module FEB is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -250,37 +262,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -301,41 +313,42 @@ Report Cell Usage:
 |1     |PLL_0_bbox  |     1|
 |2     |uC_ILA_bbox |     1|
 |3     |CARRY4      |     8|
-|4     |LUT1        |     5|
-|5     |LUT2        |    24|
-|6     |LUT3        |    55|
-|7     |LUT4        |    24|
-|8     |LUT5        |   124|
-|9     |LUT6        |   116|
-|10    |FDCE        |   196|
+|4     |LUT1        |     7|
+|5     |LUT2        |    25|
+|6     |LUT3        |    56|
+|7     |LUT4        |    37|
+|8     |LUT5        |   137|
+|9     |LUT6        |   103|
+|10    |FDCE        |   201|
 |11    |FDPE        |     1|
 |12    |FDRE        |     1|
 |13    |IBUF        |    18|
-|14    |IOBUF       |    20|
-|15    |OBUF        |     6|
+|14    |IBUFDS      |     1|
+|15    |IOBUF       |    20|
+|16    |OBUF        |     6|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2608.328 ; gain = 530.145
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2608.328 ; gain = 642.867
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.645 ; gain = 529.668
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2609.645 ; gain = 642.352
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2608.328 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2609.645 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2608.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2609.645 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 20 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 20 instances
 
-Synth Design complete | Checksum: beb31049
+Synth Design complete | Checksum: 6a6a1886
 INFO: [Common 17-83] Releasing license: Synthesis
-38 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
+45 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 2608.328 ; gain = 1017.543
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 2609.645 ; gain = 1016.090
 INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/FEB.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FEB_utilization_synth.rpt -pb FEB_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  3 13:26:52 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  3 17:19:14 2023...

@@ -36,22 +36,20 @@ entity ADC_Mux is
     -- Microcontroller data and address buses	
         uCA 				: in std_logic_vector(11 downto 0);
         uCD 				: in std_logic_vector(15 downto 0);
-        --iCD                 : out std_logic_vector(15 downto 0);
     -- Geographic address pins
         GA 					: in std_logic_vector(1 downto 0);
     -- Synchronous edge detectors of uC read and write strobes
         uWRDL 				: in std_logic_vector(1 downto 0);
     -- Analog Mux address lines
 	    MuxEn               : out std_logic_vector(3 downto 0);
-	    Muxad               : out std_logic_vector(1 downto 0)       
+	    Muxad               : out std_logic_vector(1 downto 0);
+    -- uController status registers
+        MuxSelReg           : out std_logic_vector(2 downto 0);
+        MuxadReg            : out std_logic_vector(1 downto 0)    
     );
 end ADC_Mux;
 
 architecture Behavioral of ADC_Mux is
-
--- Signals used by the current sense multiplexer
-signal MuxSelReg : std_logic_vector(2 downto 0);
-signal MuxadReg : std_logic_vector(1 downto 0);
 
 begin 
 
@@ -85,12 +83,6 @@ begin
 
     	MuxadReg <= uCD(1 downto 0);
     	MuxSelReg <= uCD(4 downto 2);
-     
-    else 
-    	-- MuxEn <= MuxEn;
-    	-- Muxad <= Muxad;
-    	MuxadReg <= MuxadReg;
-    	MuxSelReg <= MuxSelReg;
     end if;
 end if;
 end process; 

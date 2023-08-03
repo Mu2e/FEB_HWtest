@@ -149,6 +149,12 @@ set_property IOSTANDARD LVCMOS25 [get_ports {MuxEn[0]}]
 # Chip dependent I/O functions
 #-------------------------------------
 
+set_property PACKAGE_PIN Y20 [get_ports GPI0_P]
+set_property IOSTANDARD MINI_LVDS_25 [get_ports GPI0_P]
+set_property PACKAGE_PIN T16 [get_ports GPI1]
+set_property IOSTANDARD LVCMOS25 [get_ports GPI1]
+
+
 #set_property PACKAGE_PIN M4 [get_ports AFE0Clk_P]
 #set_property PACKAGE_PIN AA6 [get_ports AFE1Clk_P]
 #set_property PACKAGE_PIN AB10 [get_ports {AFECS[0]}]
@@ -403,20 +409,11 @@ set_property IOSTANDARD LVCMOS25 [get_ports {MuxEn[0]}]
 #set_property IOSTANDARD DIFF_SSTL135 [get_ports ClkB_P]
 
 
-#set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
-
 
 set_property BITSTREAM.CONFIG.CCLK_TRISTATE TRUE [current_design]
 set_property CONFIG_VOLTAGE 2.5 [current_design]
 set_property CFGBVS VCCO [current_design]
 set_property BITSTREAM.STARTUP.STARTUPCLK JTAGCLK [current_design]
-
-
-connect_debug_port u_ila_0/probe0 [get_nets [list {TestCount[0]} {TestCount[1]} {TestCount[2]} {TestCount[3]} {TestCount[4]} {TestCount[5]} {TestCount[6]} {TestCount[7]} {TestCount[8]} {TestCount[9]} {TestCount[10]} {TestCount[11]} {TestCount[12]} {TestCount[13]} {TestCount[14]} {TestCount[15]} {TestCount[16]} {TestCount[17]} {TestCount[18]} {TestCount[19]} {TestCount[20]} {TestCount[21]} {TestCount[22]} {TestCount[23]} {TestCount[24]} {TestCount[25]} {TestCount[26]} {TestCount[27]} {TestCount[28]} {TestCount[29]} {TestCount[30]} {TestCount[31]}]]
-connect_debug_port u_ila_0/probe1 [get_nets [list {uAddrReg[0]} {uAddrReg[1]} {uAddrReg[2]} {uAddrReg[3]} {uAddrReg[4]} {uAddrReg[5]} {uAddrReg[6]} {uAddrReg[7]} {uAddrReg[8]} {uAddrReg[9]} {uAddrReg[10]} {uAddrReg[11]}]]
-
-
-
 
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
