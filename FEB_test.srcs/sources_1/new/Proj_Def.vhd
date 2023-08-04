@@ -436,15 +436,15 @@ end component;
 
 component Trigger is
   Port (
-  	SysClk				: in std_logic; -- 160 MHz
+	SysClk				: in std_logic; -- 160 MHz
 	ResetHi  			: in std_logic;
 -- Signals for other logic
 	TrigReq				: buffer std_logic;
 	SlfTrgEn 			: buffer std_logic;
-	BeamOn 				: buffer std_logic;
+	BeamOn 				: out std_logic;
 	uBunch   			: buffer std_logic_vector(31 downto 0);
-	uBunchWrt			: out std_logic;
-	GPO			 		: inout std_logic;
+	uBunchWrt			: buffer std_logic;
+	GPO			 		: out std_logic;
 -- Microcontroller strobes
 	CpldRst				: in std_logic;
 	CpldCS				: in std_logic;
@@ -456,14 +456,15 @@ component Trigger is
 -- Geographic address pins
 	GA 					: in std_logic_vector(1 downto 0);
 -- Synchronous edge detectors of uC read and write strobes
-	uWRDL 				: in std_logic_vector(1 downto 0);
 	WRDL 				: in std_logic_vector(1 downto 0);
 -- LED/Flash Gate select line
-	PulseSel 			: buffer std_logic;
+	PulseSel 			: inout std_logic;
 -- LED pulser/Flash Gate
 	Pulse 				: out std_logic;
-	LEDSrc				: buffer std_logic;
-	GPI0 				: in std_logic
+	LEDSrc				: out std_logic;
+	GPI0 				: in std_logic;
+-- uController status registers
+	FlashEn  			: buffer std_logic 
 	);
 end component;
 
@@ -510,22 +511,20 @@ end component;
 component LVDS_TX is
 port (
 	Clk_100MHz			: in std_logic;
-	ResetHi				: in std_logic; 
-	-- Microcontroller data and address buses
-	uCA 				: in std_logic_vector(11 downto 0);
-	uCD 				: inout std_logic_vector(15 downto 0);
-	-- Microcontroller strobes
 	CpldRst				: in std_logic;
-	CpldCS				: in std_logic;
-	uCRd				: in std_logic;
-	uCWr 				: in std_logic;
+	ResetHi				: in std_logic; 
+	-- Microcontroller data and address buses	
+	uCA 				: in std_logic_vector(11 downto 0);
+	uCD 				: in std_logic_vector(15 downto 0);	
 	-- Geographic address pins
 	GA 					: in std_logic_vector(1 downto 0);
+	-- Synchronous edge detectors of uC read and write strobes
+	uWRDL 				: in std_logic_vector(1 downto 0);
 	-- Chip dipendent I/O functions 
 	LVDSTX 				: out std_logic;
-	-- Other Logic 
-	FMTxBuff_wreq		: in std_logic;
-	uWRDL 				: in std_logic_vector(1 downto 0)
+	-- uController status registers
+	FMTxBuff_full		: out std_logic;
+	FMTxBuff_empty		: buffer std_logic
 );
 end component;
 
@@ -668,8 +667,14 @@ component uController_interface is
     -- OUTPUT REGISTERS     
     -- ADC mux
         MuxSelReg           : in std_logic_vector(2 downto 0);
-        MuxadReg            : in std_logic_vector(1 downto 0)         
-              
+        MuxadReg            : in std_logic_vector(1 downto 0);         
+	-- Trigger
+		FlashEn  			: in std_logic; 	         
+		PulseSel 			: in std_logic;
+		LEDSrc				: in std_logic;
+	-- LVDS logic
+		FMTxBuff_full		: in std_logic;
+		FMTxBuff_empty		: in std_logic               
     );
 end component;
 

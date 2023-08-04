@@ -157,6 +157,9 @@ set_property IOSTANDARD LVCMOS25 [get_ports GPI1]
 set_property PACKAGE_PIN AB20 [get_ports A7]
 set_property IOSTANDARD LVCMOS25 [get_ports A7]
 
+set_property PACKAGE_PIN U5 [get_ports LVDSTX]
+set_property IOSTANDARD LVCMOS25 [get_ports LVDSTX]
+
 #-------------------------------------
 # AFE Interface
 #-------------------------------------
@@ -419,6 +422,11 @@ set_property CFGBVS VCCO [current_design]
 set_property BITSTREAM.STARTUP.STARTUPCLK JTAGCLK [current_design]
 
 
+
+
+
+set_property PACKAGE_PIN M3 [get_ports AFE0Clk_N]
+set_property PACKAGE_PIN AB6 [get_ports AFE1Clk_N]
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]

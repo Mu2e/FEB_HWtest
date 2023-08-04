@@ -32,8 +32,8 @@ port(
 	AFE0Dat_P, AFE0Dat_N    : in std_logic_vector(7 downto 0); -- LVDS pairs from an AFE chip (8 channels)
 	AFE1Dat_P, AFE1Dat_N    : in std_logic_vector(7 downto 0);
 	-- AFE Input clocks
-	AFE0Clk_P, AFE0Clk_N    : out std_logic; -- Copy of 80MHz master clock sent to AFE chips
-	AFE1Clk_P, AFE1Clk_N    : out std_logic;
+--	AFE0Clk_P, AFE0Clk_N    : out std_logic; -- Copy of 80MHz master clock sent to AFE chips
+--	AFE1Clk_P, AFE1Clk_N    : out std_logic;
 	-- AFE clock, framing lines
 	AFEDCLK_P, AFEDCLK_N    : in std_logic_vector(1 downto 0); -- Unused in this design 
 	AFE0FCLK_P, AFE0FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
@@ -82,7 +82,7 @@ port(
 	GPI0_N, GPI0_P			: in std_logic;
 	GPI1  					: in std_logic;
 	-- LED/Flash Gate select line
-	PulseSel 				: buffer std_logic;
+	PulseSel 				: out std_logic;
 	-- LED pulser/Flash Gate
 	Pulse 					: out std_logic;
 	-- Temperature sensor lines
@@ -165,11 +165,13 @@ signal One_Wire_Out 		  : std_logic_vector(15 downto 0);
 
 signal FMTxBuff_wreq		  : std_logic;
 
--- uController status registers
+-- uController status registers (are values read back by the uC)
 signal iCD				  	  : std_logic_vector(15 downto 0);
 signal MuxSelReg           	  : std_logic_vector(2 downto 0);
 signal MuxadReg            	  : std_logic_vector(1 downto 0);  
-
+signal FlashEn  			  : std_logic; 
+signal FMTxBuff_empty 		  : std_logic;
+signal FMTxBuff_full  		  : std_logic;
 
 attribute mark_debug : string;
 attribute mark_debug of uAddrReg: signal is "false";
@@ -264,41 +266,41 @@ port map(
 
 
 
-AFE : AFE_Interface
-port map(
-	AFE0Dat_P		=> AFE0Dat_P,
-	AFE0Dat_N       => AFE0Dat_N,
-	AFE1Dat_P       => AFE1Dat_P,
-	AFE1Dat_N       => AFE1Dat_N,
-	AFE0Clk_P       => AFE0Clk_P,
-	AFE0Clk_N       => AFE0Clk_N,
-	AFE1Clk_P       => AFE1Clk_P,
-	AFE1Clk_N       => AFE1Clk_N,
-	
-	AFEDCLK_P       => AFEDCLK_P, -- unused
-	AFEDCLK_N       => AFEDCLK_N, -- unused
-	
-	AFE0FCLK_P      => AFE0FCLK_P,
-	AFE0FCLK_N      => AFE0FCLK_N,
-	AFE1FCLK_P      => AFE1FCLK_P,
-	AFE1FCLK_N      => AFE1FCLK_N,
-	
-	AFEPDn 		    => AFEPDn,
-	AFECS 		    => AFECS,
-	AFERst 		    => AFERst,
-	AFESClk         => AFESClk,
-	AFESDI  	    => AFESDI,
-	AFESDO 		    => AFESDO,
--- FPGA interface
-	Clk_80MHz		=> Clk_80MHz,			  
-	Clk_560MHz		=> Clk_560MHz,			  
-	Clk_200MHz		=> Clk_200MHz,			  
-	reset			=> SerdesRst(0) or SerdesRst(1),				  
-	done			=> done,				  
-	warn			=> warn,				  
-	dout_AFE0		=> dout_AFE0,				  
-	dout_AFE1		=> dout_AFE1
-);
+--AFE : AFE_Interface
+--port map(
+--	AFE0Dat_P		=> AFE0Dat_P,
+--	AFE0Dat_N       => AFE0Dat_N,
+--	AFE1Dat_P       => AFE1Dat_P,
+--	AFE1Dat_N       => AFE1Dat_N,
+--	AFE0Clk_P       => AFE0Clk_P,
+--	AFE0Clk_N       => AFE0Clk_N,
+--	AFE1Clk_P       => AFE1Clk_P,
+--	AFE1Clk_N       => AFE1Clk_N,
+--	
+--	AFEDCLK_P       => AFEDCLK_P, -- unused
+--	AFEDCLK_N       => AFEDCLK_N, -- unused
+--	
+--	AFE0FCLK_P      => AFE0FCLK_P,
+--	AFE0FCLK_N      => AFE0FCLK_N,
+--	AFE1FCLK_P      => AFE1FCLK_P,
+--	AFE1FCLK_N      => AFE1FCLK_N,
+--	
+--	AFEPDn 		    => AFEPDn,
+--	AFECS 		    => AFECS,
+--	AFERst 		    => AFERst,
+--	AFESClk         => AFESClk,
+--	AFESDI  	    => AFESDI,
+--	AFESDO 		    => AFESDO,
+---- FPGA interface
+--	Clk_80MHz		=> Clk_80MHz,			  
+--	Clk_560MHz		=> Clk_560MHz,			  
+--	Clk_200MHz		=> Clk_200MHz,			  
+--	reset			=> SerdesRst(0) or SerdesRst(1),				  
+--	done			=> done,				  
+--	warn			=> warn,				  
+--	dout_AFE0		=> dout_AFE0,				  
+--	dout_AFE1		=> dout_AFE1
+--);
 
 --AFE_DataPath_inst : AFE_DataPath
 --port map (
@@ -352,41 +354,40 @@ port map(
 );
 
 
---Trigger_logic: Trigger 
---port map(
---  	SysClk			=> SysClk, -- 160 MHz
---	ResetHi  		=> ResetHi,
-----Signals to AFE_DataPath
---	TrigReq			=> TrigReq,
---	BeamOn			=> BeamOn,
----- Signals to EVB and DDR
---	uBunch   		=> uBunch,   
---	uBunchWrt		=> uBunchWrt,
---	SlfTrgEn		=> SlfTrgEn,
----- Signal to Phase_Detector
---	GPO				=> GPO,		
----- Microcontroller strobes
---	CpldRst			=> CpldRst,	
---	CpldCS			=> CpldCS,	
---	uCRd			=> uCRd,
---	uCWr 			=> uCWr, 	
----- Microcontroller data and address buses	
---	uCA 			=> uCA,
---	uCD 			=> uCD,
----- Geographic address pins
---	GA 				=> GA,
----- Global signals
---	uWRDL 			=> uWRDL,
---	WRDL 			=> WRDL,
----- Chip out
---	PulseSel 		=> PulseSel, 
---	Pulse 			=> Pulse, 
---	GPI0 			=> GPI0,
----- uC register 
---	LEDSrc 			=> LEDSrc
---
---);
---
+Trigger_logic: Trigger 
+port map(
+  	SysClk			=> SysClk, -- 160 MHz
+	ResetHi  		=> ResetHi,
+--Signals to AFE_DataPath
+	TrigReq			=> TrigReq,
+	BeamOn			=> BeamOn,
+-- Signals to EVB and DDR
+	uBunch   		=> uBunch,   
+	uBunchWrt		=> uBunchWrt,
+	SlfTrgEn		=> SlfTrgEn,
+-- Signal to Phase_Detector
+	GPO				=> GPO,		
+-- Microcontroller strobes
+	CpldRst			=> CpldRst,	
+	CpldCS			=> CpldCS,	
+	uCRd			=> uCRd,
+	uCWr 			=> uCWr, 	
+-- Microcontroller data and address buses	
+	uCA 			=> uCA,
+	uCD 			=> uCD,
+-- Geographic address pins
+	GA 				=> GA,
+-- Synchronous edge detectors of uC read and write strobes
+	WRDL 			=> WRDL,
+-- Chip out
+	PulseSel 		=> PulseSel, 
+	Pulse 			=> Pulse, 
+	GPI0 			=> GPI0,
+	LEDSrc 			=> LEDSrc,
+-- uController status registers
+	FlashEn  		=> FlashEn
+);
+
 --EventBuilder_logic :  EventBuilder
 --port map(
 --	SysClk			=> SysClk,	 -- 160 MHz
@@ -537,43 +538,49 @@ port map(
 uC_to_LVDSTX : LVDS_TX
 port map(
 	Clk_100MHz		=> Clk_100MHz,
+	CpldRst			=> CpldRst,	
 	ResetHi			=> ResetHi,
-	FMTxBuff_wreq	=> FMTxBuff_wreq,
--- Microcontroller data and address buses
+	-- Microcontroller data and address buses
 	uCA 			=> uCA,
 	uCD 			=> uCD,
--- Microcontroller strobes
-	CpldRst			=> CpldRst,		
-	CpldCS			=> CpldCS,	
-	uCRd			=> uCRd,	
-	uCWr 			=> uCWr, 		
--- Geographic address pins
+	-- Geographic address pins
 	GA 				=> GA,
--- Chip dipendent I/O functions 
+	-- Synchronous edge detectors of uC read and write strobes
+	uWRDL 			=> uWRDL,
+	-- Chip dipendent I/O functions 
 	LVDSTX 			=> LVDSTX,
--- Global signal
-	uWRDL			=> uWRDL
+	-- uController status registers
+	FMTxBuff_full	=> FMTxBuff_full,
+	FMTxBuff_empty	=> FMTxBuff_empty
 );
 
 uControllerRegister : uController_interface 
 port map(
 	Clk_100MHz		=> Clk_100MHz,
--- Microcontroller strobes
+	-- Microcontroller strobes
 	CpldRst			=> CpldRst,	
--- Microcontroller data and address buses
+	-- Microcontroller data and address buses
 	uCA 			=> uCA,
 	uCD 			=> uCD,
--- Geographic address pins
+	-- Geographic address pins
 	GA  			=> GA,
--- Synchronous edge detectors of uC read and write strobes
+	-- Synchronous edge detectors of uC read and write strobes
 	uWRDL 			=> uWRDL, 			
 	uRDDL 			=> uRDDL,
 	uAddrReg		=> uAddrReg,
 
 	iCD 			=> iCD,
-	
+	-- ADC Mux
 	MuxSelReg		=> MuxSelReg,
-	MuxadReg 		=> MuxadReg	
+	MuxadReg 		=> MuxadReg,
+	-- Trigger
+	FlashEn  		=> FlashEn, 	         
+	PulseSel 		=> PulseSel,
+	LEDSrc			=> LEDSrc,
+	-- LVDS logic
+	FMTxBuff_full	=> FMTxBuff_full,
+	FMTxBuff_empty	=> FMTxBuff_empty	
+	
   );
 --
 --

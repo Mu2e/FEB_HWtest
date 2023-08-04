@@ -1,0 +1,2 @@
+Trigger_ila.vhd,vhdl,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/Trigger_ila/sim/Trigger_ila.vhd,incdir="../../../../FEB_test.gen/sources_1/ip/Trigger_ila/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v

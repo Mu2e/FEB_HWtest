@@ -47,8 +47,14 @@ entity uController_interface is
     -- OUTPUT REGISTERS     
     -- ADC mux
         MuxSelReg           : in std_logic_vector(2 downto 0);
-        MuxadReg            : in std_logic_vector(1 downto 0)         
-              
+        MuxadReg            : in std_logic_vector(1 downto 0);
+	-- Trigger
+		FlashEn  			: in std_logic; 	         
+		PulseSel 			: in std_logic;
+		LEDSrc				: in std_logic;
+	-- LVDS logic
+		FMTxBuff_full		: in std_logic;
+		FMTxBuff_empty		: in std_logic            
     );
 end uController_interface;
 
@@ -79,6 +85,7 @@ end if;
 end process;
 
 
+
 with uCA(9 downto 0) select
 
 iCD <= 	-- X"000" & "00" & AFEPDn when CSRRegAddr,
@@ -93,12 +100,12 @@ iCD <= 	-- X"000" & "00" & AFEPDn when CSRRegAddr,
 		X"00" & "000" & MuxSelReg & MuxadReg when MuxCtrlAd,
 		-- MaskReg(1) & MaskReg(0) when InputMaskAddr,
 		-- In_Seq_Stat(1)(7 downto 0) & In_Seq_Stat(0)(7 downto 0) when InseqStatAd,
-		-- X"000" & '0' & LEDSrc & PulseSel & FlashEn when FlashCtrlAddr,
+		X"000" & '0' & LEDSrc & PulseSel & FlashEn when FlashCtrlAddr,
 		-- UpTimeStage(31 downto 16) when UpTimeRegAddrHi,
 		-- UpTimeStage(15 downto 0) when UpTimeRegAddrLo,
 		TestCount(31 downto 16) when TestCounterHiAd,
 		TestCount(15 downto 0) when TestCounterLoAd,
-		-- X"000" & "00" & FMTxBuff_full & FMTxBuff_empty when LVDSTxFIFOStatAd,
+		X"000" & "00" & FMTxBuff_full & FMTxBuff_empty when LVDSTxFIFOStatAd,
 		-- X"0" & BeamOnLength when BeamOnLengthAd,
 		-- X"0" & BeamOffLength when BeamOffLengthAd,
 		-- "0000000" & TurnOnTime when OnTimeAddr,

@@ -76,6 +76,20 @@ component vio_0 is
 );
 end component;
 
+component Trigger_ila
+    port (
+        clk    : in std_logic;
+        probe0 : in std_logic_vector(0 downto 0);
+        probe1 : in std_logic_vector(0 downto 0);
+        probe2 : in std_logic_vector(0 downto 0);
+        probe3 : in std_logic_vector(0 downto 0);
+        probe4 : in std_logic_vector(31 downto 0);
+        probe5 : in std_logic_vector(0 downto 0);
+        probe6 : in std_logic_vector(23 downto 0);
+        probe7 : in std_logic_vector(0 downto 0)
+    );
+    end component;
+    
 
 
 end package;
