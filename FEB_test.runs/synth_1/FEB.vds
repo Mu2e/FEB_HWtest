@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Aug  3 17:18:18 2023
-# Process ID: 5672
+# Start of session at: Fri Aug  4 09:02:25 2023
+# Process ID: 15320
 # Current directory: C:/v23.1/FEB_test/FEB_test.runs/synth_1
 # Command line: vivado.exe -log FEB.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FEB.tcl
 # Log file: C:/v23.1/FEB_test/FEB_test.runs/synth_1/FEB.vds
@@ -12,7 +12,7 @@
 # Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34287 MB
 #-----------------------------------------------------------
 source FEB.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1507.383 ; gain = 198.684
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1497.445 ; gain = 189.664
 Command: read_checkpoint -auto_incremental -incremental C:/v23.1/FEB_test/FEB_test.srcs/utils_1/imports/synth_1/FEB.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/v23.1/FEB_test/FEB_test.srcs/utils_1/imports/synth_1/FEB.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,47 +25,180 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 27132
+INFO: [Synth 8-7075] Helper process launched with PID 5764
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2378.457 ; gain = 411.164
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2371.621 ; gain = 409.820
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'FEB' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'FEB' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:95]
 	Parameter DIFF_TERM bound to: 1 - type: bool 
 	Parameter IBUF_LOW_PWR bound to: 0 - type: bool 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-113] binding component instance 'GPI0DiffIn' to cell 'IBUFDS' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:221]
-INFO: [Synth 8-3491] module 'PLL_0' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/PLL_0_stub.vhdl:6' bound to instance 'PLL' of component 'PLL_0' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:231]
-INFO: [Synth 8-638] synthesizing module 'PLL_0' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/PLL_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'ADC_Mux' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:31' bound to instance 'Mux' of component 'ADC_Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:243]
-INFO: [Synth 8-638] synthesizing module 'ADC_Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:53]
-INFO: [Synth 8-226] default block is never used [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:77]
-INFO: [Synth 8-256] done synthesizing module 'ADC_Mux' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:53]
-INFO: [Synth 8-3491] module 'uC_ILA' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/uC_ILA_stub.vhdl:6' bound to instance 'ILA_uC' of component 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:315]
-INFO: [Synth 8-638] synthesizing module 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-5672-CD-135239/realtime/uC_ILA_stub.vhdl:24]
-INFO: [Synth 8-3491] module 'One_Wire' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:7' bound to instance 'OneWire' of component 'One_Wire' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:535]
+INFO: [Synth 8-113] binding component instance 'GPI0DiffIn' to cell 'IBUFDS' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:222]
+INFO: [Synth 8-3491] module 'PLL_0' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-15320-CD-135239/realtime/PLL_0_stub.vhdl:6' bound to instance 'PLL' of component 'PLL_0' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:232]
+INFO: [Synth 8-638] synthesizing module 'PLL_0' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-15320-CD-135239/realtime/PLL_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'Mux' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:31' bound to instance 'ADC_Mux' of component 'Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:244]
+INFO: [Synth 8-638] synthesizing module 'Mux' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:52]
+INFO: [Synth 8-226] default block is never used [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'Mux' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd:52]
+INFO: [Synth 8-3491] module 'AFE_Interface' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:30' bound to instance 'AFE' of component 'AFE_Interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:267]
+INFO: [Synth 8-638] synthesizing module 'AFE_Interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:63]
+	Parameter IOSTANDARD bound to: LVDS - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst0' to cell 'OBUFDS' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:103]
+	Parameter IOSTANDARD bound to: LVDS - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst1' to cell 'OBUFDS' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:107]
+INFO: [Synth 8-113] binding component instance 'IDELAYCTRL_inst' to cell 'IDELAYCTRL' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:136]
+INFO: [Synth 8-3491] module 'Auto_AFE' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:20' bound to instance 'afe0_inst' of component 'auto_afe' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'Auto_AFE' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:35]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'ffebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:29]
+	Parameter DIFF_TERM bound to: 1 - type: bool 
+	Parameter IBUF_LOW_PWR bound to: 0 - type: bool 
+	Parameter IOSTANDARD bound to: LVDS - type: string 
+INFO: [Synth 8-113] binding component instance 'IBUFDS_inst' to cell 'IBUFDS' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:39]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: IDATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
+	Parameter IDELAY_TYPE bound to: VAR_LOAD - type: string 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+INFO: [Synth 8-113] binding component instance 'IDELAYE2_inst' to cell 'IDELAYE2' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:53]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 14 - type: integer 
+	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
+	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
+	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
+	Parameter IOBDELAY bound to: IFD - type: string 
+	Parameter NUM_CE bound to: 2 - type: integer 
+	Parameter OFB_USED bound to: FALSE - type: string 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+INFO: [Synth 8-113] binding component instance 'iserdese2_master_inst' to cell 'ISERDESE2' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:83]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 14 - type: integer 
+	Parameter DYN_CLKDIV_INV_EN bound to: FALSE - type: string 
+	Parameter DYN_CLK_INV_EN bound to: FALSE - type: string 
+	Parameter INTERFACE_TYPE bound to: NETWORKING - type: string 
+	Parameter IOBDELAY bound to: IFD - type: string 
+	Parameter NUM_CE bound to: 2 - type: integer 
+	Parameter OFB_USED bound to: FALSE - type: string 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+INFO: [Synth 8-113] binding component instance 'iserdese2_slave_inst' to cell 'ISERDESE2' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'febit' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:29]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'febit' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd:16' bound to instance 'dfebit_inst' of component 'febit' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:84]
+INFO: [Synth 8-3491] module 'auto_FSM' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/auto_FSM.vhd:28' bound to instance 'auto_fsm_inst' of component 'auto_FSM' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'auto_FSM' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/auto_FSM.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'auto_FSM' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/auto_FSM.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'Auto_AFE' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:35]
+INFO: [Synth 8-3491] module 'Auto_AFE' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd:20' bound to instance 'afe1_inst' of component 'auto_afe' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:161]
+INFO: [Synth 8-256] done synthesizing module 'AFE_Interface' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:63]
+INFO: [Synth 8-3491] module 'Phase_Detector' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Phase_Detector.vhd:30' bound to instance 'Phase_Detector_inst' of component 'Phase_Detector' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:343]
+INFO: [Synth 8-638] synthesizing module 'Phase_Detector' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Phase_Detector.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'Phase_Detector' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Phase_Detector.vhd:46]
+INFO: [Synth 8-3491] module 'One_Wire' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:7' bound to instance 'OneWire' of component 'One_Wire' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:519]
 INFO: [Synth 8-638] synthesizing module 'One_Wire' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:25]
 WARNING: [Synth 8-614] signal 'OneWrRdROM' is read in the process but is not in the sensitivity list [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:60]
 INFO: [Synth 8-256] done synthesizing module 'One_Wire' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:25]
-INFO: [Synth 8-3491] module 'uController_interface' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhdl:31' bound to instance 'uControllerRegister' of component 'uController_interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:574]
-INFO: [Synth 8-638] synthesizing module 'uController_interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhdl:55]
-INFO: [Synth 8-256] done synthesizing module 'uController_interface' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhdl:55]
-INFO: [Synth 8-256] done synthesizing module 'FEB' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:94]
+INFO: [Synth 8-3491] module 'LVDS_TX' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/LVDS_TX.vhd:12' bound to instance 'uC_to_LVDSTX' of component 'LVDS_TX' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:537]
+INFO: [Synth 8-638] synthesizing module 'LVDS_TX' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/LVDS_TX.vhd:34]
+	Parameter Pwidth bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'FM_Tx' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FM_Serializer.vhd:18' bound to instance 'FMTx' of component 'FM_Tx' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/LVDS_TX.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'FM_Tx' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FM_Serializer.vhd:29]
+	Parameter Pwidth bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'FM_Tx' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FM_Serializer.vhd:29]
+WARNING: [Synth 8-5640] Port 'wr_rst_busy' is missing in component declaration [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Proj_Def.vhd:748]
+WARNING: [Synth 8-5640] Port 'rd_rst_busy' is missing in component declaration [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Proj_Def.vhd:748]
+INFO: [Synth 8-3491] module 'LVDSTxBuff' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-15320-CD-135239/realtime/LVDSTxBuff_stub.vhdl:6' bound to instance 'FMTx_Buff' of component 'LVDSTxBuff' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/LVDS_TX.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'LVDSTxBuff' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-15320-CD-135239/realtime/LVDSTxBuff_stub.vhdl:22]
+INFO: [Synth 8-256] done synthesizing module 'LVDS_TX' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/LVDS_TX.vhd:34]
+INFO: [Synth 8-3491] module 'uController_interface' declared at 'C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhd:31' bound to instance 'uControllerRegister' of component 'uController_interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:558]
+INFO: [Synth 8-638] synthesizing module 'uController_interface' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'uController_interface' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhd:55]
+INFO: [Synth 8-3491] module 'uC_ILA' declared at 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-15320-CD-135239/realtime/uC_ILA_stub.vhdl:6' bound to instance 'ILA_uC' of component 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:628]
+INFO: [Synth 8-638] synthesizing module 'uC_ILA' [C:/v23.1/FEB_test/FEB_test.runs/synth_1/.Xil/Vivado-15320-CD-135239/realtime/uC_ILA_stub.vhdl:24]
+INFO: [Synth 8-256] done synthesizing module 'FEB' (0#1) [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:95]
+WARNING: [Synth 8-3848] Net AFEPDn in module/entity AFE_Interface does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:43]
+WARNING: [Synth 8-3848] Net AFECS in module/entity AFE_Interface does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:44]
+WARNING: [Synth 8-3848] Net AFERst in module/entity AFE_Interface does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:45]
+WARNING: [Synth 8-3848] Net AFESClk in module/entity AFE_Interface does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:46]
+WARNING: [Synth 8-3848] Net AFESDI in module/entity AFE_Interface does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd:46]
 WARNING: [Synth 8-6014] Unused sequential element ResponseBit_reg was removed.  [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd:73]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'uControllerRegister'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:574]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'OneWire'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:535]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Mux'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:243]
-WARNING: [Synth 8-6014] Unused sequential element AddrReg_reg was removed.  [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:187]
-WARNING: [Synth 8-7129] Port uCD[15] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[14] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[13] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[12] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[11] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[10] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[9] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[8] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[7] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[6] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[5] in module ADC_Mux is either unconnected or has no load
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'uControllerRegister'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:558]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'uC_to_LVDSTX'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:537]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'OneWire'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:519]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Phase_Detector_inst'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:343]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ADC_Mux'. This will prevent further optimization [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:244]
+WARNING: [Synth 8-6014] Unused sequential element AddrReg_reg was removed.  [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:188]
+WARNING: [Synth 8-3848] Net DACCS in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:75]
+WARNING: [Synth 8-3848] Net DACClk in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:76]
+WARNING: [Synth 8-3848] Net DACDat in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:77]
+WARNING: [Synth 8-3848] Net DACLd in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:78]
+WARNING: [Synth 8-3848] Net PulseSel in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:85]
+WARNING: [Synth 8-3848] Net Pulse in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:87]
+WARNING: [Synth 8-3848] Net Clk_80MHz in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:98]
+WARNING: [Synth 8-3848] Net Clk_560MHz in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:101]
+WARNING: [Synth 8-3848] Net SerdesRst in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:132]
+WARNING: [Synth 8-3848] Net FMTxBuff_wreq in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:166]
+WARNING: [Synth 8-3848] Net TrgSrc in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:135]
+WARNING: [Synth 8-3848] Net GPO in module/entity FEB does not have driver. [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:124]
+WARNING: [Synth 8-7129] Port uCA[11] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[10] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[9] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[8] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[7] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[6] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[5] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[4] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[3] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[2] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[1] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[0] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CpldRst in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CpldCS in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCRd in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCWr in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port GA[1] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port GA[0] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uWRDL[1] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uWRDL[0] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEPDn[1] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEPDn[0] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFECS[1] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFECS[0] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFERst in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFESClk in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFESDI in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEDCLK_P[1] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEDCLK_P[0] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEDCLK_N[1] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEDCLK_N[0] in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFESDO in module AFE_Interface is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[15] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[14] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[13] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[12] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[11] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[10] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[9] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[8] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[7] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[6] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[5] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DACCS[2] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DACCS[1] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DACCS[0] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DACClk in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DACDat in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DACLd in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PulseSel in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Pulse in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBG[9] in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBG[8] in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBG[7] in module FEB is either unconnected or has no load
@@ -77,19 +210,19 @@ WARNING: [Synth 8-7129] Port DBG[2] in module FEB is either unconnected or has n
 WARNING: [Synth 8-7129] Port DBG[1] in module FEB is either unconnected or has no load
 WARNING: [Synth 8-7129] Port GPI1 in module FEB is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2479.039 ; gain = 511.746
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2478.461 ; gain = 516.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2496.961 ; gain = 529.668
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2496.391 ; gain = 534.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2496.961 ; gain = 529.668
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2496.391 ; gain = 534.590
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2508.949 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2508.438 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 75 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -99,28 +232,30 @@ Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0/PLL_0_
 Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0/PLL_0_in_context.xdc] for cell 'PLL'
 Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/uC_ILA/uC_ILA_in_context.xdc] for cell 'ILA_uC'
 Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/uC_ILA/uC_ILA_in_context.xdc] for cell 'ILA_uC'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/LVDSTxBuff/LVDSTxBuff/LVDSTxBuff_in_context.xdc] for cell 'uC_to_LVDSTX/FMTx_Buff'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/LVDSTxBuff/LVDSTxBuff/LVDSTxBuff_in_context.xdc] for cell 'uC_to_LVDSTX/FMTx_Buff'
 Parsing XDC File [C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]
 Finished Parsing XDC File [C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/FEB_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/FEB_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2609.645 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2609.082 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2609.645 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2609.082 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50fgga484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -131,10 +266,32 @@ Applied set_property IO_BUFFER_TYPE = NONE for VXO_P. (constraint file  c:/v23.1
 Applied set_property CLOCK_BUFFER_TYPE = NONE for VXO_P. (constraint file  c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0/PLL_0_in_context.xdc, line 8).
 Applied set_property KEEP_HIERARCHY = SOFT for PLL. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for ILA_uC. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for uC_to_LVDSTX/FMTx_Buff. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'auto_FSM'
 INFO: [Synth 8-802] inferred FSM for state register 'OneWireSeq_reg' in module 'One_Wire'
+INFO: [Synth 8-802] inferred FSM for state register 'TxBitWdth_reg' in module 'FM_Tx'
+INFO: [Synth 8-802] inferred FSM for state register 'Tx_State_reg' in module 'FM_Tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                     rst |                    0000000000001 |                             0000
+      load_cntvalue_init |                    0000000000010 |                             0001
+      wait_cntvalue_init |                    0000000000100 |                             0010
+             sample_init |                    0000000001000 |                             0011
+           load_cntvalue |                    0000000010000 |                             0100
+           wait_cntvalue |                    0000000100000 |                             0101
+              edge_check |                    0000001000000 |                             0110
+     load_cntvalue_final |                    0000010000000 |                             0111
+     wait_cntvalue_final |                    0000100000000 |                             1000
+               chk_frame |                    0001000000000 |                             1001
+                 aligned |                    0010000000000 |                             1100
+                  slipit |                    0100000000000 |                             1010
+               wait_slip |                    1000000000000 |                             1011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'auto_FSM'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -148,8 +305,30 @@ INFO: [Synth 8-802] inferred FSM for state register 'OneWireSeq_reg' in module '
                  readgap |                         00000010 |                             1000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'OneWireSeq_reg' using encoding 'one-hot' in module 'One_Wire'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE3 |                              000 |                              000
+                  iSTATE |                              001 |                              001
+                 iSTATE1 |                              010 |                              010
+                 iSTATE0 |                              011 |                              011
+                 iSTATE2 |                              100 |                              100
+                 iSTATE4 |                              101 |                              101
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'TxBitWdth_reg' using encoding 'sequential' in module 'FM_Tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  txidle |                            00010 |                              000
+                 txstrta |                            10000 |                              001
+                 txstrtb |                            01000 |                              010
+                  shfttx |                            00100 |                              011
+                paritytx |                            00001 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Tx_State_reg' using encoding 'one-hot' in module 'FM_Tx'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -158,33 +337,48 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   32 Bit       Adders := 1     
 	   2 Input    9 Bit       Adders := 1     
-	   2 Input    8 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               72 Bit    Registers := 1     
 	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               14 Bit    Registers := 4     
 	               12 Bit    Registers := 1     
 	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 4     
-	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 6     
-	                1 Bit    Registers := 6     
+	                8 Bit    Registers := 6     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 16    
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 4     
-	   2 Input   16 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 5     
 	   4 Input   16 Bit        Muxes := 1     
+	  13 Input   13 Bit        Muxes := 2     
+	   2 Input   13 Bit        Muxes := 12    
 	   8 Input    9 Bit        Muxes := 1     
+	  13 Input    8 Bit        Muxes := 2     
 	   2 Input    8 Bit        Muxes := 20    
 	   8 Input    8 Bit        Muxes := 1     
 	   3 Input    8 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 4     
-	   2 Input    4 Bit        Muxes := 7     
+	   2 Input    5 Bit        Muxes := 13    
+	  13 Input    5 Bit        Muxes := 2     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 9     
 	   4 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 5     
+	   6 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 12    
+	   2 Input    1 Bit        Muxes := 27    
+	  13 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 2     
 	   8 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 1     
@@ -204,47 +398,92 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port uCD[15] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[14] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[13] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[12] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[11] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[10] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[9] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[8] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[7] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[6] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port uCD[5] in module ADC_Mux is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[9] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[8] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[7] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[6] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[5] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[4] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[3] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[2] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DBG[1] in module FEB is either unconnected or has no load
-WARNING: [Synth 8-7129] Port GPI1 in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[11] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[10] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[9] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[8] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[7] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[6] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[5] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[4] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[3] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[2] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[1] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCA[0] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CpldRst in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CpldCS in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCRd in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCWr in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port GA[1] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port GA[0] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uWRDL[1] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uWRDL[0] in module LVDS_TX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[15] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[14] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[13] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[12] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[11] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[10] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[9] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[8] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[7] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[6] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uCD[5] in module Mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEPDn[1] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFEPDn[0] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFECS[1] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFECS[0] in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFERst in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFESClk in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AFESDI in module FEB is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DACCS[2] in module FEB is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[10]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[10]) is unused and will be removed from module FEB.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[12]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[11]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[9]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[8]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[7]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[6]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[5]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[4]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[3]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[2]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[1]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe0_inst/auto_fsm_inst/FSM_onehot_state_reg[0]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[12]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[11]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[9]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[8]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[7]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[6]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[5]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[4]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[3]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[2]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[1]) is unused and will be removed from module FEB.
+WARNING: [Synth 8-3332] Sequential element (AFE/afe1_inst/auto_fsm_inst/FSM_onehot_state_reg[0]) is unused and will be removed from module FEB.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -261,38 +500,54 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[15], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[14], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[13], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[12], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[11], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[10], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[9], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[8], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[7], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[6], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[5], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[4], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[3], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[2], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[1], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
+CRITICAL WARNING: [Synth 8-5744] Inout buffer is not created at top module FEB for the pin uCD[0], other connections may not have buffer connection [C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd:25]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -302,53 +557,62 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |PLL_0         |         1|
-|2     |uC_ILA        |         1|
+|1     |LVDSTxBuff    |         1|
+|2     |PLL_0         |         1|
+|3     |uC_ILA        |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
-+------+------------+------+
-|      |Cell        |Count |
-+------+------------+------+
-|1     |PLL_0_bbox  |     1|
-|2     |uC_ILA_bbox |     1|
-|3     |CARRY4      |     8|
-|4     |LUT1        |     7|
-|5     |LUT2        |    25|
-|6     |LUT3        |    56|
-|7     |LUT4        |    37|
-|8     |LUT5        |   137|
-|9     |LUT6        |   103|
-|10    |FDCE        |   201|
-|11    |FDPE        |     1|
-|12    |FDRE        |     1|
-|13    |IBUF        |    18|
-|14    |IBUFDS      |     1|
-|15    |IOBUF       |    20|
-|16    |OBUF        |     6|
-+------+------------+------+
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |LVDSTxBuff_bbox |     1|
+|2     |PLL_0_bbox      |     1|
+|3     |uC_ILA_bbox     |     1|
+|4     |CARRY4          |     8|
+|5     |IDELAYCTRL      |     1|
+|6     |IDELAYE2        |    18|
+|7     |ISERDESE2       |    36|
+|9     |LUT1            |     9|
+|10    |LUT2            |    43|
+|11    |LUT3            |    60|
+|12    |LUT4            |    43|
+|13    |LUT5            |   161|
+|14    |LUT6            |   110|
+|15    |FDCE            |   238|
+|16    |FDPE            |     2|
+|17    |FDRE            |     1|
+|18    |IBUF            |    18|
+|19    |IBUFDS          |    19|
+|20    |IOBUF           |    20|
+|21    |OBUF            |     8|
+|22    |OBUFDS          |     2|
+|23    |OBUFT           |    15|
++------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 2609.645 ; gain = 529.668
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2609.645 ; gain = 642.352
+Synthesis finished with 0 errors, 16 critical warnings and 88 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 2609.082 ; gain = 534.590
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2609.082 ; gain = 647.281
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2609.645 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2609.082 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 103 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 16 OBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2609.645 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2609.082 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 20 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 20 instances
 
-Synth Design complete | Checksum: 6a6a1886
+Synth Design complete | Checksum: 32ca6333
 INFO: [Common 17-83] Releasing license: Synthesis
-45 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
+94 Infos, 149 Warnings, 16 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 2609.645 ; gain = 1016.090
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 2609.082 ; gain = 1025.961
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/synth_1/FEB.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FEB_utilization_synth.rpt -pb FEB_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug  3 17:19:14 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug  4 09:03:23 2023...

@@ -96,10 +96,16 @@ read_vhdl -library work {
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FM_Serializer.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/One_Wire.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Phase_Detector.vhd
-  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/ADC_mux.vhd
-  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhdl
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/uController.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/DAC.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/auto_FSM.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Interface.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Auto_AFE.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/LVDS_TX.vhd
 }
+read_vhdl -vhdl2008 -library work C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd
 read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc]
@@ -124,6 +130,17 @@ set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_
 read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DDR3LController/DDR3LController.xci
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/CMD_Fifo/CMD_Fifo.xci
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/CMD_Fifo/CMD_Fifo.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/CMD_Fifo/CMD_Fifo_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DAC_Ram/DAC_Ram.xci
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_Ram/DAC_Ram_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/LVDSTxBuff/LVDSTxBuff.xci
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/LVDSTxBuff/LVDSTxBuff.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/LVDSTxBuff/LVDSTxBuff_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

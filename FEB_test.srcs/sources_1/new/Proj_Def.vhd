@@ -405,7 +405,7 @@ port (
 	-- Geographic address pins
 	GA 						: in std_logic_vector(1 downto 0);
 	-- Chip dependent I/O functions
-	A7		 				: buffer std_logic;
+	A7		 				: out std_logic;
 	GPI0					: in std_logic;
 	-- Trigger Logic
 	TrgSrc					: in std_logic;
@@ -522,10 +522,10 @@ port (
 	-- Geographic address pins
 	GA 					: in std_logic_vector(1 downto 0);
 	-- Chip dipendent I/O functions 
-	LVDSTX 				: buffer std_logic;
+	LVDSTX 				: out std_logic;
 	-- Other Logic 
-	FMTxBuff_wreq			: in std_logic;
-	uWRDL 					: in std_logic_vector(1 downto 0)
+	FMTxBuff_wreq		: in std_logic;
+	uWRDL 				: in std_logic_vector(1 downto 0)
 );
 end component;
 
@@ -673,7 +673,7 @@ component uController_interface is
     );
 end component;
 
-component ADC_Mux is
+component Mux is
     port (
         Clk_100MHz			: in std_logic;
     -- Microcontroller strobes

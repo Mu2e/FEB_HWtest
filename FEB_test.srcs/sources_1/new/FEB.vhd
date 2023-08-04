@@ -28,22 +28,22 @@ port(
 	VXO_P,VXO_N 			: in std_logic;
 	-- 100 MHz VXO clock
 --	ClkB_P, ClkB_N			: in std_logic;
---	-- AFE Data lines
---	AFE0Dat_P, AFE0Dat_N    : in std_logic_vector(7 downto 0); -- LVDS pairs from an AFE chip (8 channels)
---	AFE1Dat_P, AFE1Dat_N    : in std_logic_vector(7 downto 0);
---	-- AFE Input clocks
---	AFE0Clk_P, AFE0Clk_N    : out std_logic; -- Copy of 80MHz master clock sent to AFE chips
---	AFE1Clk_P, AFE1Clk_N    : out std_logic;
---	-- AFE clock, framing lines
---	AFEDCLK_P, AFEDCLK_N    : in std_logic_vector(1 downto 0); -- Unused in this design 
---	AFE0FCLK_P, AFE0FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
---	AFE1FCLK_P, AFE1FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
---	-- AFE serial control lines
---	AFEPDn 				    : buffer std_logic_vector(1 downto 0);
---	AFECS 				    : buffer std_logic_vector(1 downto 0);
---	AFERst 				    : buffer std_logic;
---	AFESClk, AFESDI  	    : buffer std_logic;
---	AFESDO 				    : in std_logic;
+	-- AFE Data lines
+	AFE0Dat_P, AFE0Dat_N    : in std_logic_vector(7 downto 0); -- LVDS pairs from an AFE chip (8 channels)
+	AFE1Dat_P, AFE1Dat_N    : in std_logic_vector(7 downto 0);
+	-- AFE Input clocks
+	AFE0Clk_P, AFE0Clk_N    : out std_logic; -- Copy of 80MHz master clock sent to AFE chips
+	AFE1Clk_P, AFE1Clk_N    : out std_logic;
+	-- AFE clock, framing lines
+	AFEDCLK_P, AFEDCLK_N    : in std_logic_vector(1 downto 0); -- Unused in this design 
+	AFE0FCLK_P, AFE0FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
+	AFE1FCLK_P, AFE1FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
+	-- AFE serial control lines
+	AFEPDn 				    : buffer std_logic_vector(1 downto 0);
+	AFECS 				    : buffer std_logic_vector(1 downto 0);
+	AFERst 				    : buffer std_logic;
+	AFESClk, AFESDI  	    : buffer std_logic;
+	AFESDO 				    : in std_logic;
 --	-- DDR3L pins
 --	DDR_DATA				: inout std_logic_vector(DATA_WIDTH-1 downto 0);
 --	DDR_ADDR				: out std_logic_vector(DDR3L_ADDR-1 downto 0);
@@ -77,14 +77,15 @@ port(
 	DACDat 					: buffer std_logic;
 	DACLd 					: buffer std_logic;
 	-- Chip dependent I/O functions
---	A7,LVDSTX 				: buffer std_logic;
+	A7						: out std_logic;
+	LVDSTX 					: out std_logic;
 	GPI0_N, GPI0_P			: in std_logic;
 	GPI1  					: in std_logic;
---	-- LED/Flash Gate select line
---	PulseSel 				: buffer std_logic;
---	-- LED pulser/Flash Gate
---	Pulse 					: out std_logic;
---	-- Temperature sensor lines
+	-- LED/Flash Gate select line
+	PulseSel 				: buffer std_logic;
+	-- LED pulser/Flash Gate
+	Pulse 					: out std_logic;
+	-- Temperature sensor lines
 	Temp					: inout std_logic_vector(3 downto 0);
 	-- Debug header 
 	DBG	 					: inout std_logic_vector(9 downto 1)
@@ -240,7 +241,7 @@ port map(
 	locked		=> PLL_locked
 );
 
-Mux : ADC_Mux
+ADC_Mux : Mux
 port map(
     Clk_100MHz		=> Clk_100MHz,
 -- Microcontroller strobes
@@ -261,109 +262,44 @@ port map(
 );
 
 
--- DDR : DDR_test
--- generic map(
--- 	-- DDR3L parameters
--- 	DATA_WIDTH		=> DATA_WIDTH,  -- 16 Both ARTY and FEB
--- 	DDR3L_ADDR		=> DDR3L_ADDR,  -- 14: ARTY 15: FEB
--- 	APP_ADDR		=> APP_ADDR 	-- 28: ARTY 29: FEB
--- )
--- port map(
--- 	Clk_100MHz		=> Clk_100MHz,
--- 	Clk_200MHz		=> Clk_200MHz,
--- 	SysClk			=> SysClk,	
--- 	ResetHi			=> ResetHi,
--- -- DDR3L pins
--- 	DDR_DATA		=> DDR_DATA,	
--- 	DDR_ADDR		=> DDR_ADDR,	
--- 	BA 				=> BA, 			
--- 	DDR_CKE	 		=> DDR_CKE,		
--- 	ODT 			=> ODT, 		
--- 	CS 				=> CS, 			
--- 	DM 				=> DM, 			
--- 	RAS				=> RAS,
--- 	CAS				=> CAS,		
--- 	DDR_WE 			=> DDR_WE, 		
--- 	DDR_CLKP        => DDR_CLKP,
--- 	DDR_CLKN 	    => DDR_CLKN,
--- 	LDQS_P          => LDQS_P,
--- 	LDQS_N 		    => LDQS_N, 	
--- 	UDQS_P          => UDQS_P,
--- 	UDQS_N 		    => UDQS_N, 	 	
--- 	RESET_N			=> DDR_RESET_N,
--- -- Microcontroller strobes
--- 	CpldRst			=> CpldRst,	
--- 	CpldCS			=> CpldCS,	
--- 	uCRd			=> uCRd,
--- 	uCWr 			=> uCWr, 	
--- -- Microcontroller data and address buses	
--- 	uCA 			=> uCA,
--- 	uCD 			=> uCD,
--- -- Geographic address pins
--- 	GA 				=> GA,
--- -- Synchronous edge detectors of uC read and write strobes
--- 	AddrReg			=> AddrReg,
--- 	WRDL 			=> WRDL,
--- 	RDDL			=> RDDL,
--- -- Debug
--- 	DBG	 			=> DBG
--- );
 
 
-
-ILA_uC : uC_ILA 
+AFE : AFE_Interface
 port map(
-	clk    	  => Clk_100MHz,-- std_logic;
-	probe0(0) => CpldRst, 	-- std_logic_vector(0 downto 0);
-    probe1(0) => CpldCS, 	-- std_logic_vector(0 downto 0);
-    probe2(0) => uCRd,		-- std_logic_vector(0 downto 0);
-    probe3(0) => uCWr,	 	-- std_logic_vector(0 downto 0);
-    probe4 	  => uCA,		-- std_logic_vector(11 downto 0);
-    probe5 	  => uCD,		-- std_logic_vector(15 downto 0);
-    probe6 	  => GA,		-- std_logic_vector(1 downto 0);
-	probe7	  => WRDL, 		-- std_logic_vector(1 downto 0);
-	probe8 	  => RDDL, 		-- std_logic_vector(1 downto 0);
-	probe9    => uWRDL,		-- std_logic_vector(1 downto 0);
-	probe10	  => uRDDL 		-- std_logic_vector(1 downto 0)	
+	AFE0Dat_P		=> AFE0Dat_P,
+	AFE0Dat_N       => AFE0Dat_N,
+	AFE1Dat_P       => AFE1Dat_P,
+	AFE1Dat_N       => AFE1Dat_N,
+	AFE0Clk_P       => AFE0Clk_P,
+	AFE0Clk_N       => AFE0Clk_N,
+	AFE1Clk_P       => AFE1Clk_P,
+	AFE1Clk_N       => AFE1Clk_N,
+	
+	AFEDCLK_P       => AFEDCLK_P, -- unused
+	AFEDCLK_N       => AFEDCLK_N, -- unused
+	
+	AFE0FCLK_P      => AFE0FCLK_P,
+	AFE0FCLK_N      => AFE0FCLK_N,
+	AFE1FCLK_P      => AFE1FCLK_P,
+	AFE1FCLK_N      => AFE1FCLK_N,
+	
+	AFEPDn 		    => AFEPDn,
+	AFECS 		    => AFECS,
+	AFERst 		    => AFERst,
+	AFESClk         => AFESClk,
+	AFESDI  	    => AFESDI,
+	AFESDO 		    => AFESDO,
+-- FPGA interface
+	Clk_80MHz		=> Clk_80MHz,			  
+	Clk_560MHz		=> Clk_560MHz,			  
+	Clk_200MHz		=> Clk_200MHz,			  
+	reset			=> SerdesRst(0) or SerdesRst(1),				  
+	done			=> done,				  
+	warn			=> warn,				  
+	dout_AFE0		=> dout_AFE0,				  
+	dout_AFE1		=> dout_AFE1
 );
 
-
---AFE_Interface_inst : AFE_Interface
---port map(
---	AFE0Dat_P		=> AFE0Dat_P,
---	AFE0Dat_N       => AFE0Dat_N,
---	AFE1Dat_P       => AFE1Dat_P,
---	AFE1Dat_N       => AFE1Dat_N,
---	AFE0Clk_P       => AFE0Clk_P,
---	AFE0Clk_N       => AFE0Clk_N,
---	AFE1Clk_P       => AFE1Clk_P,
---	AFE1Clk_N       => AFE1Clk_N,
---	
---	AFEDCLK_P       => AFEDCLK_P, -- unused
---	AFEDCLK_N       => AFEDCLK_N, -- unused
---	
---	AFE0FCLK_P      => AFE0FCLK_P,
---	AFE0FCLK_N      => AFE0FCLK_N,
---	AFE1FCLK_P      => AFE1FCLK_P,
---	AFE1FCLK_N      => AFE1FCLK_N,
---	
---	AFEPDn 		    => AFEPDn,
---	AFECS 		    => AFECS,
---	AFERst 		    => AFERst,
---	AFESClk         => AFESClk,
---	AFESDI  	    => AFESDI,
---	AFESDO 		    => AFESDO,
----- FPGA interface
---	Clk_80MHz		=> Clk_80MHz,			  
---	Clk_560MHz		=> Clk_560MHz,			  
---	Clk_200MHz		=> Clk_200MHz,			  
---	reset			=> SerdesRst(0) or SerdesRst(1),				  
---	done			=> done,				  
---	warn			=> warn,				  
---	dout_AFE0		=> dout_AFE0,				  
---	dout_AFE1		=> dout_AFE1
---);
---
 --AFE_DataPath_inst : AFE_DataPath
 --port map (
 --	Clk_80MHz	    => Clk_80MHz,		
@@ -403,19 +339,19 @@ port map(
 ---- Geographic address pins
 --	GA              => GA 
 --);
---
---Phase_Detector_inst: Phase_Detector
---port map(
---	SysClk 			=> SysClk,	-- 160 MHz			    
---	CpldRst			=> CpldRst,				
---	GA 				=> GA,				
---	A7		 		=> A7,			
---	GPI0			=> GPI0,
---	TrgSrc			=> TrgSrc, 					
---	GPO				=> GPO
---);
---
---
+
+Phase_Detector_inst: Phase_Detector
+port map(
+	SysClk 			=> SysClk,	-- 160 MHz			    
+	CpldRst			=> CpldRst,				
+	GA 				=> GA,				
+	A7		 		=> A7,			
+	GPI0			=> GPI0,
+	TrgSrc			=> TrgSrc, 					
+	GPO				=> GPO
+);
+
+
 --Trigger_logic: Trigger 
 --port map(
 --  	SysClk			=> SysClk, -- 160 MHz
@@ -530,6 +466,55 @@ port map(
 --	RDDL			=> RDDL
 --);
 --
+
+-- DDR : DDR_test
+-- generic map(
+-- 	-- DDR3L parameters
+-- 	DATA_WIDTH		=> DATA_WIDTH,  -- 16 Both ARTY and FEB
+-- 	DDR3L_ADDR		=> DDR3L_ADDR,  -- 14: ARTY 15: FEB
+-- 	APP_ADDR		=> APP_ADDR 	-- 28: ARTY 29: FEB
+-- )
+-- port map(
+-- 	Clk_100MHz		=> Clk_100MHz,
+-- 	Clk_200MHz		=> Clk_200MHz,
+-- 	SysClk			=> SysClk,	
+-- 	ResetHi			=> ResetHi,
+-- -- DDR3L pins
+-- 	DDR_DATA		=> DDR_DATA,	
+-- 	DDR_ADDR		=> DDR_ADDR,	
+-- 	BA 				=> BA, 			
+-- 	DDR_CKE	 		=> DDR_CKE,		
+-- 	ODT 			=> ODT, 		
+-- 	CS 				=> CS, 			
+-- 	DM 				=> DM, 			
+-- 	RAS				=> RAS,
+-- 	CAS				=> CAS,		
+-- 	DDR_WE 			=> DDR_WE, 		
+-- 	DDR_CLKP        => DDR_CLKP,
+-- 	DDR_CLKN 	    => DDR_CLKN,
+-- 	LDQS_P          => LDQS_P,
+-- 	LDQS_N 		    => LDQS_N, 	
+-- 	UDQS_P          => UDQS_P,
+-- 	UDQS_N 		    => UDQS_N, 	 	
+-- 	RESET_N			=> DDR_RESET_N,
+-- -- Microcontroller strobes
+-- 	CpldRst			=> CpldRst,	
+-- 	CpldCS			=> CpldCS,	
+-- 	uCRd			=> uCRd,
+-- 	uCWr 			=> uCWr, 	
+-- -- Microcontroller data and address buses	
+-- 	uCA 			=> uCA,
+-- 	uCD 			=> uCD,
+-- -- Geographic address pins
+-- 	GA 				=> GA,
+-- -- Synchronous edge detectors of uC read and write strobes
+-- 	AddrReg			=> AddrReg,
+-- 	WRDL 			=> WRDL,
+-- 	RDDL			=> RDDL,
+-- -- Debug
+-- 	DBG	 			=> DBG
+-- );
+
 -- Read the temperature/ID chip on the four connectoed CMBs
 OneWire : One_Wire 
 port map(
@@ -548,28 +533,28 @@ port map(
 );
 
 
----- Data written from the uC to the LVDS Tx port
---uC_to_LVDSTX : LVDS_TX
---port map(
---	Clk_100MHz		=> Clk_100MHz,
---	ResetHi			=> ResetHi,
---	FMTxBuff_wreq	=> FMTxBuff_wreq,
----- Microcontroller data and address buses
---	uCA 			=> uCA,
---	uCD 			=> uCD,
----- Microcontroller strobes
---	CpldRst			=> CpldRst,		
---	CpldCS			=> CpldCS,	
---	uCRd			=> uCRd,	
---	uCWr 			=> uCWr, 		
----- Geographic address pins
---	GA 				=> GA,
----- Chip dipendent I/O functions 
---	LVDSTX 			=> LVDSTX,
----- Global signal
---	uWRDL			=> uWRDL
---);
---
+-- Data written from the uC to the LVDS Tx port
+uC_to_LVDSTX : LVDS_TX
+port map(
+	Clk_100MHz		=> Clk_100MHz,
+	ResetHi			=> ResetHi,
+	FMTxBuff_wreq	=> FMTxBuff_wreq,
+-- Microcontroller data and address buses
+	uCA 			=> uCA,
+	uCD 			=> uCD,
+-- Microcontroller strobes
+	CpldRst			=> CpldRst,		
+	CpldCS			=> CpldCS,	
+	uCRd			=> uCRd,	
+	uCWr 			=> uCWr, 		
+-- Geographic address pins
+	GA 				=> GA,
+-- Chip dipendent I/O functions 
+	LVDSTX 			=> LVDSTX,
+-- Global signal
+	uWRDL			=> uWRDL
+);
+
 uControllerRegister : uController_interface 
 port map(
 	Clk_100MHz		=> Clk_100MHz,
@@ -636,5 +621,25 @@ uCD <= iCD when uCRd = '0' and CpldCS = '0' and uCA(11 downto 10) = GA
 -- else 'Z'&'Z'&'Z'&'Z'&'Z'&'Z'&'Z'&'Z'& DRAMRdBuffEmpty &'Z'&'Z'&'Z'
 -- 		& PageRdStat &'Z'&'Z'&'Z' when uCRd = '0' and CpldCS = '0' and GA = "11" and uCA(9 downto 0) = PageStatAddr 
 else (others => 'Z');
+
+
+
+
+ILA_uC : uC_ILA 
+port map(
+	clk    	  => Clk_100MHz,-- std_logic;
+	probe0(0) => CpldRst, 	-- std_logic_vector(0 downto 0);
+	probe1(0) => CpldCS, 	-- std_logic_vector(0 downto 0);
+	probe2(0) => uCRd,		-- std_logic_vector(0 downto 0);
+	probe3(0) => uCWr,	 	-- std_logic_vector(0 downto 0);
+	probe4 	  => uCA,		-- std_logic_vector(11 downto 0);
+	probe5 	  => uCD,		-- std_logic_vector(15 downto 0);
+	probe6 	  => GA,		-- std_logic_vector(1 downto 0);
+	probe7	  => WRDL, 		-- std_logic_vector(1 downto 0);
+	probe8 	  => RDDL, 		-- std_logic_vector(1 downto 0);
+	probe9    => uWRDL,		-- std_logic_vector(1 downto 0);
+	probe10	  => uRDDL 		-- std_logic_vector(1 downto 0)	
+);
+
 
 end behavioural;

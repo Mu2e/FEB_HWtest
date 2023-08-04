@@ -28,7 +28,7 @@ use UNISIM.vcomponents.all;
 use work.Proj_Def.all;
 use work.Debug_ILA.all;
 
-entity ADC_Mux is
+entity Mux is
     port (
         Clk_100MHz			: in std_logic;
     -- Microcontroller strobes
@@ -47,9 +47,9 @@ entity ADC_Mux is
         MuxSelReg           : out std_logic_vector(2 downto 0);
         MuxadReg            : out std_logic_vector(1 downto 0)    
     );
-end ADC_Mux;
+end Mux;
 
-architecture Behavioral of ADC_Mux is
+architecture Behavioral of Mux is
 
 begin 
 
