@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Fri Aug  4 13:40:21 2023
+| Date             : Mon Aug  7 11:01:14 2023
 | Host             : CD-135239 running 64-bit major release  (build 9200)
 | Command          : report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
 | Design           : FEB
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.215        |
+| Total On-Chip Power (W)  | 0.426        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.143        |
+| Dynamic (W)              | 0.354        |
 | Device Static (W)        | 0.071        |
 | Effective TJA (C/W)      | 2.9          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 83.8         |
+| Junction Temperature (C) | 26.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.025 |        7 |       --- |             --- |
-| Slice Logic              |     0.004 |    13141 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     3713 |     32600 |           11.39 |
+| Clocks                   |     0.026 |       10 |       --- |             --- |
+| Slice Logic              |     0.004 |    13155 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     3726 |     32600 |           11.43 |
 |   Register               |    <0.001 |     6096 |     65200 |            9.35 |
 |   LUT as Distributed RAM |    <0.001 |      152 |      9600 |            1.58 |
 |   CARRY4                 |    <0.001 |      237 |      8150 |            2.91 |
 |   LUT as Shift Register  |    <0.001 |      632 |      9600 |            6.58 |
 |   F7/F8 Muxes            |    <0.001 |      144 |     32600 |            0.44 |
-|   Others                 |     0.000 |      943 |       --- |             --- |
-| Signals                  |     0.005 |     8495 |       --- |             --- |
+|   Others                 |     0.000 |      945 |       --- |             --- |
+| Signals                  |     0.005 |     8503 |       --- |             --- |
 | Block RAM                |     0.001 |        2 |        75 |            2.67 |
-| MMCM                     |     0.097 |        1 |         5 |           20.00 |
-| I/O                      |     0.012 |       65 |       250 |           26.00 |
+| MMCM                     |     0.209 |        2 |         5 |           40.00 |
+| I/O                      |     0.109 |       69 |       250 |           27.60 |
 | Static Power             |     0.071 |          |           |                 |
-| Total                    |     0.215 |          |           |                 |
+| Total                    |     0.426 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,10 +76,10 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.047 |       0.037 |      0.010 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.069 |       0.056 |      0.013 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.048 |       0.038 |      0.010 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.131 |       0.119 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco25    |       2.500 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.042 |       0.041 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -131,9 +131,12 @@ Table of Contents
 | Clock                                                                                      | Domain                                                            | Constraint (ns) |
 +--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
 | Clk_100MHz_PLL_0                                                                           | PLL/inst/Clk_100MHz_PLL_0                                         |            10.0 |
+| Clk_80MHz_PLL_AFE_1                                                                        | HF_PLL/inst/Clk_80MHz_PLL_AFE                                     |            12.5 |
+| SysClk_PLL_0                                                                               | PLL/inst/SysClk                                                   |             6.3 |
 | SysClk_PLL_0                                                                               | PLL/inst/SysClk_PLL_0                                             |             6.3 |
 | VXO_P                                                                                      | VXO_P                                                             |             6.3 |
 | clkfbout_PLL_0                                                                             | PLL/inst/clkfbout_PLL_0                                           |             6.3 |
+| clkfbout_PLL_AFE_1                                                                         | HF_PLL/inst/clkfbout_PLL_AFE                                      |             6.3 |
 | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TCK |            33.0 |
 +--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
 
@@ -147,13 +150,18 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| FEB                      |     0.143 |
-|   ILA_uC                 |     0.027 |
-|     U0                   |     0.027 |
-|       ila_core_inst      |     0.027 |
+| FEB                      |     0.354 |
+|   AFE                    |     0.097 |
+|   HF_PLL                 |     0.113 |
+|     inst                 |     0.113 |
+|   ILA_uC                 |     0.026 |
+|     U0                   |     0.026 |
+|       ila_core_inst      |     0.026 |
+|   OneWire                |     0.001 |
 |   PLL                    |     0.100 |
 |     inst                 |     0.100 |
 |   Trigger_logic          |     0.002 |
+|     FMRx1                |     0.001 |
 |   dbg_hub                |     0.002 |
 |     inst                 |     0.002 |
 |       BSCANID.u_xsdbm_id |     0.002 |

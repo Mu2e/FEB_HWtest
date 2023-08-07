@@ -1,0 +1,3 @@
+PLL_AFE_clk_wiz.v,verilog,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE_clk_wiz.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
+PLL_AFE.v,verilog,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
+glbl.v,Verilog,xil_defaultlib,glbl.v

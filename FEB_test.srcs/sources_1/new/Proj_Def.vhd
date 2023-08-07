@@ -853,5 +853,17 @@ component PLL_0
 	locked				: out std_logic
  );
  end component;
+
+
+component PLL_AFE 
+ port (
+	clk_in1				: in std_logic;
+	resetn				: in std_logic;
+   
+	Clk_80MHz			: out std_logic;
+	Clk_560MHz			: out std_logic;
+	locked				: out std_logic
+);
+end component;
  
 end package;

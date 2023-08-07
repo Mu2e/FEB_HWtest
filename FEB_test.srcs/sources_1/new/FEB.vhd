@@ -25,19 +25,21 @@ use work.Debug_ILA.all;
 entity FEB is
 port(
 	-- 160 MHz VXO clock
-	VXO_P,VXO_N 			: in std_logic;
+	VXO_P, VXO_N			: in std_logic;
 	-- 100 MHz VXO clock
 --	ClkB_P, ClkB_N			: in std_logic;
 	-- AFE Data lines
-	AFE0Dat_P, AFE0Dat_N    : in std_logic_vector(7 downto 0); -- LVDS pairs from an AFE chip (8 channels)
-	AFE1Dat_P, AFE1Dat_N    : in std_logic_vector(7 downto 0);
+	AFE0Dat_P   			: in std_logic_vector(7 downto 0); -- LVDS pairs from an AFE chip (8 channels)
+	AFE0Dat_N    			: in std_logic_vector(7 downto 0); 
+	AFE1Dat_P 				: in std_logic_vector(7 downto 0);
+	AFE1Dat_N    			: in std_logic_vector(7 downto 0);
 	-- AFE Input clocks
---	AFE0Clk_P, AFE0Clk_N    : out std_logic; -- Copy of 80MHz master clock sent to AFE chips
---	AFE1Clk_P, AFE1Clk_N    : out std_logic;
+	AFE0Clk_P, AFE0Clk_N	: out std_logic; -- Copy of 80MHz master clock sent to AFE chips
+	AFE1Clk_P, AFE1Clk_N    : out std_logic;
 	-- AFE clock, framing lines
-	AFEDCLK_P, AFEDCLK_N    : in std_logic_vector(1 downto 0); -- Unused in this design 
-	AFE0FCLK_P, AFE0FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
-	AFE1FCLK_P, AFE1FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
+	AFEDCLK_P, AFEDCLK_N	: in std_logic_vector(1 downto 0); -- Unused in this design 
+	AFE0FCLK_P, AFE0FCLK_N	: in std_logic; -- LVDS pairs of the Frame Clock
+	AFE1FCLK_P, AFE1FCLK_N	: in std_logic; -- LVDS pairs of the Frame Clock
 	-- AFE serial control lines
 	AFEPDn 				    : buffer std_logic_vector(1 downto 0);
 	AFECS 				    : buffer std_logic_vector(1 downto 0);
@@ -79,7 +81,8 @@ port(
 	-- Chip dependent I/O functions
 	A7						: out std_logic;
 	LVDSTX 					: out std_logic;
-	GPI0_N, GPI0_P			: in std_logic;
+	GPI0_N					: in std_logic;
+	GPI0_P					: in std_logic;
 	GPI1  					: in std_logic;
 	-- LED/Flash Gate select line
 	PulseSel 				: out std_logic;
@@ -112,6 +115,7 @@ signal uAddrReg				  : std_logic_vector(11 downto 0);
 
 -- PLL signals 
 signal PLL_locked 			  : std_logic;
+signal HFPLL_locked	 		  : std_logic;			
 
 -- Trigger logic signals
 signal TrigReq		          : std_logic;
@@ -243,6 +247,18 @@ port map(
 	locked		=> PLL_locked
 );
 
+HF_PLL : PLL_AFE 
+port map(
+	clk_in1		=> SysClk,
+	resetn		=> CpldRst,
+
+	Clk_80MHz	=> Clk_80MHz,
+	Clk_560MHz	=> Clk_560MHz,
+	locked		=> HFPLL_locked
+);
+
+
+
 ADC_Mux : Mux
 port map(
     Clk_100MHz		=> Clk_100MHz,
@@ -266,41 +282,41 @@ port map(
 
 
 
---AFE : AFE_Interface
---port map(
---	AFE0Dat_P		=> AFE0Dat_P,
---	AFE0Dat_N       => AFE0Dat_N,
---	AFE1Dat_P       => AFE1Dat_P,
---	AFE1Dat_N       => AFE1Dat_N,
---	AFE0Clk_P       => AFE0Clk_P,
---	AFE0Clk_N       => AFE0Clk_N,
---	AFE1Clk_P       => AFE1Clk_P,
---	AFE1Clk_N       => AFE1Clk_N,
---	
---	AFEDCLK_P       => AFEDCLK_P, -- unused
---	AFEDCLK_N       => AFEDCLK_N, -- unused
---	
---	AFE0FCLK_P      => AFE0FCLK_P,
---	AFE0FCLK_N      => AFE0FCLK_N,
---	AFE1FCLK_P      => AFE1FCLK_P,
---	AFE1FCLK_N      => AFE1FCLK_N,
---	
---	AFEPDn 		    => AFEPDn,
---	AFECS 		    => AFECS,
---	AFERst 		    => AFERst,
---	AFESClk         => AFESClk,
---	AFESDI  	    => AFESDI,
---	AFESDO 		    => AFESDO,
----- FPGA interface
---	Clk_80MHz		=> Clk_80MHz,			  
---	Clk_560MHz		=> Clk_560MHz,			  
---	Clk_200MHz		=> Clk_200MHz,			  
---	reset			=> SerdesRst(0) or SerdesRst(1),				  
---	done			=> done,				  
---	warn			=> warn,				  
---	dout_AFE0		=> dout_AFE0,				  
---	dout_AFE1		=> dout_AFE1
---);
+AFE : AFE_Interface
+port map(
+	AFE0Dat_P		=> AFE0Dat_P,
+	AFE0Dat_N       => AFE0Dat_N,
+	AFE1Dat_P       => AFE1Dat_P,
+	AFE1Dat_N       => AFE1Dat_N,
+	AFE0Clk_P       => AFE0Clk_P,
+	AFE0Clk_N       => AFE0Clk_N,
+	AFE1Clk_P       => AFE1Clk_P,
+	AFE1Clk_N       => AFE1Clk_N,
+	
+	AFEDCLK_P       => AFEDCLK_P, -- unused
+	AFEDCLK_N       => AFEDCLK_N, -- unused
+	
+	AFE0FCLK_P      => AFE0FCLK_P,
+	AFE0FCLK_N      => AFE0FCLK_N,
+	AFE1FCLK_P      => AFE1FCLK_P,
+	AFE1FCLK_N      => AFE1FCLK_N,
+	
+	AFEPDn 		    => AFEPDn,
+	AFECS 		    => AFECS,
+	AFERst 		    => AFERst,
+	AFESClk         => AFESClk,
+	AFESDI  	    => AFESDI,
+	AFESDO 		    => AFESDO,
+-- FPGA interface
+	Clk_80MHz		=> Clk_80MHz,			  
+	Clk_560MHz		=> Clk_560MHz,			  
+	Clk_200MHz		=> Clk_200MHz,			  
+	reset			=> SerdesRst(0) or SerdesRst(1),				  
+	done			=> done,				  
+	warn			=> warn,				  
+	dout_AFE0		=> dout_AFE0,				  
+	dout_AFE1		=> dout_AFE1
+);
 
 --AFE_DataPath_inst : AFE_DataPath
 --port map (
