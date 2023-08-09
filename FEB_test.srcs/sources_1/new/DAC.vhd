@@ -101,7 +101,7 @@ signal Counter1us  : std_logic_vector (7 downto 0);
 signal Counter10us : std_logic_vector (10 downto 0);
 signal Counter1ms  : std_logic_vector (17 downto 0); 
 signal Count100ms  : std_logic_vector (6 downto 0);
-signal Counter1s   : std_logic_vector (27 downto 0);
+
 
 begin 
 
@@ -133,7 +133,6 @@ begin
         Counter1us      <= (others => '0');
         Counter10us     <= (others => '0'); 
         Counter1ms      <= (others => '0');
-        Counter1s       <= (others => '0');
         uSecCounter     <= (others => '0');
 
     elsif rising_edge (Clk_100MHz) then  
@@ -154,12 +153,6 @@ begin
             Counter1ms <= (others => '0');
         else 
             Counter1ms <= Counter1ms + 1;
-        end if;
-        -- 1 second time base
-        if	Counter1s = Count1s then 
-            Counter1s <= (others => '0');
-        else
-            Counter1s <= Counter1s + 1; 
         end if;
 
         -- Time base for alignment sequence

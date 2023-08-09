@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Aug  9 11:31:59 2023
+| Date         : Wed Aug  9 12:30:38 2023
 | Host         : CD-135239 running 64-bit major release  (build 9200)
 | Command      : report_drc -file FEB_drc_routed.rpt -pb FEB_drc_routed.pb -rpx FEB_drc_routed.rpx
 | Design       : FEB
@@ -53,7 +53,7 @@ IOSR-1#1 Warning
 IOB set reset sharing  
 IO uCD[0] connects to flops which have these ADC_Mux/MuxEn[3]_i_3_n_0, AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0,
 DACControl/DACCS[2]_i_2_n_0, OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0
-Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#2 Warning
@@ -70,52 +70,52 @@ IOSR-1#4 Warning
 IOB set reset sharing  
 IO uCD[1] connects to flops which have these ADC_Mux/MuxEn[3]_i_3_n_0, AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0,
 DACControl/DACCS[2]_i_2_n_0, OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0
-Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#5 Warning
 IOB set reset sharing  
 IO uCD[2] connects to flops which have these ADC_Mux/MuxEn[3]_i_3_n_0, AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0,
 DACControl/DACCS[2]_i_2_n_0, OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0
-Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#6 Warning
 IOB set reset sharing  
 IO uCD[3] connects to flops which have these ADC_Mux/MuxEn[3]_i_3_n_0, AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0,
 DACControl/DACCS[2]_i_2_n_0, OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0
-Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#7 Warning
 IOB set reset sharing  
 IO uCD[4] connects to flops which have these ADC_Mux/MuxEn[3]_i_3_n_0, AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0,
 DACControl/DACCS[2]_i_2_n_0, OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0
-Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#8 Warning
 IOB set reset sharing  
 IO uCD[5] connects to flops which have these AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0, DACControl/DACCS[2]_i_2_n_0,
-OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0, Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0, Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#9 Warning
 IOB set reset sharing  
 IO uCD[6] connects to flops which have these AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0, DACControl/DACCS[2]_i_2_n_0,
-OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0, Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0, Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#10 Warning
 IOB set reset sharing  
 IO uCD[7] connects to flops which have these AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0, DACControl/DACCS[2]_i_2_n_0,
-OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0, Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+OneWire/FSM_onehot_OneWireSeq[7]_i_2_n_0, Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#11 Warning
 IOB set reset sharing  
 IO uCD[8] connects to flops which have these AFE_DataPath_inst/AFE_Pipeline_inst/CpldRst_0, DACControl/DACCS[2]_i_2_n_0
-Trigger_logic/FMRx1/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Trigger_logic/FMRx1/AR[0] set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 IOSR-1#12 Warning
@@ -125,32 +125,32 @@ Related violations: <none>
 
 PDCN-1569#1 Warning
 LUT equation term check  
-Used physical LUT pin 'A1' of cell DACControl/CmdFifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin DACControl/CmdFifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A6)*A5)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A1' of cell uC_to_LVDSTX/FMTx_Buff/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin uC_to_LVDSTX/FMTx_Buff/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A5)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#2 Warning
 LUT equation term check  
-Used physical LUT pin 'A1' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I0) is not included in the LUT equation: 'O5=(A2*A3)+(A2*(~A3)*(~A4))+((~A2))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A2' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I0) is not included in the LUT equation: 'O5=(A1*A5)+(A1*(~A5)*(~A4))+((~A1))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#3 Warning
 LUT equation term check  
-Used physical LUT pin 'A3' of cell EventBuilder_logic/uBunchBuffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin EventBuilder_logic/uBunchBuffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A5)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A2' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1/I0) is not included in the LUT equation: 'O6=(A6+~A6)*((A3))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#4 Warning
 LUT equation term check  
-Used physical LUT pin 'A3' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1/I0) is not included in the LUT equation: 'O6=(A6+~A6)*((A2))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A3' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I1) is not included in the LUT equation: 'O5=(A1*A5)+(A1*(~A5)*(~A4))+((~A1))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#5 Warning
 LUT equation term check  
-Used physical LUT pin 'A4' of cell uC_to_LVDSTX/FMTx_Buff/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin uC_to_LVDSTX/FMTx_Buff/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A1)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A5' of cell DACControl/CmdFifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin DACControl/CmdFifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A4)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 PDCN-1569#6 Warning
 LUT equation term check  
-Used physical LUT pin 'A5' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I1) is not included in the LUT equation: 'O5=(A2*A3)+(A2*(~A3)*(~A4))+((~A2))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Used physical LUT pin 'A5' of cell EventBuilder_logic/uBunchBuffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin EventBuilder_logic/uBunchBuffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O6=(A1)+((~A1)*(~A6)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
 Related violations: <none>
 
 REQP-1839#1 Warning

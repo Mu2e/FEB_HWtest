@@ -67,7 +67,15 @@ entity AFE_DataPath is
 -- Geographic address pins
 	GA 					: in std_logic_vector(1 downto 0);
 -- Global signals
-	WRDL 				: in std_logic_vector(1 downto 0)
+	WRDL 				: in std_logic_vector(1 downto 0);
+-- uController status registers
+	PipelineSet 		: buffer std_logic_vector (7 downto 0);
+	In_Seq_Stat 		: buffer Array_2x8x4;
+	ControllerNo 		: buffer std_logic_vector (4 downto 0);
+	PortNo 				: buffer std_logic_vector (4 downto 0);
+	BeamOnLength 		: buffer std_logic_vector (11 downto 0);
+	BeamOffLength 		: buffer std_logic_vector (11 downto 0);
+	ADCSmplCntReg 		: buffer std_logic_vector (3 downto 0)
 
 	);
 end AFE_DataPath;
@@ -89,7 +97,7 @@ Type Input_Seq_FSM is (Idle,Increment,WrtChanNo,WrtTimeStamp,WrtHits,
 Type In_Seq_Array is Array(0 to 7) of Input_Seq_FSM;						
 Type In_Seq_Array_2x8 is Array(0 to 1) of In_Seq_Array;
 signal Input_Seqs : In_Seq_Array_2x8;						
-signal In_Seq_Stat : Array_2x8x4;
+
 
 
 signal ADCSmplCntr 		: Array_2x8x4;
@@ -112,15 +120,6 @@ signal Ped_Avg 			: Arrays_8x2x16;
 signal Avg_En 			: Array_2x8;
 signal IntTrgThresh 	: Arrays_8x2x14;
 
--- Signals from uC
-signal	ControllerNo 		: std_logic_vector (4 downto 0);
-signal	PortNo 				: std_logic_vector (4 downto 0);
-signal	BeamOnLength 		: std_logic_vector (11 downto 0);
-signal	BeamOffLength 		: std_logic_vector (11 downto 0);
-signal	ADCSmplCntReg 		: std_logic_vector (3 downto 0);
-
--- Pipeline signals
-signal PipelineSet 			: std_logic_vector (7 downto 0);	
 	
 -- attribute mark_debug : string;
 -- attribute mark_debug of AsyncRst 		 : signal is "true";

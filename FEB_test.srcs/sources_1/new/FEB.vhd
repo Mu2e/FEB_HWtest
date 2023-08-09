@@ -139,11 +139,11 @@ signal SerdesRst			  : std_logic_vector(1 downto 0);
 signal TrgSrc		          : std_logic;
 --... for AFE_DataPath
 signal PipelineSet 			  : std_logic_vector (7 downto 0);
-signal ControllerNo 		  : std_logic_vector (4 downto 0):= "00000";
-signal PortNo 				  : std_logic_vector (4 downto 0):= "00000";
-signal BeamOnLength 		  : std_logic_vector (11 downto 0) := X"050";
-signal BeamOffLength 		  : std_logic_vector (11 downto 0) := X"700";
-signal ADCSmplCntReg 		  : std_logic_vector (3 downto 0) := X"8";
+signal ControllerNo 		  : std_logic_vector (4 downto 0);
+signal PortNo 				  : std_logic_vector (4 downto 0);
+signal BeamOnLength 		  : std_logic_vector (11 downto 0);
+signal BeamOffLength 		  : std_logic_vector (11 downto 0);
+signal ADCSmplCntReg 		  : std_logic_vector (3 downto 0);
 
 -- Histogram signals from AFE_DataPath
 signal Diff_Reg				  : Arrays_8x2x14;
@@ -154,6 +154,7 @@ signal GateReq 				  : std_logic_vector (1 downto 0);
 signal MaskReg				  : Array_2x8;
 signal BufferRdAdd			  : Array_2x8x10;
 signal BufferOut 			  : Array_2x8x16;
+signal 	startEVB			  : Array_2x8;
 -- Signals Event Builder
 signal EvBuffRd				  : std_logic;
 signal EvBuffOut	          : std_logic_vector(15 downto 0);
@@ -177,8 +178,11 @@ signal FlashEn  			  : std_logic;
 signal FMTxBuff_empty 		  : std_logic;
 signal FMTxBuff_full  		  : std_logic;
 signal AlignReq				  : std_logic_vector (1 downto 0);         
-
-signal 	startEVB			  : Array_2x8;
+signal In_Seq_Stat 			  : Array_2x8x4;
+signal TurnOnTime  			  : std_logic_vector (8 downto 0);
+signal TurnOffTime 			  : std_logic_vector (8 downto 0);
+signal LEDTime	   			  : std_logic_vector (8 downto 0);
+signal TmgSrcSel			  : std_logic; 
 
 attribute mark_debug : string;
 attribute mark_debug of uAddrReg: signal is "false";
@@ -379,7 +383,15 @@ port map (
 -- Geographic address pins
 	GA              => GA,
 -- Synchronous edge detectors of uC read and write strobes
-	WRDL 			=> WRDL	 
+	WRDL 			=> WRDL,
+-- uController status registers	
+	PipelineSet 	=> PipelineSet,
+	In_Seq_Stat 	=> In_Seq_Stat,
+	ControllerNo 	=> ControllerNo,
+	PortNo 			=> PortNo,
+	BeamOnLength 	=> BeamOnLength,
+	BeamOffLength 	=> BeamOffLength, 	
+	ADCSmplCntReg 	=> ADCSmplCntReg	
 );
 
 Phase_Detector_inst: Phase_Detector
@@ -425,7 +437,11 @@ port map(
 	GPI0 			=> GPI0,
 	LEDSrc 			=> LEDSrc,
 -- uController status registers
-	FlashEn  		=> FlashEn
+	FlashEn  		=> FlashEn,
+	TurnOnTime  	=> TurnOnTime,
+	TurnOffTime 	=> TurnOffTime,
+	LEDTime	   		=> LEDTime,
+	TmgSrcSel		=> TmgSrcSel
 );
 
 EventBuilder_logic :  EventBuilder
@@ -599,6 +615,7 @@ port map(
 	Clk_100MHz		=> Clk_100MHz,
 	-- Microcontroller strobes
 	CpldRst			=> CpldRst,	
+	CpldCS			=> CpldCS,
 	-- Microcontroller data and address buses
 	uCA 			=> uCA,
 	uCD 			=> uCD,
@@ -617,12 +634,28 @@ port map(
 	FlashEn  		=> FlashEn, 	         
 	PulseSel 		=> PulseSel,
 	LEDSrc			=> LEDSrc,
+	TurnOnTime  	=> TurnOnTime,
+	TurnOffTime 	=> TurnOffTime, 
+	LEDTime	   		=> LEDTime, 
+	TmgSrcSel		=> TmgSrcSel, 
+	SlfTrgEn 		=> SlfTrgEn,
+	uBunch   		=> uBunch, 
 	-- LVDS logic
 	FMTxBuff_full	=> FMTxBuff_full,
 	FMTxBuff_empty	=> FMTxBuff_empty,
+	-- AFE Logic
 	AFEPDn			=> AFEPDn,
 	-- DAC Logic	
-	AlignReq        => AlignReq
+	AlignReq        => AlignReq,
+	-- AFE DataPath logic
+	PipelineSet 	=> PipelineSet, 
+	MaskReg			=> MaskReg,		
+	In_Seq_Stat 	=> In_Seq_Stat, 
+	ControllerNo 	=> ControllerNo, 
+	PortNo 			=> PortNo, 		
+	BeamOnLength 	=> BeamOnLength, 
+	BeamOffLength 	=> BeamOffLength,
+	ADCSmplCntReg 	=> ADCSmplCntReg 
   );
 --
 --

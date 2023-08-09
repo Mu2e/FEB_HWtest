@@ -33,6 +33,7 @@ entity uController_interface is
         Clk_100MHz			: in std_logic;
     -- Microcontroller strobes
         CpldRst				: in std_logic;
+		CpldCS				: in std_logic;
     -- Microcontroller data and address buses	
         uCA 				: in std_logic_vector(11 downto 0);
         uCD 				: in std_logic_vector(15 downto 0);
@@ -52,20 +53,39 @@ entity uController_interface is
 		FlashEn  			: in std_logic; 	         
 		PulseSel 			: in std_logic;
 		LEDSrc				: in std_logic;
+		TurnOnTime  		: in std_logic_vector (8 downto 0);
+		TurnOffTime 		: in std_logic_vector (8 downto 0);
+		LEDTime	   			: in std_logic_vector (8 downto 0);
+		TmgSrcSel			: in std_logic; 
+		SlfTrgEn 			: in std_logic;
+		uBunch   			: in std_logic_vector(31 downto 0);
 	-- LVDS logic
 		FMTxBuff_full		: in std_logic;
 		FMTxBuff_empty		: in std_logic;
 	-- AFE Logic
 		AFEPDn				: in std_logic_vector(1 downto 0);
-	-- DAC Logic
-		AlignReq            : in std_logic_vector (1 downto 0)
-    );
+	-- DAC logic
+		AlignReq            : in std_logic_vector (1 downto 0);
+	-- AFE DataPath logic
+		PipelineSet 		: in std_logic_vector (7 downto 0);
+		MaskReg				: in Array_2x8;
+		In_Seq_Stat 		: in Array_2x8x4;
+		ControllerNo 		: in std_logic_vector (4 downto 0);
+		PortNo 				: in std_logic_vector (4 downto 0);
+		BeamOnLength 		: in std_logic_vector (11 downto 0);
+		BeamOffLength 		: in std_logic_vector (11 downto 0);
+		ADCSmplCntReg 		: in std_logic_vector (3 downto 0)
+	);
 end uController_interface;
 
 architecture Behavioral of uController_interface is
 
 -- Make a test counter that increments with each read
 signal TestCount : std_logic_vector (31 downto 0);
+-- Uptime counter to check for un-anticipated resets
+signal UpTimeCount : std_logic_vector (31 downto 0);
+signal UpTimeStage : std_logic_vector (31 downto 0);
+signal Counter1s   : std_logic_vector (27 downto 0);
 
 begin    
 
@@ -89,6 +109,40 @@ end if;
 end process;
 
 
+counters : process(Clk_100MHz, CpldRst)
+begin 
+if CpldRst = '0' then
+	
+	UpTimeStage 	<= (others => '0');
+	UpTimeCount 	<= (others => '0');
+	Counter1s       <= (others => '0');
+
+elsif rising_edge (Clk_100MHz) then
+
+	-- 1 second time base
+	if	Counter1s = Count1s then 
+	    Counter1s <= (others => '0');
+	else
+	    Counter1s <= Counter1s + 1; 
+	end if;
+
+	-- Register for staging uptime count.
+	if CpldCS = '1' then 
+		UpTimeStage <= UpTimeCount;
+	else 
+		UpTimeStage <= UpTimeStage;
+	end if;
+
+	-- Uptime in seconds since th last FPGA configure
+	if	Counter1s = Count1s then 
+		UpTimeCount <= UpTimeCount + 1;
+	else 
+		UpTimeCount <= UpTimeCount;
+	end if;
+
+end if;
+end process;
+
 
 with uCA(9 downto 0) select
 
@@ -100,21 +154,21 @@ iCD <= 	 X"000" & "00" & AFEPDn when CSRRegAddr,
 		-- DRAMRdBuffOut when PageFIFOAddr,
 		-- X"0" & '0' & DRAMRdBuffWdsUsed when PageFIFOWdsAd,
 		-- X"0" & Read_Seq_Stat & X"0" & '0' &  DDRWrtSeqStat when WriteSeqStatAd,
-		-- X"00" & PipelineSet when PipeLineAddr,
+		X"00" & PipelineSet when PipeLineAddr,
 		X"00" & "000" & MuxSelReg & MuxadReg when MuxCtrlAd,
-		-- MaskReg(1) & MaskReg(0) when InputMaskAddr,
-		-- In_Seq_Stat(1)(7 downto 0) & In_Seq_Stat(0)(7 downto 0) when InseqStatAd,
+		MaskReg(1) & MaskReg(0) when InputMaskAddr,
+		-- In_Seq_Stat(1)(7 downto 0) & In_Seq_Stat(0)(7 downto 0) when InseqStatAd, --TODO: fix this 
 		X"000" & '0' & LEDSrc & PulseSel & FlashEn when FlashCtrlAddr,
-		-- UpTimeStage(31 downto 16) when UpTimeRegAddrHi,
-		-- UpTimeStage(15 downto 0) when UpTimeRegAddrLo,
+		UpTimeStage(31 downto 16) when UpTimeRegAddrHi,
+		UpTimeStage(15 downto 0) when UpTimeRegAddrLo,
 		TestCount(31 downto 16) when TestCounterHiAd,
 		TestCount(15 downto 0) when TestCounterLoAd,
 		X"000" & "00" & FMTxBuff_full & FMTxBuff_empty when LVDSTxFIFOStatAd,
-		-- X"0" & BeamOnLength when BeamOnLengthAd,
-		-- X"0" & BeamOffLength when BeamOffLengthAd,
-		-- "0000000" & TurnOnTime when OnTimeAddr,
-		-- "0000000" & TurnOffTime when OffTimeAddr,
- 		-- "0000000" & LEDTime when LEDTimeAddr,
+		X"0" & BeamOnLength when BeamOnLengthAd,
+		X"0" & BeamOffLength when BeamOffLengthAd,
+		"0000000" & TurnOnTime when OnTimeAddr,
+		"0000000" & TurnOffTime when OffTimeAddr,
+ 		"0000000" & LEDTime when LEDTimeAddr,
 		-- "00" & SDWrtAd(29 downto 16) when SDRamWrtPtrHiAd,
 		-- SDWrtAd(15 downto 0) when SDRamWrtPtrLoAd,
 		-- "00" & SDRdAD(29 downto 16) when SDRamRdPtrHiAd,
@@ -167,17 +221,17 @@ iCD <= 	 X"000" & "00" & AFEPDn when CSRRegAddr,
 		-- X"0" & std_logic_vector(IntTrgThresh(1)(6)) when ThreshRegAddr(1)(6),
 		-- X"0" & std_logic_vector(IntTrgThresh(1)(7)) when ThreshRegAddr(1)(7),
 		-- X"000" & "00" & TrgSrc & '0' when TrigCtrlAddr,
-		-- X"000" & ADCSmplCntReg when ADCSmplCntrAd,
-		-- X"000" &"00" & SlfTrgEn & TmgSrcSel when IntTrgEnAddr,
-		-- "000" & ControllerNo & "000" & PortNo when FEBAddresRegAd,
+		X"000" & ADCSmplCntReg when ADCSmplCntrAd,
+		X"000" &"00" & SlfTrgEn & TmgSrcSel when IntTrgEnAddr,
+		"000" & ControllerNo & "000" & PortNo when FEBAddresRegAd,
 		-- "00" & FRDat(0) & "00" & FRDat2(0) when FRDat0RegAd,
 		-- "00" & FRDat(1) & "00" & FRDat2(1) when FRDat1RegAd,
-		-- uBunch(15 downto  0)        when uBLoAd,
-		-- uBunch(31 downto 16)        when uBHiAd,
+		uBunch(15 downto  0)        when uBLoAd,
+		uBunch(31 downto 16)        when uBHiAd,
 		-- uBunchBuffOut(15 downto  0) when uBBuffLoAd,
 		-- uBunchBuffOut(31 downto 16) when uBBuffHiAd,
 		-- DDRAddrOut(15 downto  0)    when uBBuffAdLoAd,
 		-- DDRAddrOut(31 downto 16)    when uBBuffAdHiAd,
-		 X"0000" when others;
+		X"0000" when others;
 
 end Behavioral;

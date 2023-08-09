@@ -38,7 +38,12 @@ entity Trigger is
 	LEDSrc				: out std_logic;
 	GPI0 				: in std_logic;
 -- uController status registers
-	FlashEn  			: buffer std_logic 
+	FlashEn  			: buffer std_logic;
+	TurnOnTime  		: buffer std_logic_vector (8 downto 0);
+	TurnOffTime 		: buffer std_logic_vector (8 downto 0);
+	LEDTime	   			: buffer std_logic_vector (8 downto 0);
+	TmgSrcSel			: buffer std_logic 
+
 	);
 end Trigger;
 
@@ -53,15 +58,13 @@ signal TrigType : std_logic_vector(11 downto 0);
 -- Counter that determines the trig out pulse width
 signal GPOCount : std_logic_vector(2 downto 0);
 -- trigger logic signals
-signal TmgSrcSel: std_logic; 
+
 signal TrigReqD : std_logic; 
 
 signal FlashGate: std_logic;
 -- Timing interval counters
 signal GateCounter : std_logic_vector (8 downto 0);
-signal TurnOnTime  : std_logic_vector (8 downto 0);
-signal TurnOffTime : std_logic_vector (8 downto 0);
-signal LEDTime	   : std_logic_vector (8 downto 0);
+
 -- Self trigger signals
 signal uBunchGuard : std_logic;
 

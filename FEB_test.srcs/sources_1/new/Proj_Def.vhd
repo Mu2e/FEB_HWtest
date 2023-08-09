@@ -367,7 +367,15 @@ component AFE_DataPath is
 -- Geographic address pins
 	GA 					: in std_logic_vector(1 downto 0);
 -- Global signals
-	WRDL 				: in std_logic_vector(1 downto 0)
+	WRDL 				: in std_logic_vector(1 downto 0);
+-- uController status registers
+	PipelineSet 		: buffer std_logic_vector (7 downto 0);
+	In_Seq_Stat 		: buffer Array_2x8x4;
+	ControllerNo 		: buffer std_logic_vector (4 downto 0);
+	PortNo 				: buffer std_logic_vector (4 downto 0);
+	BeamOnLength 		: buffer std_logic_vector (11 downto 0);
+	BeamOffLength 		: buffer std_logic_vector (11 downto 0);
+	ADCSmplCntReg 		: buffer std_logic_vector (3 downto 0)
 );
 end component;
 	
@@ -454,7 +462,12 @@ component Trigger is
 	LEDSrc				: out std_logic;
 	GPI0 				: in std_logic;
 -- uController status registers
-	FlashEn  			: buffer std_logic 
+	FlashEn  			: buffer std_logic;
+	TurnOnTime  		: buffer std_logic_vector (8 downto 0);
+	TurnOffTime 		: buffer std_logic_vector (8 downto 0);
+	LEDTime	   			: buffer std_logic_vector (8 downto 0);
+	TmgSrcSel			: buffer std_logic 
+
 	);
 end component;
 
@@ -643,6 +656,7 @@ component uController_interface is
         Clk_100MHz			: in std_logic;
     -- Microcontroller strobes
         CpldRst				: in std_logic;
+		CpldCS				: in std_logic;
     -- Microcontroller data and address buses	
         uCA 				: in std_logic_vector(11 downto 0);
         uCD 				: in std_logic_vector(15 downto 0);
@@ -651,24 +665,39 @@ component uController_interface is
     -- Synchronous edge detectors of uC read and write strobes
         uWRDL 				: in std_logic_vector(1 downto 0);
 		uRDDL 				: in std_logic_vector(1 downto 0);
-		uAddrReg 				: in std_logic_vector(11 downto 0);
+        uAddrReg 				: in std_logic_vector(11 downto 0);
 
         iCD                 : out std_logic_vector(15 downto 0);
     -- OUTPUT REGISTERS     
     -- ADC mux
         MuxSelReg           : in std_logic_vector(2 downto 0);
-        MuxadReg            : in std_logic_vector(1 downto 0);         
+        MuxadReg            : in std_logic_vector(1 downto 0);
 	-- Trigger
 		FlashEn  			: in std_logic; 	         
 		PulseSel 			: in std_logic;
 		LEDSrc				: in std_logic;
+		TurnOnTime  		: in std_logic_vector (8 downto 0);
+		TurnOffTime 		: in std_logic_vector (8 downto 0);
+		LEDTime	   			: in std_logic_vector (8 downto 0);
+		TmgSrcSel			: in std_logic; 
+		SlfTrgEn 			: in std_logic;
+		uBunch   			: in std_logic_vector(31 downto 0);
 	-- LVDS logic
 		FMTxBuff_full		: in std_logic;
 		FMTxBuff_empty		: in std_logic;
 	-- AFE Logic
 		AFEPDn				: in std_logic_vector(1 downto 0);
-	-- DAC Logic
-		AlignReq            : in std_logic_vector (1 downto 0)               
+	-- DAC logic
+		AlignReq            : in std_logic_vector (1 downto 0);
+	-- AFE DataPath logic
+		PipelineSet 		: in std_logic_vector (7 downto 0);
+		MaskReg				: in Array_2x8;
+		In_Seq_Stat 		: in Array_2x8x4;
+		ControllerNo 		: in std_logic_vector (4 downto 0);
+		PortNo 				: in std_logic_vector (4 downto 0);
+		BeamOnLength 		: in std_logic_vector (11 downto 0);
+		BeamOffLength 		: in std_logic_vector (11 downto 0);
+		ADCSmplCntReg 		: in std_logic_vector (3 downto 0)              
     );
 end component;
 
