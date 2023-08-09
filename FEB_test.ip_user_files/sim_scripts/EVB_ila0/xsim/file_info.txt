@@ -1,0 +1,2 @@
+EVB_ila0.vhd,vhdl,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/EVB_ila0/sim/EVB_ila0.vhd,incdir="../../../../FEB_test.gen/sources_1/ip/EVB_ila0/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v

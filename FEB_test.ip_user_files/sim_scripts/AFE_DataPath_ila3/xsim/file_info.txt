@@ -1,0 +1,2 @@
+AFE_DataPath_ila3.vhd,vhdl,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/AFE_DataPath_ila3/sim/AFE_DataPath_ila3.vhd,incdir="../../../../FEB_test.gen/sources_1/ip/AFE_DataPath_ila3/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v

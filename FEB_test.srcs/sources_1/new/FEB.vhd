@@ -178,6 +178,8 @@ signal FMTxBuff_empty 		  : std_logic;
 signal FMTxBuff_full  		  : std_logic;
 signal AlignReq				  : std_logic_vector (1 downto 0);         
 
+signal 	startEVB			  : Array_2x8;
+
 attribute mark_debug : string;
 attribute mark_debug of uAddrReg: signal is "false";
 
@@ -344,45 +346,41 @@ port map(
 	dout_AFE1		=> dout_AFE1
 );
 
---AFE_DataPath_inst : AFE_DataPath
---port map (
---	Clk_80MHz	    => Clk_80MHz,		
---	SysClk			=> SysClk,
---	ResetHi			=> ResetHi,
----- Signals from Trigger Logic
---	TrigReq			=> TrigReq,
---	BeamOn			=> BeamOn,
----- Signals for EventBuilder
---	MaskReg			=> MaskReg,			
---	BufferRdAdd		=> BufferRdAdd,		
---	BufferOut 		=> BufferOut, 		
----- Signals from uC
---	ControllerNo 	=> ControllerNo, 
---	PortNo 			=> PortNo,	
---	BeamOnLength    => BeamOnLength,
---	BeamOffLength   => BeamOffLength, 
---	ADCSmplCntReg   => ADCSmplCntReg,
----- Data output from the deserializer for AFE0 and AFE1 synchronized to 80 MHz clock
---    din_AFE0		=> dout_AFE0,
---    din_AFE1		=> dout_AFE1,
---	done 			=> done,
----- Pipeline signals 	
---	PipelineSet		=> PipelineSet,
----- Histogram signals
---	Diff_Reg		=> Diff_Reg,	
---	GateWidth	    => GateWidth,
---	GateReq 		=> GateReq, 	
----- Microcontroller strobes
---	CpldRst			=> CpldRst,	
---	CpldCS			=> CpldCS,
---	uCRd			=> uCRd,
---	uCWr 			=> uCWr, 	
----- Microcontroller data and address buses	
---	uCA				=> uCA,
---	uCD             => uCD,
----- Geographic address pins
---	GA              => GA 
---);
+AFE_DataPath_inst : AFE_DataPath
+port map (
+	Clk_80MHz	    => Clk_80MHz,		
+	SysClk			=> SysClk,
+	ResetHi			=> ResetHi,
+-- Signals from Trigger Logic
+	TrigReq			=> TrigReq,
+	BeamOn			=> BeamOn,
+-- Signals for EventBuilder
+	MaskReg			=> MaskReg,			
+	BufferRdAdd		=> BufferRdAdd,		
+	BufferOut 		=> BufferOut, 	
+	startEVB		=> startEVB,	
+-- Data output from the deserializer for AFE0 and AFE1 synchronized to 80 MHz clock
+    din_AFE0		=> dout_AFE0,
+    din_AFE1		=> dout_AFE1,
+	done 			=> done,
+	SerdesRst		=> SerdesRst, 
+-- Histogram signals
+	Diff_Reg		=> Diff_Reg,	
+	GateWidth	    => GateWidth,
+	GateReq 		=> GateReq, 	
+-- Microcontroller strobes
+	CpldRst			=> CpldRst,	
+	CpldCS			=> CpldCS,
+	uCRd			=> uCRd,
+	uCWr 			=> uCWr, 	
+-- Microcontroller data and address buses	
+	uCA				=> uCA,
+	uCD             => uCD,
+-- Geographic address pins
+	GA              => GA,
+-- Synchronous edge detectors of uC read and write strobes
+	WRDL 			=> WRDL	 
+);
 
 Phase_Detector_inst: Phase_Detector
 port map(
@@ -430,28 +428,28 @@ port map(
 	FlashEn  		=> FlashEn
 );
 
---EventBuilder_logic :  EventBuilder
---port map(
---	SysClk			=> SysClk,	 -- 160 MHz
---	CpldRst			=> CpldRst,
---	ResetHi			=> ResetHi,
----- Signals from/to AFE Buffer in AFE_DataPath
---	MaskReg			=> MaskReg,
---	BufferRdAdd		=> BufferRdAdd,	
---	BufferOut 		=> BufferOut, 	
----- Signals from Trigger Logic
---	SlfTrgEn		=> SlfTrgEn,
---	uBunchWrt		=> uBunchWrt,
---	uBunch   		=> uBunch,
----- Signals for the DDR
---	EvBuffRd		=> EvBuffRd,		
---	EvBuffOut		=> EvBuffOut,			
---	EvBuffEmpty		=> EvBuffEmpty,			
---	EvBuffWdsUsed	=> EvBuffWdsUsed,
---	asp 			=> asp
---	);
---
---
+EventBuilder_logic :  EventBuilder
+port map(
+	SysClk			=> SysClk,	 -- 160 MHz
+	CpldRst			=> CpldRst,
+	ResetHi			=> ResetHi,
+-- Signals from/to AFE Buffer in AFE_DataPath
+	MaskReg			=> MaskReg,
+	BufferRdAdd		=> BufferRdAdd,	
+	BufferOut 		=> BufferOut, 	
+	startEVB		=> startEVB, 
+-- Signals from Trigger Logic
+	SlfTrgEn		=> SlfTrgEn,
+	uBunchWrt		=> uBunchWrt,
+	uBunch   		=> uBunch,
+-- Signals for the DDR
+	EvBuffRd		=> EvBuffRd,		
+	EvBuffOut		=> EvBuffOut,			
+	EvBuffEmpty		=> EvBuffEmpty,			
+	EvBuffWdsUsed	=> EvBuffWdsUsed
+	);
+
+
 --DDR_Interface_inst : DDR_Interface
 --generic map(
 --	-- DDR3L parameters

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Wed Aug  9 10:43:33 2023
+| Date             : Wed Aug  9 11:32:09 2023
 | Host             : CD-135239 running 64-bit major release  (build 9200)
 | Command          : report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
 | Design           : FEB
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.429        |
+| Total On-Chip Power (W)  | 0.757        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.357        |
-| Device Static (W)        | 0.071        |
+| Dynamic (W)              | 0.684        |
+| Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 2.9          |
-| Max Ambient (C)          | 83.8         |
-| Junction Temperature (C) | 26.2         |
+| Max Ambient (C)          | 82.8         |
+| Junction Temperature (C) | 27.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.027 |       10 |       --- |             --- |
-| Slice Logic              |     0.005 |    13873 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     4032 |     32600 |           12.37 |
-|   Register               |    <0.001 |     6369 |     65200 |            9.77 |
-|   CARRY4                 |    <0.001 |      268 |      8150 |            3.29 |
+| Clocks                   |     0.046 |       12 |       --- |             --- |
+| Slice Logic              |     0.014 |    20627 |       --- |             --- |
+|   LUT as Logic           |     0.012 |     6564 |     32600 |           20.13 |
+|   Register               |    <0.001 |     9266 |     65200 |           14.21 |
+|   CARRY4                 |    <0.001 |      482 |      8150 |            5.91 |
+|   F7/F8 Muxes            |    <0.001 |      277 |     32600 |            0.85 |
 |   LUT as Distributed RAM |    <0.001 |      152 |      9600 |            1.58 |
-|   LUT as Shift Register  |    <0.001 |      633 |      9600 |            6.59 |
-|   F7/F8 Muxes            |    <0.001 |      144 |     32600 |            0.44 |
-|   Others                 |     0.000 |      974 |       --- |             --- |
-| Signals                  |     0.005 |     8976 |       --- |             --- |
-| Block RAM                |     0.001 |        3 |        75 |            4.00 |
-| MMCM                     |     0.209 |        2 |         5 |           40.00 |
-| I/O                      |     0.110 |       69 |       250 |           27.60 |
-| Static Power             |     0.071 |          |           |                 |
-| Total                    |     0.429 |          |           |                 |
+|   LUT as Shift Register  |    <0.001 |      635 |      9600 |            6.61 |
+|   Others                 |    <0.001 |     1151 |       --- |             --- |
+| Signals                  |     0.021 |    13812 |       --- |             --- |
+| Block RAM                |     0.042 |       15 |        75 |           20.00 |
+| MMCM                     |     0.212 |        2 |         5 |           40.00 |
+| I/O                      |     0.348 |      105 |       250 |           42.00 |
+| Static Power             |     0.073 |          |           |                 |
+| Total                    |     0.757 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,16 +76,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.051 |       0.041 |      0.010 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.131 |       0.119 |      0.013 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.152 |       0.142 |      0.011 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.237 |       0.225 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco25    |       2.500 |     0.042 |       0.041 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.055 |       0.054 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.003 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 
@@ -131,6 +131,8 @@ Table of Contents
 | Clock                                                                                      | Domain                                                            | Constraint (ns) |
 +--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
 | Clk_100MHz_PLL_0                                                                           | PLL/inst/Clk_100MHz_PLL_0                                         |            10.0 |
+| Clk_200MHz_PLL_0                                                                           | PLL/inst/Clk_200MHz_PLL_0                                         |             5.0 |
+| Clk_560MHz_PLL_AFE_1                                                                       | HF_PLL/inst/Clk_560MHz_PLL_AFE                                    |             1.8 |
 | Clk_80MHz_PLL_AFE_1                                                                        | HF_PLL/inst/Clk_80MHz_PLL_AFE                                     |            12.5 |
 | SysClk_PLL_0                                                                               | PLL/inst/SysClk                                                   |             6.3 |
 | SysClk_PLL_0                                                                               | PLL/inst/SysClk_PLL_0                                             |             6.3 |
@@ -147,25 +149,81 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------------+-----------+
-| Name                     | Power (W) |
-+--------------------------+-----------+
-| FEB                      |     0.357 |
-|   AFE                    |     0.097 |
-|   DACControl             |     0.002 |
-|   HF_PLL                 |     0.113 |
-|     inst                 |     0.113 |
-|   ILA_uC                 |     0.026 |
-|     U0                   |     0.026 |
-|       ila_core_inst      |     0.026 |
-|   OneWire                |     0.001 |
-|   PLL                    |     0.100 |
-|     inst                 |     0.100 |
-|   Trigger_logic          |     0.002 |
-|     FMRx1                |     0.001 |
-|   dbg_hub                |     0.002 |
-|     inst                 |     0.002 |
-|       BSCANID.u_xsdbm_id |     0.002 |
-+--------------------------+-----------+
++------------------------------------------------+-----------+
+| Name                                           | Power (W) |
++------------------------------------------------+-----------+
+| FEB                                            |     0.684 |
+|   AFE                                          |     0.343 |
+|     afe0_inst                                  |     0.133 |
+|       ffebit_inst                              |     0.015 |
+|       genfebit[0].dfebit_inst                  |     0.015 |
+|       genfebit[1].dfebit_inst                  |     0.015 |
+|       genfebit[2].dfebit_inst                  |     0.015 |
+|       genfebit[3].dfebit_inst                  |     0.015 |
+|       genfebit[4].dfebit_inst                  |     0.015 |
+|       genfebit[5].dfebit_inst                  |     0.015 |
+|       genfebit[6].dfebit_inst                  |     0.015 |
+|       genfebit[7].dfebit_inst                  |     0.015 |
+|     afe1_inst                                  |     0.133 |
+|       ffebit_inst                              |     0.015 |
+|       genfebit[0].dfebit_inst                  |     0.015 |
+|       genfebit[1].dfebit_inst                  |     0.015 |
+|       genfebit[2].dfebit_inst                  |     0.015 |
+|       genfebit[3].dfebit_inst                  |     0.015 |
+|       genfebit[4].dfebit_inst                  |     0.015 |
+|       genfebit[5].dfebit_inst                  |     0.015 |
+|       genfebit[6].dfebit_inst                  |     0.015 |
+|       genfebit[7].dfebit_inst                  |     0.015 |
+|   AFE_DataPath_inst                            |     0.064 |
+|     AFE_Pipeline_inst                          |     0.017 |
+|       Gen_Two_AFEs[0].Pipeline                 |     0.008 |
+|       Gen_Two_AFEs[1].Pipeline                 |     0.008 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[0].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[1].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[2].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[3].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[4].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[5].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[6].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[0].Gen_Eight_Chans[7].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[0].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[1].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[2].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[3].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[4].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[5].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[6].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|     Gen_Two_AFEs[1].Gen_Eight_Chans[7].AFEBuff |     0.002 |
+|       U0                                       |     0.002 |
+|   DACControl                                   |     0.002 |
+|   EventBuilder_logic                           |     0.014 |
+|   HF_PLL                                       |     0.116 |
+|     inst                                       |     0.116 |
+|   ILA_uC                                       |     0.027 |
+|     U0                                         |     0.027 |
+|       ila_core_inst                            |     0.027 |
+|   OneWire                                      |     0.001 |
+|   PLL                                          |     0.101 |
+|     inst                                       |     0.101 |
+|   Trigger_logic                                |     0.001 |
+|   dbg_hub                                      |     0.003 |
+|     inst                                       |     0.003 |
+|       BSCANID.u_xsdbm_id                       |     0.003 |
++------------------------------------------------+-----------+
 
 

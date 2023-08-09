@@ -6,6 +6,7 @@ Library UNISIM;
 use UNISIM.vcomponents.all;
 
 use work.Proj_Def.all;
+use work.Debug_ILA.all;
 
 entity Trigger is
   Port (
@@ -14,7 +15,7 @@ entity Trigger is
 -- Signals for other logic
 	TrigReq				: buffer std_logic;
 	SlfTrgEn 			: buffer std_logic;
-	BeamOn 				: out std_logic;
+	BeamOn 				: buffer std_logic;
 	uBunch   			: buffer std_logic_vector(31 downto 0);
 	uBunchWrt			: buffer std_logic;
 	GPO			 		: out std_logic;

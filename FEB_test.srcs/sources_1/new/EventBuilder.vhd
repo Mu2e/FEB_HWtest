@@ -21,7 +21,7 @@ Library UNISIM;
 use UNISIM.vcomponents.all;
 
 use work.Proj_Def.all;
-
+use work.Debug_ILA.all;
 
 entity EventBuilder is
 port (
@@ -80,12 +80,12 @@ signal SampleCount			: std_logic_vector(15 downto 0);
 signal BuffRdCount 			: std_logic_vector(8 downto 0); -- Unused right now
 
 
-attribute mark_debug : string;
-attribute mark_debug of Event_Builder : signal is "true";
-attribute mark_debug of EvBuffOut	  : signal is "true";
-attribute mark_debug of EvBuffWdsUsed : signal is "true";
-attribute mark_debug of AFE_Num	  	  : signal is "true";
-attribute mark_debug of Chan_Num 	  : signal is "true";
+--attribute mark_debug : string;
+--attribute mark_debug of Event_Builder : signal is "true";
+--attribute mark_debug of EvBuffOut	  : signal is "true";
+--attribute mark_debug of EvBuffWdsUsed : signal is "true";
+--attribute mark_debug of AFE_Num	  	  : signal is "true";
+--attribute mark_debug of Chan_Num 	  : signal is "true";
 
 
 begin

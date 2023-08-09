@@ -346,19 +346,12 @@ component AFE_DataPath is
 	MaskReg				: buffer Array_2x8;
 	BufferRdAdd			: in Array_2x8x10;
 	BufferOut 			: out Array_2x8x16;
--- Signals from uC
-	ControllerNo 		: in std_logic_vector (4 downto 0);
-	PortNo 				: in std_logic_vector (4 downto 0);
-	BeamOnLength 		: in std_logic_vector (11 downto 0);
-	BeamOffLength 		: in std_logic_vector (11 downto 0);
-	ADCSmplCntReg 		: in std_logic_vector (3 downto 0);
+	startEVB			: out Array_2x8;
 -- Data output from the deserializer for AFE0 and AFE1 synchronized to 80 MHz clock
     din_AFE0			: in Array_8x14; 
     din_AFE1			: in Array_8x14;
     done				: in std_logic_vector(1 downto 0); -- status of automatic alignment FSM
 	SerdesRst			: out std_logic_vector(1 downto 0);
--- Pipeline signals
-	PipelineSet 		: in std_logic_vector (7 downto 0);	
 -- Histogram signals
 	Diff_Reg			: inout Arrays_8x2x14;
 	GateWidth	    	: inout Array_2x12;
@@ -372,7 +365,9 @@ component AFE_DataPath is
 	uCA 				: in std_logic_vector(11 downto 0);
 	uCD 				: in std_logic_vector(15 downto 0);
 -- Geographic address pins
-	GA 					: in std_logic_vector(1 downto 0)
+	GA 					: in std_logic_vector(1 downto 0);
+-- Global signals
+	WRDL 				: in std_logic_vector(1 downto 0)
 );
 end component;
 	
@@ -436,7 +431,7 @@ component Trigger is
 -- Signals for other logic
 	TrigReq				: buffer std_logic;
 	SlfTrgEn 			: buffer std_logic;
-	BeamOn 				: out std_logic;
+	BeamOn 				: buffer std_logic;
 	uBunch   			: buffer std_logic_vector(31 downto 0);
 	uBunchWrt			: buffer std_logic;
 	GPO			 		: out std_logic;
@@ -472,6 +467,7 @@ port (
 	MaskReg				: in Array_2x8;
 	BufferRdAdd			: buffer Array_2x8x10;
 	BufferOut 			: in Array_2x8x16;
+	startEVB			: in Array_2x8;
 -- Signals from Trigger Logic
 	SlfTrgEn 			: in std_logic;
 	uBunchWrt			: in std_logic;
@@ -480,8 +476,7 @@ port (
 	EvBuffRd			: in std_logic;
 	EvBuffOut			: out std_logic_vector(15 downto 0);
 	EvBuffEmpty			: out std_logic;
-	EvBuffWdsUsed		: out std_logic_vector(10 downto 0);
-	asp					: in std_logic
+	EvBuffWdsUsed		: out std_logic_vector(10 downto 0)
 	);
 end component;
 

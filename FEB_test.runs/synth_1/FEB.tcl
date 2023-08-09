@@ -105,6 +105,9 @@ read_vhdl -library work {
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/febit.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/LVDS_TX.vhd
   C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/Trigger.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_DataPath.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/EventBuilder.vhd
+  C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/AFE_Pipeline.vhd
 }
 read_vhdl -vhdl2008 -library work C:/v23.1/FEB_test/FEB_test.srcs/sources_1/new/FEB.vhd
 read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_0/PLL_0.xci
@@ -153,6 +156,50 @@ read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_AFE/PLL_AFE.xci
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE_board.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/EVB_ila0/EVB_ila0.xci
+set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/EVB_ila0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/EVB_ila0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/EVB_ila0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/EVB_ila0/EVB_ila0_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/SCFIFO_1Kx16/SCFIFO_1Kx16.xci
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/SCFIFO_1Kx16/SCFIFO_1Kx16.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/SCFIFO_1Kx16/SCFIFO_1Kx16_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/SCFIFO_32x256/SCFIFO_32x256.xci
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/SCFIFO_32x256/SCFIFO_32x256.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/SCFIFO_32x256/SCFIFO_32x256_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DPRAM_1Kx16/DPRAM_1Kx16.xci
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DPRAM_1Kx16/DPRAM_1Kx16_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila0/AFE_DataPath_ila0.xci
+set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila0/AFE_DataPath_ila0_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila1/AFE_DataPath_ila1.xci
+set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila1/AFE_DataPath_ila1_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila2/AFE_DataPath_ila2.xci
+set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila2/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila2/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila2/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila2/AFE_DataPath_ila2_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila3/AFE_DataPath_ila3.xci
+set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila3/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila3/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DataPath_ila3/AFE_DataPath_ila3_ooc.xdc]
+
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DP_Pipeline/AFE_DP_Pipeline.xci
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DP_Pipeline/AFE_DP_Pipeline_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

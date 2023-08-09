@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../FEB_test.gen/sources_1/ip/AFE_DataPath_ila2/sim/AFE_DataPath_ila2.vhd" \
+
+# Do not sort compile order
+nosort

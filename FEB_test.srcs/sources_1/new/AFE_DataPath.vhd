@@ -32,6 +32,7 @@ Library UNISIM;
 use UNISIM.vcomponents.all;
 
 use work.Proj_Def.all;
+use work.Debug_ILA.all;
 
 entity AFE_DataPath is
   Port (
@@ -534,7 +535,7 @@ end generate;
 -- =========================================================================
 -- ===========================     ILA    ==================================
 -- =========================================================================
-generateILA0: if true generate
+generateILA0: if false generate
 
 	AFE_DataPath_ila_inst0: AFE_DataPath_ila0
 	port map(

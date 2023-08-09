@@ -149,6 +149,15 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/LVDSTxBuff/LVDSTxBuff.xci
   read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/Trigger_ila/Trigger_ila.xci
   read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/PLL_AFE/PLL_AFE.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/EVB_ila0/EVB_ila0.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/SCFIFO_1Kx16/SCFIFO_1Kx16.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/SCFIFO_32x256/SCFIFO_32x256.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DPRAM_1Kx16/DPRAM_1Kx16.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila0/AFE_DataPath_ila0.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila1/AFE_DataPath_ila1.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila2/AFE_DataPath_ila2.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DataPath_ila3/AFE_DataPath_ila3.xci
+  read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DP_Pipeline/AFE_DP_Pipeline.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc
 OPTRACE "read constraints: implementation" END { }
