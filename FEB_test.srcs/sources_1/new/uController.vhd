@@ -54,7 +54,11 @@ entity uController_interface is
 		LEDSrc				: in std_logic;
 	-- LVDS logic
 		FMTxBuff_full		: in std_logic;
-		FMTxBuff_empty		: in std_logic            
+		FMTxBuff_empty		: in std_logic;
+	-- AFE Logic
+		AFEPDn				: in std_logic_vector(1 downto 0);
+	-- DAC Logic
+		AlignReq            : in std_logic_vector (1 downto 0)
     );
 end uController_interface;
 
@@ -88,8 +92,8 @@ end process;
 
 with uCA(9 downto 0) select
 
-iCD <= 	-- X"000" & "00" & AFEPDn when CSRRegAddr,
-		-- X"000" & "00" & AlignReq when SlipCtrlAd,
+iCD <= 	 X"000" & "00" & AFEPDn when CSRRegAddr,
+		 X"000" & "00" & AlignReq when SlipCtrlAd,
 		-- X"0" & '0' & SlipCntReg(1)
 		--	& X"0" & '0' & SlipCntReg(0) when SlipCntRegAd,
 		-- X"00" & WidthReg when GateAddr,

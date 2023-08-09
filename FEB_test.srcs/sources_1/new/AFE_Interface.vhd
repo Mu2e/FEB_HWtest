@@ -39,15 +39,10 @@ port(
 	AFEDCLK_P, AFEDCLK_N    : in std_logic_vector(1 downto 0); -- Unused in this design 
 	AFE0FCLK_P, AFE0FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
 	AFE1FCLK_P, AFE1FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
-	-- AFE serial control lines
-	AFEPDn 				    : buffer std_logic_vector(1 downto 0);
-	AFECS 				    : buffer std_logic_vector(1 downto 0);
-	AFERst 				    : buffer std_logic;
-	AFESClk, AFESDI  	    : buffer std_logic;
-	AFESDO 				    : in std_logic;
-						    
+			    
     -- FPGA interface       
     Clk_80MHz			    : in  std_logic; 	-- Master clock 80MHz
+    Clk_100MHz			    : in  std_logic; 	-- uController clock 
     Clk_560MHz			    : in  std_logic; 	-- 7 x Master clock = 560MHz
     Clk_200MHz			    : in  std_logic; 	-- 200 MHz refclk for the IDELAY2
     reset				    : in  std_logic;
@@ -169,5 +164,10 @@ begin
         warn    => warn(1),
         dout    => dout_afe1
     );
+
+
+
+
+
 
 end AFE_Interface_Architecture;

@@ -1,0 +1,1184 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Mon Aug  7 12:16:59 2023
+# Process ID: 9488
+# Current directory: C:/v23.1/FEB_test/FEB_test.runs/impl_1
+# Command line: vivado.exe -log FEB.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FEB.tcl -notrace
+# Log file: C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB.vdi
+# Journal file: C:/v23.1/FEB_test/FEB_test.runs/impl_1\vivado.jou
+# Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34287 MB
+#-----------------------------------------------------------
+source FEB.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1503.715 ; gain = 196.398
+Command: link_design -top FEB -part xc7s50fgga484-2
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s50fgga484-2
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE.dcp' for cell 'HF_PLL'
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/uC_ILA.dcp' for cell 'ILA_uC'
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.dcp' for cell 'PLL'
+INFO: [Project 1-454] Reading design checkpoint 'c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/LVDSTxBuff/LVDSTxBuff.dcp' for cell 'uC_to_LVDSTX/FMTx_Buff'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 2036.719 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1028 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. HF_PLL/inst/clkin1_ibufg 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'HF_PLL/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+INFO: [Chipscope 16-324] Core: ILA_uC UUID: fab29885-ba49-55ec-a49d-1439a7a12cc1 
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc] for cell 'PLL/inst'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0_board.xdc] for cell 'PLL/inst'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc] for cell 'PLL/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2652.746 ; gain = 484.691
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_0/PLL_0.xdc] for cell 'PLL/inst'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila_impl.xdc] for cell 'ILA_uC/U0'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila_impl.xdc] for cell 'ILA_uC/U0'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila.xdc] for cell 'ILA_uC/U0'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/uC_ILA/ila_v6_2/constraints/ila.xdc] for cell 'ILA_uC/U0'
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'DDR_ila_0'. The XDC file c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila_impl.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'DDR_ila_0'. The XDC file c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1281] Could not find module 'vio_0'. The XDC file c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/vio_0/vio_0.xdc will not be read for this module.
+CRITICAL WARNING: [Designutils 20-1281] Could not find module 'DDR3LController'. The XDC file c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/constraints/DDR3LController.xdc will not be read for this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'CMD_Fifo'. The XDC file c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/CMD_Fifo/CMD_Fifo.xdc will not be read for any cell of this module.
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/LVDSTxBuff/LVDSTxBuff.xdc] for cell 'uC_to_LVDSTX/FMTx_Buff/U0'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/LVDSTxBuff/LVDSTxBuff.xdc] for cell 'uC_to_LVDSTX/FMTx_Buff/U0'
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'Trigger_ila'. The XDC file c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/Trigger_ila/ila_v6_2/constraints/ila_impl.xdc will not be read for any cell of this module.
+CRITICAL WARNING: [Designutils 20-1280] Could not find module 'Trigger_ila'. The XDC file c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/Trigger_ila/ila_v6_2/constraints/ila.xdc will not be read for any cell of this module.
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE_board.xdc] for cell 'HF_PLL/inst'
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE_board.xdc] for cell 'HF_PLL/inst'
+Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE.xdc] for cell 'HF_PLL/inst'
+INFO: [Timing 38-2] Deriving generated clocks [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE.xdc:57]
+Finished Parsing XDC File [c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/PLL_AFE/PLL_AFE.xdc] for cell 'HF_PLL/inst'
+Parsing XDC File [C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]
+Finished Parsing XDC File [C:/v23.1/FEB_test/FEB_test.srcs/constrs_1/new/FEB_pinout.xdc]
+INFO: [Project 1-1714] 1 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2652.746 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 576 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 524 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 20 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 32 instances
+
+16 Infos, 2 Warnings, 7 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 2652.746 ; gain = 1051.336
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2652.746 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 99e00eee
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.348 . Memory (MB): peak = 2675.504 ; gain = 22.758
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = d0f38e0c9bd647d1.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 3060.320 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 13580c386
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:26 . Memory (MB): peak = 3060.320 ; gain = 20.875
+
+Phase 2 Retarget
+INFO: [Opt 31-1566] Pulled 1 inverters resulting in an inversion of 12 pins
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 3 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: 1d3c08e8f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:26 . Memory (MB): peak = 3060.320 ; gain = 20.875
+INFO: [Opt 31-389] Phase Retarget created 22 cells and removed 39 cells
+INFO: [Opt 31-1021] In phase Retarget, 109 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 3 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 3 Constant propagation | Checksum: 1a05c5b49
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:26 . Memory (MB): peak = 3060.320 ; gain = 20.875
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 37 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 58 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Sweep
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/ffebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[0].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[1].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[2].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[3].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[4].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[5].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[6].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe0_inst/genfebit[7].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/ffebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[0].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[1].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[2].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[3].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[4].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[5].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[6].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+WARNING: [Opt 31-163] Instance AFE/afe1_inst/genfebit[7].dfebit_inst/iserdese2_slave_inst with type ISERDESE2 and SERDES_MODE=SLAVE will be removed because its outputs are unobservable. If the associated master SERDES requires the slave and is not removed, an error will be issued when generating the bitstream. To avoid this message and the removal of the slave SERDES (assuming it is needed by the master), please add a DONT_TOUCH property to it before running opt_design.
+Phase 4 Sweep | Checksum: 26339c189
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:26 . Memory (MB): peak = 3060.320 ; gain = 20.875
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 336 cells
+INFO: [Opt 31-1021] In phase Sweep, 934 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 BUFG optimization
+Phase 5 BUFG optimization | Checksum: 1d67e5139
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:26 . Memory (MB): peak = 3060.320 ; gain = 20.875
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 1 cells.
+
+Phase 6 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 6 Shift Register Optimization | Checksum: 1d8f4e707
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:27 . Memory (MB): peak = 3060.320 ; gain = 20.875
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 7 Post Processing Netlist
+Phase 7 Post Processing Netlist | Checksum: 1e57ebbd2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:27 . Memory (MB): peak = 3060.320 ; gain = 20.875
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 69 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              22  |              39  |                                            109  |
+|  Constant propagation         |               0  |              37  |                                             58  |
+|  Sweep                        |               0  |             336  |                                            934  |
+|  BUFG optimization            |               0  |               1  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             69  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 3060.320 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 20a07bf3f
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:27 . Memory (MB): peak = 3060.320 ; gain = 20.875
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 1 BRAM(s) out of a total of 3 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-201] Structural ODC has moved 1 WE to EN ports
+Number of BRAM Ports augmented: 3 newly gated: 1 Total Ports: 6
+Ending PowerOpt Patch Enables Task | Checksum: 1b1b62a1a
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.364 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1b1b62a1a
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3169.672 ; gain = 109.352
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1b1b62a1a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 20e9e7ce7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+50 Infos, 20 Warnings, 7 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:33 . Memory (MB): peak = 3169.672 ; gain = 516.926
+INFO: [runtcl-4] Executing : report_drc -file FEB_drc_opted.rpt -pb FEB_drc_opted.pb -rpx FEB_drc_opted.rpx
+Command: report_drc -file FEB_drc_opted.rpt -pb FEB_drc_opted.pb -rpx FEB_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_opt.dcp' has been generated.
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 3 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 14e6a2b0a
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+WARNING: [Place 30-574] Poor placement for routing between an IO pin and BUFG. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	CpldRst_IBUF_inst (IBUF.O) is locked to IOB_X0Y7
+	CpldRst_IBUF_BUFG_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y4
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 148f4d741
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.633 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1ea753f9c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1ea753f9c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1ea753f9c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1d8c125ff
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 20a587836
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1ff4e9f8b
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 1d6bfe8e1
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 2 LUTNM shape to break, 321 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 2, total 2, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 150 nets or LUTs. Breaked 2 LUTs, combined 148 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            2  |            148  |                   150  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            2  |            148  |                   150  |           0  |           9  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 201a2ced1
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 2.4 Global Placement Core | Checksum: 2472f15eb
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 2472f15eb
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 22bb4dfc7
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1362789b1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 14b3400f8
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1ffc56f83
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 15b0d4d64
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: d88a6863
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:13 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 17a233a39
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 176b8a631
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 1bfcd5512
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1bfcd5512
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 15685754d
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-2.048 | TNS=-78.376 |
+Phase 1 Physical Synthesis Initialization | Checksum: 19a3c34f0
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.467 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 19a3c34f0
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.547 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 15685754d
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-1.848. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: bbcad227
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: bbcad227
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: bbcad227
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: bbcad227
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: bbcad227
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 48520ab7
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Ending Placer Task | Checksum: 41def6c4
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+93 Infos, 21 Warnings, 7 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_io -file FEB_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file FEB_utilization_placed.rpt -pb FEB_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file FEB_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.869 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 2.00s |  WALL: 1.43s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.848 | TNS=-71.876 |
+Phase 1 Physical Synthesis Initialization | Checksum: 172a07bb3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.757 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.848 | TNS=-71.876 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 172a07bb3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.793 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.848 | TNS=-71.876 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWWrtByte[7]_i_1_n_0. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[7]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWWrtByte[7]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.785 | TNS=-67.489 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWBitCount[1]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWBitCount[7]_i_1_n_0. Critical path length was reduced through logic transformation on cell OneWire/OneWBitCount[7]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.438 | TNS=-63.717 |
+INFO: [Physopt 32-702] Processed net OneWire/p_4_in[0]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/TempCtrl[3]_i_1_n_0. Critical path length was reduced through logic transformation on cell OneWire/TempCtrl[3]_i_1_comp_2.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.300 | TNS=-55.361 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[1]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWBitCount[7]_i_1_n_0. Critical path length was reduced through logic transformation on cell OneWire/OneWBitCount[7]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.296 | TNS=-52.272 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[2]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[2]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[2]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.296 | TNS=-52.315 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWrRdTmp_reg_n_0_[0]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWrRdTmp__0[0]. Critical path length was reduced through logic transformation on cell OneWire/OneWrRdTmp[0]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdTmp[0]_i_6_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.286 | TNS=-51.891 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWWrtByte[7]_i_1_n_0. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[7]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.273 | TNS=-47.938 |
+INFO: [Physopt 32-663] Processed net OneWire/OneWireCmdReg[2].  Re-placed instance OneWire/OneWireCmdReg_reg[2]
+INFO: [Physopt 32-735] Processed net OneWire/OneWireCmdReg[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.273 | TNS=-47.918 |
+INFO: [Physopt 32-663] Processed net OneWire/OneWireCmdReg[3].  Re-placed instance OneWire/OneWireCmdReg_reg[3]
+INFO: [Physopt 32-735] Processed net OneWire/OneWireCmdReg[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.273 | TNS=-47.898 |
+INFO: [Physopt 32-663] Processed net OneWire/OneWireCmdReg[4].  Re-placed instance OneWire/OneWireCmdReg_reg[4]
+INFO: [Physopt 32-735] Processed net OneWire/OneWireCmdReg[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.273 | TNS=-47.878 |
+INFO: [Physopt 32-663] Processed net OneWire/OneWireCmdReg[5].  Re-placed instance OneWire/OneWireCmdReg_reg[5]
+INFO: [Physopt 32-735] Processed net OneWire/OneWireCmdReg[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.273 | TNS=-47.858 |
+INFO: [Physopt 32-663] Processed net OneWire/OneWireCmdReg[6].  Re-placed instance OneWire/OneWireCmdReg_reg[6]
+INFO: [Physopt 32-735] Processed net OneWire/OneWireCmdReg[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.273 | TNS=-47.838 |
+INFO: [Physopt 32-663] Processed net OneWire/OneWireCmdReg[7].  Re-placed instance OneWire/OneWireCmdReg_reg[7]
+INFO: [Physopt 32-735] Processed net OneWire/OneWireCmdReg[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.261 | TNS=-47.818 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte_reg_n_0_[0]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[0]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[0]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWWrtByte[7]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.257 | TNS=-47.863 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWireCmdReg[0]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWWrtByte1. Critical path length was reduced through logic transformation on cell OneWire/OneWireCmdReg[7]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.250 | TNS=-42.266 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[2]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[2]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/OneWWrtByte[7]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.243 | TNS=-41.720 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[0]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[0]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.224 | TNS=-41.204 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[5]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[5]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[5]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.224 | TNS=-40.740 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[7]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[7]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[7]_i_2_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.216 | TNS=-40.189 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[6]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[6]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[6]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.116 | TNS=-39.636 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWrRdROM_reg_n_0_[0]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWrRdROM__0[0]. Critical path length was reduced through logic transformation on cell OneWire/OneWrRdROM[0]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.111 | TNS=-39.353 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[4]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[4]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[4]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.099 | TNS=-39.071 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[1]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[1]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.991 | TNS=-38.789 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[3]. Optimizations did not improve timing on the net.
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[2]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[2]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: uCA_IBUF[3]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets uCA_IBUF[3]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[3]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[3]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/OneWrRdROM[0]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.916 | TNS=-38.714 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[1]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWBitCount[7]_i_1_n_0. Critical path length was reduced through logic transformation on cell OneWire/OneWBitCount[7]_i_1_comp.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.916 | TNS=-37.754 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[1]]
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[3]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[3]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.891 | TNS=-37.492 |
+INFO: [Physopt 32-601] Processed net OneWire/TempCtrl[3]_i_1_n_0. Net driver OneWire/TempCtrl[3]_i_1_comp_2 was replaced.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.889 | TNS=-37.176 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[1]]
+INFO: [Physopt 32-710] Processed net OneWire/OneWrRdTmp__0[0]. Critical path length was reduced through logic transformation on cell OneWire/OneWrRdTmp[0]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.829 | TNS=-36.611 |
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[10]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[10]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: L[11]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets L[11]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[1]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[1]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: R[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets R[0]]
+WARNING: [Physopt 32-722] Net with MARK_DEBUG TRUE property was optimized: WRDL[0]
+Resolution: To prevent optimization apply the following XDC constraint before phys_opt_design: set_property DONT_TOUCH TRUE [get_nets WRDL[0]]
+INFO: [Common 17-14] Message 'Physopt 32-722' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Physopt 32-710] Processed net OneWire/OneWrRdROM__0[0]. Critical path length was reduced through logic transformation on cell OneWire/OneWrRdROM[0]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.817 | TNS=-36.528 |
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[4]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[4]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.807 | TNS=-36.387 |
+INFO: [Physopt 32-710] Processed net OneWire/p_2_in[1]. Critical path length was reduced through logic transformation on cell OneWire/OneWWrtByte[1]_i_1_comp_1.
+INFO: [Physopt 32-735] Processed net OneWire/TempCtrl[3]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.806 | TNS=-36.288 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-735] Processed net OneWire/OneWBitCount[7]_i_1_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.796 | TNS=-34.696 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[7]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net WRDL[1] was not replicated.
+INFO: [Physopt 32-81] Processed net WRDL[1]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net WRDL[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.795 | TNS=-34.459 |
+INFO: [Physopt 32-571] Net WRDL[1] was not replicated.
+INFO: [Physopt 32-571] Net WRDL[1] was not replicated.
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[7]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.795 | TNS=-34.459 |
+Phase 3 Critical Path Optimization | Checksum: 172a07bb3
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 3169.672 ; gain = 0.000
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.795 | TNS=-34.459 |
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[7]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-571] Net WRDL[1] was not replicated.
+INFO: [Physopt 32-571] Net WRDL[1] was not replicated.
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net PLL/inst/SysClk_PLL_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net OneWire/OneWWrtByte[7]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net WRDL[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.795 | TNS=-34.459 |
+Phase 4 Critical Path Optimization | Checksum: 172a07bb3
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.795 | TNS=-34.459 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          1.053  |         37.417  |            1  |              0  |                    33  |           0  |           2  |  00:00:06  |
+|  Total          |          1.053  |         37.417  |            1  |              0  |                    33  |           0  |           3  |  00:00:06  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 3169.672 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 28a8d620c
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+244 Infos, 121 Warnings, 7 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.907 . Memory (MB): peak = 3169.672 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: aa416583 ConstDB: 0 ShapeSum: f33bdc03 RouteDB: 0
+Post Restoration Checksum: NetGraph: 53f708d4 | NumContArr: 8ad273d3 | Constraints: 190a55ad | Timing: 0
+Phase 1 Build RT Design | Checksum: f7d3d254
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 3220.465 ; gain = 50.793
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: f7d3d254
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 3220.465 ; gain = 50.793
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: f7d3d254
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 3220.465 ; gain = 50.793
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 2321b5f4e
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 3240.191 ; gain = 70.520
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.702 | TNS=-29.538| WHS=-0.362 | THS=-437.192|
+
+
+Phase 2.4 Update Timing for Bus Skew
+
+Phase 2.4.1 Update Timing
+Phase 2.4.1 Update Timing | Checksum: 2f1c27de4
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 3253.168 ; gain = 83.496
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.702 | TNS=-29.466| WHS=N/A    | THS=N/A    |
+
+Phase 2.4 Update Timing for Bus Skew | Checksum: 2dae37e4a
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 3268.258 ; gain = 98.586
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00637806 %
+  Global Horizontal Routing Utilization  = 0.00377408 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 8531
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 8529
+  Number of Partially Routed Nets     = 2
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 228acf623
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 3268.258 ; gain = 98.586
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 228acf623
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:23 . Memory (MB): peak = 3268.258 ; gain = 98.586
+Phase 3 Initial Routing | Checksum: 11bb5c683
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:26 . Memory (MB): peak = 3321.176 ; gain = 151.504
+INFO: [Route 35-580] Design has 61 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+==============================+
+| Launch Setup Clock | Launch Hold Clock | Pin                          |
++====================+===================+==============================+
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[1]/D |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[4]/D |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWrRdROM_reg[0]/D  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[0]/D |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[6]/D |
++--------------------+-------------------+------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 582
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.018 | TNS=-51.009| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1b574f3a0
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 29
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.056 | TNS=-51.729| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 17d15fa17
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:55 . Memory (MB): peak = 3337.199 ; gain = 167.527
+Phase 4 Rip-up And Reroute | Checksum: 17d15fa17
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:55 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 12128f9b4
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:55 . Memory (MB): peak = 3337.199 ; gain = 167.527
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.018 | TNS=-51.009| WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: f4e8f39f
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:55 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: f4e8f39f
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:55 . Memory (MB): peak = 3337.199 ; gain = 167.527
+Phase 5 Delay and Skew Optimization | Checksum: f4e8f39f
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:55 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 16f463e91
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:56 . Memory (MB): peak = 3337.199 ; gain = 167.527
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.018 | TNS=-51.009| WHS=0.045  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 105b4fedd
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:56 . Memory (MB): peak = 3337.199 ; gain = 167.527
+Phase 6 Post Hold Fix | Checksum: 105b4fedd
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:56 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 2.36546 %
+  Global Horizontal Routing Utilization  = 2.85086 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 34.2342%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 48.6486%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 39.7059%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 45.5882%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 10a27e4d2
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:56 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 10a27e4d2
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:56 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 10e9f294d
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:57 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-1.018 | TNS=-51.009| WHS=0.045  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 10e9f294d
+
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:57 . Memory (MB): peak = 3337.199 ; gain = 167.527
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 11 Post-Route Event Processing
+Phase 11 Post-Route Event Processing | Checksum: 179db4564
+
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:57 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Time (s): cpu = 00:01:16 ; elapsed = 00:00:57 . Memory (MB): peak = 3337.199 ; gain = 167.527
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+264 Infos, 122 Warnings, 7 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:18 ; elapsed = 00:00:58 . Memory (MB): peak = 3337.199 ; gain = 167.527
+INFO: [runtcl-4] Executing : report_drc -file FEB_drc_routed.rpt -pb FEB_drc_routed.pb -rpx FEB_drc_routed.rpx
+Command: report_drc -file FEB_drc_routed.rpt -pb FEB_drc_routed.pb -rpx FEB_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file FEB_methodology_drc_routed.rpt -pb FEB_methodology_drc_routed.pb -rpx FEB_methodology_drc_routed.rpx
+Command: report_methodology -file FEB_methodology_drc_routed.rpt -pb FEB_methodology_drc_routed.pb -rpx FEB_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
+Command: report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+274 Infos, 122 Warnings, 7 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file FEB_route_status.rpt -pb FEB_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file FEB_timing_summary_routed.rpt -pb FEB_timing_summary_routed.pb -rpx FEB_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file FEB_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file FEB_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file FEB_bus_skew_routed.rpt -pb FEB_bus_skew_routed.pb -rpx FEB_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.941 . Memory (MB): peak = 3346.078 ; gain = 8.879
+INFO: [Common 17-1381] The checkpoint 'C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  7 12:20:07 2023...

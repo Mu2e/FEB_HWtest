@@ -243,3 +243,5 @@ set_property src_info {type:XDC file:1 line:432 export:INPUT save:INPUT read:REA
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
 set_property src_info {type:XDC file:1 line:433 export:INPUT save:INPUT read:READ} [current_design]
 connect_debug_port dbg_hub/clk [get_nets Clk_100MHz]
+set_property src_info {type:XDC file:1 line:436 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CpldRst_IBUF]

@@ -202,7 +202,7 @@ constant CtrlArray2Min : AddrPtr := "00" & X"58";
 constant CtrlArray2Max : AddrPtr := "00" & X"5F";
 
 --Clock alignment slip control registers
-constant SlipCtrlAd 	 : AddrPtr := "00" & X"61";
+constant SlipCtrlAd   : AddrPtr := "00" & X"61";
 constant SlipCntRegAd : AddrPtr := "00" & X"62";
 constant AlignEnAd    : AddrPtr := "00" & X"63";
 
@@ -319,15 +319,10 @@ port(
 	AFEDCLK_P, AFEDCLK_N    : in std_logic_vector(1 downto 0); -- Unused in this design 
 	AFE0FCLK_P, AFE0FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
 	AFE1FCLK_P, AFE1FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
-	-- AFE serial control lines
-	AFEPDn 				    : buffer std_logic_vector(1 downto 0);
-	AFECS 				    : buffer std_logic_vector(1 downto 0);
-	AFERst 				    : buffer std_logic;
-	AFESClk, AFESDI  	    : buffer std_logic;
-	AFESDO 				    : in std_logic;
-							
+				
 	-- FPGA interface       
 	Clk_80MHz			    : in  std_logic; 	-- Master clock 80MHz
+	Clk_100MHz			    : in  std_logic; 	-- uController clock 
 	Clk_560MHz			    : in  std_logic; 	-- 7 x Master clock = 560MHz
 	Clk_200MHz			    : in  std_logic; 	-- 200 MHz refclk for the IDELAY2
 	reset				    : in  std_logic;
@@ -674,7 +669,11 @@ component uController_interface is
 		LEDSrc				: in std_logic;
 	-- LVDS logic
 		FMTxBuff_full		: in std_logic;
-		FMTxBuff_empty		: in std_logic               
+		FMTxBuff_empty		: in std_logic;
+	-- AFE Logic
+		AFEPDn				: in std_logic_vector(1 downto 0);
+	-- DAC Logic
+		AlignReq            : in std_logic_vector (1 downto 0)               
     );
 end component;
 
@@ -699,7 +698,36 @@ component Mux is
     );
 end component;
 
-
+component DAC is
+    port (
+        Clk_100MHz			: in std_logic;
+        ResetHi			    : in std_logic;
+    -- Microcontroller strobes
+        CpldRst				: in std_logic;
+		CpldCS				: in std_logic;
+        uCWr 				: in std_logic;
+    -- Microcontroller data and address buses	
+        uCA 				: in std_logic_vector(11 downto 0);
+        uCD 				: in std_logic_vector(15 downto 0);        
+    -- Geographic address pins
+        GA 					: in std_logic_vector(1 downto 0);
+    -- Synchronous edge detectors of uC read and write strobes
+        uWRDL 				: in std_logic_vector(1 downto 0);
+	-- Serial DAC control lines
+	    DACCS 				: buffer std_logic_vector(2 downto 0);
+	    DACClk 				: buffer std_logic;
+	    DACDat 				: buffer std_logic;
+	    DACLd 				: buffer std_logic;
+    -- AFE serial control lines
+	    AFEPDn 				: buffer std_logic_vector(1 downto 0);
+	    AFECS 				: buffer std_logic_vector(1 downto 0);
+	    AFERst 				: buffer std_logic;
+	    AFESClk, AFESDI  	: buffer std_logic;
+	    AFESDO 				: in std_logic;
+    -- uController status registers
+        AlignReq            : buffer std_logic_vector (1 downto 0)
+    );
+end component;
 
 -----------------------------------------------------------------------
 ------------------------ Xilinx IP Components -------------------------

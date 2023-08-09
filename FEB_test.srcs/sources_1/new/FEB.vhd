@@ -176,6 +176,7 @@ signal MuxadReg            	  : std_logic_vector(1 downto 0);
 signal FlashEn  			  : std_logic; 
 signal FMTxBuff_empty 		  : std_logic;
 signal FMTxBuff_full  		  : std_logic;
+signal AlignReq				  : std_logic_vector (1 downto 0);         
 
 attribute mark_debug : string;
 attribute mark_debug of uAddrReg: signal is "false";
@@ -279,6 +280,36 @@ port map(
     MuxadReg        => MuxadReg         
 );
 
+DACControl : DAC
+port map (
+    Clk_100MHz		=> Clk_100MHz,
+	ResetHi  		=> ResetHi,
+-- Microcontroller strobes
+    CpldRst			=> CpldRst,	
+	CpldCS			=> CpldCS,
+	uCWr 			=> uCWr, 
+-- Microcontroller data and address buses	
+    uCA 			=> uCA,
+    uCD 			=> uCD,
+-- Geographic address pins
+    GA 				=> GA,
+-- Synchronous edge detectors of uC read and write strobes
+    uWRDL 			=> uWRDL,
+-- Serial DAC control lines
+    DACCS 			=> DACCS,
+    DACClk 			=> DACClk,
+    DACDat 			=> DACDat,
+    DACLd 			=> DACLd,
+-- AFE serial control lines
+	AFEPDn 		    => AFEPDn,
+	AFECS 		    => AFECS,
+	AFERst 		    => AFERst,
+	AFESClk         => AFESClk,
+	AFESDI  	    => AFESDI,
+	AFESDO 		    => AFESDO,
+-- uController status registers
+    AlignReq        => AlignReq
+    );
 
 
 
@@ -300,15 +331,10 @@ port map(
 	AFE0FCLK_N      => AFE0FCLK_N,
 	AFE1FCLK_P      => AFE1FCLK_P,
 	AFE1FCLK_N      => AFE1FCLK_N,
-	
-	AFEPDn 		    => AFEPDn,
-	AFECS 		    => AFECS,
-	AFERst 		    => AFERst,
-	AFESClk         => AFESClk,
-	AFESDI  	    => AFESDI,
-	AFESDO 		    => AFESDO,
--- FPGA interface
-	Clk_80MHz		=> Clk_80MHz,			  
+
+	-- FPGA interface
+	Clk_80MHz		=> Clk_80MHz,
+    Clk_100MHz		=> Clk_100MHz,			  
 	Clk_560MHz		=> Clk_560MHz,			  
 	Clk_200MHz		=> Clk_200MHz,			  
 	reset			=> SerdesRst(0) or SerdesRst(1),				  
@@ -595,8 +621,10 @@ port map(
 	LEDSrc			=> LEDSrc,
 	-- LVDS logic
 	FMTxBuff_full	=> FMTxBuff_full,
-	FMTxBuff_empty	=> FMTxBuff_empty	
-	
+	FMTxBuff_empty	=> FMTxBuff_empty,
+	AFEPDn			=> AFEPDn,
+	-- DAC Logic	
+	AlignReq        => AlignReq
   );
 --
 --
