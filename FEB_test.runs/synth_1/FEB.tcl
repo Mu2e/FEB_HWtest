@@ -201,6 +201,12 @@ set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_
 read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_DP_Pipeline/AFE_DP_Pipeline.xci
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_DP_Pipeline/AFE_DP_Pipeline_ooc.xdc]
 
+read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DAC_ila_0/DAC_ila_0.xci
+set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_ila_0/DAC_ila_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

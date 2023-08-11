@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../FEB_test.gen/sources_1/ip/DAC_ila_0/sim/DAC_ila_0.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Wed Aug  9 12:30:48 2023
+| Date             : Thu Aug 10 17:05:26 2023
 | Host             : CD-135239 running 64-bit major release  (build 9200)
 | Command          : report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
 | Design           : FEB
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.760        |
+| Total On-Chip Power (W)  | 0.780        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.687        |
+| Dynamic (W)              | 0.707        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 2.9          |
-| Max Ambient (C)          | 82.8         |
-| Junction Temperature (C) | 27.2         |
+| Max Ambient (C)          | 82.7         |
+| Junction Temperature (C) | 27.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.048 |       12 |       --- |             --- |
-| Slice Logic              |     0.015 |    20868 |       --- |             --- |
-|   LUT as Logic           |     0.013 |     6632 |     32600 |           20.34 |
-|   Register               |    <0.001 |     9388 |     65200 |           14.40 |
-|   CARRY4                 |    <0.001 |      500 |      8150 |            6.13 |
-|   F7/F8 Muxes            |    <0.001 |      275 |     32600 |            0.84 |
-|   LUT as Distributed RAM |    <0.001 |      152 |      9600 |            1.58 |
-|   LUT as Shift Register  |    <0.001 |      635 |      9600 |            6.61 |
-|   Others                 |    <0.001 |     1152 |       --- |             --- |
-| Signals                  |     0.021 |    13975 |       --- |             --- |
-| Block RAM                |     0.042 |       15 |        75 |           20.00 |
+| Clocks                   |     0.062 |       12 |       --- |             --- |
+| Slice Logic              |     0.017 |    30125 |       --- |             --- |
+|   LUT as Logic           |     0.015 |     9366 |     32600 |           28.73 |
+|   Register               |    <0.001 |    13626 |     65200 |           20.90 |
+|   CARRY4                 |    <0.001 |      654 |      8150 |            8.02 |
+|   LUT as Distributed RAM |    <0.001 |      280 |      9600 |            2.92 |
+|   F7/F8 Muxes            |    <0.001 |      369 |     32600 |            1.13 |
+|   LUT as Shift Register  |    <0.001 |     1076 |      9600 |           11.21 |
+|   Others                 |    <0.001 |     1808 |       --- |             --- |
+| Signals                  |     0.024 |    20043 |       --- |             --- |
+| Block RAM                |     0.043 |       16 |        75 |           21.33 |
 | MMCM                     |     0.212 |        2 |         5 |           40.00 |
-| I/O                      |     0.348 |      105 |       250 |           42.00 |
+| I/O                      |     0.349 |      106 |       250 |           42.40 |
 | Static Power             |     0.073 |          |           |                 |
-| Total                    |     0.760 |          |           |                 |
+| Total                    |     0.780 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.156 |       0.145 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.175 |       0.164 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.237 |       0.225 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.055 |       0.054 |      0.001 |       NA    | Unspecified | NA         |
@@ -152,7 +152,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| FEB                                            |     0.687 |
+| FEB                                            |     0.707 |
 |   AFE                                          |     0.343 |
 |     afe0_inst                                  |     0.133 |
 |       ffebit_inst                              |     0.015 |
@@ -174,8 +174,8 @@ Table of Contents
 |       genfebit[5].dfebit_inst                  |     0.015 |
 |       genfebit[6].dfebit_inst                  |     0.015 |
 |       genfebit[7].dfebit_inst                  |     0.015 |
-|   AFE_DataPath_inst                            |     0.066 |
-|     AFE_Pipeline_inst                          |     0.018 |
+|   AFE_DataPath_inst                            |     0.063 |
+|     AFE_Pipeline_inst                          |     0.017 |
 |       Gen_Two_AFEs[0].Pipeline                 |     0.008 |
 |       Gen_Two_AFEs[1].Pipeline                 |     0.008 |
 |     Gen_Two_AFEs[0].Gen_Eight_Chans[0].AFEBuff |     0.002 |
@@ -210,19 +210,23 @@ Table of Contents
 |       U0                                       |     0.002 |
 |     Gen_Two_AFEs[1].Gen_Eight_Chans[7].AFEBuff |     0.002 |
 |       U0                                       |     0.002 |
-|   DACControl                                   |     0.002 |
-|   EventBuilder_logic                           |     0.014 |
+|   DACControl                                   |     0.023 |
+|     generateILA.DAC_ILA                        |     0.021 |
+|       U0                                       |     0.021 |
+|   EventBuilder_logic                           |     0.015 |
 |   HF_PLL                                       |     0.116 |
 |     inst                                       |     0.116 |
-|   ILA_uC                                       |     0.028 |
-|     U0                                         |     0.028 |
-|       ila_core_inst                            |     0.028 |
+|   ILA_uC                                       |     0.026 |
+|     U0                                         |     0.026 |
+|       ila_core_inst                            |     0.026 |
+|   OneWire                                      |     0.001 |
 |   PLL                                          |     0.101 |
 |     inst                                       |     0.101 |
 |   Trigger_logic                                |     0.002 |
 |   dbg_hub                                      |     0.003 |
 |     inst                                       |     0.003 |
 |       BSCANID.u_xsdbm_id                       |     0.003 |
+|   uControllerRegister                          |     0.002 |
 +------------------------------------------------+-----------+
 
 

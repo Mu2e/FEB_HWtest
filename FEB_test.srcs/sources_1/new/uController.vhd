@@ -42,7 +42,7 @@ entity uController_interface is
     -- Synchronous edge detectors of uC read and write strobes
         uWRDL 				: in std_logic_vector(1 downto 0);
 		uRDDL 				: in std_logic_vector(1 downto 0);
-        uAddrReg 				: in std_logic_vector(11 downto 0);
+        uAddrReg 			: in std_logic_vector(11 downto 0);
 
         iCD                 : out std_logic_vector(15 downto 0);
     -- OUTPUT REGISTERS     
@@ -59,6 +59,7 @@ entity uController_interface is
 		TmgSrcSel			: in std_logic; 
 		SlfTrgEn 			: in std_logic;
 		uBunch   			: in std_logic_vector(31 downto 0);
+		TrgSrc		        : in std_logic;
 	-- LVDS logic
 		FMTxBuff_full		: in std_logic;
 		FMTxBuff_empty		: in std_logic;
@@ -66,6 +67,7 @@ entity uController_interface is
 		AFEPDn				: in std_logic_vector(1 downto 0);
 	-- DAC logic
 		AlignReq            : in std_logic_vector (1 downto 0);
+		AFERdReg            : in std_logic_vector (15 downto 0);
 	-- AFE DataPath logic
 		PipelineSet 		: in std_logic_vector (7 downto 0);
 		MaskReg				: in Array_2x8;
@@ -74,7 +76,9 @@ entity uController_interface is
 		PortNo 				: in std_logic_vector (4 downto 0);
 		BeamOnLength 		: in std_logic_vector (11 downto 0);
 		BeamOffLength 		: in std_logic_vector (11 downto 0);
-		ADCSmplCntReg 		: in std_logic_vector (3 downto 0)
+		ADCSmplCntReg 		: in std_logic_vector (3 downto 0);
+		Ped_Reg				: in Arrays_8x2x14;
+		IntTrgThresh 		: in Arrays_8x2x14
 	);
 end uController_interface;
 
@@ -175,7 +179,7 @@ iCD <= 	 X"000" & "00" & AFEPDn when CSRRegAddr,
 		-- SDRdAD(15 downto 0) when SDRamRdPtrLoAd,
 		-- DDRRd_Mux(7 downto 0) & DDRRd_Mux(15 downto 8) when SDRamSwapPort,
 		-- DDRRd_Mux when SDRamPortAd,
-		-- AFERdReg when AFERdDataAd,
+		AFERdReg when AFERdDataAd,
 		-- '0' & DDR_Rd_Cnt & '0' & SDwr_count when DDRCountAddr,
 		-- X"0" & '0' & SDrd_empty & SDrd_full & SDcmd_empty(1) & SDcmd_full(1) 
 		-- & SDwr_underrun & SDwr_empty & SDwr_full & SDcmd_empty(0) & SDcmd_full(0) 
@@ -187,40 +191,40 @@ iCD <= 	 X"000" & "00" & AFEPDn when CSRRegAddr,
 		-- X"0" & '0' & HistAddrb(1) when HistPtrAd1,
 		-- Hist_Outb(0) when HistRd0Ad,
 		-- Hist_Outb(1) when HistRd1Ad,
-		-- GA & "00" & X"001" when DebugVersionAd,
-		-- X"0" & std_logic_vector(Ped_Reg(0)(0)) when PedRegAddr(0)(0),
-		-- X"0" & std_logic_vector(Ped_Reg(0)(1)) when PedRegAddr(0)(1),
-		-- X"0" & std_logic_vector(Ped_Reg(0)(2)) when PedRegAddr(0)(2),
-		-- X"0" & std_logic_vector(Ped_Reg(0)(3)) when PedRegAddr(0)(3),
-		-- X"0" & std_logic_vector(Ped_Reg(0)(4)) when PedRegAddr(0)(4),
-		-- X"0" & std_logic_vector(Ped_Reg(0)(5)) when PedRegAddr(0)(5),
-		-- X"0" & std_logic_vector(Ped_Reg(0)(6)) when PedRegAddr(0)(6),
-		-- X"0" & std_logic_vector(Ped_Reg(0)(7)) when PedRegAddr(0)(7),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(0)) when PedRegAddr(1)(0),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(1)) when PedRegAddr(1)(1),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(2)) when PedRegAddr(1)(2),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(3)) when PedRegAddr(1)(3),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(4)) when PedRegAddr(1)(4),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(5)) when PedRegAddr(1)(5),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(6)) when PedRegAddr(1)(6),
-		-- X"0" & std_logic_vector(Ped_Reg(1)(7)) when PedRegAddr(1)(7),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(0)) when ThreshRegAddr(0)(0),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(1)) when ThreshRegAddr(0)(1),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(2)) when ThreshRegAddr(0)(2),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(3)) when ThreshRegAddr(0)(3),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(4)) when ThreshRegAddr(0)(4),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(5)) when ThreshRegAddr(0)(5),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(6)) when ThreshRegAddr(0)(6),
-		-- X"0" & std_logic_vector(IntTrgThresh(0)(7)) when ThreshRegAddr(0)(7),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(0)) when ThreshRegAddr(1)(0),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(1)) when ThreshRegAddr(1)(1),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(2)) when ThreshRegAddr(1)(2),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(3)) when ThreshRegAddr(1)(3),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(4)) when ThreshRegAddr(1)(4),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(5)) when ThreshRegAddr(1)(5),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(6)) when ThreshRegAddr(1)(6),
-		-- X"0" & std_logic_vector(IntTrgThresh(1)(7)) when ThreshRegAddr(1)(7),
-		-- X"000" & "00" & TrgSrc & '0' when TrigCtrlAddr,
+		GA & "00" & X"001" when DebugVersionAd,
+		"00" & std_logic_vector(Ped_Reg(0)(0)) when PedRegAddr(0)(0),
+		"00" & std_logic_vector(Ped_Reg(0)(1)) when PedRegAddr(0)(1),
+		"00" & std_logic_vector(Ped_Reg(0)(2)) when PedRegAddr(0)(2),
+		"00" & std_logic_vector(Ped_Reg(0)(3)) when PedRegAddr(0)(3),
+		"00" & std_logic_vector(Ped_Reg(0)(4)) when PedRegAddr(0)(4),
+		"00" & std_logic_vector(Ped_Reg(0)(5)) when PedRegAddr(0)(5),
+		"00" & std_logic_vector(Ped_Reg(0)(6)) when PedRegAddr(0)(6),
+		"00" & std_logic_vector(Ped_Reg(0)(7)) when PedRegAddr(0)(7),
+		"00" & std_logic_vector(Ped_Reg(1)(0)) when PedRegAddr(1)(0),
+		"00" & std_logic_vector(Ped_Reg(1)(1)) when PedRegAddr(1)(1),
+		"00" & std_logic_vector(Ped_Reg(1)(2)) when PedRegAddr(1)(2),
+		"00" & std_logic_vector(Ped_Reg(1)(3)) when PedRegAddr(1)(3),
+		"00" & std_logic_vector(Ped_Reg(1)(4)) when PedRegAddr(1)(4),
+		"00" & std_logic_vector(Ped_Reg(1)(5)) when PedRegAddr(1)(5),
+		"00" & std_logic_vector(Ped_Reg(1)(6)) when PedRegAddr(1)(6),
+		"00" & std_logic_vector(Ped_Reg(1)(7)) when PedRegAddr(1)(7),
+		"00" & std_logic_vector(IntTrgThresh(0)(0)) when ThreshRegAddr(0)(0),
+		"00" & std_logic_vector(IntTrgThresh(0)(1)) when ThreshRegAddr(0)(1),
+		"00" & std_logic_vector(IntTrgThresh(0)(2)) when ThreshRegAddr(0)(2),
+		"00" & std_logic_vector(IntTrgThresh(0)(3)) when ThreshRegAddr(0)(3),
+		"00" & std_logic_vector(IntTrgThresh(0)(4)) when ThreshRegAddr(0)(4),
+		"00" & std_logic_vector(IntTrgThresh(0)(5)) when ThreshRegAddr(0)(5),
+		"00" & std_logic_vector(IntTrgThresh(0)(6)) when ThreshRegAddr(0)(6),
+		"00" & std_logic_vector(IntTrgThresh(0)(7)) when ThreshRegAddr(0)(7),
+		"00" & std_logic_vector(IntTrgThresh(1)(0)) when ThreshRegAddr(1)(0),
+		"00" & std_logic_vector(IntTrgThresh(1)(1)) when ThreshRegAddr(1)(1),
+		"00" & std_logic_vector(IntTrgThresh(1)(2)) when ThreshRegAddr(1)(2),
+		"00" & std_logic_vector(IntTrgThresh(1)(3)) when ThreshRegAddr(1)(3),
+		"00" & std_logic_vector(IntTrgThresh(1)(4)) when ThreshRegAddr(1)(4),
+		"00" & std_logic_vector(IntTrgThresh(1)(5)) when ThreshRegAddr(1)(5),
+		"00" & std_logic_vector(IntTrgThresh(1)(6)) when ThreshRegAddr(1)(6),
+		"00" & std_logic_vector(IntTrgThresh(1)(7)) when ThreshRegAddr(1)(7),
+		X"000" & "00" & TrgSrc & '0' when TrigCtrlAddr,
 		X"000" & ADCSmplCntReg when ADCSmplCntrAd,
 		X"000" &"00" & SlfTrgEn & TmgSrcSel when IntTrgEnAddr,
 		"000" & ControllerNo & "000" & PortNo when FEBAddresRegAd,

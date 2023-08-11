@@ -291,6 +291,3 @@ end GENERATE;
 
 end Trigger_arch;
 
-
--- Rx1DatReg mi pare inutile 
-

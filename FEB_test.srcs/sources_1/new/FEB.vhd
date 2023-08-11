@@ -183,6 +183,9 @@ signal TurnOnTime  			  : std_logic_vector (8 downto 0);
 signal TurnOffTime 			  : std_logic_vector (8 downto 0);
 signal LEDTime	   			  : std_logic_vector (8 downto 0);
 signal TmgSrcSel			  : std_logic; 
+signal Ped_Reg				  : Arrays_8x2x14;
+signal IntTrgThresh 		  : Arrays_8x2x14;
+signal AFERdReg               : std_logic_vector (15 downto 0);
 
 attribute mark_debug : string;
 attribute mark_debug of uAddrReg: signal is "false";
@@ -314,7 +317,8 @@ port map (
 	AFESDI  	    => AFESDI,
 	AFESDO 		    => AFESDO,
 -- uController status registers
-    AlignReq        => AlignReq
+    AlignReq        => AlignReq,
+	AFERdReg		=> AFERdReg
     );
 
 
@@ -391,14 +395,23 @@ port map (
 	PortNo 			=> PortNo,
 	BeamOnLength 	=> BeamOnLength,
 	BeamOffLength 	=> BeamOffLength, 	
-	ADCSmplCntReg 	=> ADCSmplCntReg	
+	ADCSmplCntReg 	=> ADCSmplCntReg,
+	Ped_Reg			=> Ped_Reg,
+	IntTrgThresh	=> IntTrgThresh	
 );
 
 Phase_Detector_inst: Phase_Detector
 port map(
-	SysClk 			=> SysClk,	-- 160 MHz			    
+	SysClk 			=> SysClk,	-- 160 MHz
+	Clk_100MHz		=> Clk_100MHz,			    
 	CpldRst			=> CpldRst,				
-	GA 				=> GA,				
+-- Microcontroller data and address buses	
+	uCA 			=> uCA,
+	uCD 			=> uCD,
+-- Geographic address pins
+	GA 				=> GA,
+-- Synchronous edge detectors of uC read and write strobes
+	uWRDL 			=> uWRDL,				
 	A7		 		=> A7,			
 	GPI0			=> GPI0,
 	TrgSrc			=> TrgSrc, 					
@@ -640,6 +653,7 @@ port map(
 	TmgSrcSel		=> TmgSrcSel, 
 	SlfTrgEn 		=> SlfTrgEn,
 	uBunch   		=> uBunch, 
+	TrgSrc			=> TrgSrc, 
 	-- LVDS logic
 	FMTxBuff_full	=> FMTxBuff_full,
 	FMTxBuff_empty	=> FMTxBuff_empty,
@@ -647,6 +661,7 @@ port map(
 	AFEPDn			=> AFEPDn,
 	-- DAC Logic	
 	AlignReq        => AlignReq,
+	AFERdReg		=> AFERdReg, 
 	-- AFE DataPath logic
 	PipelineSet 	=> PipelineSet, 
 	MaskReg			=> MaskReg,		
@@ -655,7 +670,9 @@ port map(
 	PortNo 			=> PortNo, 		
 	BeamOnLength 	=> BeamOnLength, 
 	BeamOffLength 	=> BeamOffLength,
-	ADCSmplCntReg 	=> ADCSmplCntReg 
+	ADCSmplCntReg 	=> ADCSmplCntReg,
+	Ped_Reg			=> Ped_Reg,
+	IntTrgThresh	=> IntTrgThresh	 
   );
 --
 --
@@ -725,3 +742,12 @@ port map(
 
 
 end behavioural;
+
+
+-- TODO
+-- GPIO on the DGB
+-- SysClk on the DBG
+-- AFE data on the DBG + on a FIFO to read back 
+-- A7 on the DBG
+
+-- Set the DAC on chipscope 

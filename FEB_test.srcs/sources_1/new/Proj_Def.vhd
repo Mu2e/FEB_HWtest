@@ -375,7 +375,9 @@ component AFE_DataPath is
 	PortNo 				: buffer std_logic_vector (4 downto 0);
 	BeamOnLength 		: buffer std_logic_vector (11 downto 0);
 	BeamOffLength 		: buffer std_logic_vector (11 downto 0);
-	ADCSmplCntReg 		: buffer std_logic_vector (3 downto 0)
+	ADCSmplCntReg 		: buffer std_logic_vector (3 downto 0);
+	Ped_Reg				: buffer Arrays_8x2x14;
+	IntTrgThresh 		: buffer Arrays_8x2x14
 );
 end component;
 	
@@ -397,17 +399,23 @@ end component;
 	
 component Phase_Detector is
 port (
-	SysClk				    : in std_logic;   -- 160 Mhz
+	SysClk				: in std_logic;   -- 160 Mhz
+	Clk_100MHz			: in std_logic;
 	-- Microcontroller strobes
-	CpldRst					: in std_logic; 
+	CpldRst				: in std_logic; 
+	-- Microcontroller data and address buses	
+	uCA 				: in std_logic_vector(11 downto 0);
+	uCD 				: in std_logic_vector(15 downto 0);
 	-- Geographic address pins
-	GA 						: in std_logic_vector(1 downto 0);
+	GA 					: in std_logic_vector(1 downto 0);
+	-- Synchronous edge detectors of uC read and write strobes
+	uWRDL 				: in std_logic_vector(1 downto 0);
 	-- Chip dependent I/O functions
-	A7		 				: out std_logic;
-	GPI0					: in std_logic;
+	A7		 			: out std_logic;
+	GPI0				: in std_logic;
 	-- Trigger Logic
-	TrgSrc					: in std_logic;
-	GPO						: in std_logic
+	TrgSrc				: buffer std_logic;
+	GPO					: in std_logic
 );
 end component;
 
@@ -682,6 +690,7 @@ component uController_interface is
 		TmgSrcSel			: in std_logic; 
 		SlfTrgEn 			: in std_logic;
 		uBunch   			: in std_logic_vector(31 downto 0);
+		TrgSrc		        : in std_logic;
 	-- LVDS logic
 		FMTxBuff_full		: in std_logic;
 		FMTxBuff_empty		: in std_logic;
@@ -689,6 +698,7 @@ component uController_interface is
 		AFEPDn				: in std_logic_vector(1 downto 0);
 	-- DAC logic
 		AlignReq            : in std_logic_vector (1 downto 0);
+		AFERdReg            : in std_logic_vector (15 downto 0);
 	-- AFE DataPath logic
 		PipelineSet 		: in std_logic_vector (7 downto 0);
 		MaskReg				: in Array_2x8;
@@ -697,7 +707,9 @@ component uController_interface is
 		PortNo 				: in std_logic_vector (4 downto 0);
 		BeamOnLength 		: in std_logic_vector (11 downto 0);
 		BeamOffLength 		: in std_logic_vector (11 downto 0);
-		ADCSmplCntReg 		: in std_logic_vector (3 downto 0)              
+		ADCSmplCntReg 		: in std_logic_vector (3 downto 0);
+		Ped_Reg				: in Arrays_8x2x14;
+		IntTrgThresh 		: in Arrays_8x2x14              
     );
 end component;
 
@@ -749,7 +761,8 @@ component DAC is
 	    AFESClk, AFESDI  	: buffer std_logic;
 	    AFESDO 				: in std_logic;
     -- uController status registers
-        AlignReq            : buffer std_logic_vector (1 downto 0)
+        AlignReq            : buffer std_logic_vector (1 downto 0);
+        AFERdReg            : buffer std_logic_vector (15 downto 0)
     );
 end component;
 

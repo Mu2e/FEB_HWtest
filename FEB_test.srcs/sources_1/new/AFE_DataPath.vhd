@@ -75,7 +75,9 @@ entity AFE_DataPath is
 	PortNo 				: buffer std_logic_vector (4 downto 0);
 	BeamOnLength 		: buffer std_logic_vector (11 downto 0);
 	BeamOffLength 		: buffer std_logic_vector (11 downto 0);
-	ADCSmplCntReg 		: buffer std_logic_vector (3 downto 0)
+	ADCSmplCntReg 		: buffer std_logic_vector (3 downto 0);
+	Ped_Reg				: buffer Arrays_8x2x14;
+	IntTrgThresh 		: buffer Arrays_8x2x14
 
 	);
 end AFE_DataPath;
@@ -113,12 +115,11 @@ signal WrtCrrntWdCntAd 	: Array_2x8x10;
 signal WrtNxtWdCntAd 	: Array_2x8x10;
 
 -- Self trigger signals
-signal Ped_Reg			: Arrays_8x2x14;
 signal Pad_Avg_Count 	: Array_2x5;
 signal Avg_Req 			: std_logic_vector(1 downto 0);
 signal Ped_Avg 			: Arrays_8x2x16;
 signal Avg_En 			: Array_2x8;
-signal IntTrgThresh 	: Arrays_8x2x14;
+
 
 	
 -- attribute mark_debug : string;

@@ -55,7 +55,8 @@ entity DAC is
 	    AFESClk, AFESDI  	 : buffer std_logic;
 	    AFESDO 				 : in std_logic;
     -- uController status registers
-        AlignReq             : buffer std_logic_vector (1 downto 0)
+        AlignReq             : buffer std_logic_vector (1 downto 0);
+        AFERdReg             : buffer std_logic_vector (15 downto 0)
     );
 end DAC;
 
@@ -68,7 +69,6 @@ signal RampGate             : std_logic_vector (1 downto 0);
 signal ClkDiv               : std_logic_vector (2 downto 0);
 signal BitCount             : std_logic_vector (4 downto 0);
 signal DACShift             : std_logic_vector (23 downto 0);
-signal AFERdReg             : std_logic_vector (15 downto 0);
 
 Type  Serializer_FSM is (Idle,Shift,ClearSync,SetLoad);
 Signal Octal_Shift : Serializer_FSM;
@@ -235,7 +235,6 @@ begin
         ODFifoData  <= (others => '0');
         ShadowWrt   <= "0";
 
-        AFERdReg    <= (others => '0');
 
     elsif rising_edge (Clk_100MHz) then 
 
@@ -575,6 +574,8 @@ begin
         AFESDI      <= '0';
         AFESClk     <= '0'; 
         AFERst      <= '0';
+        
+        AFERdReg    <= (others => '0');
 
     elsif rising_edge (Clk_100MHz) then  
 
@@ -635,12 +636,31 @@ begin
     -- Clock in any readback data
     if Dev_Sel = '0' and SClkDL = 6 then
         AFERdReg <= AFERdReg(14 downto 0) & AFESDO;
+        --AFERdReg <= "000000000000000" & AFESDO;
     end if;
 
     end if;
 end process;
 
+-- =========================================================================
+-- ===========================     ILA    ==================================
+-- =========================================================================
 
+generateILA: if true generate
+
+	DAC_ILA: DAC_ila_0 
+	port map(
+	clk    		=> Clk_100MHz,
+	probe0  	=> AFEPDn,          -- std_logic_vector(1 downto 0)      
+    probe1  	=> AFECS,        -- std_logic_vector(1 downto 0)       
+    probe2(0) 	=> AFERst,          -- std_logic    
+    probe3(0) 	=> AFESClk,     -- std_logic        
+    probe4(0) 	=> AFESDI,          -- std_logic
+    probe5(0) 	=> AFESDO,       -- std_logic
+	probe6   	=> AFERdReg           -- std_logic_vector (15 downto 0)
+);
+
+end GENERATE; 
 
 
 end Behavioral;
