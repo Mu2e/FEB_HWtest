@@ -646,21 +646,38 @@ end process;
 -- ===========================     ILA    ==================================
 -- =========================================================================
 
-generateILA: if true generate
+generateILA0: if true generate
 
 	DAC_ILA: DAC_ila_0 
 	port map(
 	clk    		=> Clk_100MHz,
-	probe0  	=> AFEPDn,          -- std_logic_vector(1 downto 0)      
+	probe0  	=> AFEPDn,       -- std_logic_vector(1 downto 0)      
     probe1  	=> AFECS,        -- std_logic_vector(1 downto 0)       
-    probe2(0) 	=> AFERst,          -- std_logic    
-    probe3(0) 	=> AFESClk,     -- std_logic        
-    probe4(0) 	=> AFESDI,          -- std_logic
+    probe2(0) 	=> AFERst,       -- std_logic    
+    probe3(0) 	=> AFESClk,      -- std_logic        
+    probe4(0) 	=> AFESDI,       -- std_logic
     probe5(0) 	=> AFESDO,       -- std_logic
-	probe6   	=> AFERdReg           -- std_logic_vector (15 downto 0)
+	probe6   	=> AFERdReg      -- std_logic_vector (15 downto 0)
 );
 
 end GENERATE; 
+
+generateILA1: if true generate
+
+	DAC_ILA: DAC_ila_1
+	port map(
+	clk    		=> Clk_100MHz,
+	probe0  	=> DACCS,        -- std_logic_vector(1 downto 0)      
+    probe1(0)  	=> DACClk,       -- std_logic_vector(1 downto 0)       
+    probe2(0) 	=> DACDat,       -- std_logic    
+    probe3(0) 	=> DACLd         -- std_logic        
+);
+
+end GENERATE; 
+
+
+
+
 
 
 end Behavioral;

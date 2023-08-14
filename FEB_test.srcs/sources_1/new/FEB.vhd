@@ -91,7 +91,7 @@ port(
 	-- Temperature sensor lines
 	Temp					: inout std_logic_vector(3 downto 0);
 	-- Debug header 
-	DBG	 					: inout std_logic_vector(9 downto 1)
+	DBG	 					: out std_logic_vector(9 downto 1)
 );
 end FEB;
 
@@ -626,6 +626,7 @@ port map(
 uControllerRegister : uController_interface 
 port map(
 	Clk_100MHz		=> Clk_100MHz,
+	ResetHi			=> ResetHi,
 	-- Microcontroller strobes
 	CpldRst			=> CpldRst,	
 	CpldCS			=> CpldCS,
@@ -659,6 +660,8 @@ port map(
 	FMTxBuff_empty	=> FMTxBuff_empty,
 	-- AFE Logic
 	AFEPDn			=> AFEPDn,
+	dout_afe0		=> dout_afe0,
+	done			=> done,
 	-- DAC Logic	
 	AlignReq        => AlignReq,
 	AFERdReg		=> AFERdReg, 
@@ -740,14 +743,31 @@ port map(
 	probe10	  => uRDDL 		-- std_logic_vector(1 downto 0)	
 );
 
+generateILA0: if true generate
+
+    AFE_ila: AFE_ila_0
+    port map(
+    clk    		=> Clk_80MHz, 	
+    probe0(0) 	=> SerdesRst(0), 
+    probe1   	=> done, 	
+    probe2	 	=> warn, 		
+    probe3	 	=> dout_afe0(0),  
+    probe4  	=> dout_afe1(0) 	
+);
+
+end GENERATE; 
+
+------- DEBUG
+DBG(1)	<= GPI0;
+DBG(2)	<= SysClk;
+DBG(3)	<= A7; 
+DBG(4)	<= dout_afe0(0)(0);
+DBG(5)	<= dout_afe1(0)(0);
+-- DBG(6)	<= 
+-- DBG(7)	<= 
+-- DBG(8)	<= 
+-- DBG(9)	<= 
+
 
 end behavioural;
 
-
--- TODO
--- GPIO on the DGB
--- SysClk on the DBG
--- AFE data on the DBG + on a FIFO to read back 
--- A7 on the DBG
-
--- Set the DAC on chipscope 

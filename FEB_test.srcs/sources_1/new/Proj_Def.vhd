@@ -662,6 +662,7 @@ end component;
 component uController_interface is
     port (
         Clk_100MHz			: in std_logic;
+		ResetHi			    : in std_logic;
     -- Microcontroller strobes
         CpldRst				: in std_logic;
 		CpldCS				: in std_logic;
@@ -696,6 +697,8 @@ component uController_interface is
 		FMTxBuff_empty		: in std_logic;
 	-- AFE Logic
 		AFEPDn				: in std_logic_vector(1 downto 0);
+		dout_afe0			: in Array_8x14;
+		done				: in std_logic_vector(1 downto 0);
 	-- DAC logic
 		AlignReq            : in std_logic_vector (1 downto 0);
 		AFERdReg            : in std_logic_vector (15 downto 0);

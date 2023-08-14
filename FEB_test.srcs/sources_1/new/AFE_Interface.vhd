@@ -20,6 +20,7 @@ Library UNISIM;
 use UNISIM.vcomponents.all;
 
 use work.Proj_Def.all;
+use work.Debug_ILA.all;
 
 -- The 7series FPGAs ISERDESE2 modules when in DDR mode and cascaded together, 
 -- only support 10 and 14 bit transmission modes. The AFE chip used on the CRV 

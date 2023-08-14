@@ -90,7 +90,7 @@ begin
 	
 elsif falling_edge(SysClk) then
 
- SqWav <= FBDiv(2); -- 20 MHz (160 Mhz/8)
+ SqWav <= FBDiv(2); -- 20 MHz (160 Mhz/8)+
  FBDiv <= FBDiv + 1;
 
 end if; -- CpldRst

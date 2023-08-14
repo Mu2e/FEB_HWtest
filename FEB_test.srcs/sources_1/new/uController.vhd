@@ -31,6 +31,7 @@ use work.Debug_ILA.all;
 entity uController_interface is
     port (
         Clk_100MHz			: in std_logic;
+		ResetHi			    : in std_logic;
     -- Microcontroller strobes
         CpldRst				: in std_logic;
 		CpldCS				: in std_logic;
@@ -65,6 +66,8 @@ entity uController_interface is
 		FMTxBuff_empty		: in std_logic;
 	-- AFE Logic
 		AFEPDn				: in std_logic_vector(1 downto 0);
+		dout_afe0			: in Array_8x14;
+		done				: in std_logic_vector(1 downto 0);
 	-- DAC logic
 		AlignReq            : in std_logic_vector (1 downto 0);
 		AFERdReg            : in std_logic_vector (15 downto 0);
@@ -90,6 +93,17 @@ signal TestCount : std_logic_vector (31 downto 0);
 signal UpTimeCount : std_logic_vector (31 downto 0);
 signal UpTimeStage : std_logic_vector (31 downto 0);
 signal Counter1s   : std_logic_vector (27 downto 0);
+
+-- AFE DEBUG signals 
+signal AFE_DBG_wr_en 	   : std_logic;	
+signal AFE_DBG_rd_en 	   : std_logic;
+signal AFE_DBG_din 	   	   : std_logic_vector(15 downto 0);
+signal AFE_DBG_dout 	   : std_logic_vector(15 downto 0);
+signal AFE_DBG_full 	   : std_logic;
+signal AFE_DBG_empty 	   : std_logic;
+signal AFE_DBG_data_count  : std_logic_vector(10 downto 0);
+
+constant AFEDBGAddr		   : AddrPtr  := "00" & X"AB";
 
 begin    
 
@@ -147,11 +161,58 @@ elsif rising_edge (Clk_100MHz) then
 end if;
 end process;
 
+-- AFE DEBUG FIFO
+AFE_DEBUG : SCFIFO_1Kx16
+port map (
+	rst 		=> ResetHi,
+	clk 		=> Clk_100MHz,
+	wr_en 		=> AFE_DBG_wr_en, 	   
+	rd_en 		=> AFE_DBG_rd_en, 	   
+	din 		=> AFE_DBG_din, 	   
+    dout		=> AFE_DBG_dout, 	   
+    empty 		=> AFE_DBG_empty, 	   
+	full 		=> AFE_DBG_full, 	   
+	data_count  => AFE_DBG_data_count 
+);
+
+AFE_DBG_din <= "00" & dout_afe0(0);
+
+AFE_FIFO_DEBUG : process(Clk_100MHz, CpldRst)
+begin 
+if CpldRst = '0' then
+	
+	AFE_DBG_wr_en 	<= '0';
+	AFE_DBG_rd_en 	<= '0';
+	--AFE_DBG_din     <= (others => '0');
+
+elsif rising_edge (Clk_100MHz) then
+
+
+	if AFE_DBG_full = '0' and done(0) = '1' then 
+	    AFE_DBG_wr_en <= '1';
+	else
+	    AFE_DBG_wr_en <= '0';
+	end if;
+
+	if uRDDL = 2 and uAddrReg(11 downto 10) = GA and uAddrReg(9 downto 0) = AFEDBGAddr then 
+	
+		AFE_DBG_rd_en <= '1'; 
+	else 
+		AFE_DBG_rd_en <= '0';
+
+   end if;
+
+end if;
+end process;
+
+
+
 
 with uCA(9 downto 0) select
 
 iCD <= 	 X"000" & "00" & AFEPDn when CSRRegAddr,
 		 X"000" & "00" & AlignReq when SlipCtrlAd,
+		 AFE_DBG_dout when AFEDBGAddr, 
 		-- X"0" & '0' & SlipCntReg(1)
 		--	& X"0" & '0' & SlipCntReg(0) when SlipCntRegAd,
 		-- X"00" & WidthReg when GateAddr,
