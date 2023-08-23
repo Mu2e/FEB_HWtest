@@ -631,9 +631,7 @@ component DDR_test is
 	-- Synchronous edge detectors of uC read and write strobes
 		AddrReg			  	: in std_logic_vector(11 downto 0);
 		WRDL 				: in std_logic_vector(1 downto 0);
-		RDDL				: in std_logic_vector(1 downto 0);
-	-- Debug
-		DBG	 				: out std_logic_vector(9 downto 0)
+		RDDL				: in std_logic_vector(1 downto 0)
 	);
 	end component;
 
@@ -895,7 +893,9 @@ component Cmd_FIFO
     clk,rst,wr_en,rd_en : in std_logic;
     din 				: in std_logic_vector(27 downto 0);
     dout 				: out std_logic_vector(27 downto 0);
-    full,empty 			: out std_logic);
+    full,empty 			: out std_logic;
+	wr_rst_busy, rd_rst_busy : out std_logic
+	);
 end component;
 
 -- Ram used to shadow DAC writes for later readback

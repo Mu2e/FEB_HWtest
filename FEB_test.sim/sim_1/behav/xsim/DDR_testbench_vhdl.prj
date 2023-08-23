@@ -1,0 +1,55 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../FEB_test.gen/sources_1/ip/uC_ILA/sim/uC_ILA.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/sim/DDR_ila_0.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/vio_0/sim/vio_0.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/DDR3LController_mig_sim.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/DDR3LController/DDR3LController/user_design/rtl/DDR3LController.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/Trigger_ila/sim/Trigger_ila.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/EVB_ila0/sim/EVB_ila0.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/AFE_DataPath_ila0/sim/AFE_DataPath_ila0.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/AFE_DataPath_ila1/sim/AFE_DataPath_ila1.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/AFE_DataPath_ila2/sim/AFE_DataPath_ila2.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/AFE_DataPath_ila3/sim/AFE_DataPath_ila3.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/DAC_ila_0/sim/DAC_ila_0.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/DAC_ila_1/sim/DAC_ila_1.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/AFE_ila_0/sim/AFE_ila_0.vhd" \
+"../../../../FEB_test.gen/sources_1/ip/AFE_ila_1/sim/AFE_ila_1.vhd" \
+
+vhdl work  \
+"../../../../FEB_test.srcs/sources_1/new/Proj_Def.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/Debug_ILA.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/DDR_test.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/FM_Deserializer.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/FM_Serializer.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/One_Wire.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/Phase_Detector.vhd" \
+
+vhdl2008 work  \
+"../../../../FEB_test.srcs/sources_1/new/FEB.vhd" \
+
+vhdl work  \
+"../../../../FEB_test.srcs/sources_1/new/ADC_mux.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/uController.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/DAC.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/auto_FSM.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/AFE_Interface.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/Auto_AFE.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/febit.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/LVDS_TX.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/Trigger.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/AFE_DataPath.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/EventBuilder.vhd" \
+"../../../../FEB_test.srcs/sources_1/new/AFE_Pipeline.vhd" \
+"../../../../FEB_test.srcs/sim_1/new/Testbench.vhd" \
+
+vhdl2008 xil_defaultlib  \
+"../../../../FEB_test.srcs/sim_1/new/AFE_Interface_testbench.vhd" \
+
+vhdl work  \
+"../../../../FEB_test.srcs/sim_1/new/AFE5807.vhd" \
+"../../../../FEB_test.srcs/sim_1/new/DDR_testbench.vhd" \
+
+# Do not sort compile order
+nosort

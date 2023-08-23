@@ -222,9 +222,9 @@ entity DDR3LController_mig is
    -- The following parameters are multiplier and divisor factors for PLLE2.
    -- Based on the selected design frequency these parameters vary.
    --***************************************************************************
-   CLKIN_PERIOD          : integer := 3077;
+   CLKIN_PERIOD          : integer := 10000;
                                      -- Input Clock Period
-   CLKFBOUT_MULT         : integer := 4;
+   CLKFBOUT_MULT         : integer := 13;
                                      -- write PLL VCO multiplier
    DIVCLK_DIVIDE         : integer := 1;
                                      -- write PLL VCO divisor

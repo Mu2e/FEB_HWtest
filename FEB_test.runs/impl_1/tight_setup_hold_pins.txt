@@ -1,0 +1,53 @@
++====================+===================+=================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                             |
++====================+===================+=================================+
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[7]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[6]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[5]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[3]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[2]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[0]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[2]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[4]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[6]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[4]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[1]/D   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[5]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWRdReq_reg/D         |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWrRdROM_reg[0]/D     |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[7]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWrRdTmp_reg[0]/D     |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[0]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtReq_reg/D        |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[3]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[1]/D    |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWRstReq_reg/D        |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[5]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[7]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[3]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[1]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[0]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[2]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[4]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWWrtByte_reg[6]/CE   |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[4]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[6]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[5]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[0]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[1]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[2]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[3]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/TempCtrl_reg[3]/CE      |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/TempCtrl_reg[1]/CE      |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/TempCtrl_reg[2]/CE      |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/TempCtrl_reg[0]/CE      |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWBitCount_reg[7]/CE  |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[7]/CE |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[4]/CE |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[6]/CE |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[0]/CE |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[1]/CE |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[2]/CE |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[5]/CE |
+| SysClk_PLL_0       | SysClk_PLL_0      | OneWire/OneWireCmdReg_reg[3]/CE |
++--------------------+-------------------+---------------------------------+

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x3B4887391F257938",
+      "boundary_crc": "0x3B4887394A0C7895",
       "device": "xc7s50fgga484-2",
       "gen_directory": "../../../../FEB_test.gen/sources_1/bd/Test_DDR",
       "name": "Test_DDR",
@@ -24,7 +24,8 @@
       "clk_wiz_1": "",
       "rst_clk_wiz_1_100M": "",
       "axi_smc": "",
-      "rst_mig_7series_0_81M": ""
+      "rst_mig_7series_0_81M": "",
+      "clk_wiz_0": ""
     },
     "interface_ports": {
       "DDR3_0": {
@@ -593,6 +594,9 @@
           "NUM_CLKS": {
             "value": "2"
           },
+          "NUM_MI": {
+            "value": "1"
+          },
           "NUM_SI": {
             "value": "3"
           }
@@ -684,6 +688,32 @@
         "xci_name": "Test_DDR_rst_mig_7series_0_81M_1",
         "xci_path": "ip\\Test_DDR_rst_mig_7series_0_81M_1\\Test_DDR_rst_mig_7series_0_81M_1.xci",
         "inst_hier_path": "rst_mig_7series_0_81M"
+      },
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "Test_DDR_clk_wiz_0_0",
+        "xci_path": "ip\\Test_DDR_clk_wiz_0_0\\Test_DDR_clk_wiz_0_0.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "114.829"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "200.000"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "5.000"
+          },
+          "RESET_PORT": {
+            "value": "resetn"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_LOW"
+          },
+          "USE_LOCKED": {
+            "value": "false"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -740,7 +770,8 @@
       "BD_CpldRst_1": {
         "ports": [
           "BD_CpldRst",
-          "clk_wiz_1/resetn"
+          "clk_wiz_1/resetn",
+          "clk_wiz_0/resetn"
         ]
       },
       "BD_VXO_N_1": {
@@ -753,6 +784,12 @@
         "ports": [
           "BD_VXO_P",
           "clk_wiz_1/clk_in1_p"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "mig_7series_0/clk_ref_i"
         ]
       },
       "clk_wiz_1_locked": {
@@ -774,19 +811,14 @@
           "microblaze_0_local_memory/LMB_Clk",
           "rst_clk_wiz_1_100M/slowest_sync_clk",
           "axi_smc/aclk",
-          "mig_7series_0/sys_clk_i"
+          "mig_7series_0/sys_clk_i",
+          "clk_wiz_0/clk_in1"
         ]
       },
       "mig_7series_0_mmcm_locked": {
         "ports": [
           "mig_7series_0/mmcm_locked",
           "rst_mig_7series_0_81M/dcm_locked"
-        ]
-      },
-      "mig_7series_0_ui_addn_clk_0": {
-        "ports": [
-          "mig_7series_0/ui_addn_clk_0",
-          "mig_7series_0/clk_ref_i"
         ]
       },
       "mig_7series_0_ui_clk": {
@@ -837,7 +869,7 @@
               "SEG_dlmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem",
                 "offset": "0x00000000",
-                "range": "32K",
+                "range": "128K",
                 "offset_high_param": "C_HIGHADDR"
               },
               "SEG_mig_7series_0_memaddr": {
@@ -852,7 +884,7 @@
               "SEG_ilmb_bram_if_cntlr_Mem": {
                 "address_block": "/microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem",
                 "offset": "0x00000000",
-                "range": "32K",
+                "range": "128K",
                 "offset_high_param": "C_HIGHADDR"
               },
               "SEG_mig_7series_0_memaddr": {

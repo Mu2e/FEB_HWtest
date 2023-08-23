@@ -7,7 +7,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* HW_HANDOFF = "Test_DDR_axi_smc_1.hwdef" *) (* core_generation_info = "bd_9a5b,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_9a5b,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=50,numReposBlks=40,numNonXlnxBlks=0,numHierBlks=10,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=OOC_per_IP}" *) 
+(* CORE_GENERATION_INFO = "bd_9a5b,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=bd_9a5b,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=50,numReposBlks=40,numNonXlnxBlks=0,numHierBlks=10,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=SBD,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Test_DDR_axi_smc_1.hwdef" *) 
 module bd_9a5b
    (M00_AXI_araddr,
     M00_AXI_arburst,

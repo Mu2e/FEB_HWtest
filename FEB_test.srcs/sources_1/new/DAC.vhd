@@ -86,6 +86,7 @@ signal AFESel               : std_logic_vector (1 downto 0);
 signal ODFifoRdReq          : std_logic;
 signal ODFifoWrReq          : std_logic;
 signal ODFifoEmpty          : std_logic;
+signal ODFifoFull           : std_logic;
 signal ODFifoData           : std_logic_vector (27 downto 0);
 signal ODFifoOut            : std_logic_vector (27 downto 0);
 
@@ -114,6 +115,7 @@ port map (
     rd_en   => ODFifoRdReq,
     din     => ODFifoData,
     dout    => ODFifoOut,
+    full    => ODFifoFull, 
     empty   => ODFifoEmpty
 );
 -- Ram for storing DAC values for readback
@@ -646,7 +648,7 @@ end process;
 -- ===========================     ILA    ==================================
 -- =========================================================================
 
-generateILA0: if true generate
+generateILA0: if false generate
 
 	DAC_ILA: DAC_ila_0 
 	port map(
@@ -662,7 +664,7 @@ generateILA0: if true generate
 
 end GENERATE; 
 
-generateILA1: if true generate
+generateILA1: if false generate
 
 	DAC_ILA: DAC_ila_1
 	port map(

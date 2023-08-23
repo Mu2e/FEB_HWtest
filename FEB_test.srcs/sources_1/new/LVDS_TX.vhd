@@ -35,6 +35,7 @@ signal TxPDat		  : std_logic_vector(15 downto 0);
 signal TxEn			  : std_logic;
 signal TxOuts 		  : TxOutRec;
 signal FMTxBuff_wreq  : std_logic;
+signal FMTxBuff_empty_sig : std_logic; 
 
 begin
 -- Transmits an FM serial stream at 1/4 the clock rate.
@@ -51,6 +52,7 @@ port map (
 
 LVDSTX <= TxOuts.FM;
 TxEn <= not FMTxBuff_empty and not TxOuts.Done;
+FMTxBuff_empty <= FMTxBuff_empty_sig;
 
 -- Buffer data written from the uC to the LVDS Tx port
 FMTx_Buff : LVDSTxBuff
@@ -62,7 +64,7 @@ port map(
     rd_en 	=> TxOuts.Done,
     dout 	=> TxPDat,
     full 	=> FMTxBuff_full,
-    empty 	=> FMTxBuff_empty
+    empty 	=> FMTxBuff_empty_sig
 );
 
 uController_registers : process(Clk_100MHz, CpldRst)

@@ -67,9 +67,9 @@ entity DDR_test is
     -- Synchronous edge detectors of uC read and write strobes
         AddrReg			  	: in std_logic_vector(11 downto 0);
         WRDL 				: in std_logic_vector(1 downto 0);
-        RDDL				: in std_logic_vector(1 downto 0);
+        RDDL				: in std_logic_vector(1 downto 0)
 	-- Debug
-        DBG	 				: out std_logic_vector(9 downto 0)        
+        --DBG	 				: out std_logic_vector(9 downto 0)        
     );
 end DDR_test;
 
@@ -105,7 +105,7 @@ signal device_temp        : std_logic_vector(11 downto 0);
 signal sys_rst		      : std_logic; 
 
 Type DDR_FSM is (Reset, Idle, WaitReady, PrepareData, WrtData, RdData, Pause);
-signal prev_state, DDR_Seq 	  : DDR_FSM;
+signal DDR_FSM_state, DDR_Seq 	  : DDR_FSM;
 signal DDRSeqStat 	 	  	  : std_logic_vector(3 downto 0);
 
 -- Signals for DDR FSM
@@ -116,6 +116,9 @@ signal DDR_addr_bank 	  : std_logic_vector(2 downto 0);
 signal DDR_addr_col 	  : std_logic_vector(9 downto 0);
 signal DDR_addr_row 	  : std_logic_vector(13 downto 0);
 signal done				  : std_logic;
+signal success            : std_logic;
+signal test_data          : std_logic_vector(127 downto 0); 
+signal trig               : std_logic;
 
 -- DEBUG signals
 signal B_in	 			  : std_logic_vector(4 downto 0);	
@@ -200,21 +203,21 @@ port map(
 DDR_state_memory : process (Clk_50MHz, CpldRst)
 begin 
     if CpldRst = '0' then --and  not DDR3_rst = '1' then
-		prev_state 		<= Reset;
+		DDR_FSM_state 		<= Reset;
 	elsif rising_edge (Clk_50MHz) then
-		prev_state		<= DDR_Seq;
+		DDR_FSM_state		<= DDR_Seq;
 	end if; 
 end process; 
 
-DDR_transition_table: process(Clk_50MHz, prev_state)
+DDR_transition_table: process(Clk_50MHz, DDR_FSM_state)
 begin 
-	case prev_state is
+	case DDR_FSM_state is
 	when Reset =>
 			DDR_Seq 			<= Idle;
 	when Idle =>
-		if B_in(0 downto 0) = x"1" then -- Button 0 Write
+		if B_in = "00001" then -- Button 0 Write
 			DDR_Seq 			<= WaitReady;
-		elsif B_in(1 downto 1) = x"1" then -- Button 1 Read 
+		elsif B_in = "00010" then -- Button 1 Read 
 			DDR_Seq 			<= RdData;
 		else 
 			DDR_Seq 			<= Idle;
@@ -241,27 +244,32 @@ begin
 		else 
 			DDR_Seq 			<= RdData;
 		end if;
+
+
 	when others =>
 			DDR_Seq 			<= Idle;
 	end case;
 end process;
 
 
-DDR_output_table : process(Clk_50MHz, prev_state)
+DDR_output_table : process(Clk_50MHz, DDR_FSM_state)
 begin
 if rising_edge(Clk_50MHz) then
 	-- Default value of the output 
-	case prev_state is
+	case DDR_FSM_state is
 		when Reset =>  
 		DDRSeqStat	  	<= X"0";
 		DDR3_cmd    	<= (others => '0');       
 		DDR3_en     	<= '0';	       
 		DDR3_addr   	<= (others => '0'); 
 		DDR3_wrt_data	<= (others => '0'); 
+        test_data   	<= (others => '0');
 		DDR3_wrt_end 	<= '0';
 		DDR3_wrt_mask	<= (others => '0'); 
 		DDR3_wrt_en		<= '0';
 		done			<= '0'; 
+        success         <= '0';
+        trig            <= '0';
 		
 		when Idle =>
 		DDRSeqStat	  	<= X"1";
@@ -270,8 +278,11 @@ if rising_edge(Clk_50MHz) then
 		DDR3_addr   	<= (others => '0');  
 		DDR3_wrt_end 	<= '0';
 		DDR3_wrt_mask	<= (others => '0'); 
+        DDR3_wrt_data	<= (others => '0'); 
 		DDR3_wrt_en		<= '0';
 		done			<= '0'; 
+        success         <= '0';
+        trig            <= '0';
 
 		when WaitReady => 
 		DDRSeqStat	  	<= X"2";
@@ -281,7 +292,8 @@ if rising_edge(Clk_50MHz) then
 		
 		when WrtData =>
 		DDRSeqStat	  	<= X"4";
-				
+
+        trig            <= '1';		
 		if DDR3_wrt_rdy = '1' then 
 		DDR3_cmd		<= DDR_cmd_write;
 		DDR3_en     	<= '1';
@@ -297,9 +309,17 @@ if rising_edge(Clk_50MHz) then
 		
 		when RdData =>
 		DDRSeqStat	  	<= X"5";
+        trig            <= '1';	
 		DDR3_cmd		<= DDR_cmd_read;
 		DDR3_en     	<= '1';
 		DDR3_addr		<= DDR3_addr + x"10";
+
+        test_data   	<= test_data + x"10";
+        if DDR3_rd_data = test_data then 
+            success <= '1';
+        else 
+            success <= '0';
+        end if;
 		if DDR3_addr = b"000" & x"000100" then 
 			done <= '1';
 		end if; 
@@ -343,5 +363,19 @@ port map(
 	probe11(0) 	=> DDR3_wrt_rdy,
 	probe12	 	=> DDRSeqStat
 );  
+
+testila : DDR_ila_1
+port map(
+	clk 		=> SysClk, 
+	probe0 (0)	=> done,         
+    probe1(0)   => success,          
+    probe2(0)	=> trig,           
+    probe3 		=> DDR3_addr,     
+    probe4  	=> DDR3_wrt_data,      
+    probe5 		=> DDR3_rd_data,     
+    probe6  	=> test_data,       
+    probe7 		=> DDRSeqStat
+);  
+
 
 end Behavioral;

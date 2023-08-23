@@ -60,6 +60,21 @@ component DDR_ila_0 is
     );
 end component;
 
+component DDR_ila_1 is
+    port (
+        clk 	: in std_logic;
+        probe0 	: in std_logic_vector(0 downto 0);
+        probe1 	: in std_logic_vector(0 downto 0);
+        probe2 	: in std_logic_vector(0 downto 0);
+        probe3 	: in std_logic_vector(28 downto 0);
+        probe4 	: in std_logic_vector(127 downto 0);
+        probe5 	: in std_logic_vector(127 downto 0);
+        probe6 	: in std_logic_vector(127 downto 0);
+        probe7 	: in std_logic_vector(3 downto 0)
+    );
+end component;
+
+
 component vio_0 is
     port (
         clk         : in std_logic;
@@ -196,5 +211,13 @@ component AFE_ila_0
     );
 end component;
 
+component AFE_ila_1 
+    port (
+        clk    : in std_logic;
+        probe0 : in std_logic_vector(0 downto 0);
+        probe1 : in std_logic_vector(7 downto 0);
+        probe2 : in std_logic_vector(0 downto 0)
+    );
+end component;
 
 end package;

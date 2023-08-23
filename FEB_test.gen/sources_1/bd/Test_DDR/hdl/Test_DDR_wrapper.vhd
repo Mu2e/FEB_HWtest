@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Fri Jul 21 17:35:53 2023
+--Date        : Tue Aug 15 17:36:42 2023
 --Host        : CD-135239 running 64-bit major release  (build 9200)
 --Command     : generate_target Test_DDR_wrapper.bd
 --Design      : Test_DDR_wrapper
@@ -38,9 +38,6 @@ end Test_DDR_wrapper;
 architecture STRUCTURE of Test_DDR_wrapper is
   component Test_DDR is
   port (
-    BD_CpldRst : in STD_LOGIC;
-    BD_VXO_P : in STD_LOGIC;
-    BD_VXO_N : in STD_LOGIC;
     DDR3_0_dq : inout STD_LOGIC_VECTOR ( 15 downto 0 );
     DDR3_0_dqs_p : inout STD_LOGIC_VECTOR ( 1 downto 0 );
     DDR3_0_dqs_n : inout STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -55,7 +52,10 @@ architecture STRUCTURE of Test_DDR_wrapper is
     DDR3_0_cke : out STD_LOGIC_VECTOR ( 0 to 0 );
     DDR3_0_cs_n : out STD_LOGIC_VECTOR ( 0 to 0 );
     DDR3_0_dm : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    DDR3_0_odt : out STD_LOGIC_VECTOR ( 0 to 0 )
+    DDR3_0_odt : out STD_LOGIC_VECTOR ( 0 to 0 );
+    BD_CpldRst : in STD_LOGIC;
+    BD_VXO_P : in STD_LOGIC;
+    BD_VXO_N : in STD_LOGIC
   );
   end component Test_DDR;
 begin

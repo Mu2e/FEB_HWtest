@@ -143,9 +143,9 @@ module example_top #
    // The following parameters are multiplier and divisor factors for PLLE2.
    // Based on the selected design frequency these parameters vary.
    //***************************************************************************
-   parameter CLKIN_PERIOD          = 3077,
+   parameter CLKIN_PERIOD          = 10000,
                                      // Input Clock Period
-   parameter CLKFBOUT_MULT         = 4,
+   parameter CLKFBOUT_MULT         = 13,
                                      // write PLL VCO multiplier
    parameter DIVCLK_DIVIDE         = 1,
                                      // write PLL VCO divisor
@@ -165,32 +165,6 @@ module example_top #
                                      // write MMCM VCO multiplier
    parameter MMCM_DIVCLK_DIVIDE    = 1,
                                      // write MMCM VCO divisor
-   parameter MMCM_CLKOUT0_EN       = "TRUE",
-                                     // "TRUE" - MMCM output clock (CLKOUT0) is enabled
-                                     // "FALSE" - MMCM output clock (CLKOUT0) is disabled
-   parameter MMCM_CLKOUT1_EN       = "FALSE",
-                                     // "TRUE" - MMCM output clock (CLKOUT1) is enabled
-                                     // "FALSE" - MMCM output clock (CLKOUT1) is disabled
-   parameter MMCM_CLKOUT2_EN       = "FALSE",
-                                     // "TRUE" - MMCM output clock (CLKOUT2) is enabled
-                                     // "FALSE" - MMCM output clock (CLKOUT2) is disabled
-   parameter MMCM_CLKOUT3_EN       = "FALSE",
-                                     // "TRUE" - MMCM output clock (CLKOUT3) is enabled
-                                     // "FALSE" - MMCM output clock (CLKOUT3) is disabled
-   parameter MMCM_CLKOUT4_EN       = "FALSE",
-                                     // "TRUE" - MMCM output clock (CLKOUT4) is enabled
-                                     // "FALSE" - MMCM output clock (CLKOUT4) is disabled
-   parameter MMCM_CLKOUT0_DIVIDE   = 3.25,
-                                     // VCO output divisor for MMCM output clock (CLKOUT0)
-   parameter MMCM_CLKOUT1_DIVIDE   = 1,
-                                     // VCO output divisor for MMCM output clock (CLKOUT1)
-   parameter MMCM_CLKOUT2_DIVIDE   = 1,
-                                     // VCO output divisor for MMCM output clock (CLKOUT2)
-   parameter MMCM_CLKOUT3_DIVIDE   = 1,
-                                     // VCO output divisor for MMCM output clock (CLKOUT3)
-   parameter MMCM_CLKOUT4_DIVIDE   = 1,
-                                     // VCO output divisor for MMCM output clock (CLKOUT4)
-
 
    //***************************************************************************
    // Simulation parameters
@@ -330,11 +304,6 @@ function integer clogb2 (input integer size);
       
   wire                              clk;
   wire                              rst;
-  wire                              ui_addn_clk_0;
-  wire                              ui_addn_clk_1;
-  wire                              ui_addn_clk_2;
-  wire                              ui_addn_clk_3;
-  wire                              ui_addn_clk_4;
   wire                              mmcm_locked;
   reg                               aresetn;
   wire                              app_sr_active;
@@ -460,11 +429,6 @@ function integer clogb2 (input integer size);
        .ui_clk                         (clk),
        .ui_clk_sync_rst                (rst),
 
-       .ui_addn_clk_0                  (ui_addn_clk_0),
-       .ui_addn_clk_1                  (ui_addn_clk_1),
-       .ui_addn_clk_2                  (ui_addn_clk_2),
-       .ui_addn_clk_3                  (ui_addn_clk_3),
-       .ui_addn_clk_4                  (ui_addn_clk_4),
        .mmcm_locked                    (mmcm_locked),
        .aresetn                        (aresetn),
        .app_sr_active                  (app_sr_active),

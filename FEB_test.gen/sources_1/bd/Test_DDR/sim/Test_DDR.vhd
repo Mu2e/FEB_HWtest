@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
---Date        : Fri Jul 21 17:35:53 2023
+--Date        : Tue Aug 15 17:36:42 2023
 --Host        : CD-135239 running 64-bit major release  (build 9200)
 --Command     : generate_target Test_DDR.bd
 --Design      : Test_DDR
@@ -591,10 +591,10 @@ entity Test_DDR is
     DDR3_0_reset_n : out STD_LOGIC;
     DDR3_0_we_n : out STD_LOGIC
   );
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of Test_DDR : entity is "Test_DDR,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Test_DDR,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=14,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=10,da_clkrst_cnt=7,da_mb_cnt=2,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of Test_DDR : entity is "Test_DDR.hwdef";
-  attribute core_generation_info : string;
-  attribute core_generation_info of Test_DDR : entity is "Test_DDR,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Test_DDR,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=13,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=9,da_clkrst_cnt=7,da_mb_cnt=2,synth_mode=OOC_per_IP}";
 end Test_DDR;
 
 architecture STRUCTURE of Test_DDR is
@@ -619,7 +619,6 @@ architecture STRUCTURE of Test_DDR is
     ddr3_odt : out STD_LOGIC_VECTOR ( 0 to 0 );
     ui_clk_sync_rst : out STD_LOGIC;
     ui_clk : out STD_LOGIC;
-    ui_addn_clk_0 : out STD_LOGIC;
     s_axi_awid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
     s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -833,6 +832,7 @@ architecture STRUCTURE of Test_DDR is
   component Test_DDR_axi_smc_1 is
   port (
     aclk : in STD_LOGIC;
+    aclk1 : in STD_LOGIC;
     aresetn : in STD_LOGIC;
     S00_AXI_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     S00_AXI_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -867,40 +867,6 @@ architecture STRUCTURE of Test_DDR is
     S00_AXI_rlast : out STD_LOGIC;
     S00_AXI_rvalid : out STD_LOGIC;
     S00_AXI_rready : in STD_LOGIC;
-    M00_AXI_awaddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
-    M00_AXI_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M00_AXI_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_awlock : out STD_LOGIC_VECTOR ( 0 to 0 );
-    M00_AXI_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_awqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_awvalid : out STD_LOGIC;
-    M00_AXI_awready : in STD_LOGIC;
-    M00_AXI_wdata : out STD_LOGIC_VECTOR ( 127 downto 0 );
-    M00_AXI_wstrb : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    M00_AXI_wlast : out STD_LOGIC;
-    M00_AXI_wvalid : out STD_LOGIC;
-    M00_AXI_wready : in STD_LOGIC;
-    M00_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_bvalid : in STD_LOGIC;
-    M00_AXI_bready : out STD_LOGIC;
-    M00_AXI_araddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
-    M00_AXI_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M00_AXI_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_arlock : out STD_LOGIC_VECTOR ( 0 to 0 );
-    M00_AXI_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_arvalid : out STD_LOGIC;
-    M00_AXI_arready : in STD_LOGIC;
-    M00_AXI_rdata : in STD_LOGIC_VECTOR ( 127 downto 0 );
-    M00_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_rlast : in STD_LOGIC;
-    M00_AXI_rvalid : in STD_LOGIC;
-    M00_AXI_rready : out STD_LOGIC;
-    aclk1 : in STD_LOGIC;
     S01_AXI_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     S01_AXI_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     S01_AXI_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -934,7 +900,40 @@ architecture STRUCTURE of Test_DDR is
     S02_AXI_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     S02_AXI_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     S02_AXI_rvalid : out STD_LOGIC;
-    S02_AXI_rready : in STD_LOGIC
+    S02_AXI_rready : in STD_LOGIC;
+    M00_AXI_awaddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
+    M00_AXI_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M00_AXI_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_awlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M00_AXI_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_awqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_awvalid : out STD_LOGIC;
+    M00_AXI_awready : in STD_LOGIC;
+    M00_AXI_wdata : out STD_LOGIC_VECTOR ( 127 downto 0 );
+    M00_AXI_wstrb : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    M00_AXI_wlast : out STD_LOGIC;
+    M00_AXI_wvalid : out STD_LOGIC;
+    M00_AXI_wready : in STD_LOGIC;
+    M00_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_bvalid : in STD_LOGIC;
+    M00_AXI_bready : out STD_LOGIC;
+    M00_AXI_araddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
+    M00_AXI_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M00_AXI_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_arlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M00_AXI_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_arvalid : out STD_LOGIC;
+    M00_AXI_arready : in STD_LOGIC;
+    M00_AXI_rdata : in STD_LOGIC_VECTOR ( 127 downto 0 );
+    M00_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_rlast : in STD_LOGIC;
+    M00_AXI_rvalid : in STD_LOGIC;
+    M00_AXI_rready : out STD_LOGIC
   );
   end component Test_DDR_axi_smc_1;
   component Test_DDR_rst_mig_7series_0_81M_1 is
@@ -951,6 +950,13 @@ architecture STRUCTURE of Test_DDR is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component Test_DDR_rst_mig_7series_0_81M_1;
+  component Test_DDR_clk_wiz_0_0 is
+  port (
+    resetn : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC
+  );
+  end component Test_DDR_clk_wiz_0_0;
   signal BD_CpldRst_1 : STD_LOGIC;
   signal BD_VXO_N_1 : STD_LOGIC;
   signal BD_VXO_P_1 : STD_LOGIC;
@@ -987,6 +993,7 @@ architecture STRUCTURE of Test_DDR is
   signal axi_smc_M00_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal axi_smc_M00_AXI_WVALID : STD_LOGIC;
+  signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal clk_wiz_1_locked : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_0_Clk : STD_LOGIC;
@@ -1101,7 +1108,6 @@ architecture STRUCTURE of Test_DDR is
   signal mig_7series_0_DDR3_RESET_N : STD_LOGIC;
   signal mig_7series_0_DDR3_WE_N : STD_LOGIC;
   signal mig_7series_0_mmcm_locked : STD_LOGIC;
-  signal mig_7series_0_ui_addn_clk_0 : STD_LOGIC;
   signal mig_7series_0_ui_clk : STD_LOGIC;
   signal mig_7series_0_ui_clk_sync_rst : STD_LOGIC;
   signal rst_clk_wiz_1_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1286,6 +1292,12 @@ axi_smc: component Test_DDR_axi_smc_1
       aclk1 => mig_7series_0_ui_clk,
       aresetn => rst_mig_7series_0_81M_peripheral_aresetn(0)
     );
+clk_wiz_0: component Test_DDR_clk_wiz_0_0
+     port map (
+      clk_in1 => microblaze_0_Clk,
+      clk_out1 => clk_wiz_0_clk_out1,
+      resetn => BD_CpldRst_1
+    );
 clk_wiz_1: component Test_DDR_clk_wiz_1_0
      port map (
       clk_in1_n => BD_VXO_N_1,
@@ -1463,7 +1475,7 @@ microblaze_0_local_memory: entity work.microblaze_0_local_memory_imp_1B2BIVQ
 mig_7series_0: component Test_DDR_mig_7series_0_0
      port map (
       aresetn => rst_mig_7series_0_81M_peripheral_aresetn(0),
-      clk_ref_i => mig_7series_0_ui_addn_clk_0,
+      clk_ref_i => clk_wiz_0_clk_out1,
       ddr3_addr(14 downto 0) => mig_7series_0_DDR3_ADDR(14 downto 0),
       ddr3_ba(2 downto 0) => mig_7series_0_DDR3_BA(2 downto 0),
       ddr3_cas_n => mig_7series_0_DDR3_CAS_N,
@@ -1520,7 +1532,6 @@ mig_7series_0: component Test_DDR_mig_7series_0_0
       s_axi_wvalid => axi_smc_M00_AXI_WVALID,
       sys_clk_i => microblaze_0_Clk,
       sys_rst => rst_clk_wiz_1_100M_interconnect_aresetn(0),
-      ui_addn_clk_0 => mig_7series_0_ui_addn_clk_0,
       ui_clk => mig_7series_0_ui_clk,
       ui_clk_sync_rst => mig_7series_0_ui_clk_sync_rst
     );

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1692040829">
+<GenRun Id="impl_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1692802166">
   <File Type="ROUTE-PWR" Name="FEB_power_routed.rpt"/>
   <File Type="PA-TCL" Name="FEB.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="FEB_power_summary_routed.pb"/>
@@ -260,6 +260,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/ip/DDR3LController/mig_b.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="DDR3LController"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="FEB"/>
@@ -275,7 +281,6 @@
     </File>
     <File Path="$PSRCDIR/constrs_1/new/BD_constraints.xdc">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -313,6 +318,7 @@
       <Option Id="BinFile">1</Option>
     </Step>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="AFE_ila_1"/>
   <BlockFileSet Type="BlockSrcs" Name="CMD_Fifo"/>
   <BlockFileSet Type="BlockSrcs" Name="PLL_0"/>
   <BlockFileSet Type="BlockSrcs" Name="AFE_DataPath_ila2"/>
@@ -335,4 +341,5 @@
   <BlockFileSet Type="BlockSrcs" Name="AFE_DataPath_ila3"/>
   <BlockFileSet Type="BlockSrcs" Name="AFE_DP_Pipeline"/>
   <BlockFileSet Type="BlockSrcs" Name="AFE_ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="DDR_ila_1"/>
 </GenRun>

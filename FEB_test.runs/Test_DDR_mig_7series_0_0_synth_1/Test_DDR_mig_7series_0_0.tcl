@@ -90,9 +90,9 @@ set_property ip_output_repo c:/v23.1/FEB_test/FEB_test.cache/ip [current_project
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0.xci
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0/user_design/constraints/Test_DDR_mig_7series_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0/user_design/constraints/Test_DDR_mig_7series_0_0_ooc.xdc]
+read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/bd/Test_DDR/ip/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/mrigatti/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-10848-CD-135239/coregen/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0/user_design/constraints/Test_DDR_mig_7series_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mrigatti/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-10848-CD-135239/coregen/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0/user_design/constraints/Test_DDR_mig_7series_0_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

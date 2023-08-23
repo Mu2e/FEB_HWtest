@@ -3,86 +3,84 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="FEB_testbench_behav.wdb" id="1">
+      <db_ref path="DDR_testbench_behav.wdb" id="1">
          <top_modules>
-            <top_module name="FEB_testbench" />
+            <top_module name="DDR_testbench" />
+            <top_module name="debug_ila" />
             <top_module name="glbl" />
             <top_module name="proj_def" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,092.175 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,238.976 ns"></ZoomEndTime>
-      <Cursor1Time time="1,156.175 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,628.000001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,340.000000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+      <ValueColumnWidth column_width="110"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
-   <wvobject fp_name="/FEB_testbench/DUT/VXO_P" type="logic">
-      <obj_property name="ElementShortName">VXO_P</obj_property>
-      <obj_property name="ObjectShortName">VXO_P</obj_property>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/DDR_testbench/DDR/Clk_50MHz" type="logic">
+      <obj_property name="ElementShortName">Clk_50MHz</obj_property>
+      <obj_property name="ObjectShortName">Clk_50MHz</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/VXO_N" type="logic">
-      <obj_property name="ElementShortName">VXO_N</obj_property>
-      <obj_property name="ObjectShortName">VXO_N</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDR3_addr" type="array">
+      <obj_property name="ElementShortName">DDR3_addr[28:0]</obj_property>
+      <obj_property name="ObjectShortName">DDR3_addr[28:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/CpldRst" type="logic">
-      <obj_property name="ElementShortName">CpldRst</obj_property>
-      <obj_property name="ObjectShortName">CpldRst</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDR3_cmd" type="array">
+      <obj_property name="ElementShortName">DDR3_cmd[2:0]</obj_property>
+      <obj_property name="ObjectShortName">DDR3_cmd[2:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/CpldCS" type="logic">
-      <obj_property name="ElementShortName">CpldCS</obj_property>
-      <obj_property name="ObjectShortName">CpldCS</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDR3_en" type="logic">
+      <obj_property name="ElementShortName">DDR3_en</obj_property>
+      <obj_property name="ObjectShortName">DDR3_en</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/uCRd" type="logic">
-      <obj_property name="ElementShortName">uCRd</obj_property>
-      <obj_property name="ObjectShortName">uCRd</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDR3_wrt_data" type="array">
+      <obj_property name="ElementShortName">DDR3_wrt_data[127:0]</obj_property>
+      <obj_property name="ObjectShortName">DDR3_wrt_data[127:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/uCWr" type="logic">
-      <obj_property name="ElementShortName">uCWr</obj_property>
-      <obj_property name="ObjectShortName">uCWr</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDR3_wrt_en" type="logic">
+      <obj_property name="ElementShortName">DDR3_wrt_en</obj_property>
+      <obj_property name="ObjectShortName">DDR3_wrt_en</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/uCA" type="array">
-      <obj_property name="ElementShortName">uCA[11:0]</obj_property>
-      <obj_property name="ObjectShortName">uCA[11:0]</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/prev_state" type="other">
+      <obj_property name="ElementShortName">prev_state</obj_property>
+      <obj_property name="ObjectShortName">prev_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/uCD" type="array">
-      <obj_property name="ElementShortName">uCD[15:0]</obj_property>
-      <obj_property name="ObjectShortName">uCD[15:0]</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDR_Seq" type="other">
+      <obj_property name="ElementShortName">DDR_Seq</obj_property>
+      <obj_property name="ObjectShortName">DDR_Seq</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/GA" type="array">
-      <obj_property name="ElementShortName">GA[1:0]</obj_property>
-      <obj_property name="ObjectShortName">GA[1:0]</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDRSeqStat" type="array">
+      <obj_property name="ElementShortName">DDRSeqStat[3:0]</obj_property>
+      <obj_property name="ObjectShortName">DDRSeqStat[3:0]</obj_property>
    </wvobject>
-   <wvobject type="divider" fp_name="divider60">
-      <obj_property name="label">Logic</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/PLL/Clk_100MHz" type="logic">
-      <obj_property name="ElementShortName">Clk_100MHz</obj_property>
-      <obj_property name="ObjectShortName">Clk_100MHz</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/success" type="logic">
+      <obj_property name="ElementShortName">success</obj_property>
+      <obj_property name="ObjectShortName">success</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/WRDL" type="array">
-      <obj_property name="ElementShortName">WRDL[1:0]</obj_property>
-      <obj_property name="ObjectShortName">WRDL[1:0]</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/test_data" type="array">
+      <obj_property name="ElementShortName">test_data[127:0]</obj_property>
+      <obj_property name="ObjectShortName">test_data[127:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/RDDL" type="array">
-      <obj_property name="ElementShortName">RDDL[1:0]</obj_property>
-      <obj_property name="ObjectShortName">RDDL[1:0]</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/trig" type="logic">
+      <obj_property name="ElementShortName">trig</obj_property>
+      <obj_property name="ObjectShortName">trig</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/uWRDL" type="array">
-      <obj_property name="ElementShortName">uWRDL[1:0]</obj_property>
-      <obj_property name="ObjectShortName">uWRDL[1:0]</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/DDR3_rdy" type="logic">
+      <obj_property name="ElementShortName">DDR3_rdy</obj_property>
+      <obj_property name="ObjectShortName">DDR3_rdy</obj_property>
    </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/uRDDL" type="array">
-      <obj_property name="ElementShortName">uRDDL[1:0]</obj_property>
-      <obj_property name="ObjectShortName">uRDDL[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FEB_testbench/DUT/TestCount" type="array">
-      <obj_property name="ElementShortName">TestCount[31:0]</obj_property>
-      <obj_property name="ObjectShortName">TestCount[31:0]</obj_property>
+   <wvobject fp_name="/DDR_testbench/DDR/B_in" type="array">
+      <obj_property name="ElementShortName">B_in[4:0]</obj_property>
+      <obj_property name="ObjectShortName">B_in[4:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

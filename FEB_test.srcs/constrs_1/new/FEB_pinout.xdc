@@ -166,6 +166,8 @@ set_property IOSTANDARD LVCMOS25 [get_ports LVDSTX]
 
 # ADC CLOCKS
 set_property PACKAGE_PIN M4 [get_ports AFE0Clk_P]
+set_property PACKAGE_PIN M3 [get_ports AFE0Clk_N]
+set_property PACKAGE_PIN AB6 [get_ports AFE1Clk_N]
 set_property PACKAGE_PIN AA6 [get_ports AFE1Clk_P]
 set_property IOSTANDARD LVDS_25 [get_ports AFE1Clk_P]
 set_property IOSTANDARD LVDS_25 [get_ports AFE1Clk_N]
@@ -177,10 +179,10 @@ set_property PACKAGE_PIN L1 [get_ports {AFEDCLK_P[0]}]
 set_property PACKAGE_PIN Y6 [get_ports {AFEDCLK_P[1]}]
 set_property PACKAGE_PIN K1 [get_ports {AFEDCLK_N[0]}]
 set_property PACKAGE_PIN Y5 [get_ports {AFEDCLK_N[1]}]
-set_property IOSTANDARD LVCMOS25 [get_ports {AFEDCLK_N[1]}]
-set_property IOSTANDARD LVCMOS25 [get_ports {AFEDCLK_N[0]}]
-set_property IOSTANDARD LVCMOS25 [get_ports {AFEDCLK_P[1]}]
-set_property IOSTANDARD LVCMOS25 [get_ports {AFEDCLK_P[0]}]
+set_property IOSTANDARD LVDS_25 [get_ports {AFEDCLK_N[1]}]
+set_property IOSTANDARD LVDS_25 [get_ports {AFEDCLK_N[0]}]
+set_property IOSTANDARD LVDS_25 [get_ports {AFEDCLK_P[1]}]
+set_property IOSTANDARD LVDS_25 [get_ports {AFEDCLK_P[0]}]
 
 # ADC F CLOCKS
 set_property PACKAGE_PIN U4 [get_ports AFE1FCLK_P]
@@ -423,10 +425,6 @@ set_property BITSTREAM.STARTUP.STARTUPCLK JTAGCLK [current_design]
 
 
 
-
-
-set_property PACKAGE_PIN M3 [get_ports AFE0Clk_N]
-set_property PACKAGE_PIN AB6 [get_ports AFE1Clk_N]
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
@@ -434,3 +432,5 @@ connect_debug_port dbg_hub/clk [get_nets Clk_100MHz]
 
 
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CpldRst_IBUF]
+
+

@@ -168,7 +168,16 @@ begin
 
 
 
-
-
+--generateILA0: if true generate
+--
+--    AFE_ila1: AFE_ila_1
+--    port map(
+--    clk    		=> Clk_560MHz, 	
+--    probe0(0) 	=> Clk_80MHz, --AFE0Clk_P, -- out 80 MHz
+--    probe1   	=> afe0_p(7 downto 0),--AFE0Dat_P, -- in std_logic_vector(7 downto 0)	
+--    probe2(0) 	=> afe0_p(8) -- in frame clock 	
+--);
+--
+--end GENERATE;
 
 end AFE_Interface_Architecture;
