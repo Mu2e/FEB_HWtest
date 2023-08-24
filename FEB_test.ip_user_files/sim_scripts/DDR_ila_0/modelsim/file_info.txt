@@ -8,7 +8,6 @@ axi_vip_if.sv,systemverilog,xilinx_vip,../../../../../../../../../Xilinx/Vivado/
 clk_vip_if.sv,systemverilog,xilinx_vip,../../../../../../../../../Xilinx/Vivado/2023.1/data/xilinx_vip/hdl/clk_vip_if.sv,incdir="../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/hdl/verilog"
 rst_vip_if.sv,systemverilog,xilinx_vip,../../../../../../../../../Xilinx/Vivado/2023.1/data/xilinx_vip/hdl/rst_vip_if.sv,incdir="../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/hdl/verilog"
 xpm_cdc.sv,systemverilog,xpm,../../../../../../../../../Xilinx/Vivado/2023.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,incdir="../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/hdl/verilog"
-xpm_fifo.sv,systemverilog,xpm,../../../../../../../../../Xilinx/Vivado/2023.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv,incdir="../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/hdl/verilog"
 xpm_memory.sv,systemverilog,xpm,../../../../../../../../../Xilinx/Vivado/2023.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,incdir="../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/hdl/verilog"
 xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../../Xilinx/Vivado/2023.1/data/ip/xpm/xpm_VCOMP.vhd,incdir="../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/hdl/verilog"
 DDR_ila_0.vhd,vhdl,xil_defaultlib,../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/sim/DDR_ila_0.vhd,incdir="../../../../FEB_test.gen/sources_1/ip/DDR_ila_0/hdl/verilog"

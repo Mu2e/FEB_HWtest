@@ -36,3 +36,4 @@ platform active {Test_DDR}
 platform config -updatehw {C:/v23.1/FEB_test/Test_DDR_wrapper.xsa}
 platform config -updatehw {C:/v23.1/FEB_test/Test_DDR_wrapper.xsa}
 platform generate
+platform generate

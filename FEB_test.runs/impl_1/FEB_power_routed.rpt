@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Wed Aug 23 09:58:03 2023
+| Date             : Thu Aug 24 09:50:24 2023
 | Host             : CD-135239 running 64-bit major release  (build 9200)
 | Command          : report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
 | Design           : FEB
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.249        |
+| Total On-Chip Power (W)  | 1.219        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.175        |
-| Device Static (W)        | 0.075        |
+| Dynamic (W)              | 1.145        |
+| Device Static (W)        | 0.074        |
 | Effective TJA (C/W)      | 2.9          |
-| Max Ambient (C)          | 81.4         |
-| Junction Temperature (C) | 28.6         |
+| Max Ambient (C)          | 81.5         |
+| Junction Temperature (C) | 28.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,24 +52,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.116 |       33 |       --- |             --- |
-| Slice Logic              |     0.017 |    43605 |       --- |             --- |
-|   LUT as Logic           |     0.014 |    12203 |     32600 |           37.43 |
-|   Register               |     0.001 |    20119 |     65200 |           30.86 |
-|   LUT as Distributed RAM |    <0.001 |      740 |      9600 |            7.71 |
-|   LUT as Shift Register  |    <0.001 |     2224 |      9600 |           23.17 |
-|   CARRY4                 |    <0.001 |      843 |      8150 |           10.34 |
-|   F7/F8 Muxes            |    <0.001 |      336 |     32600 |            1.03 |
-|   Others                 |     0.000 |     2295 |       --- |             --- |
-| Signals                  |     0.025 |    34542 |       --- |             --- |
-| Block RAM                |     0.017 |       23 |        75 |           30.67 |
+| Clocks                   |     0.103 |       33 |       --- |             --- |
+| Slice Logic              |     0.012 |    33722 |       --- |             --- |
+|   LUT as Logic           |     0.010 |     9700 |     32600 |           29.75 |
+|   Register               |    <0.001 |    15255 |     65200 |           23.40 |
+|   LUT as Shift Register  |    <0.001 |     1585 |      9600 |           16.51 |
+|   LUT as Distributed RAM |    <0.001 |      612 |      9600 |            6.38 |
+|   CARRY4                 |    <0.001 |      671 |      8150 |            8.23 |
+|   F7/F8 Muxes            |    <0.001 |      281 |     32600 |            0.86 |
+|   Others                 |     0.000 |     1676 |       --- |             --- |
+| Signals                  |     0.018 |    26607 |       --- |             --- |
+| Block RAM                |     0.013 |     14.5 |        75 |           19.33 |
 | MMCM                     |     0.297 |        3 |         5 |           60.00 |
 | PLL                      |     0.115 |        1 |         5 |           20.00 |
-| I/O                      |     0.400 |      132 |       250 |           52.80 |
+| I/O                      |     0.399 |      132 |       250 |           52.80 |
 | PHASER                   |     0.184 |       20 |       --- |             --- |
 | XADC                     |     0.004 |        1 |       --- |             --- |
-| Static Power             |     0.075 |          |           |                 |
-| Total                    |     1.249 |          |           |                 |
+| Static Power             |     0.074 |          |           |                 |
+| Total                    |     1.219 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,7 +79,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.237 |       0.225 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.207 |       0.196 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.381 |       0.368 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.050 |       0.049 |      0.001 |       NA    | Unspecified | NA         |
@@ -176,24 +176,23 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| FEB                         |     1.175 |
-|   AFE_DataPath_inst         |     0.003 |
+| FEB                         |     1.145 |
+|   AFE_DataPath_inst         |     0.004 |
 |   DACControl                |     0.002 |
-|   DDR                       |     0.811 |
-|     DDR_Controller          |     0.691 |
-|       u_DDR3LController_mig |     0.689 |
-|     buttons                 |     0.001 |
-|       inst                  |     0.001 |
-|     ila                     |     0.058 |
-|       U0                    |     0.058 |
-|     testila                 |     0.059 |
-|       U0                    |     0.059 |
+|   DDR                       |     0.778 |
+|     DDR_Controller          |     0.683 |
+|       u_DDR3LController_mig |     0.681 |
+|     buttons                 |     0.002 |
+|       inst                  |     0.002 |
+|     ila                     |     0.092 |
+|       U0                    |     0.092 |
 |   HF_PLL                    |     0.113 |
 |     inst                    |     0.113 |
 |   OneWire                   |     0.001 |
 |   PLL                       |     0.101 |
 |     inst                    |     0.101 |
-|   Trigger_logic             |     0.002 |
+|   Trigger_logic             |     0.004 |
+|     FMRx1                   |     0.001 |
 |   dbg_hub                   |     0.003 |
 |     inst                    |     0.003 |
 |       BSCANID.u_xsdbm_id    |     0.003 |

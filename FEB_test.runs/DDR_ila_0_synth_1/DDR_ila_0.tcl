@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "DDR_ila_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param simulator.modelsimInstallPath C:/intelFPGA/20.1/modelsim_ae/win32aloem
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
@@ -82,14 +83,14 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/v23.1/FEB_test/FEB_test.cache/wt [current_project]
 set_property parent.project_path C:/v23.1/FEB_test/FEB_test.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/v23.1/FEB_test/FEB_test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DDR_ila_0/DDR_ila_0.xci
+read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DDR_ila_0/DDR_ila_0.xci
 set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_0/ila_v6_2/constraints/ila.xdc]
