@@ -199,10 +199,11 @@ end component;
 component DAC_ila_1
     port (
         clk    : in std_logic;
-        probe0 : in std_logic_vector(2 downto 0);
+        probe0 : in std_logic_vector(0 downto 0);
         probe1 : in std_logic_vector(0 downto 0);
-        probe2 : in std_logic_vector(0 downto 0);
-        probe3 : in std_logic_vector(0 downto 0)
+        probe2 : in std_logic_vector(23 downto 0);
+        probe3 : in std_logic_vector(23 downto 0);
+        probe4 : in std_logic_vector(3 downto 0)
     );
 end component;
 

@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Aug 24 09:42:06 2023
-# Process ID: 25356
+# Start of session at: Wed Sep 13 10:06:26 2023
+# Process ID: 3888
 # Current directory: C:/v23.1/FEB_test/FEB_test.runs/impl_1
-# Command line: vivado.exe -log FEB.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FEB.tcl -notrace
-# Log file: C:/v23.1/FEB_test/FEB_test.runs/impl_1/FEB.vdi
+# Command line: vivado.exe -log AFE_test.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source AFE_test.tcl -notrace
+# Log file: C:/v23.1/FEB_test/FEB_test.runs/impl_1/AFE_test.vdi
 # Journal file: C:/v23.1/FEB_test/FEB_test.runs/impl_1\vivado.jou
-# Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34287 MB
+# Running On: CD-135239, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 34286 MB
 #-----------------------------------------------------------
-source FEB.tcl -notrace
+source AFE_test.tcl -notrace

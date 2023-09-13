@@ -767,6 +767,31 @@ component DAC is
     );
 end component;
 
+component AFE_debug is
+    port (
+        Clk_100MHz			: in std_logic;
+        ResetHi			    : in std_logic;
+    -- Microcontroller strobes
+        CpldRst				: in std_logic;
+        CpldCS				: in std_logic;
+        uCWr 				: in std_logic;
+    -- Microcontroller data and address buses	
+        uCA 				: in std_logic_vector(11 downto 0);
+        uCD 				: in std_logic_vector(15 downto 0);        
+    -- Geographic address pins
+        GA 					: in std_logic_vector(1 downto 0);
+    -- Synchronous edge detectors of uC read and write strobes
+        uWRDL 				: in std_logic_vector(1 downto 0);
+    -- AFE serial control lines
+	    AFEPDn 				 : buffer std_logic_vector(1 downto 0);
+	    AFECS 				 : buffer std_logic_vector(1 downto 0);
+	    AFERst 				 : buffer std_logic;
+	    AFESClk            	 : buffer std_logic;
+        AFESDI  		     : out std_logic;         
+	    AFESDO 				 : in std_logic
+    );
+end component;
+
 -----------------------------------------------------------------------
 ------------------------ Xilinx IP Components -------------------------
 -----------------------------------------------------------------------	
@@ -863,6 +888,24 @@ component DDR3LController is
 	ui_clk              : out   std_logic;
 	ui_clk_sync_rst     : out   std_logic;
 	init_calib_complete : out   std_logic;
+    -- debug signals
+--    ddr3_ila_wrpath     : out   std_logic_vector(390 downto 0);
+--    ddr3_ila_rdpath     : out   std_logic_vector(1023 downto 0);
+--    ddr3_ila_basic      : out   std_logic_vector(119 downto 0);
+--    ddr3_vio_sync_out   : in    std_logic_vector(13 downto 0);
+--    dbg_byte_sel        : in    std_logic_vector(1 downto 0);
+--    dbg_sel_pi_incdec   : in    std_logic;
+--    dbg_pi_f_inc        : in    std_logic;
+--    dbg_pi_f_dec        : in    std_logic;
+--    dbg_sel_po_incdec   : in    std_logic;
+--    dbg_po_f_inc        : in    std_logic;
+--    dbg_po_f_stg23_sel  : in    std_logic;
+--    dbg_po_f_dec        : in    std_logic;
+--    dbg_pi_counter_read_val   : out   std_logic_vector(5 downto 0);
+--    dbg_po_counter_read_val   : out   std_logic_vector(8 downto 0);
+--    dbg_prbs_final_dqs_tap_cnt_r : out std_logic_vector(107 downto 0);
+--    dbg_prbs_first_edge_taps     : out std_logic_vector(107 downto 0);
+--    dbg_prbs_second_edge_taps    : out std_logic_vector(107 downto 0);
 	-- System Clock Ports
 	sys_clk_i           : in    std_logic;
 	-- Reference Clock Ports

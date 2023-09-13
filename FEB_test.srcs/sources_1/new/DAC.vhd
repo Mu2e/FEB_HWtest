@@ -455,7 +455,7 @@ Case Octal_Shift is
                 Octal_Shift    <= Shift;
             end if;
     When ClearSync => 
-            if DacCS = 7 and Dev_Sel = '1' and ClkDiv = 0 and Dev_Sel = '1' then 
+            if DacCS = 7 and Dev_Sel = '1' and ClkDiv = 0 then 
                 Octal_Shift    <= SetLoad;
             elsif Dev_Sel = '0' and ClkDiv = 0 then 
                 Octal_Shift    <= Idle;
@@ -648,34 +648,34 @@ end process;
 -- ===========================     ILA    ==================================
 -- =========================================================================
 
-generateILA0: if false generate
-
-	DAC_ILA: DAC_ila_0 
-	port map(
-	clk    		=> Clk_100MHz,
-	probe0  	=> AFEPDn,       -- std_logic_vector(1 downto 0)      
-    probe1  	=> AFECS,        -- std_logic_vector(1 downto 0)       
-    probe2(0) 	=> AFERst,       -- std_logic    
-    probe3(0) 	=> AFESClk,      -- std_logic        
-    probe4(0) 	=> AFESDI,       -- std_logic
-    probe5(0) 	=> AFESDO,       -- std_logic
-	probe6   	=> AFERdReg      -- std_logic_vector (15 downto 0)
-);
-
-end GENERATE; 
-
-generateILA1: if false generate
-
-	DAC_ILA: DAC_ila_1
-	port map(
-	clk    		=> Clk_100MHz,
-	probe0  	=> DACCS,        -- std_logic_vector(1 downto 0)      
-    probe1(0)  	=> DACClk,       -- std_logic_vector(1 downto 0)       
-    probe2(0) 	=> DACDat,       -- std_logic    
-    probe3(0) 	=> DACLd         -- std_logic        
-);
-
-end GENERATE; 
+--generateILA0: if false generate
+--
+--	DAC_ILA: DAC_ila_0 
+--	port map(
+--	clk    		=> Clk_100MHz,
+--	probe0  	=> AFEPDn,       -- std_logic_vector(1 downto 0)      
+--    probe1  	=> AFECS,        -- std_logic_vector(1 downto 0)       
+--    probe2(0) 	=> AFERst,       -- std_logic    
+--    probe3(0) 	=> AFESClk,      -- std_logic        
+--    probe4(0) 	=> AFESDI,       -- std_logic
+--    probe5(0) 	=> AFESDO,       -- std_logic
+--	probe6   	=> AFERdReg      -- std_logic_vector (15 downto 0)
+--);
+--
+--end GENERATE; 
+--
+--generateILA1: if false generate
+--
+--	DAC_ILA: DAC_ila_1
+--	port map(
+--	clk    		=> Clk_100MHz,
+--	probe0  	=> DACCS,        -- std_logic_vector(1 downto 0)      
+--    probe1(0)  	=> DACClk,       -- std_logic_vector(1 downto 0)       
+--    probe2(0) 	=> DACDat,       -- std_logic    
+--    probe3(0) 	=> DACLd         -- std_logic        
+--);
+--
+--end GENERATE; 
 
 
 

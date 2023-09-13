@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "DAC_ila_1_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
 set_param simulator.modelsimInstallPath C:/intelFPGA/20.1/modelsim_ae/win32aloem
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
@@ -90,7 +89,7 @@ set_property ip_output_repo c:/v23.1/FEB_test/FEB_test.cache/ip [current_project
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DAC_ila_1/DAC_ila_1.xci
+read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DAC_ila_1/DAC_ila_1.xci
 set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_ila_1/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_ila_1/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DAC_ila_1/ila_v6_2/constraints/ila.xdc]

@@ -45,7 +45,7 @@ port(
 	AFECS 				    : buffer std_logic_vector(1 downto 0);
 	AFERst 				    : buffer std_logic;
 	AFESClk			  	    : buffer std_logic;
-	AFESDI			  	    : buffer std_logic;
+	AFESDI			  	    : out std_logic;
 	AFESDO 				    : in std_logic;
 	-- DDR3L pins
 	DDR_DATA				: inout std_logic_vector(DATA_WIDTH-1 downto 0);
@@ -313,8 +313,40 @@ port map(
     MuxadReg        => MuxadReg         
 );
 
-DACControl : DAC
-port map (
+--DACControl : DAC
+--port map (
+--    Clk_100MHz		=> Clk_100MHz,
+--	ResetHi  		=> ResetHi,
+---- Microcontroller strobes
+--    CpldRst			=> CpldRst,	
+--	CpldCS			=> CpldCS,
+--	uCWr 			=> uCWr, 
+---- Microcontroller data and address buses	
+--    uCA 			=> uCA,
+--    uCD 			=> uCD,
+---- Geographic address pins
+--    GA 				=> GA,
+---- Synchronous edge detectors of uC read and write strobes
+--    uWRDL 			=> uWRDL,
+---- Serial DAC control lines
+--    DACCS 			=> DACCS,
+--    DACClk 			=> DACClk,
+--    DACDat 			=> DACDat,
+--    DACLd 			=> DACLd,
+---- AFE serial control lines
+--	AFEPDn 		    => AFEPDn,
+--	AFECS 		    => AFECS,
+--	AFERst 		    => AFERst,
+--	AFESClk         => AFESClk,
+--	AFESDI  	    => AFESDI,
+--	AFESDO 		    => AFESDO,
+---- uController status registers
+--    AlignReq        => AlignReq,
+--	AFERdReg		=> AFERdReg
+--    );
+
+AFEControl : AFE_debug
+port map(
     Clk_100MHz		=> Clk_100MHz,
 	ResetHi  		=> ResetHi,
 -- Microcontroller strobes
@@ -328,23 +360,14 @@ port map (
     GA 				=> GA,
 -- Synchronous edge detectors of uC read and write strobes
     uWRDL 			=> uWRDL,
--- Serial DAC control lines
-    DACCS 			=> DACCS,
-    DACClk 			=> DACClk,
-    DACDat 			=> DACDat,
-    DACLd 			=> DACLd,
 -- AFE serial control lines
 	AFEPDn 		    => AFEPDn,
 	AFECS 		    => AFECS,
 	AFERst 		    => AFERst,
 	AFESClk         => AFESClk,
 	AFESDI  	    => AFESDI,
-	AFESDO 		    => AFESDO,
--- uController status registers
-    AlignReq        => AlignReq,
-	AFERdReg		=> AFERdReg
-    );
-
+	AFESDO 		    => AFESDO
+);
 
 
 --AFE : AFE_Interface

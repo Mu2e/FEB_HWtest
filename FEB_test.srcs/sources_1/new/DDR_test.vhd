@@ -103,6 +103,24 @@ signal DDR3_rst		      : std_logic; -- out from the MIG
 signal init_calib_complete: std_logic;
 signal device_temp        : std_logic_vector(11 downto 0);
 signal sys_rst		      : std_logic; 
+-- debug signals
+signal ddr3_ila_wrpath    : std_logic_vector(390 downto 0);
+signal ddr3_ila_rdpath    : std_logic_vector(1023 downto 0);
+signal ddr3_ila_basic     : std_logic_vector(119 downto 0);
+signal ddr3_vio_sync_out  : std_logic_vector(13 downto 0);
+signal dbg_byte_sel       : std_logic_vector(1 downto 0);
+signal dbg_sel_pi_incdec  : std_logic;
+signal dbg_pi_f_inc       : std_logic;
+signal dbg_pi_f_dec       : std_logic;
+signal dbg_sel_po_incdec  : std_logic;
+signal dbg_po_f_inc       : std_logic;
+signal dbg_po_f_stg23_sel : std_logic;
+signal dbg_po_f_dec       : std_logic;
+signal dbg_pi_counter_read_val   : std_logic_vector(5 downto 0);
+signal dbg_po_counter_read_val   : std_logic_vector(8 downto 0);
+signal dbg_prbs_final_dqs_tap_cnt_r : std_logic_vector(107 downto 0);
+signal dbg_prbs_first_edge_taps     : std_logic_vector(107 downto 0);
+signal dbg_prbs_second_edge_taps    : std_logic_vector(107 downto 0);
 
 Type DDR_FSM is (Reset, Idle, WaitReady, WaitReadyRd, PrepareData, WrtData, RdData, Pause);
 signal DDR_FSM_state, DDR_Seq 	  : DDR_FSM;
@@ -182,6 +200,24 @@ port map(
     ui_clk_sync_rst   => DDR3_rst,  -- This is the active-High UI reset.         
     init_calib_complete => init_calib_complete,  -- PHY asserts init_calib_complete when calibration is finished.
 	--device_temp_i	  => "000000000000",
+    -- debug signals
+--    ddr3_ila_wrpath   => ddr3_ila_wrpath,    
+--    ddr3_ila_rdpath   => ddr3_ila_rdpath,    
+--    ddr3_ila_basic    => ddr3_ila_basic,     
+--    ddr3_vio_sync_out => ddr3_vio_sync_out,  
+--    dbg_byte_sel      => dbg_byte_sel,       
+--    dbg_sel_pi_incdec => dbg_sel_pi_incdec,  
+--    dbg_pi_f_inc      => dbg_pi_f_inc,       
+--    dbg_pi_f_dec      => dbg_pi_f_dec,       
+--    dbg_sel_po_incdec => dbg_sel_po_incdec,  
+--    dbg_po_f_inc      => dbg_po_f_inc,       
+--    dbg_po_f_stg23_sel=> dbg_po_f_stg23_sel, 
+--    dbg_po_f_dec      => dbg_po_f_dec,       
+--    dbg_pi_counter_read_val   => dbg_pi_counter_read_val,
+--    dbg_po_counter_read_val   => dbg_po_counter_read_val,
+--    dbg_prbs_final_dqs_tap_cnt_r => dbg_prbs_final_dqs_tap_cnt_r,
+--    dbg_prbs_first_edge_taps     => dbg_prbs_first_edge_taps,    
+--    dbg_prbs_second_edge_taps    => dbg_prbs_second_edge_taps,   
     -- System Clock Ports
     sys_clk_i         => Clk_100MHz,
     -- Reference Clock Ports
@@ -344,21 +380,22 @@ if rising_edge(Clk_50MHz) then
 end if;
 end process;
 
-buttons: vio_0
-port map(
-	clk				=> SysClk,         
-	probe_in0		=> B_in(0 downto 0),   
-    probe_in1		=> B_in(1 downto 1),   
-    probe_in2		=> B_in(2 downto 2),   
-    probe_in3		=> B_in(3 downto 3),   
-    probe_in4		=> B_in(4 downto 4),   
-	probe_out0		=> B_out(0 downto 0), 
-    probe_out1      => B_out(1 downto 1), 
-    probe_out2      => B_out(2 downto 2), 
-    probe_out3      => B_out(3 downto 3), 
-    probe_out4      => B_out(4 downto 4)
-); 
+--buttons: vio_0
+--port map(
+--	clk				=> SysClk,         
+--	probe_in0		=> B_in(0 downto 0),   
+--    probe_in1		=> B_in(1 downto 1),   
+--    probe_in2		=> B_in(2 downto 2),   
+--    probe_in3		=> B_in(3 downto 3),   
+--    probe_in4		=> B_in(4 downto 4),   
+--	probe_out0		=> B_out(0 downto 0), 
+--    probe_out1      => B_out(1 downto 1), 
+--    probe_out2      => B_out(2 downto 2), 
+--    probe_out3      => B_out(3 downto 3), 
+--    probe_out4      => B_out(4 downto 4)
+--); 
 
+generateILA0: if true generate
 ila : DDR_ila_0 
 port map(
 	clk 		=> Clk_200MHz, 
@@ -384,6 +421,7 @@ port map(
     probe19(0)  => DDR3_rst    
 );  
 
+end GENERATE; 
 
 --testila : DDR_ila_1
 --port map(
