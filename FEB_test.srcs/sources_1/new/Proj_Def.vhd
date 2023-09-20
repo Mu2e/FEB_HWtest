@@ -870,11 +870,11 @@ component DDR3LController is
 	app_addr            : in    std_logic_vector(28 downto 0);
 	app_cmd             : in    std_logic_vector(2 downto 0);
 	app_en              : in    std_logic;
-	app_wdf_data        : in    std_logic_vector(127 downto 0);
+	app_wdf_data        : in    std_logic_vector(63 downto 0);
 	app_wdf_end         : in    std_logic;
-	app_wdf_mask        : in    std_logic_vector(15 downto 0);
+	app_wdf_mask        : in    std_logic_vector(7 downto 0);
 	app_wdf_wren        : in    std_logic;
-	app_rd_data         : out   std_logic_vector(127 downto 0);
+	app_rd_data         : out   std_logic_vector(63 downto 0);
 	app_rd_data_end     : out   std_logic;
 	app_rd_data_valid   : out   std_logic;
 	app_rdy             : out   std_logic;
@@ -911,6 +911,7 @@ component DDR3LController is
 	-- Reference Clock Ports
 	clk_ref_i           : in    std_logic;
 	device_temp         : out 	std_logic_vector(11 downto 0);
+	device_temp_i       : in    std_logic_vector(11 downto 0);
   sys_rst               : in    std_logic
   );
 end component;

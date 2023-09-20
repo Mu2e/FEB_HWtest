@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Aug 30 10:16:08 2023
+| Date         : Tue Sep 19 14:23:30 2023
 | Host         : CD-135239 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file DDR3LController_utilization_synth.rpt -pb DDR3LController_utilization_synth.pb
 | Design       : DDR3LController
@@ -31,15 +31,15 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 4636 |     0 |          0 |     32600 | 14.22 |
-|   LUT as Logic             | 4154 |     0 |          0 |     32600 | 12.74 |
-|   LUT as Memory            |  482 |     0 |          0 |      9600 |  5.02 |
-|     LUT as Distributed RAM |  464 |     0 |            |           |       |
-|     LUT as Shift Register  |   18 |     0 |            |           |       |
-| Slice Registers            | 3809 |     0 |          0 |     65200 |  5.84 |
-|   Register as Flip Flop    | 3809 |     0 |          0 |     65200 |  5.84 |
+| Slice LUTs*                | 3555 |     0 |          0 |     32600 | 10.90 |
+|   LUT as Logic             | 3274 |     0 |          0 |     32600 | 10.04 |
+|   LUT as Memory            |  281 |     0 |          0 |      9600 |  2.93 |
+|     LUT as Distributed RAM |  268 |     0 |            |           |       |
+|     LUT as Shift Register  |   13 |     0 |            |           |       |
+| Slice Registers            | 3065 |     0 |          0 |     65200 |  4.70 |
+|   Register as Flip Flop    | 3065 |     0 |          0 |     65200 |  4.70 |
 |   Register as Latch        |    0 |     0 |          0 |     65200 |  0.00 |
-| F7 Muxes                   |    5 |     0 |          0 |     16300 |  0.03 |
+| F7 Muxes                   |    1 |     0 |          0 |     16300 | <0.01 |
 | F8 Muxes                   |    0 |     0 |          0 |      8150 |  0.00 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -60,8 +60,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |            - |
 | 73    |          Yes |           - |          Set |
 | 3     |          Yes |           - |        Reset |
-| 84    |          Yes |         Set |            - |
-| 3649  |          Yes |       Reset |            - |
+| 60    |          Yes |         Set |            - |
+| 2929  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -135,18 +135,18 @@ Warning! LUT value is adjusted to account for LUT combining.
 6. Specific Feature
 -------------------
 
-+-------------+------+-------+------------+-----------+--------+
-|  Site Type  | Used | Fixed | Prohibited | Available |  Util% |
-+-------------+------+-------+------------+-----------+--------+
-| BSCANE2     |    0 |     0 |          0 |         4 |   0.00 |
-| CAPTUREE2   |    0 |     0 |          0 |         1 |   0.00 |
-| DNA_PORT    |    0 |     0 |          0 |         1 |   0.00 |
-| EFUSE_USR   |    0 |     0 |          0 |         1 |   0.00 |
-| FRAME_ECCE2 |    0 |     0 |          0 |         1 |   0.00 |
-| ICAPE2      |    0 |     0 |          0 |         2 |   0.00 |
-| STARTUPE2   |    0 |     0 |          0 |         1 |   0.00 |
-| XADC        |    1 |     0 |          0 |         1 | 100.00 |
-+-------------+------+-------+------------+-----------+--------+
++-------------+------+-------+------------+-----------+-------+
+|  Site Type  | Used | Fixed | Prohibited | Available | Util% |
++-------------+------+-------+------------+-----------+-------+
+| BSCANE2     |    0 |     0 |          0 |         4 |  0.00 |
+| CAPTUREE2   |    0 |     0 |          0 |         1 |  0.00 |
+| DNA_PORT    |    0 |     0 |          0 |         1 |  0.00 |
+| EFUSE_USR   |    0 |     0 |          0 |         1 |  0.00 |
+| FRAME_ECCE2 |    0 |     0 |          0 |         1 |  0.00 |
+| ICAPE2      |    0 |     0 |          0 |         2 |  0.00 |
+| STARTUPE2   |    0 |     0 |          0 |         1 |  0.00 |
+| XADC        |    0 |     0 |          0 |         1 |  0.00 |
++-------------+------+-------+------------+-----------+-------+
 
 
 7. Primitives
@@ -155,29 +155,28 @@ Warning! LUT value is adjusted to account for LUT combining.
 +--------------------------+------+---------------------+
 |         Ref Name         | Used | Functional Category |
 +--------------------------+------+---------------------+
-| FDRE                     | 3649 |        Flop & Latch |
-| LUT6                     | 1201 |                 LUT |
-| LUT5                     | 1068 |                 LUT |
-| LUT4                     |  924 |                 LUT |
-| LUT3                     |  807 |                 LUT |
-| RAMD32                   |  692 |  Distributed Memory |
-| LUT2                     |  457 |                 LUT |
-| LUT1                     |  421 |                 LUT |
-| RAMS32                   |  228 |  Distributed Memory |
-| CARRY4                   |  110 |          CarryLogic |
-| FDSE                     |   84 |        Flop & Latch |
+| FDRE                     | 2929 |        Flop & Latch |
+| LUT6                     | 1171 |                 LUT |
+| LUT5                     |  866 |                 LUT |
+| LUT4                     |  709 |                 LUT |
+| LUT3                     |  615 |                 LUT |
+| RAMD32                   |  400 |  Distributed Memory |
+| LUT2                     |  393 |                 LUT |
+| LUT1                     |  298 |                 LUT |
+| RAMS32                   |  132 |  Distributed Memory |
+| CARRY4                   |  106 |          CarryLogic |
 | FDPE                     |   73 |        Flop & Latch |
+| FDSE                     |   60 |        Flop & Latch |
 | OSERDESE2                |   44 |                  IO |
 | OBUF                     |   25 |                  IO |
 | OBUFT                    |   18 |                  IO |
-| SRL16E                   |   17 |  Distributed Memory |
 | ISERDESE2                |   16 |                  IO |
 | IDELAYE2                 |   16 |                  IO |
-| IBUF                     |   16 |                  IO |
+| IBUF_INTERMDISABLE       |   16 |                  IO |
+| SRL16E                   |   12 |  Distributed Memory |
 | PHASER_OUT_PHY           |    6 |                  IO |
 | OUT_FIFO                 |    6 |                  IO |
 | ODDR                     |    5 |                  IO |
-| MUXF7                    |    5 |               MuxFx |
 | OBUFTDS                  |    4 |                  IO |
 | IBUFDS_INTERMDISABLE_INT |    4 |                  IO |
 | INV                      |    3 |                 LUT |
@@ -188,9 +187,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 | PHASER_IN_PHY            |    2 |                  IO |
 | OBUFDS                   |    2 |                  IO |
 | IN_FIFO                  |    2 |                  IO |
-| XADC                     |    1 |              Others |
 | SRLC32E                  |    1 |  Distributed Memory |
 | PLLE2_ADV                |    1 |               Clock |
+| MUXF7                    |    1 |               MuxFx |
 | MMCME2_ADV               |    1 |               Clock |
 | IDELAYCTRL               |    1 |                  IO |
 | BUFH                     |    1 |               Clock |

@@ -47,11 +47,11 @@ component DDR_ila_0 is
         probe0 	: in std_logic_vector(28 downto 0);
         probe1 	: in std_logic_vector(2 downto 0);
         probe2 	: in std_logic_vector(0 downto 0);
-        probe3 	: in std_logic_vector(127 downto 0);
+        probe3 	: in std_logic_vector(63 downto 0);
         probe4 	: in std_logic_vector(0 downto 0);
-        probe5 	: in std_logic_vector(15 downto 0);
+        probe5 	: in std_logic_vector(7 downto 0);
         probe6 	: in std_logic_vector(0 downto 0);
-        probe7 	: in std_logic_vector(127 downto 0);
+        probe7 	: in std_logic_vector(63 downto 0);
         probe8 	: in std_logic_vector(0 downto 0);
         probe9 	: in std_logic_vector(0 downto 0);
         probe10 : in std_logic_vector(0 downto 0);
@@ -60,7 +60,7 @@ component DDR_ila_0 is
         probe13	: in std_logic_vector(0 downto 0);
         probe14	: in std_logic_vector(0 downto 0);
         probe15	: in std_logic_vector(0 downto 0);
-        probe16	: in std_logic_vector(127 downto 0);
+        probe16	: in std_logic_vector(63 downto 0);
         probe17	: in std_logic_vector(0 downto 0);
         probe18	: in std_logic_vector(0 downto 0);
         probe19	: in std_logic_vector(0 downto 0)

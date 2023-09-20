@@ -80,12 +80,12 @@ signal DDR3_addr          : std_logic_vector(28 downto 0);
 signal DDR3_cmd           : std_logic_vector(2 downto 0);
 signal DDR3_en            : std_logic;
 
-signal DDR3_wrt_data      : std_logic_vector(127 downto 0); 
+signal DDR3_wrt_data      : std_logic_vector(63 downto 0); 
 signal DDR3_wrt_end       : std_logic;
-signal DDR3_wrt_mask      : std_logic_vector(15 downto 0);
+signal DDR3_wrt_mask      : std_logic_vector(7 downto 0);
 signal DDR3_wrt_en        : std_logic;
 
-signal DDR3_rd_data       : std_logic_vector(127 downto 0);
+signal DDR3_rd_data       : std_logic_vector(63 downto 0);
 signal DDR3_rd_data_end   : std_logic;
 signal DDR3_rd_data_valid : std_logic;
 
@@ -135,7 +135,7 @@ signal DDR_addr_col 	  : std_logic_vector(9 downto 0);
 signal DDR_addr_row 	  : std_logic_vector(13 downto 0);
 signal done				  : std_logic;
 signal success            : std_logic;
-signal test_data          : std_logic_vector(127 downto 0); 
+signal test_data          : std_logic_vector(63 downto 0); 
 signal trig               : std_logic;
 
 -- DEBUG signals
@@ -144,6 +144,11 @@ signal B_out 	 		  : std_logic_vector(4 downto 0);
 signal startwrite         : std_logic;
 signal startread          : std_logic;
 signal resetFSM           : std_logic;
+
+-- temperature 12 bit vector is the upper 12 bits of Q8.7 encoded temperature
+-- 45C * 2^7 = 5760 = 0x1680 now take the upper 12 bits
+
+constant device_temp_i: std_logic_vector(11 downto 0) := X"168";
 
 begin
     
@@ -219,10 +224,11 @@ port map(
 --    dbg_prbs_first_edge_taps     => dbg_prbs_first_edge_taps,    
 --    dbg_prbs_second_edge_taps    => dbg_prbs_second_edge_taps,   
     -- System Clock Ports
-    sys_clk_i         => Clk_100MHz,
+    sys_clk_i         => SysClk,
     -- Reference Clock Ports
     clk_ref_i         => Clk_200MHz,      
     device_temp       => device_temp, 
+    device_temp_i     => device_temp_i, --The SYSMON leverages the Q fixed-point number format to provide a signed temperature value stored in the Celsius scale. Temperature information is stored in the 16 least significant bits of the register in a Q8.7 signed format. The Q8.7 format consists of a sign bit, 8 integer bits, and 7 fractional bits.
     sys_rst           => sys_rst     
 );
 
@@ -380,20 +386,20 @@ if rising_edge(Clk_50MHz) then
 end if;
 end process;
 
---buttons: vio_0
---port map(
---	clk				=> SysClk,         
---	probe_in0		=> B_in(0 downto 0),   
---    probe_in1		=> B_in(1 downto 1),   
---    probe_in2		=> B_in(2 downto 2),   
---    probe_in3		=> B_in(3 downto 3),   
---    probe_in4		=> B_in(4 downto 4),   
---	probe_out0		=> B_out(0 downto 0), 
---    probe_out1      => B_out(1 downto 1), 
---    probe_out2      => B_out(2 downto 2), 
---    probe_out3      => B_out(3 downto 3), 
---    probe_out4      => B_out(4 downto 4)
---); 
+buttons: vio_0
+port map(
+	clk				=> SysClk,         
+	probe_in0		=> B_in(0 downto 0),   
+    probe_in1		=> B_in(1 downto 1),   
+    probe_in2		=> B_in(2 downto 2),   
+    probe_in3		=> B_in(3 downto 3),   
+    probe_in4		=> B_in(4 downto 4),   
+	probe_out0		=> B_out(0 downto 0), 
+    probe_out1      => B_out(1 downto 1), 
+    probe_out2      => B_out(2 downto 2), 
+    probe_out3      => B_out(3 downto 3), 
+    probe_out4      => B_out(4 downto 4)
+); 
 
 generateILA0: if true generate
 ila : DDR_ila_0 

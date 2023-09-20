@@ -383,7 +383,7 @@ generateILA0: if true generate
 
 end GENERATE; 
 
-generateILA1: if true generate
+generateILA1: if false generate
 
 	DAC_ILA: DAC_ila_1
 	port map(
@@ -397,20 +397,20 @@ generateILA1: if true generate
 
 end GENERATE; 
 
-buttons: vio_0
-port map(
-	clk				=> Clk_100MHz,         
-	probe_in0		=> B_in(0 downto 0),   
-    probe_in1		=> B_in(1 downto 1),   
-    probe_in2		=> B_in(2 downto 2),   
-    probe_in3		=> B_in(3 downto 3),   
-    probe_in4		=> B_in(4 downto 4),   
-	probe_out0		=> B_out(0 downto 0), 
-    probe_out1      => B_out(1 downto 1), 
-    probe_out2      => B_out(2 downto 2), 
-    probe_out3      => B_out(3 downto 3), 
-    probe_out4      => B_out(4 downto 4)
-); 
+--buttons: vio_0
+--port map(
+--	clk				=> Clk_100MHz,         
+--	probe_in0		=> B_in(0 downto 0),   
+--    probe_in1		=> B_in(1 downto 1),   
+--    probe_in2		=> B_in(2 downto 2),   
+--    probe_in3		=> B_in(3 downto 3),   
+--    probe_in4		=> B_in(4 downto 4),   
+--	probe_out0		=> B_out(0 downto 0), 
+--    probe_out1      => B_out(1 downto 1), 
+--    probe_out2      => B_out(2 downto 2), 
+--    probe_out3      => B_out(3 downto 3), 
+--    probe_out4      => B_out(4 downto 4)
+--); 
 
 
 

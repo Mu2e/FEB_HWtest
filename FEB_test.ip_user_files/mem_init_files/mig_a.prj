@@ -11,13 +11,13 @@
 
   <dci_inputs>1</dci_inputs>
 
-  <Debug_En>ON</Debug_En>
+  <Debug_En>OFF</Debug_En>
 
   <DataDepth_En>1024</DataDepth_En>
 
-  <LowPower_En>OFF</LowPower_En>
+  <LowPower_En>ON</LowPower_En>
 
-  <XADC_En>Enabled</XADC_En>
+  <XADC_En>Disabled</XADC_En>
 
   <TargetFPGA>xc7s50-fgga484/-2</TargetFPGA>
 
@@ -39,12 +39,12 @@
 
   <Controller number="0">
     <MemoryDevice>DDR3_SDRAM/Components/MT41K256M16XX-107</MemoryDevice>
-    <TimePeriod>3077</TimePeriod>
+    <TimePeriod>3125</TimePeriod>
     <VccAuxIO>1.8V</VccAuxIO>
     <PHYRatio>4:1</PHYRatio>
-    <InputClkFreq>99.997</InputClkFreq>
+    <InputClkFreq>160</InputClkFreq>
     <UIExtraClocks>0</UIExtraClocks>
-    <MMCM_VCO>649</MMCM_VCO>
+    <MMCM_VCO>640</MMCM_VCO>
     <MMCMClkOut0> 1.000</MMCMClkOut0>
     <MMCMClkOut1>1</MMCMClkOut1>
     <MMCMClkOut2>1</MMCMClkOut2>

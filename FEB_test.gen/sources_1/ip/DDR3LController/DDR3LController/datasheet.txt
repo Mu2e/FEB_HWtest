@@ -16,8 +16,8 @@ FPGA Options:
    Reference Clock Type            : No Buffer
    Debug Port                      : OFF
    Internal Vref                   : enabled
-   IO Power Reduction              : OFF
-   XADC instantiation in MIG       : Enabled
+   IO Power Reduction              : ON
+   XADC instantiation in MIG       : Disabled
 
 Extended FPGA Options:
    DCI for DQ,DQS/DQS#,DM          : enabled
@@ -36,13 +36,13 @@ Controller Options :
 
    Interface                     : NATIVE
 
-   Design Clock Frequency        : 3077 ps (  0.00 MHz)
+   Design Clock Frequency        : 3125 ps (  0.00 MHz)
 
-   Phy to Controller Clock Ratio : 4:1
+   Phy to Controller Clock Ratio : 2:1
 
-   Input Clock Period            : 10000 ps
+   Input Clock Period            : 6250 ps
 
-   CLKFBOUT_MULT (PLL)           : 13
+   CLKFBOUT_MULT (PLL)           : 8
 
    DIVCLK_DIVIDE (PLL)           : 1
 
@@ -60,13 +60,13 @@ Controller Options :
 
    Data Mask                     : enabled
 
-   ORDERING                      : Normal
+   ORDERING                      : Strict
 
 
 
 AXI Parameters :
 
-   Data Width                    : 128
+   Data Width                    : 64
 
    Arbitration Scheme            : RD_PRI_REG
 
@@ -84,11 +84,11 @@ Memory Options:
 
    CAS Latency (MR0[6:4])           : 6
 
-   Output Drive Strength (MR1[5,1]) : RZQ/6
+   Output Drive Strength (MR1[5,1]) : RZQ/7
 
    Controller CS option             : Enable
 
-   Rtt_NOM - ODT (MR1[9,6,2])       : RZQ/6
+   Rtt_NOM - ODT (MR1[9,6,2])       : RZQ/4
 
    Rtt_WR - Dynamic ODT (MR2[10:9]) : Dynamic ODT off
 

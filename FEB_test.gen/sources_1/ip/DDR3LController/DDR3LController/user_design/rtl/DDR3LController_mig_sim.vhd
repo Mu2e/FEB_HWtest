@@ -91,7 +91,7 @@ entity DDR3LController_mig is
                                      -- # of unique CS outputs per rank for phy
    CKE_WIDTH             : integer := 1;
                                      -- # of CKE outputs to memory.
-   DATA_BUF_ADDR_WIDTH   : integer := 5;
+   DATA_BUF_ADDR_WIDTH   : integer := 4;
    DQ_CNT_WIDTH          : integer := 4;
                                      -- = ceil(log2(DQ_WIDTH))
    DQ_PER_DM             : integer := 8;
@@ -193,11 +193,11 @@ entity DDR3LController_mig is
                                      -- in number of clock cycles
                                      -- DDR3 SDRAM: CAS Write Latency (Mode Register 2).
                                      -- DDR2 SDRAM: Can be ignored
-   OUTPUT_DRV            : string  := "LOW";
+   OUTPUT_DRV            : string  := "HIGH";
                                      -- Output Driver Impedance Control (Mode Register 1).
                                      -- # = "HIGH" - RZQ/7,
                                      --   = "LOW" - RZQ/6.
-   RTT_NOM               : string  := "40";
+   RTT_NOM               : string  := "60";
                                      -- RTT_NOM (ODT) (Mode Register 1).
                                      --   = "120" - RZQ/2,
                                      --   = "60"  - RZQ/4,
@@ -222,9 +222,9 @@ entity DDR3LController_mig is
    -- The following parameters are multiplier and divisor factors for PLLE2.
    -- Based on the selected design frequency these parameters vary.
    --***************************************************************************
-   CLKIN_PERIOD          : integer := 10000;
+   CLKIN_PERIOD          : integer := 6250;
                                      -- Input Clock Period
-   CLKFBOUT_MULT         : integer := 13;
+   CLKFBOUT_MULT         : integer := 8;
                                      -- write PLL VCO multiplier
    DIVCLK_DIVIDE         : integer := 1;
                                      -- write PLL VCO divisor
@@ -236,11 +236,11 @@ entity DDR3LController_mig is
                                      -- VCO output divisor for PLL output clock (CLKOUT1)
    CLKOUT2_DIVIDE        : integer := 64;
                                      -- VCO output divisor for PLL output clock (CLKOUT2)
-   CLKOUT3_DIVIDE        : integer := 16;
+   CLKOUT3_DIVIDE        : integer := 8;
                                      -- VCO output divisor for PLL output clock (CLKOUT3)
-   MMCM_VCO              : integer := 649;
+   MMCM_VCO              : integer := 640;
                                      -- Max Freq (MHz) of MMCM VCO
-   MMCM_MULT_F           : integer := 8;
+   MMCM_MULT_F           : integer := 4;
                                      -- write MMCM VCO multiplier
    MMCM_DIVCLK_DIVIDE    : integer := 1;
                                      -- write MMCM VCO divisor
@@ -339,7 +339,7 @@ entity DDR3LController_mig is
      : std_logic_vector(143 downto 0) := X"000000000000000000000000000000000011";
    ADDR_MAP
      : std_logic_vector(191 downto 0) := X"00010812B13613A119127138123134106137122120135121";
-   BANK_MAP   : std_logic_vector(35 downto 0) := X"125131124";
+   BANK_MAP   : std_logic_vector(35 downto 0) := X"124131125";
    CAS_MAP    : std_logic_vector(11 downto 0) := X"126";
    CKE_ODT_BYTE_MAP : std_logic_vector(7 downto 0) := X"00";
    CKE_MAP    : std_logic_vector(95 downto 0) := X"000000000000000000000139";
@@ -381,18 +381,18 @@ entity DDR3LController_mig is
    --***************************************************************************
    IBUF_LPWR_MODE        : string  := "OFF";
                                      -- to phy_top
-   DATA_IO_IDLE_PWRDWN   : string  := "OFF";
+   DATA_IO_IDLE_PWRDWN   : string  := "ON";
                                      -- # = "ON", "OFF"
    BANK_TYPE             : string  := "HR_IO";
                                      -- # = "HP_IO", "HPL_IO", "HR_IO", "HRL_IO"
-   DATA_IO_PRIM_TYPE     : string  := "DEFAULT";
+   DATA_IO_PRIM_TYPE     : string  := "HR_LP";
                                      -- # = "HP_LP", "HR_LP", "DEFAULT"
    CKE_ODT_AUX           : string  := "FALSE";
    USER_REFRESH          : string  := "OFF";
    WRLVL                 : string  := "ON";
                                      -- # = "ON" - DDR3 SDRAM
                                      --   = "OFF" - DDR2 SDRAM.
-   ORDERING              : string  := "NORM";
+   ORDERING              : string  := "STRICT";
                                      -- # = "NORM", "STRICT", "RELAXED".
    CALIB_ROW_ADD         : std_logic_vector(15 downto 0) := X"0000";
                                      -- Calibration row address will be used for
@@ -450,10 +450,10 @@ entity DDR3LController_mig is
    --***************************************************************************
    -- System clock frequency parameters
    --***************************************************************************
-   tCK                   : integer := 3077;
+   tCK                   : integer := 3125;
                                      -- memory tCK paramter.
                                      -- # = Clock Period in pS.
-   nCK_PER_CLK           : integer := 4;
+   nCK_PER_CLK           : integer := 2;
                                      -- # of memory CKs per fabric CLK
    DIFF_TERM_SYSCLK      : string  := "TRUE";
                                      -- Differential Termination for System
@@ -469,7 +469,7 @@ entity DDR3LController_mig is
    --***************************************************************************
    -- Temparature monitor parameter
    --***************************************************************************
-   TEMP_MON_CONTROL         : string  := "INTERNAL";
+   TEMP_MON_CONTROL         : string  := "EXTERNAL";
                                      -- # = "INTERNAL", "EXTERNAL"
    --***************************************************************************
    -- FPGA Voltage Type parameter
@@ -532,7 +532,10 @@ entity DDR3LController_mig is
    
       
    init_calib_complete  : out std_logic;
-   
+   device_temp_i                 : in  std_logic_vector(11 downto 0);
+                      -- The 12 MSB bits of the temperature sensor transfer
+                      -- function need to be connected to this port. This port
+                      -- will be synchronized w.r.t. to fabric clock internally.
    device_temp                    : out std_logic_vector(11 downto 0);
       
 
@@ -1071,7 +1074,6 @@ architecture arch_DDR3LController_mig of DDR3LController_mig is
   signal clk_ref_p               : std_logic;
   signal clk_ref_n               : std_logic;
   signal device_temp_s         : std_logic_vector(11 downto 0);
-  signal device_temp_i           : std_logic_vector(11 downto 0);
 
   -- Debug port signals
   signal dbg_idel_down_all           : std_logic;

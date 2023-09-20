@@ -157,7 +157,7 @@ entity example_top is
    --***************************************************************************
    -- System clock frequency parameters
    --***************************************************************************
-   nCK_PER_CLK           : integer := 4;
+   nCK_PER_CLK           : integer := 2;
                                      -- # of memory CKs per fabric CLK
 
    --***************************************************************************
@@ -170,7 +170,7 @@ entity example_top is
    --***************************************************************************
    -- Temparature monitor parameter
    --***************************************************************************
-   TEMP_MON_CONTROL         : string  := "INTERNAL";
+   TEMP_MON_CONTROL         : string  := "EXTERNAL";
                                      -- # = "INTERNAL", "EXTERNAL"
       
    RST_ACT_LOW           : integer := 1
@@ -206,7 +206,10 @@ entity example_top is
    
    tg_compare_error              : out std_logic;
    init_calib_complete           : out std_logic;
-   
+   device_temp_i                 : in  std_logic_vector(11 downto 0);
+                      -- The 12 MSB bits of the temperature sensor transfer
+                      -- function need to be connected to this port. This port
+                      -- will be synchronized w.r.t. to fabric clock internally.
       
 
    -- System reset - Default polarity of sys_rst pin is Active Low.
@@ -297,11 +300,11 @@ architecture arch_example_top of example_top is
       app_addr                  : in    std_logic_vector(28 downto 0);
       app_cmd                   : in    std_logic_vector(2 downto 0);
       app_en                    : in    std_logic;
-      app_wdf_data              : in    std_logic_vector(127 downto 0);
+      app_wdf_data              : in    std_logic_vector(63 downto 0);
       app_wdf_end               : in    std_logic;
-      app_wdf_mask         : in    std_logic_vector(15 downto 0);
+      app_wdf_mask         : in    std_logic_vector(7 downto 0);
       app_wdf_wren              : in    std_logic;
-      app_rd_data               : out   std_logic_vector(127 downto 0);
+      app_rd_data               : out   std_logic_vector(63 downto 0);
       app_rd_data_end           : out   std_logic;
       app_rd_data_valid         : out   std_logic;
       app_rdy                   : out   std_logic;
@@ -319,6 +322,7 @@ architecture arch_example_top of example_top is
       sys_clk_i                      : in    std_logic;
       -- Reference Clock Ports
       clk_ref_i                                : in    std_logic;
+      device_temp_i                            : in    std_logic_vector(11 downto 0);
       device_temp     : out std_logic_vector(11 downto 0);
       sys_rst             : in std_logic
       );
@@ -572,6 +576,7 @@ begin
        sys_clk_i                       => sys_clk_i,
 -- Reference Clock Ports
        clk_ref_i                      => clk_ref_i,
+       device_temp_i                  => device_temp_i,
         sys_rst                        => sys_rst
         );
 -- End of User Design top instance

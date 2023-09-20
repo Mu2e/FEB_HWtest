@@ -15,9 +15,9 @@
 
   <DataDepth_En>1024</DataDepth_En>
 
-  <LowPower_En>OFF</LowPower_En>
+  <LowPower_En>ON</LowPower_En>
 
-  <XADC_En>Enabled</XADC_En>
+  <XADC_En>Disabled</XADC_En>
 
   <TargetFPGA>xc7s50-fgga484/-2</TargetFPGA>
 
@@ -39,12 +39,12 @@
 
   <Controller number="0">
     <MemoryDevice>DDR3_SDRAM/Components/MT41K256M16XX-107</MemoryDevice>
-    <TimePeriod>3077</TimePeriod>
+    <TimePeriod>3125</TimePeriod>
     <VccAuxIO>1.8V</VccAuxIO>
-    <PHYRatio>4:1</PHYRatio>
-    <InputClkFreq>99.997</InputClkFreq>
+    <PHYRatio>2:1</PHYRatio>
+    <InputClkFreq>160</InputClkFreq>
     <UIExtraClocks>0</UIExtraClocks>
-    <MMCM_VCO>649</MMCM_VCO>
+    <MMCM_VCO>640</MMCM_VCO>
     <MMCMClkOut0> 1.000</MMCMClkOut0>
     <MMCMClkOut1>1</MMCMClkOut1>
     <MMCMClkOut2>1</MMCMClkOut2>
@@ -54,7 +54,7 @@
     <DeepMemory>1</DeepMemory>
     <DataMask>1</DataMask>
     <ECC>Disabled</ECC>
-    <Ordering>Normal</Ordering>
+    <Ordering>Strict</Ordering>
     <BankMachineCnt>4</BankMachineCnt>
     <CustomPart>FALSE</CustomPart>
     <NewPartName/>
@@ -79,9 +79,9 @@
       <Pin IN_TERM="" IOSTANDARD="" PADName="F21" SLEW="" VCCAUX_IO="" name="ddr3_addr[7]"/>
       <Pin IN_TERM="" IOSTANDARD="" PADName="F18" SLEW="" VCCAUX_IO="" name="ddr3_addr[8]"/>
       <Pin IN_TERM="" IOSTANDARD="" PADName="D20" SLEW="" VCCAUX_IO="" name="ddr3_addr[9]"/>
-      <Pin IN_TERM="" IOSTANDARD="" PADName="D22" SLEW="" VCCAUX_IO="" name="ddr3_ba[0]"/>
+      <Pin IN_TERM="" IOSTANDARD="" PADName="E22" SLEW="" VCCAUX_IO="" name="ddr3_ba[0]"/>
       <Pin IN_TERM="" IOSTANDARD="" PADName="K15" SLEW="" VCCAUX_IO="" name="ddr3_ba[1]"/>
-      <Pin IN_TERM="" IOSTANDARD="" PADName="E22" SLEW="" VCCAUX_IO="" name="ddr3_ba[2]"/>
+      <Pin IN_TERM="" IOSTANDARD="" PADName="D22" SLEW="" VCCAUX_IO="" name="ddr3_ba[2]"/>
       <Pin IN_TERM="" IOSTANDARD="" PADName="C20" SLEW="" VCCAUX_IO="" name="ddr3_cas_n"/>
       <Pin IN_TERM="" IOSTANDARD="" PADName="M18" SLEW="" VCCAUX_IO="" name="ddr3_ck_n[0]"/>
       <Pin IN_TERM="" IOSTANDARD="" PADName="M17" SLEW="" VCCAUX_IO="" name="ddr3_ck_p[0]"/>
@@ -129,10 +129,10 @@
     <mrDllReset name="DLL Reset">No</mrDllReset>
     <mrPdMode name="DLL control for precharge PD">Slow Exit</mrPdMode>
     <emrDllEnable name="DLL Enable">Enable</emrDllEnable>
-    <emrOutputDriveStrength name="Output Driver Impedance Control">RZQ/6</emrOutputDriveStrength>
+    <emrOutputDriveStrength name="Output Driver Impedance Control">RZQ/7</emrOutputDriveStrength>
     <emrMirrorSelection name="Address Mirroring">Disable</emrMirrorSelection>
     <emrCSSelection name="Controller Chip Select Pin">Enable</emrCSSelection>
-    <emrRTT name="RTT (nominal) - On Die Termination (ODT)">RZQ/6</emrRTT>
+    <emrRTT name="RTT (nominal) - On Die Termination (ODT)">RZQ/4</emrRTT>
     <emrPosted name="Additive Latency (AL)">0</emrPosted>
     <emrOCD name="Write Leveling Enable">Disabled</emrOCD>
     <emrDQS name="TDQS enable">Enabled</emrDQS>
