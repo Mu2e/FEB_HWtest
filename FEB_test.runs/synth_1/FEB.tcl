@@ -219,12 +219,6 @@ set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_ila_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_ila_0/AFE_ila_0_ooc.xdc]
 
-read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/AFE_ila_1/AFE_ila_1.xci
-set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_ila_1/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_ila_1/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_ila_1/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/AFE_ila_1/AFE_ila_1_ooc.xdc]
-
 read_ip -quiet C:/v23.1/FEB_test/FEB_test.srcs/sources_1/ip/DDR_ila_1/DDR_ila_1.xci
 set_property used_in_synthesis false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_1/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/v23.1/FEB_test/FEB_test.gen/sources_1/ip/DDR_ila_1/ila_v6_2/constraints/ila_impl.xdc]

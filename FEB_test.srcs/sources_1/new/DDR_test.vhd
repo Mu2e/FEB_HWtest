@@ -386,22 +386,22 @@ if rising_edge(Clk_50MHz) then
 end if;
 end process;
 
-buttons: vio_0
-port map(
-	clk				=> SysClk,         
-	probe_in0		=> B_in(0 downto 0),   
-    probe_in1		=> B_in(1 downto 1),   
-    probe_in2		=> B_in(2 downto 2),   
-    probe_in3		=> B_in(3 downto 3),   
-    probe_in4		=> B_in(4 downto 4),   
-	probe_out0		=> B_out(0 downto 0), 
-    probe_out1      => B_out(1 downto 1), 
-    probe_out2      => B_out(2 downto 2), 
-    probe_out3      => B_out(3 downto 3), 
-    probe_out4      => B_out(4 downto 4)
-); 
+--buttons: vio_0
+--port map(
+--	clk				=> SysClk,         
+--	probe_in0		=> B_in(0 downto 0),   
+--    probe_in1		=> B_in(1 downto 1),   
+--    probe_in2		=> B_in(2 downto 2),   
+--    probe_in3		=> B_in(3 downto 3),   
+--    probe_in4		=> B_in(4 downto 4),   
+--	probe_out0		=> B_out(0 downto 0), 
+--    probe_out1      => B_out(1 downto 1), 
+--    probe_out2      => B_out(2 downto 2), 
+--    probe_out3      => B_out(3 downto 3), 
+--    probe_out4      => B_out(4 downto 4)
+--); 
 
-generateILA0: if true generate
+generateILA0: if false generate
 ila : DDR_ila_0 
 port map(
 	clk 		=> Clk_200MHz, 

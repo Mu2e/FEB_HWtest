@@ -26,8 +26,6 @@ entity FEB is
 port(
 	-- 160 MHz VXO clock
 	VXO_P, VXO_N			: in std_logic;
-	-- 100 MHz VXO clock
---	ClkB_P, ClkB_N			: in std_logic;
 	-- AFE Data lines
 	AFE0Dat_P   			: in std_logic_vector(7 downto 0); -- LVDS pairs from an AFE chip (8 channels)
 	AFE0Dat_N    			: in std_logic_vector(7 downto 0); 
@@ -162,8 +160,6 @@ signal EvBuffOut	          : std_logic_vector(15 downto 0);
 signal EvBuffEmpty	          : std_logic;
 signal EvBuffWdsUsed          : std_logic_vector(10 downto 0);
 
-signal asp					  : std_logic := '0';
-
 
 signal TempCtrl 			  : std_logic_vector(3 downto 0);
 signal One_Wire_Out 		  : std_logic_vector(15 downto 0);
@@ -190,9 +186,7 @@ signal AFERdReg               : std_logic_vector (15 downto 0);
 
 attribute mark_debug : string;
 attribute mark_debug of uAddrReg: signal is "false";
-signal AFE0FCLK             : std_logic; 
-signal AFE0DATA             : std_logic; 
-signal AFE0outCLK           : std_logic;
+
 
 begin
 
@@ -248,26 +242,6 @@ port map (
 	IB => GPI0_N, -- Diff_n buffer input (connect directly to top-level port)
 	O  => GPI0);  -- Buffer output
 
-DEBUG_1 : IBUFDS
-generic map (
-	DIFF_TERM 	 => TRUE, -- Differential Termination
-	IBUF_LOW_PWR => FALSE, -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
-	IOSTANDARD   => "DEFAULT")
-port map (
-	I  => AFE0FCLK_P, -- Diff_p buffer input (connect directly to top-level port)
-	IB => AFE0FCLK_N, -- Diff_n buffer input (connect directly to top-level port)
-	O  => AFE0FCLK);  -- Buffer output
-
-DEBUG_2 : IBUFDS
-generic map (
-	DIFF_TERM 	 => TRUE, -- Differential Termination
-	IBUF_LOW_PWR => FALSE, -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
-	IOSTANDARD   => "DEFAULT")
-port map (
-	I  => AFE0Dat_P(0), -- Diff_p buffer input (connect directly to top-level port)
-	IB => AFE0Dat_N(0), -- Diff_n buffer input (connect directly to top-level port)
-	O  => AFE0DATA);  -- Buffer output
-
 
 PLL :  PLL_0 
 port map(
@@ -313,40 +287,8 @@ port map(
     MuxadReg        => MuxadReg         
 );
 
---DACControl : DAC
---port map (
---    Clk_100MHz		=> Clk_100MHz,
---	ResetHi  		=> ResetHi,
----- Microcontroller strobes
---    CpldRst			=> CpldRst,	
---	CpldCS			=> CpldCS,
---	uCWr 			=> uCWr, 
----- Microcontroller data and address buses	
---    uCA 			=> uCA,
---    uCD 			=> uCD,
----- Geographic address pins
---    GA 				=> GA,
----- Synchronous edge detectors of uC read and write strobes
---    uWRDL 			=> uWRDL,
----- Serial DAC control lines
---    DACCS 			=> DACCS,
---    DACClk 			=> DACClk,
---    DACDat 			=> DACDat,
---    DACLd 			=> DACLd,
----- AFE serial control lines
---	AFEPDn 		    => AFEPDn,
---	AFECS 		    => AFECS,
---	AFERst 		    => AFERst,
---	AFESClk         => AFESClk,
---	AFESDI  	    => AFESDI,
---	AFESDO 		    => AFESDO,
----- uController status registers
---    AlignReq        => AlignReq,
---	AFERdReg		=> AFERdReg
---    );
-
-AFEControl : AFE_debug
-port map(
+DACControl : DAC
+port map (
     Clk_100MHz		=> Clk_100MHz,
 	ResetHi  		=> ResetHi,
 -- Microcontroller strobes
@@ -360,47 +302,65 @@ port map(
     GA 				=> GA,
 -- Synchronous edge detectors of uC read and write strobes
     uWRDL 			=> uWRDL,
+-- Serial DAC control lines
+    DACCS 			=> DACCS,
+    DACClk 			=> DACClk,
+    DACDat 			=> DACDat,
+    DACLd 			=> DACLd,
+
+-- uController status registers
+    AlignReq        => AlignReq,
+	AFERdReg		=> AFERdReg
+    );
+
+AFE : AFE_Interface
+port map(
+	AFE0Dat_P		=> AFE0Dat_P,
+	AFE0Dat_N       => AFE0Dat_N,
+	AFE1Dat_P       => AFE1Dat_P,
+	AFE1Dat_N       => AFE1Dat_N,
+	AFE0Clk_P       => AFE0Clk_P,
+	AFE0Clk_N       => AFE0Clk_N,
+	AFE1Clk_P       => AFE1Clk_P,
+	AFE1Clk_N       => AFE1Clk_N,
+	
+	AFEDCLK_P       => AFEDCLK_P, -- unused
+	AFEDCLK_N       => AFEDCLK_N, -- unused
+	
+	AFE0FCLK_P      => AFE0FCLK_P,
+	AFE0FCLK_N      => AFE0FCLK_N,
+	AFE1FCLK_P      => AFE1FCLK_P,
+	AFE1FCLK_N      => AFE1FCLK_N,
 -- AFE serial control lines
 	AFEPDn 		    => AFEPDn,
 	AFECS 		    => AFECS,
 	AFERst 		    => AFERst,
 	AFESClk         => AFESClk,
 	AFESDI  	    => AFESDI,
-	AFESDO 		    => AFESDO
+	AFESDO 		    => AFESDO,
+	-- FPGA interface
+	Clk_80MHz		=> Clk_80MHz,
+    Clk_100MHz		=> Clk_100MHz,			  
+	Clk_560MHz		=> Clk_560MHz,			  
+	Clk_200MHz		=> Clk_200MHz,			  
+	reset			=> SerdesRst(0) or SerdesRst(1),				  
+	done			=> done,				  
+	warn			=> warn,				  
+	dout_AFE0		=> dout_AFE0,				  
+	dout_AFE1		=> dout_AFE1,
+	-- Microcontroller strobes
+	CpldRst			=> CpldRst,	
+	CpldCS			=> CpldCS,
+	uCWr 			=> uCWr, 
+	-- Microcontroller data and address buses	
+	uCA 			=> uCA,
+	uCD 			=> uCD,
+	-- Geographic address pins
+	GA 				=> GA,
+	-- Synchronous edge detectors of uC read and write strobes
+	uWRDL 			=> uWRDL
 );
 
-
---AFE : AFE_Interface
---port map(
---	AFE0Dat_P		=> AFE0Dat_P,
---	AFE0Dat_N       => AFE0Dat_N,
---	AFE1Dat_P       => AFE1Dat_P,
---	AFE1Dat_N       => AFE1Dat_N,
---	AFE0Clk_P       => AFE0Clk_P,
---	AFE0Clk_N       => AFE0Clk_N,
---	AFE1Clk_P       => AFE1Clk_P,
---	AFE1Clk_N       => AFE1Clk_N,
---	
---	AFEDCLK_P       => AFEDCLK_P, -- unused
---	AFEDCLK_N       => AFEDCLK_N, -- unused
---	
---	AFE0FCLK_P      => AFE0FCLK_P,
---	AFE0FCLK_N      => AFE0FCLK_N,
---	AFE1FCLK_P      => AFE1FCLK_P,
---	AFE1FCLK_N      => AFE1FCLK_N,
---
---	-- FPGA interface
---	Clk_80MHz		=> Clk_80MHz,
---    Clk_100MHz		=> Clk_100MHz,			  
---	Clk_560MHz		=> Clk_560MHz,			  
---	Clk_200MHz		=> Clk_200MHz,			  
---	reset			=> SerdesRst(0) or SerdesRst(1),				  
---	done			=> done,				  
---	warn			=> warn,				  
---	dout_AFE0		=> dout_AFE0,				  
---	dout_AFE1		=> dout_AFE1
---);
---
 AFE_DataPath_inst : AFE_DataPath
 port map (
 	Clk_80MHz	    => Clk_80MHz,		
@@ -787,11 +747,12 @@ port map(
 	probe9    => uWRDL,		-- std_logic_vector(1 downto 0);
 	probe10	  => uRDDL 		-- std_logic_vector(1 downto 0)	
 );
+end GENERATE; 
 
+generateILA1: if true generate
 
-
-    AFE_ila: AFE_ila_0
-    port map(
+AFE_ila: AFE_ila_0
+port map(
     clk    		=> Clk_80MHz, 	
     probe0(0) 	=> SerdesRst(0), 
     probe1   	=> done, 	
@@ -802,25 +763,16 @@ port map(
 
 end GENERATE; 
 
-OBUFDS_inst0: OBUFDS
-generic map(IOSTANDARD=>"LVDS")
-port map(I => Clk_80MHz, O => AFE0Clk_P, OB => AFE0Clk_N);
-
-OBUFDS_inst1: OBUFDS
-generic map(IOSTANDARD=>"LVDS")
-port map(I => Clk_80MHz, O => AFE1Clk_P, OB => AFE1Clk_N); 
-
-
 
 ------- DEBUG
 DBG(1)	<= GPI0;
 DBG(2)	<= SysClk;
 DBG(3)	<= A7; 
-DBG(4)	<= dout_afe0(0)(0);
-DBG(5)	<= dout_afe1(0)(0);
-DBG(6)	<= Clk_80MHz;
-DBG(7)	<= AFE0DATA;
-DBG(8)	<= AFE0FCLK;
+DBG(4)	<= Clk_80MHz;
+-- DBG(5)	<= 
+-- DBG(6)	<= 
+-- DBG(7)	<= 
+-- DBG(8)	<= 
 -- DBG(9)	<= 
 
 

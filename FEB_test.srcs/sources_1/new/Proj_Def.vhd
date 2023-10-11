@@ -319,7 +319,13 @@ port(
 	AFEDCLK_P, AFEDCLK_N    : in std_logic_vector(1 downto 0); -- Unused in this design 
 	AFE0FCLK_P, AFE0FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
 	AFE1FCLK_P, AFE1FCLK_N  : in std_logic; -- LVDS pairs of the Frame Clock
-				
+	-- AFE serial control lines
+	AFEPDn 				    : buffer std_logic_vector(1 downto 0);
+	AFECS 				    : buffer std_logic_vector(1 downto 0);
+	AFERst 				    : buffer std_logic;
+	AFESClk			  	    : buffer std_logic;
+	AFESDI			  	    : out std_logic;
+	AFESDO 				    : in std_logic;				
 	-- FPGA interface       
 	Clk_80MHz			    : in  std_logic; 	-- Master clock 80MHz
 	Clk_100MHz			    : in  std_logic; 	-- uController clock 
@@ -329,8 +335,18 @@ port(
 	done				    : out std_logic_vector(1 downto 0); -- status of automatic alignment FSM
 	warn				    : out std_logic_vector(1 downto 0); -- pulse to indicate an error was seen in the FCLK pattern
 	dout_afe0				: out Array_8x14; -- data synchronized to clock
-	dout_AFE1				: out Array_8x14 -- data synchronized to clock
-
+	dout_AFE1				: out Array_8x14; -- data synchronized to clock
+    -- Microcontroller strobes
+	CpldRst					: in std_logic;
+	CpldCS					: in std_logic;
+	uCWr 					: in std_logic;
+-- Microcontroller data and address buses	
+	uCA 					: in std_logic_vector(11 downto 0);
+	uCD 					: in std_logic_vector(15 downto 0);        
+-- Geographic address pins
+	GA 						: in std_logic_vector(1 downto 0);
+-- Synchronous edge detectors of uC read and write strobes
+	uWRDL 					: in std_logic_vector(1 downto 0)
 );
 end component;
 
@@ -755,12 +771,6 @@ component DAC is
 	    DACClk 				: buffer std_logic;
 	    DACDat 				: buffer std_logic;
 	    DACLd 				: buffer std_logic;
-    -- AFE serial control lines
-	    AFEPDn 				: buffer std_logic_vector(1 downto 0);
-	    AFECS 				: buffer std_logic_vector(1 downto 0);
-	    AFERst 				: buffer std_logic;
-	    AFESClk, AFESDI  	: buffer std_logic;
-	    AFESDO 				: in std_logic;
     -- uController status registers
         AlignReq            : buffer std_logic_vector (1 downto 0);
         AFERdReg            : buffer std_logic_vector (15 downto 0)
@@ -791,6 +801,10 @@ component AFE_debug is
 	    AFESDO 				 : in std_logic
     );
 end component;
+
+
+
+
 
 -----------------------------------------------------------------------
 ------------------------ Xilinx IP Components -------------------------

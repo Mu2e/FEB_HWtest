@@ -48,12 +48,6 @@ entity DAC is
 	    DACClk 				: buffer std_logic;
 	    DACDat 				: buffer std_logic;
 	    DACLd 				: buffer std_logic;
-    -- AFE serial control lines
-	    AFEPDn 				 : buffer std_logic_vector(1 downto 0);
-	    AFECS 				 : buffer std_logic_vector(1 downto 0);
-	    AFERst 				 : buffer std_logic;
-	    AFESClk, AFESDI  	 : buffer std_logic;
-	    AFESDO 				 : in std_logic;
     -- uController status registers
         AlignReq             : buffer std_logic_vector (1 downto 0);
         AFERdReg             : buffer std_logic_vector (15 downto 0)
@@ -183,7 +177,7 @@ begin
 
     elsif rising_edge (Clk_100MHz) then 
 
-        if uWRDL = 1 and uCD(0) = '1' and AFEPDn(0) = '0'
+        if uWRDL = 1 and uCD(0) = '1' --and AFEPDn(0) = '0'
 		    and ((uCA(11 downto 10) = GA and uCA(9 downto 0) = SlipCtrlAd)
 			or uCA(9 downto 0) = BrdCstAlgnReqAd) then 
 	        
@@ -195,7 +189,7 @@ begin
         
         end if;
 
-        if uWRDL = 1 and uCD(1) = '1' and AFEPDn(1) = '0'
+        if uWRDL = 1 and uCD(1) = '1' --and AFEPDn(1) = '0'
 		and ((uCA(11 downto 10) = GA and uCA(9 downto 0) = SlipCtrlAd)
 			or uCA(9 downto 0) = BrdCstAlgnReqAd) then
 	  
@@ -566,119 +560,93 @@ end if;
 end if;
 end process; 
 
-
-AFEControl : process(Clk_100MHz, CpldRst)
-begin 
-    if CpldRst = '0' then 
-
-        AFEPDn      <= "11"; 
-        AFECS       <= "11"; 
-        AFESDI      <= '0';
-        AFESClk     <= '0'; 
-        AFERst      <= '0';
-        
-        AFERdReg    <= (others => '0');
-
-    elsif rising_edge (Clk_100MHz) then  
-
-    -- AFE power down control bits
-    if uWRDL = 1 and ((uCA(11 downto 10) = GA and uCA(9 downto 0) = CSRRegAddr)
-            or uCA(9 downto 0) = CSRBroadCastAd) then
-        
-        AFEPDn <= uCD(1 downto 0);
-    else 
-        AFEPDn <= AFEPDn;
-    end if;
-    
-    -- AFE specific reset
-    if uCWR = '0' and CpldCS = '0' and uCD(6) = '1'  
-	    and ((uCA(11 downto 10) = GA and uCA(9 downto 0) = CSRRegAddr)
-			or uCA(9 downto 0) = CSRBroadCastAd) then
-        
-        AFERst <= '1';
-    else 
-        AFERst <= '0';
-    end if;
+-- ##################################################
+--
+--      OLD CODE for the slow control of the AFE
+--
+-- ##################################################
 
 
-    -- Assert appropriate AFE chip select based on bits 25, 24 of the FIFO output
-    if ODFifoRdReq = '1' and BitCount = 0 and Dev_Sel = '0' then 
-
-        Case ODFifoOut(25 downto 24) is
-            When "01" => AFECS <= "10";
-    	    When "10" => AFECS <= "01";
-    	    When others => AFECS <= "11";
-        end case;
-
-    elsif ClkDiv = 0 and Octal_Shift = ClearSync then 
-
-        AFECS <= "11";
-
-    end if;
-
-    ---- AFE serial clock
-    if Dev_Sel = '0' and BitCount /= 0 and Octal_Shift = Shift then 
-        AFESClk <= ClkDiv(2); 
-    else 
-        AFESClk <= '0';
-    end if;
-    
-    ---- AFE serial data
-    if Dev_Sel = '0' and Octal_Shift = Shift then 
-        AFESDI <= DACShift(23); 
-    else 
-        AFESDI <= '0';
-    end if;
-    
-    -- Delayed copy of the serial clock for strobing in readback data
-    SClkDL(0) <= AFESClk;
-    SClkDL(1) <= SClkDL(0);
-    SClkDL(2) <= SClkDL(1);
-       
-    -- Clock in any readback data
-    if Dev_Sel = '0' and SClkDL = 6 then
-        AFERdReg <= AFERdReg(14 downto 0) & AFESDO;
-        --AFERdReg <= "000000000000000" & AFESDO;
-    end if;
-
-    end if;
-end process;
+-- AFEControl : process(Clk_100MHz, CpldRst)
+-- begin 
+--     if CpldRst = '0' then 
+-- 
+--         AFEPDn      <= "11"; 
+--         AFECS       <= "11"; 
+--         AFESDI      <= '0';
+--         AFESClk     <= '0'; 
+--         AFERst      <= '0';
+--         
+--         AFERdReg    <= (others => '0');
+-- 
+--     elsif rising_edge (Clk_100MHz) then  
+-- 
+--     -- AFE power down control bits
+--     if uWRDL = 1 and ((uCA(11 downto 10) = GA and uCA(9 downto 0) = CSRRegAddr)
+--             or uCA(9 downto 0) = CSRBroadCastAd) then
+--         
+--         AFEPDn <= uCD(1 downto 0);
+--     else 
+--         AFEPDn <= AFEPDn;
+--     end if;
+--     
+--     -- AFE specific reset
+--     if uCWR = '0' and CpldCS = '0' and uCD(6) = '1'  
+-- 	    and ((uCA(11 downto 10) = GA and uCA(9 downto 0) = CSRRegAddr)
+-- 			or uCA(9 downto 0) = CSRBroadCastAd) then
+--         
+--         AFERst <= '1';
+--     else 
+--         AFERst <= '0';
+--     end if;
+-- 
+-- 
+--     -- Assert appropriate AFE chip select based on bits 25, 24 of the FIFO output
+--     if ODFifoRdReq = '1' and BitCount = 0 and Dev_Sel = '0' then 
+-- 
+--         Case ODFifoOut(25 downto 24) is
+--             When "01" => AFECS <= "10";
+--     	    When "10" => AFECS <= "01";
+--     	    When others => AFECS <= "11";
+--         end case;
+-- 
+--     elsif ClkDiv = 0 and Octal_Shift = ClearSync then 
+-- 
+--         AFECS <= "11";
+-- 
+--     end if;
+-- 
+--     ---- AFE serial clock
+--     if Dev_Sel = '0' and BitCount /= 0 and Octal_Shift = Shift then 
+--         AFESClk <= ClkDiv(2); 
+--     else 
+--         AFESClk <= '0';
+--     end if;
+--     
+--     ---- AFE serial data
+--     if Dev_Sel = '0' and Octal_Shift = Shift then 
+--         AFESDI <= DACShift(23); 
+--     else 
+--         AFESDI <= '0';
+--     end if;
+--     
+--     -- Delayed copy of the serial clock for strobing in readback data
+--     SClkDL(0) <= AFESClk;
+--     SClkDL(1) <= SClkDL(0);
+--     SClkDL(2) <= SClkDL(1);
+--        
+--     -- Clock in any readback data
+--     if Dev_Sel = '0' and SClkDL = 6 then
+--         AFERdReg <= AFERdReg(14 downto 0) & AFESDO;
+--         --AFERdReg <= "000000000000000" & AFESDO;
+--     end if;
+-- 
+--     end if;
+-- end process;
 
 -- =========================================================================
 -- ===========================     ILA    ==================================
 -- =========================================================================
-
---generateILA0: if false generate
---
---	DAC_ILA: DAC_ila_0 
---	port map(
---	clk    		=> Clk_100MHz,
---	probe0  	=> AFEPDn,       -- std_logic_vector(1 downto 0)      
---    probe1  	=> AFECS,        -- std_logic_vector(1 downto 0)       
---    probe2(0) 	=> AFERst,       -- std_logic    
---    probe3(0) 	=> AFESClk,      -- std_logic        
---    probe4(0) 	=> AFESDI,       -- std_logic
---    probe5(0) 	=> AFESDO,       -- std_logic
---	probe6   	=> AFERdReg      -- std_logic_vector (15 downto 0)
---);
---
---end GENERATE; 
---
---generateILA1: if false generate
---
---	DAC_ILA: DAC_ila_1
---	port map(
---	clk    		=> Clk_100MHz,
---	probe0  	=> DACCS,        -- std_logic_vector(1 downto 0)      
---    probe1(0)  	=> DACClk,       -- std_logic_vector(1 downto 0)       
---    probe2(0) 	=> DACDat,       -- std_logic    
---    probe3(0) 	=> DACLd         -- std_logic        
---);
---
---end GENERATE; 
-
-
-
 
 
 

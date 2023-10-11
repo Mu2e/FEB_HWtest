@@ -99,23 +99,23 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_dlmb_bram_if_cntlr_1/Test_DDR_dlmb_bram_if_cntlr_1.xci">
+          <Proxy FileSetName="Test_DDR_dlmb_bram_if_cntlr_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_ilmb_bram_if_cntlr_1/Test_DDR_ilmb_bram_if_cntlr_1.xci">
+          <Proxy FileSetName="Test_DDR_ilmb_bram_if_cntlr_1"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_lmb_bram_1/Test_DDR_lmb_bram_1.xci">
           <Proxy FileSetName="Test_DDR_lmb_bram_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_mig_7series_0_0/Test_DDR_mig_7series_0_0.xci">
           <Proxy FileSetName="Test_DDR_mig_7series_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_ilmb_bram_if_cntlr_1/Test_DDR_ilmb_bram_if_cntlr_1.xci">
-          <Proxy FileSetName="Test_DDR_ilmb_bram_if_cntlr_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_dlmb_bram_if_cntlr_1/Test_DDR_dlmb_bram_if_cntlr_1.xci">
-          <Proxy FileSetName="Test_DDR_dlmb_bram_if_cntlr_1"/>
+        <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_clk_wiz_1_0/Test_DDR_clk_wiz_1_0.xci">
+          <Proxy FileSetName="Test_DDR_clk_wiz_1_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_clk_wiz_0_0/Test_DDR_clk_wiz_0_0.xci">
           <Proxy FileSetName="Test_DDR_clk_wiz_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Test_DDR.bd" FileRelPathName="ip/Test_DDR_clk_wiz_1_0/Test_DDR_clk_wiz_1_0.xci">
-          <Proxy FileSetName="Test_DDR_clk_wiz_1_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/Proj_Def.vhd">
@@ -715,19 +715,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="AFE_ila_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/AFE_ila_1" RelGenDir="$PGENDIR/AFE_ila_1">
-      <File Path="$PSRCDIR/sources_1/ip/AFE_ila_1/AFE_ila_1.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="AFE_ila_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="DDR_ila_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DDR_ila_1" RelGenDir="$PGENDIR/DDR_ila_1">
       <File Path="$PSRCDIR/sources_1/ip/DDR_ila_1/DDR_ila_1.xci">
         <FileInfo>
@@ -1056,16 +1043,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="AFE_ila_1_synth_1" Type="Ft3:Synth" SrcSet="AFE_ila_1" Part="xc7s50fgga484-2" ConstrsSet="AFE_ila_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/AFE_ila_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/AFE_ila_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/AFE_ila_1_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="DDR_ila_1_synth_1" Type="Ft3:Synth" SrcSet="DDR_ila_1" Part="xc7s50fgga484-2" ConstrsSet="DDR_ila_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/DDR_ila_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DDR_ila_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DDR_ila_1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
@@ -1078,9 +1055,7 @@
     </Run>
     <Run Id="DDR3LController_synth_1" Type="Ft3:Synth" SrcSet="DDR3LController" Part="xc7s50fgga484-2" ConstrsSet="DDR3LController" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/DDR3LController_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DDR3LController_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DDR3LController_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1550,23 +1525,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="AFE_ila_1_impl_1" Type="Ft2:EntireDesign" Part="xc7s50fgga484-2" ConstrsSet="AFE_ila_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="AFE_ila_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/AFE_ila_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/AFE_ila_1_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="DDR_ila_1_impl_1" Type="Ft2:EntireDesign" Part="xc7s50fgga484-2" ConstrsSet="DDR_ila_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="DDR_ila_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DDR_ila_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DDR_ila_1_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
@@ -1586,9 +1544,7 @@
     </Run>
     <Run Id="DDR3LController_impl_1" Type="Ft2:EntireDesign" Part="xc7s50fgga484-2" ConstrsSet="DDR3LController" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="DDR3LController_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/DDR3LController_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/DDR3LController_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

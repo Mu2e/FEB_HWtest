@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Tue Sep 19 14:31:17 2023
+| Date             : Wed Oct 11 09:52:06 2023
 | Host             : CD-135239 running 64-bit major release  (build 9200)
 | Command          : report_power -file FEB_power_routed.rpt -pb FEB_power_summary_routed.pb -rpx FEB_power_routed.rpx
 | Design           : FEB
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.246        |
+| Total On-Chip Power (W)  | 1.296        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.172        |
+| Dynamic (W)              | 1.222        |
 | Device Static (W)        | 0.074        |
 | Effective TJA (C/W)      | 2.9          |
-| Max Ambient (C)          | 81.4         |
-| Junction Temperature (C) | 28.6         |
+| Max Ambient (C)          | 81.3         |
+| Junction Temperature (C) | 28.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.115 |       33 |       --- |             --- |
-| Slice Logic              |     0.018 |    37871 |       --- |             --- |
-|   LUT as Logic           |     0.014 |    11123 |     32600 |           34.12 |
-|   Register               |     0.001 |    17187 |     65200 |           26.36 |
-|   LUT as Shift Register  |    <0.001 |     1720 |      9600 |           17.92 |
+| Clocks                   |     0.082 |       34 |       --- |             --- |
+| Slice Logic              |     0.015 |    31478 |       --- |             --- |
+|   LUT as Logic           |     0.013 |    10132 |     32600 |           31.08 |
+|   Register               |    <0.001 |    14038 |     65200 |           21.53 |
+|   CARRY4                 |    <0.001 |      599 |      8150 |            7.35 |
 |   LUT as Distributed RAM |    <0.001 |      538 |      9600 |            5.60 |
-|   CARRY4                 |    <0.001 |      712 |      8150 |            8.74 |
-|   F7/F8 Muxes            |    <0.001 |      415 |     32600 |            1.27 |
-|   Others                 |     0.000 |     2184 |       --- |             --- |
-| Signals                  |     0.026 |    28312 |       --- |             --- |
-| Block RAM                |     0.008 |        9 |        75 |           12.00 |
-| MMCM                     |     0.297 |        3 |         5 |           60.00 |
-| PLL                      |     0.114 |        1 |         5 |           20.00 |
-| I/O                      |     0.408 |      131 |       250 |           52.40 |
+|   LUT as Shift Register  |    <0.001 |      911 |      9600 |            9.49 |
+|   Others                 |    <0.001 |     1651 |       --- |             --- |
+|   F7/F8 Muxes            |    <0.001 |      193 |     32600 |            0.59 |
+| Signals                  |     0.017 |    22885 |       --- |             --- |
+| Block RAM                |     0.002 |        5 |        75 |            6.67 |
+| MMCM                     |     0.299 |        3 |         5 |           60.00 |
+| PLL                      |     0.000 |        1 |         5 |           20.00 |
+| I/O                      |     0.620 |      164 |       250 |           65.60 |
 | PHASER                   |     0.187 |       20 |       --- |             --- |
 | Static Power             |     0.074 |          |           |                 |
-| Total                    |     1.246 |          |           |                 |
+| Total                    |     1.296 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,16 +78,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.233 |       0.222 |      0.011 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.383 |       0.370 |      0.013 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.192 |       0.181 |      0.011 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.417 |       0.404 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco25    |       2.500 |     0.050 |       0.049 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.062 |       0.061 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.121 |       0.120 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.001 |       0.001 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 
@@ -134,6 +134,7 @@ Table of Contents
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | Clk_100MHz_PLL_0                                                                                                                                          | PLL/inst/Clk_100MHz_PLL_0                                                                                                                                                                                        |            10.0 |
 | Clk_200MHz_PLL_0                                                                                                                                          | PLL/inst/Clk_200MHz_PLL_0                                                                                                                                                                                        |             5.0 |
+| Clk_560MHz_PLL_AFE_1                                                                                                                                      | HF_PLL/inst/Clk_560MHz_PLL_AFE                                                                                                                                                                                   |             1.8 |
 | Clk_80MHz_PLL_AFE_1                                                                                                                                       | HF_PLL/inst/Clk_80MHz_PLL_AFE                                                                                                                                                                                    |            12.5 |
 | SysClk_PLL_0                                                                                                                                              | PLL/inst/SysClk                                                                                                                                                                                                  |             6.3 |
 | SysClk_PLL_0                                                                                                                                              | PLL/inst/SysClk_PLL_0                                                                                                                                                                                            |             6.3 |
@@ -172,33 +173,54 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-----------------------------+-----------+
-| Name                        | Power (W) |
-+-----------------------------+-----------+
-| FEB                         |     1.172 |
-|   AFEControl                |     0.022 |
-|     generateILA0.DAC_ILA    |     0.022 |
-|       U0                    |     0.022 |
-|   AFE_DataPath_inst         |     0.004 |
-|   DDR                       |     0.786 |
-|     DDR_Controller          |     0.704 |
-|       u_DDR3LController_mig |     0.701 |
-|     buttons                 |     0.002 |
-|       inst                  |     0.002 |
-|     generateILA0.ila        |     0.077 |
-|       U0                    |     0.077 |
-|   HF_PLL                    |     0.113 |
-|     inst                    |     0.113 |
-|   OneWire                   |     0.001 |
-|   PLL                       |     0.101 |
-|     inst                    |     0.101 |
-|   Trigger_logic             |     0.003 |
-|     FMRx1                   |     0.001 |
-|   dbg_hub                   |     0.003 |
-|     inst                    |     0.003 |
-|       BSCANID.u_xsdbm_id    |     0.003 |
-|   uC_to_LVDSTX              |     0.001 |
-|   uControllerRegister       |     0.001 |
-+-----------------------------+-----------+
++-------------------------------+-----------+
+| Name                          | Power (W) |
++-------------------------------+-----------+
+| FEB                           |     1.222 |
+|   AFE                         |     0.367 |
+|     afe0_inst                 |     0.133 |
+|       ffebit_inst             |     0.015 |
+|       genfebit[0].dfebit_inst |     0.015 |
+|       genfebit[1].dfebit_inst |     0.015 |
+|       genfebit[2].dfebit_inst |     0.015 |
+|       genfebit[3].dfebit_inst |     0.015 |
+|       genfebit[4].dfebit_inst |     0.015 |
+|       genfebit[5].dfebit_inst |     0.015 |
+|       genfebit[6].dfebit_inst |     0.015 |
+|       genfebit[7].dfebit_inst |     0.015 |
+|     afe1_inst                 |     0.133 |
+|       ffebit_inst             |     0.015 |
+|       genfebit[0].dfebit_inst |     0.015 |
+|       genfebit[1].dfebit_inst |     0.015 |
+|       genfebit[2].dfebit_inst |     0.015 |
+|       genfebit[3].dfebit_inst |     0.015 |
+|       genfebit[4].dfebit_inst |     0.015 |
+|       genfebit[5].dfebit_inst |     0.015 |
+|       genfebit[6].dfebit_inst |     0.015 |
+|       genfebit[7].dfebit_inst |     0.015 |
+|     buttons                   |     0.001 |
+|       inst                    |     0.001 |
+|     generateILA1.AFE_ILA1     |     0.022 |
+|       U0                      |     0.022 |
+|   AFE_DataPath_inst           |     0.008 |
+|   DACControl                  |     0.002 |
+|   DDR                         |     0.569 |
+|     DDR_Controller            |     0.568 |
+|       u_DDR3LController_mig   |     0.565 |
+|   HF_PLL                      |     0.116 |
+|     inst                      |     0.116 |
+|   PLL                         |     0.101 |
+|     inst                      |     0.101 |
+|   Trigger_logic               |     0.002 |
+|     FMRx1                     |     0.001 |
+|   dbg_hub                     |     0.003 |
+|     inst                      |     0.003 |
+|       BSCANID.u_xsdbm_id      |     0.003 |
+|   generateILA1.AFE_ila        |     0.021 |
+|     U0                        |     0.021 |
+|       ila_core_inst           |     0.021 |
+|   uC_to_LVDSTX                |     0.001 |
+|   uControllerRegister         |     0.003 |
++-------------------------------+-----------+
 
 

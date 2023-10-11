@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1695151270" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/FEB.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s50fgga484-2" LaunchTime="1697035555" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/FEB.dcp">
   <File Type="PA-TCL" Name="FEB.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="FEB_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="FEB_reports.tcl"/>
@@ -270,7 +270,6 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="PLL_AFE"/>
-  <BlockFileSet Type="BlockSrcs" Name="AFE_ila_1"/>
   <BlockFileSet Type="BlockSrcs" Name="CMD_Fifo"/>
   <BlockFileSet Type="BlockSrcs" Name="PLL_0"/>
   <BlockFileSet Type="BlockSrcs" Name="AFE_DataPath_ila2"/>

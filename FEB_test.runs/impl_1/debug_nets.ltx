@@ -14,212 +14,20 @@
                         "clk_input_freq_hz": "100000000"
                     },
                     {
-                        "type": "ILA_V3",
-                        "name": "AFEControl/generateILA0.DAC_ILA",
-                        "spec": "labtools_ila_v6",
-                        "ipName": "ila",
+                        "type": "VIO_V2",
+                        "name": "AFE/buttons",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
                         "core_location": {
                             "user_chain": 1,
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "70745A0284FC58E0A4BC6C6C4A7DF370",
-                        "pins": [
-                            {
-                                "name": "probe0",
-                                "id": 0,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 1,
-                                "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "AFEControl/AFEPDn",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "AFEControl/AFEPDn[1]"
-                                            },
-                                            {
-                                                "name": "AFEControl/AFEPDn[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 1,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 1,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "AFEControl/AFECS",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "AFEControl/AFECS[1]"
-                                            },
-                                            {
-                                                "name": "AFEControl/AFECS[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 2,
-                                "nets": [
-                                    {
-                                        "name": "AFEControl/AFERst",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe3",
-                                "id": 3,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 3,
-                                "nets": [
-                                    {
-                                        "name": "AFEControl/AFESClk",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe4",
-                                "id": 4,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 4,
-                                "nets": [
-                                    {
-                                        "name": "AFEControl/probe4",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe5",
-                                "id": 5,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 5,
-                                "nets": [
-                                    {
-                                        "name": "AFEControl/probe5",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe6",
-                                "id": 6,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 15,
-                                "portIndex": 6,
-                                "nets": [
-                                    {
-                                        "name": "AFEControl/probe6",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "AFEControl/probe6[15]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[14]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[13]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[12]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[11]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[10]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[9]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[8]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[7]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[6]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[5]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[4]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[3]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[2]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[1]"
-                                            },
-                                            {
-                                                "name": "AFEControl/probe6[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "type": "VIO_V2",
-                        "name": "DDR/buttons",
-                        "spec": "labtools_vio_v3",
-                        "ipName": "vio",
-                        "core_location": {
-                            "user_chain": 1,
-                            "slave_index": 1,
-                            "bscan_switch_index": 0
-                        },
-                        "uuid": "DF5386587A53540D854F04A510BF157B",
+                        "uuid": "7CB78A21B9B5539081E2ABB4E229C3B8",
                         "pins": [
                             {
                                 "name": "probe_in0",
-                                "id": 7,
+                                "id": 0,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -228,11 +36,11 @@
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "DDR/B_in_1",
+                                        "name": "AFE/B_in_1",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/B_in_1[0]"
+                                                "name": "AFE/B_in_1[0]"
                                             }
                                         ]
                                     }
@@ -240,7 +48,7 @@
                             },
                             {
                                 "name": "probe_in1",
-                                "id": 8,
+                                "id": 1,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -249,11 +57,11 @@
                                 "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "DDR/B_in_2",
+                                        "name": "AFE/B_in_2",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/B_in_2[1]"
+                                                "name": "AFE/B_in_2[1]"
                                             }
                                         ]
                                     }
@@ -261,7 +69,7 @@
                             },
                             {
                                 "name": "probe_in2",
-                                "id": 9,
+                                "id": 2,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -270,11 +78,11 @@
                                 "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "DDR/B_in_3",
+                                        "name": "AFE/B_in_3",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/B_in_3[2]"
+                                                "name": "AFE/B_in_3[2]"
                                             }
                                         ]
                                     }
@@ -282,7 +90,7 @@
                             },
                             {
                                 "name": "probe_in3",
-                                "id": 10,
+                                "id": 3,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -291,11 +99,11 @@
                                 "portIndex": 3,
                                 "nets": [
                                     {
-                                        "name": "DDR/B_in_4",
+                                        "name": "AFE/B_in_4",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/B_in_4[3]"
+                                                "name": "AFE/B_in_4[3]"
                                             }
                                         ]
                                     }
@@ -303,7 +111,7 @@
                             },
                             {
                                 "name": "probe_in4",
-                                "id": 11,
+                                "id": 4,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -312,11 +120,11 @@
                                 "portIndex": 4,
                                 "nets": [
                                     {
-                                        "name": "DDR/B_in",
+                                        "name": "AFE/B_in",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/B_in[4]"
+                                                "name": "AFE/B_in[4]"
                                             }
                                         ]
                                     }
@@ -324,7 +132,7 @@
                             },
                             {
                                 "name": "probe_out0",
-                                "id": 12,
+                                "id": 5,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -333,14 +141,14 @@
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "DDR/startwrite_1",
+                                        "name": "AFE/probe_out0",
                                         "isBus": false
                                     }
                                 ]
                             },
                             {
                                 "name": "probe_out1",
-                                "id": 13,
+                                "id": 6,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -349,14 +157,14 @@
                                 "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "DDR/startread_1",
+                                        "name": "AFE/buttons/probe_out1[0]",
                                         "isBus": false
                                     }
                                 ]
                             },
                             {
                                 "name": "probe_out2",
-                                "id": 14,
+                                "id": 7,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -365,14 +173,14 @@
                                 "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "DDR/resetFSM_1",
+                                        "name": "AFE/buttons/probe_out2[0]",
                                         "isBus": false
                                     }
                                 ]
                             },
                             {
                                 "name": "probe_out3",
-                                "id": 15,
+                                "id": 8,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -381,14 +189,14 @@
                                 "portIndex": 3,
                                 "nets": [
                                     {
-                                        "name": "DDR/buttons/probe_out3[0]",
+                                        "name": "AFE/buttons/probe_out3[0]",
                                         "isBus": false
                                     }
                                 ]
                             },
                             {
                                 "name": "probe_out4",
-                                "id": 16,
+                                "id": 9,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -397,7 +205,7 @@
                                 "portIndex": 4,
                                 "nets": [
                                     {
-                                        "name": "DDR/sys_rst_1",
+                                        "name": "AFE/buttons/probe_out4[0]",
                                         "isBus": false
                                     }
                                 ]
@@ -406,369 +214,223 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "DDR/generateILA0.ila",
+                        "name": "AFE/generateILA1.AFE_ILA1",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
                             "user_chain": 1,
-                            "slave_index": 2,
+                            "slave_index": 1,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "9D846D655B8B5D05A6B6063FFF6C63C2",
+                        "uuid": "0B3AE836671E5FA581FF334010F55E0C",
                         "pins": [
                             {
                                 "name": "probe0",
-                                "id": 17,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 28,
-                                "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_addr",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "DDR/DDR3_addr[28]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[27]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[26]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[25]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[24]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[23]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[22]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[21]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[20]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[19]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[18]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[17]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[16]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[15]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[14]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[13]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[12]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[11]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[10]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[9]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[8]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[7]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[6]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[5]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[4]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[3]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[2]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[1]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_addr[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 18,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 2,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_cmd",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "DDR/DDR3_cmd[2]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_cmd[1]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_cmd[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 19,
+                                "id": 10,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
-                                "portIndex": 2,
+                                "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "DDR/DDR3_en",
+                                        "name": "AFE/spi_enable",
                                         "isBus": false
                                     }
                                 ]
                             },
                             {
-                                "name": "probe3",
-                                "id": 20,
+                                "name": "probe1",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "AFE/spi_busy",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 12,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 63,
-                                "portIndex": 3,
+                                "rightIndex": 23,
+                                "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "DDR/DDR3_wrt_data",
+                                        "name": "AFE/spi_tx_data",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/DDR3_wrt_data[63]"
+                                                "name": "AFE/spi_tx_data[23]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[62]"
+                                                "name": "AFE/spi_tx_data[22]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[61]"
+                                                "name": "AFE/spi_tx_data[21]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[60]"
+                                                "name": "AFE/spi_tx_data[20]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[59]"
+                                                "name": "AFE/spi_tx_data[19]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[58]"
+                                                "name": "AFE/spi_tx_data[18]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[57]"
+                                                "name": "AFE/spi_tx_data[17]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[56]"
+                                                "name": "AFE/spi_tx_data[16]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[55]"
+                                                "name": "AFE/spi_tx_data[15]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[54]"
+                                                "name": "AFE/spi_tx_data[14]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[53]"
+                                                "name": "AFE/spi_tx_data[13]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[52]"
+                                                "name": "AFE/spi_tx_data[12]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[51]"
+                                                "name": "AFE/spi_tx_data[11]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[50]"
+                                                "name": "AFE/spi_tx_data[10]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[49]"
+                                                "name": "AFE/spi_tx_data[9]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[48]"
+                                                "name": "AFE/spi_tx_data[8]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[47]"
+                                                "name": "AFE/spi_tx_data[7]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[46]"
+                                                "name": "AFE/spi_tx_data[6]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[45]"
+                                                "name": "AFE/spi_tx_data[5]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[44]"
+                                                "name": "AFE/spi_tx_data[4]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[43]"
+                                                "name": "AFE/spi_tx_data[3]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[42]"
+                                                "name": "AFE/spi_tx_data[2]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[41]"
+                                                "name": "AFE/spi_tx_data[1]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[40]"
+                                                "name": "AFE/spi_tx_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 23,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "AFE/spi_rx_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "AFE/spi_rx_data[23]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[39]"
+                                                "name": "AFE/spi_rx_data[22]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[38]"
+                                                "name": "AFE/spi_rx_data[21]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[37]"
+                                                "name": "AFE/spi_rx_data[20]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[36]"
+                                                "name": "AFE/spi_rx_data[19]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[35]"
+                                                "name": "AFE/spi_rx_data[18]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[34]"
+                                                "name": "AFE/spi_rx_data[17]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[33]"
+                                                "name": "AFE/spi_rx_data[16]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[32]"
+                                                "name": "AFE/spi_rx_data[15]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[31]"
+                                                "name": "AFE/spi_rx_data[14]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[30]"
+                                                "name": "AFE/spi_rx_data[13]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[29]"
+                                                "name": "AFE/spi_rx_data[12]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[28]"
+                                                "name": "AFE/spi_rx_data[11]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[27]"
+                                                "name": "AFE/spi_rx_data[10]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[26]"
+                                                "name": "AFE/spi_rx_data[9]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[25]"
+                                                "name": "AFE/spi_rx_data[8]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[24]"
+                                                "name": "AFE/spi_rx_data[7]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[23]"
+                                                "name": "AFE/spi_rx_data[6]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[22]"
+                                                "name": "AFE/spi_rx_data[5]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[21]"
+                                                "name": "AFE/spi_rx_data[4]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[20]"
+                                                "name": "AFE/spi_rx_data[3]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[19]"
+                                                "name": "AFE/spi_rx_data[2]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[18]"
+                                                "name": "AFE/spi_rx_data[1]"
                                             },
                                             {
-                                                "name": "DDR/DDR3_wrt_data[17]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[16]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[15]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[14]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[13]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[12]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[11]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[10]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[9]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[8]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[7]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[6]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[5]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[4]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[3]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[2]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[1]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_data[0]"
+                                                "name": "AFE/spi_rx_data[0]"
                                             }
                                         ]
                                     }
@@ -776,685 +438,234 @@
                             },
                             {
                                 "name": "probe4",
-                                "id": 21,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 4,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_wrt_end",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe5",
-                                "id": 22,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 7,
-                                "portIndex": 5,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_wrt_mask",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[7]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[6]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[5]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[4]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[3]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[2]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[1]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_wrt_mask[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe6",
-                                "id": 23,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 6,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_wrt_en",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe7",
-                                "id": 24,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 63,
-                                "portIndex": 7,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_rd_data",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "DDR/DDR3_rd_data[63]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[62]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[61]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[60]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[59]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[58]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[57]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[56]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[55]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[54]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[53]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[52]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[51]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[50]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[49]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[48]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[47]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[46]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[45]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[44]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[43]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[42]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[41]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[40]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[39]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[38]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[37]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[36]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[35]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[34]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[33]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[32]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[31]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[30]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[29]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[28]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[27]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[26]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[25]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[24]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[23]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[22]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[21]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[20]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[19]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[18]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[17]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[16]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[15]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[14]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[13]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[12]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[11]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[10]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[9]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[8]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[7]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[6]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[5]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[4]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[3]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[2]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[1]"
-                                            },
-                                            {
-                                                "name": "DDR/DDR3_rd_data[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe8",
-                                "id": 25,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 8,
-                                "nets": [
-                                    {
-                                        "name": "DDR/startwrite",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe9",
-                                "id": 26,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 9,
-                                "nets": [
-                                    {
-                                        "name": "DDR/startread",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe10",
-                                "id": 27,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 10,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_rdy",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe11",
-                                "id": 28,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 11,
-                                "nets": [
-                                    {
-                                        "name": "DDR/DDR3_wrt_rdy",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe12",
-                                "id": 29,
+                                "id": 14,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 3,
-                                "portIndex": 12,
+                                "portIndex": 4,
                                 "nets": [
                                     {
-                                        "name": "DDR/DDRSeqStat",
+                                        "name": "AFE/AFE_spi_Stat",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/DDRSeqStat[3]"
+                                                "name": "AFE/AFE_spi_Stat[3]"
                                             },
                                             {
-                                                "name": "DDR/DDRSeqStat[2]"
+                                                "name": "AFE/AFE_spi_Stat[2]"
                                             },
                                             {
-                                                "name": "DDR/DDRSeqStat[1]"
+                                                "name": "AFE/AFE_spi_Stat[1]"
                                             },
                                             {
-                                                "name": "DDR/DDRSeqStat[0]"
+                                                "name": "AFE/AFE_spi_Stat[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "generateILA1.AFE_ila",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 2,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "0744B916BBFB52D88C0CE76B3DBAF7D6",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 15,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "SerdesRst",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "SerdesRst[0]"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe13",
-                                "id": 30,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 13,
-                                "nets": [
-                                    {
-                                        "name": "DDR/done",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe14",
-                                "id": 31,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 14,
-                                "nets": [
-                                    {
-                                        "name": "DDR/resetFSM",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe15",
-                                "id": 32,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 15,
-                                "nets": [
-                                    {
-                                        "name": "DDR/trig",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe16",
-                                "id": 33,
+                                "name": "probe1",
+                                "id": 16,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 63,
-                                "portIndex": 16,
+                                "rightIndex": 1,
+                                "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "DDR/test_data",
+                                        "name": "done",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "DDR/test_data[63]"
+                                                "name": "done[1]"
                                             },
                                             {
-                                                "name": "DDR/test_data[62]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[61]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[60]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[59]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[58]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[57]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[56]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[55]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[54]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[53]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[52]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[51]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[50]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[49]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[48]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[47]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[46]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[45]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[44]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[43]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[42]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[41]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[40]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[39]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[38]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[37]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[36]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[35]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[34]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[33]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[32]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[31]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[30]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[29]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[28]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[27]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[26]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[25]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[24]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[23]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[22]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[21]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[20]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[19]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[18]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[17]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[16]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[15]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[14]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[13]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[12]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[11]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[10]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[9]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[8]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[7]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[6]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[5]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[4]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[3]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[2]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[1]"
-                                            },
-                                            {
-                                                "name": "DDR/test_data[0]"
+                                                "name": "done[0]"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe17",
-                                "id": 34,
+                                "name": "probe2",
+                                "id": 17,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 17,
+                                "rightIndex": 1,
+                                "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "DDR/init_calib_complete",
-                                        "isBus": false
+                                        "name": "warn",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "warn[1]"
+                                            },
+                                            {
+                                                "name": "warn[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe18",
-                                "id": 35,
+                                "name": "probe3",
+                                "id": 18,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 18,
+                                "rightIndex": 13,
+                                "portIndex": 3,
                                 "nets": [
                                     {
-                                        "name": "DDR/sys_rst",
-                                        "isBus": false
+                                        "name": "dout_AFE0[0]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_AFE0[0][13]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][12]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][11]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][10]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][9]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][8]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][7]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][6]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][5]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][4]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][3]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][2]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][1]"
+                                            },
+                                            {
+                                                "name": "dout_AFE0[0][0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe19",
-                                "id": 36,
+                                "name": "probe4",
+                                "id": 19,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 19,
+                                "rightIndex": 13,
+                                "portIndex": 4,
                                 "nets": [
                                     {
-                                        "name": "DDR/DDR3_rst",
-                                        "isBus": false
+                                        "name": "dout_AFE1[0]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_AFE1[0][13]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][12]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][11]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][10]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][9]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][8]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][7]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][6]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][5]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][4]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][3]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][2]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][1]"
+                                            },
+                                            {
+                                                "name": "dout_AFE1[0][0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             }
